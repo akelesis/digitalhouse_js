@@ -1,178 +1,219 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
-
 body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    background-color: #EEE0CB;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #EEE0CB;
 }
 
 .bookshop_header {
-    width: 100%;
-    height: 80px;
-    padding: 0 20px;
-    box-sizing: border-box;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background-color: #F71735;
-    color: #EEE0CB;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F71735;
+  color: #EEE0CB;
 }
 
 .dh_title {
-    font-family: "Mulish", sans-serif;
-    font-weight: 300;
+  font-family: "Mulish", sans-serif;
+  font-weight: 300;
 }
 
 #dh_menu_btn {
-    width: 50px;
-    height: 50px;
-
-    border: none;
-    border-radius: 5px;
-    outline: none;
-
-    background-color: #f7425a;
-    color: #EEE0CB;
-    font-size: 25px;
-    transition: filter .3s;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #f7425a;
+  color: #EEE0CB;
+  font-size: 25px;
+  transition: filter .3s;
 }
 
 #dh_menu_btn:hover {
-    filter: brightness(80%);
-    cursor: pointer;
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+.dh_container_menu {
+  position: relative;
+}
+
+.dh_menu_popup {
+  display: none;
+  list-style-type: none;
+  background: #EEE0CB;
+  box-shadow: 2px 2px 10px rgba(0,0,0,.4);
+  position: absolute;
+  border-radius: 5px;
+  top: calc(50% + 20px);
+  right: 0;
+  text-align: center;
+  padding: 10px;
+  width: 100px;
+}
+
+.dh_menu_popup a {
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  padding: 10px;
+  color: #f7425a;
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dh_menu_popup a::after {
+  content: '';
+  display: block;
+  width: 0;
+  margin: 3px auto 0;
+  background: #f7425a;
+  height: 3px;
+  border-radius: 1.5px;
+  transition: width .3s;
+}
+
+.dh_menu_popup a:hover::after {
+  width: 80%;
+}
+
+.dh_menu_popup.active {
+  display: block;
+}
+
+.dh_menu_popup::before {
+  content: '';
+  display: block;
+  background: transparent;
+  border: 10px solid transparent;
+  border-bottom-color: #EEE0CB;
+  position: absolute;
+  right: 15px;
+  top: -20px;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #dh_carousel {
-    width: 100%;
-    height: 60vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #ccc; 
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
 }
 
 .carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+  font-family: "Mulish", sans-serif;
+  font-weight: 200;
+  font-size: 25px;
+  color: #777;
 }
 
 .filters {
-    width: 100%;
-    height: 120px;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: space-evenly;
-    align-items: center;
-
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .name_box {
-    display: flex;
+  display: flex;
 }
 
 #search_bar {
-    width: 50vw;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 25px 0 0 25px;
-    border: 1px solid #888;
-    border-right: none;
-    outline: none;
-
-    font-family: "Mulish", sans-serif;
-    color: #666;
+  width: 50vw;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 25px 0 0 25px;
+  border: 1px solid #888;
+  border-right: none;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+  color: #666;
 }
 
 #search_button {
-    font-size: 20px;
-    padding: 11px;
-    border-radius: 0 25px 25px 0;
-    border: 1px solid #888;
-    border-left: none;
-    outline: none;
-
-    color: #666;
-
-    transition: filter .3s;
+  font-size: 20px;
+  padding: 11px;
+  border-radius: 0 25px 25px 0;
+  border: 1px solid #888;
+  border-left: none;
+  outline: none;
+  color: #666;
+  transition: filter .3s;
 }
 
 #search_button:hover {
-    filter: brightness(80%);
-    cursor: pointer;
+  filter: brightness(80%);
+  cursor: pointer;
 }
 
 .advanced_filters select {
-    width: 25vw;
-    font-size: 20px;
-    font-family: "Mulish", sans-serif;
-
-    padding: 10px;
-
-    color: #666;
-    border: 1px solid #888;
+  width: 25vw;
+  font-size: 20px;
+  font-family: "Mulish", sans-serif;
+  padding: 10px;
+  color: #666;
+  border: 1px solid #888;
 }
 
 .showcase {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-self: center;
-    margin: 50px 0;
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-self: center;
+  margin: 50px 0;
 }
 
 .card {
-    width: 300px;
-    height: 400px;
-    margin: 10px 0;
-    position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 10px 0;
+  position: relative;
 }
 
 .overlay {
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 5;
-
-    background-color: #7777;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-    box-sizing: border-box;
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background-color: #7777;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 footer {
-    width: 100%;
-    height: 80px;
-    background-color: #F71735;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #EEE0CB;
+  width: 100%;
+  height: 80px;
+  background-color: #F71735;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #EEE0CB;
 }
 
 @media(min-width: 1498px) {
-    .showcase {
-        width: 60vw;
-    }
+  .showcase {
+    width: 60vw;
+  }
 }
