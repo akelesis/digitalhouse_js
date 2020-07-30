@@ -78,7 +78,7 @@ body {
   color: #EEE0CB;
   height: 80%;
   border-radius: 1.5px;
-  transition: clip-path .3s;
+  transition: clip-path 5s;
   position: absolute;
   top: 10%;
   left: 0;
@@ -87,7 +87,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  clip-path: inset(0 90% 0 0);
+  clip-path: inset(0 95% 0 0);
   padding: 0;
   margin: 0;
   border-radius: 5px;
