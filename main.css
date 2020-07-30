@@ -38,11 +38,55 @@ body {
     color: #EEE0CB;
     font-size: 25px;
     transition: filter .3s;
+
 }
 
 #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
+}
+
+.menu-bar{
+    position: relative;
+}
+
+.menu-items{
+    list-style-type: none;
+    right: 0;
+    padding: 10px;
+    position: absolute;
+    background-color: #888;
+    border-radius: 5%;
+    width: 100px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-items li{
+    margin: 10px 0px 10px 0px;
+    height: 10vh;
+
+}
+
+.menu-items a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #F9F9F9;
+    font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-items a:hover{
+    content: '';
+    transition-property: none;
+    background-color: #F71735;
+    border-radius: 5px;
 }
 
 .content {
