@@ -78,7 +78,7 @@ body {
   color: #EEE0CB;
   height: 80%;
   border-radius: 1.5px;
-  transition: clip-path 5s;
+  transition: clip-path .3s;
   position: absolute;
   top: 10%;
   left: 0;
