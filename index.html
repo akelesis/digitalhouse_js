@@ -1,18 +1,34 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <nav class="dh_menu_nav">
+        <button id="dh_menu_btn" class="side-menu-off" onclick="openMenu()"><i id="btnMenu" class="fa fa-bars"></i></button>
+            <ul class="dh_menu_list" id="mySidenav">
+                <li class="dh_menu_item">
+                    <a href="#"><i class="fa fa-list"></i> Lista de Desejos</a>
+                </li>
+                <li class="dh_menu_item">
+                    <a href="#"><i class="fa fa-shopping-cart"></i> Minhas Compras</a>
+                </li>
+                <li class="dh_menu_item">
+                    <a href="#"><i class="fa fa-cogs"></i> Painel de Controle</a>
+                </li>
+                <li class="dh_menu_item">
+                    <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main class="content">
         <section id="dh_carousel">
@@ -23,7 +39,7 @@
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="teste()"><i class="fa fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
@@ -103,7 +119,8 @@
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
-    <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
+
+    <!--<script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>-->
     <script src='main.js'></script>
 </body>
 
