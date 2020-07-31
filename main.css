@@ -1,24 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700;900&display=swap');
+
+* {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
 }
 
 .bookshop_header {
+    position: relative;
     width: 100%;
     height: 80px;
-    padding: 0 20px;
-    box-sizing: border-box;
+    padding: 0 40px;
     
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    
     background-color: #F71735;
     color: #EEE0CB;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);    
+}
+
+.bookshop_header #logo_header {
+    height: 30px;
+}
+
+.bookshop_header nav {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    padding: 0px 0;
+    border-bottom-left-radius: 10px;
+    background-color: hsl(352, 93%, 53%);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);    
+}
+
+.bookshop_header nav ul {
+    list-style: none;
+}
+
+.bookshop_header nav ul li {
+    padding: 16px 40px;
+    border-left: solid 4px #ffffff00;
+    transition: all 0.3s;
+}
+
+.bookshop_header nav ul li i {
+    margin-right: 16px;
+}
+
+.bookshop_header nav ul a:last-child li{
+    border-bottom-left-radius: 10px;
+}
+
+.bookshop_header nav ul li:hover {
+    border-left: solid 4px #ffffff;
+    background-color: hsl(352, 93%, 42%);
+}
+
+.bookshop_header nav ul a {
+    font-family: "Mulish", sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
 }
 
 .dh_title {
@@ -36,7 +90,7 @@ body {
 
     background-color: #f7425a;
     color: #EEE0CB;
-    font-size: 25px;
+    font-size: 2.5em;
     transition: filter .3s;
 }
 
@@ -64,7 +118,7 @@ body {
 .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
-    font-size: 25px;
+    font-size: 2.5em;
     color: #777;
 }
 
@@ -86,7 +140,7 @@ body {
 
 #search_bar {
     width: 50vw;
-    font-size: 20px;
+    font-size: 2em;
     padding: 10px;
     border-radius: 25px 0 0 25px;
     border: 1px solid #888;
@@ -98,7 +152,7 @@ body {
 }
 
 #search_button {
-    font-size: 20px;
+    font-size: 2em;
     padding: 11px;
     border-radius: 0 25px 25px 0;
     border: 1px solid #888;
@@ -117,7 +171,7 @@ body {
 
 .advanced_filters select {
     width: 25vw;
-    font-size: 20px;
+    font-size: 2em;
     font-family: "Mulish", sans-serif;
 
     padding: 10px;
