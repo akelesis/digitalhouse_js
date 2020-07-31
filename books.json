@@ -119,6 +119,21 @@
       "category": "Ficção Científica",
       "price": 18.24,
       "price_range": "barato"
+    },
+    {
+      "isbn": "9780596517748",
+      "title": "JavaScript: The Good Parts",
+      "subtitle": "",
+      "author": "Douglas Crockford",
+      "published": "2008-05-01T00:00:00.000Z",
+      "publisher": "O'Reilly Media",
+      "pages": 153,
+      "description": "With JavaScript: The Good Parts, you'll discover a beautiful, elegant, lightweight and highly expressive language that lets you create effective code, whether you're managing object libraries or just trying to get Ajax to run fast. If you develop sites or applications for the Web, this book is an absolute must.",
+      "website": "https://www.oreilly.com/library/view/javascript-the-good/9780596517748/",
+      "img_url": "https://images-na.ssl-images-amazon.com/images/I/5131OWtQRaL._SX381_BO1,204,203,200_.jpg",
+      "category": "Romance",
+      "price": 13.37,
+      "price_range": "barato"
     }
   ]
 }
