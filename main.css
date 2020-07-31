@@ -65,8 +65,7 @@ body {
 
 .menu-items li{
     margin: 10px 0px 10px 0px;
-    height: 10vh;
-
+    height: 15vh;
 }
 
 .menu-items a{
@@ -77,8 +76,9 @@ body {
     color: #F9F9F9;
     font-family: "Mulish", sans-serif;
     font-size: 18px;
+    padding-left: 1vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
