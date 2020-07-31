@@ -25,7 +25,7 @@ body {
     font-weight: 300;
 }
 
-/* INÍCIO MENU */
+/* MENU START */
 
 .dh_menu_nav {
     display: flex;
@@ -98,7 +98,7 @@ body {
     text-decoration: none;
 }
 
-/* FIM MENU */
+/* MENU END */
 
 .content {
     display: flex;
@@ -116,11 +116,11 @@ body {
     background-color: #ccc; 
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+/* TODO: check the responsive */
+#dh_carousel_img {
+    height: 60vh;
+    object-fit: cover;
+    width: 100%;
 }
 
 .filters {
