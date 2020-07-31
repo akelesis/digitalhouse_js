@@ -11,5 +11,4 @@ a etapa de javascript no curso Fullstack Java - Santander Coders.
 
 3. Todas as modificações feitas devem ocorrer na sua respectiva branch
 
-
-## Happy Coding!
+## Happy Coding
