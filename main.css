@@ -7,6 +7,10 @@ body {
     background-color: #EEE0CB;
 }
 
+#menu{
+    display: none;
+}
+
 .bookshop_header {
     width: 100%;
     height: 80px;
