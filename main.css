@@ -55,7 +55,7 @@ body {
   right: 0;
   text-align: center;
   padding: 10px;
-  width: 100px;
+  width: 200px;
 }
 
 .dh_menu_popup a {
@@ -70,7 +70,7 @@ body {
   position: relative;
 }
 
-.dh_menu_popup a::after {
+.dh_menu_popup li:not(:last-child) a::after{
   content: attr(data-text);
   min-width: 100%;
   margin: 3px auto 0;
@@ -87,13 +87,22 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  clip-path: inset(0 95% 0 0);
   padding: 0;
   margin: 0;
   border-radius: 5px;
 }
 
-.dh_menu_popup a:hover::after {
+.dh_menu_popup li:last-child a:hover{
+  background: none;
+  color: white!important;
+  clip-path: inset(0 0 0 0);
+}
+
+.dh_menu_popup li:not(:last-child) a::after {
+  clip-path: inset(0 95% 0 0);
+}
+
+.dh_menu_popup li:not(:last-child) a:hover::after {
   min-width: 100%;
   clip-path: inset(0 0 0 0);
 }
