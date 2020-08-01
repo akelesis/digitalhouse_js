@@ -9,22 +9,21 @@ body {
 }
 
 #menu {
-    position: absolute;
-    transition: 0.5s;
-}
-
-#menu[active = "true"] {
     background-color: #F71735;
     box-shadow: 0px 5px 5px 0px rgba(70, 70, 70, 0.2);
     display: flex;
     height: 100%;
-    opacity: 1;
-    right: 0px;
+    position: absolute;
+    transition: 0.5s;
     width: 40%;
+    z-index: 7;
+}
+
+#menu[active = "true"] {
+    right: 0px;
 }
 
 #menu[active = "false"] {
-    opacity: 0;
     right: -400px;
 }
 
