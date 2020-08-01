@@ -40,17 +40,62 @@ body {
     transition: filter .3s;
 }
 
+#menu-opt {
+    position: fixed;
+
+    height: 33%;
+    width: 0;
+    
+    top: 0;
+    right: 0;
+    padding-top: 0.5%;
+    z-index: 5;
+    
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+#menu-opt a {
+    display: block;
+
+    top: 0;
+    padding: 8px 8px 8px 32px;
+
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: "Mulish", sans-serif;
+    
+    color: #818181;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#menu-opt btnclose {
+    position: absolute;
+
+    top: 0;
+    left: 25px;
+    margin-right: 50px;
+}
+
+#menu-opt a:hover {
+    color: #f1f1f1;
+  }
+
 #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
+
 
 .content {
     display: flex;
     flex-direction: column;
 }
 
-#dh_carousel {
+#dh_carousel,
+#dh_carousel .container {
     width: 100%;
     height: 60vh;
 
@@ -65,7 +110,55 @@ body {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
-    color: #777;
+    color: rgba(0, 0, 0, 0.95);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.img_carrousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.overlay-2 {
+    position: absolute;
+
+    background-color: #7777;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.h2-teste {
+    text-align: right;
+    width: 35%;
+    margin-left: 50vh;
+
+    font-family: "Mulish", sans-serif;
+    font-size: 1.3em;
+}
+
+.paragraph {
+    width: 150%;
+    text-align: left;
+    margin-right: 30vh;
+    padding: 20px;
+
+    font-family: "Mulish", sans-serif;
+    font-size: 1.2em;
 }
 
 .filters {
