@@ -1,110 +1,225 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>.:Bookstore</title>
+    <link
+      rel="shortcut icon"
+      href="https://image.flaticon.com/icons/svg/2947/2947998.svg"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-</head>
-
-<body>
+  <body>
     <header class="bookshop_header">
-        <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+      <h1 class="dh_title">Digital House - Livraria</h1>
+      <ul class="dh_menu">
+        <li>
+          <a>
+            <i class="far fa-paper-plane"></i>
+            Lista de desejos</a
+          >
+        </li>
+        <li>
+          <a>
+            <i class="fas fa-shopping-cart"></i>
+            Minhas Compras</a
+          >
+        </li>
+        <li>
+          <a> <i class="fas fa-tools"></i> Painel de Controle</a>
+        </li>
+        <li>
+          <a>
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </a>
+        </li>
+      </ul>
+      <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
     </header>
     <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
-        </section>
-        <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
-                </select>
-                <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
-                </select>
-            </div>
-        </section>
+      <section id="dh_carousel">
+        <a class="carousel_arrow" id="arrowLeft">
+          <i
+            class="fas fa-arrow-circle-left"
+            style="font-size: 48px; color: #f7425a;"
+          ></i
+        ></a>
 
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-        </section>
+        <img class="carouselImage" src="" alt="" />
+        <a class="carousel_arrow" id="arrowRight">
+          <i
+            class="fas fa-arrow-circle-right"
+            style="font-size: 48px; color: #f7425a;"
+          ></i
+        ></a>
+      </section>
+      <section class="filters">
+        <div class="name_box">
+          <input type="text" id="search_bar" placeholder="Nome do livro..." />
+          <button id="search_button"">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="advanced_filters">
+          <select name="category" id="category">
+            <option value="" selected="true" disabled="disabled"
+              >Selecione a categoria</option
+            >
+            <option value="Auto-Ajuda">Auto Ajuda</option>
+            <option value="Ficcao-Cientifica">Ficção Científica</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Romance">Romance</option>
+          </select>
+          <select name="price_range" id="price_range">
+            <option value="" selected="true" disabled="disabled"
+              >Faixa de preço</option
+            >
+            <option value="barato">R$1 - R$20</option>
+            <option value="medio">R$21 - R$40</option>
+            <option value="caro">R$41 - R$60</option>
+            <option value="maisCaro">acima de R$61</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1520467795206-62e33627e6ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+          />
+          <div class="maisInfo">
+            Mais Informações...
+          </div>
+
+          <div class="overlay Romance medio" id="book1">
+            <h2>Romance 1</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae
+              asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+              corrupti error perspiciatis repellat!
+            </p>
+            <p>Price: $ 39,90</p>
+            <a href="#">Saiba mais...</a>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1476081718509-d5d0b661a376?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80"
+          />
+          <div class="maisInfo">
+            Mais Informações...
+          </div>
+          <div class="overlay Ficcao-Cientifica medio" id="book2">
+            <h2>Terry Potter</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae
+              asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+              corrupti error perspiciatis repellat!
+            </p>
+            <p>Price: $ 29,90</p>
+            <a href="#">Saiba mais...</a>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          />
+          <div class="maisInfo">
+            Mais Informações...
+          </div>
+          <div class="overlay Fantasia medio" id="book3">
+            <h2>Fantasia 1</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae
+              asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+              corrupti error perspiciatis repellat!
+            </p>
+            <p>Price: $ 35,90</p>
+            <a href="#">Saiba mais...</a>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1496104679561-38d3af73f9b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=361&q=80"
+          />
+          <div class="maisInfo">
+            Mais Informações...
+          </div>
+          <div class="overlay Auto-Ajuda caro" id="book4">
+            <h2>Auto-Ajuda</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae
+              asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+              corrupti error perspiciatis repellat!
+            </p>
+            <p>Price: $ 49,90</p>
+            <a href="#">Saiba mais...</a>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1516207562423-ae3965d90896?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80"
+          />
+          <div class="maisInfo">
+            Mais Informações...
+          </div>
+          <div class="overlay Ficcao-Cientifica barato" id="book5">
+            <h2>Ficção 2</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae
+              asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+              corrupti error perspiciatis repellat!
+            </p>
+            <p>Price: $ 19,90</p>
+            <a href="#">Saiba mais...</a>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1511500210851-7b5a6fd70703?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=382&q=80"
+          />
+          <div class="maisInfo">
+            Mais Informações...
+          </div>
+          <div class="overlay Fantasia maisCaro" id="book6">
+            <h2>Fantasia 2</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae
+              asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+              corrupti error perspiciatis repellat!
+            </p>
+            <p>Price: $ 64,90</p>
+            <a href="#">Saiba mais...</a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>Todos os direitos reservados - Digital House &#169;</p>
+      <p>Todos os direitos reservados - Digital House &#169;</p>
+      <div>
+        Icons made by
+        <a href="https://www.flaticon.com/authors/bqlqn" title="bqlqn">bqlqn</a>
+        from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com
+        </a>
+      </div>
     </footer>
-    <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/37a6fc82c8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
 </html>
