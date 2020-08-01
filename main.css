@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    overflow-x: hidden; 
 }
 
 .bookshop_header {
@@ -50,7 +51,7 @@ body {
     flex-direction: column;
 }
 
-#dh_carousel {
+#dh_carousel img {
     width: 100%;
     height: 60vh;
 
@@ -177,6 +178,7 @@ footer {
     }
 }
 
+
 /* menu */
 #menu {
   height: 100%; 
@@ -185,6 +187,7 @@ footer {
   font-family: "Mulish", sans-serif;
   top: 0; 
   right: 0;
+  z-index: 1;
   background-color: #888888;
   overflow-x: hidden; 
   padding-top: 60px; 
