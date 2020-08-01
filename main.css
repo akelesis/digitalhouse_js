@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    overflow-x: hidden;
 }
 
 .bookshop_header {
@@ -44,7 +45,7 @@ body {
     filter: brightness(80%);
     cursor: pointer;
 }
-
+/* Side menu */
 .side-menu {
     position: absolute;
     top: 80px;
@@ -53,6 +54,15 @@ body {
     width: 28%;
     z-index: 10;
     background-color: #F71735;
+
+    transform: translateX(100%);
+    transition: transform 200ms ease-in;
+
+    border-radius: 5px;
+}
+
+.side-menu-toggle {
+    transform: translateX(0);
 }
 
 .side-menu-list {
@@ -90,11 +100,8 @@ body {
     position: absolute;
     left: 0;
     top: 18px;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     transition: 500ms transform ease;
-    /* opacity: 0; */
-
-
 }
 
 .side-menu-list li {
@@ -120,6 +127,7 @@ body {
     /* overflow: visible; */
 }
 
+/*  */
 .content {
     display: flex;
     flex-direction: column;
@@ -249,5 +257,11 @@ footer {
 @media(min-width: 1498px) {
     .showcase {
         width: 60vw;
+    }
+}
+
+@media(max-width: 600px) {
+    .side-menu {
+        width: 50%;
     }
 }
