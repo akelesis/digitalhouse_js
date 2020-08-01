@@ -38,6 +38,7 @@ body {
   color: #eee0cb;
   font-size: 25px;
   transition: filter 0.3s;
+  z-index: 1005;
 }
 
 #dh_menu_btn:hover {
@@ -216,7 +217,7 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .carousel-control-btn {
@@ -229,4 +230,62 @@ footer {
   .showcase {
     width: 60vw;
   }
+}
+
+#lateral {
+  padding: 0;
+  transition: all 0.5s ease;
+  font-size: 1.2em;
+  background: #f7425a;
+  height: 100%;
+  overflow: hidden;
+  width: 370px;
+  position: fixed;
+  top: 0;
+  right: -370px;
+  z-index: 1000;
+}
+
+#lateral .box {
+  list-style-type: none;
+}
+
+#lateral h3 {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.4em;
+  font-style: normal;
+  padding-bottom: 0.2em;
+  margin: 0 0 0 0.8em;
+  color: #eee0cb;
+  border-bottom: 1px solid #eee0cb;
+}
+
+#menu {
+  font-style: italic;
+  position: relative;
+  font-size: 1em;
+  margin: 1em 0 1em 0em;
+  padding: 0;
+}
+
+#menu li {
+  padding: 0;
+  margin: 0;
+}
+
+#menu li a,
+#menu li a:link {
+  font-size: 1.2em;
+  color: #eee0cb;
+  text-decoration: none;
+  padding: 0.8em 0 0.8em 1em;
+  display: block;
+  transition: all 1.2s ease;
+}
+
+#menu li a:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
 }
