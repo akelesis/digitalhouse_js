@@ -46,10 +46,6 @@ body {
 
     z-index: 20;
 
-    /* RECEBE ESSES ATRIBUTOS QUANDO LISTA = ON
-    position: fixed;
-    top: 15px;
-    right: 20px;*/
 }
 
 #dh_menu_btn:hover {
@@ -60,7 +56,7 @@ body {
 .dh_menu_list {
     background-color: #F71735;
     height: 100vh;
-    width: 0; /* CORRIGIR DISPOSITIVOS MOVEIS */
+    width: 0; /* TODO: check the responsive */
     position: fixed;
     z-index: 10;
     top: 0;
@@ -72,8 +68,6 @@ body {
     list-style-type: none;
     padding: 80px 0 0 0;
 
-    /* MODIFICA ESSE ATRIBUTO QUANDO LISTA = ON 
-    display: none;*/
 }
 
 .dh_menu_item {
@@ -116,7 +110,6 @@ body {
     background-color: #ccc; 
 }
 
-/* TODO: check the responsive */
 #dh_carousel_img {
     height: 60vh;
     object-fit: cover;
@@ -197,6 +190,17 @@ body {
     position: relative;
 }
 
+.card:hover {
+    filter: brightness(120%);
+}
+
+.card img {
+    height: 400px;
+    object-fit: cover;
+    width: 300px;
+    filter: opacity(80%);
+}
+
 .overlay {
     width: 300px;
     height: 400px;
@@ -205,15 +209,28 @@ body {
     top: 0;
     z-index: 5;
 
-    background-color: #7777;
+    /*background-color: rgba(119, 119, 119, 0.8);*/
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 10px;
+    padding: 20px;
     box-sizing: border-box;
+
+    text-align: center;
+}
+
+.overlay h2 {
+    background-color: rgb(119, 119, 119);
+    color: #EEE0CB;
+    font-size: 2em;
+}
+
+.overlay p {
+    background-color: rgb(119, 119, 119);
+    color: #EEE0CB;
 }
 
 footer {
