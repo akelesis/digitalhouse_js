@@ -81,32 +81,44 @@ let cardsFill = function () {
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/41jEbK-jG+L.jpg',
             title: 'Clean Code',
-            abstract: 'Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.'
+            abstract: 'Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.',
+            category: '',
+            price: ''
         },
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/51sZW87slRL._SX375_BO1,204,203,200_.jpg',
             title: 'Domain-Driven Design',
-            abstract: 'Domain-Driven Design fills that need. This is not a book about specific technologies. It offers readers a systematic approach to domain-driven design, presenting an extensive set of design best practices, experience-based techniques, and fundamental principles that facilitate the development of software projects facing complex domains.'
+            abstract: 'Domain-Driven Design fills that need. This is not a book about specific technologies. It offers readers a systematic approach to domain-driven design, presenting an extensive set of design best practices, experience-based techniques, and fundamental principles that facilitate the development of software projects facing complex domains.',
+            category: '',
+            price: ''
         },
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/516tg-5b2ZL._SX380_BO1,204,203,200_.jpg',
             title: 'Clean Architecture',
-            abstract: 'Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.'
+            abstract: 'Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.',
+            category: '',
+            price: ''
         },
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/41jEbK-jG+L.jpg',
             title: 'Clean Code 44444',
-            abstract: 'Robert C. Martin (“Uncle Bob”) has been a programmer since 1970. He is founder of Uncle Bob Consulting, LLC, and cofounder with his son Micah Martin of The Clean Coders LLC. Martin has published dozens of articles in various trade journals and is a regular speaker at international conferences and trade shows.'
+            abstract: 'Robert C. Martin (“Uncle Bob”) has been a programmer since 1970. He is founder of Uncle Bob Consulting, LLC, and cofounder with his son Micah Martin of The Clean Coders LLC. Martin has published dozens of articles in various trade journals and is a regular speaker at international conferences and trade shows.',
+            category: '',
+            price: ''
         },
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/41jEbK-jG+L.jpg',
             title: 'Cracking the Coding Interview',
-            abstract: 'Gayle Laakmann McDowell is the founder and CEO of CareerCup and the author of Cracking the PM Interview and Cracking the Tech Career. Her background is in software development. She has worked as a software engineer at Google, Microsoft, and Apple. At Google, she interviewed hundreds of software engineers and evaluated thousands of hiring packets on the hiring committee. She holds a B.S.E. and M.S.E. in computer science from the University of Pennsylvania and an MBA from the Wharton School.'
+            abstract: 'Gayle Laakmann McDowell is the founder and CEO of CareerCup and the author of Cracking the PM Interview and Cracking the Tech Career. Her background is in software development. She has worked as a software engineer at Google, Microsoft, and Apple. At Google, she interviewed hundreds of software engineers and evaluated thousands of hiring packets on the hiring committee. She holds a B.S.E. and M.S.E. in computer science from the University of Pennsylvania and an MBA from the Wharton School.',
+            category: '',
+            price: ''
         },
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/41vEGoXo1sL._SX323_BO1,204,203,200_.jpg',
             title: 'Javascript e Jquery',
-            abstract: 'Jon Duckett projeta e desenvolve websites há mais de quinze anos. Trabalhou em pequenas startups e empresas internacionais e escreveu mais de uma dúzia de livros sobre web design e programação.'
+            abstract: 'Jon Duckett projeta e desenvolve websites há mais de quinze anos. Trabalhou em pequenas startups e empresas internacionais e escreveu mais de uma dúzia de livros sobre web design e programação.',
+            category: '',
+            price: ''
         }
     ];
     
@@ -119,4 +131,25 @@ let cardsFill = function () {
 };
 
 window.onload = cardsFill();
+
+let btnSearch = document.getElementById('search_button');
+let inputSearch = document.getElementById('search_bar');
+btnSearch.onclick = function() {
+    searchBook(inputSearch.value);
+};
+
+let searchBook = function(input) {
+    let getCards = document.querySelectorAll('.card');
+    getCards.forEach(card => {
+        card.style.visibility = 'hidden';
+    });
+
+    for(let i = 0; i < getCards.length; i++) {
+        let getTitle = getCards[i].querySelector('h2').textContent;
+        if(getTitle == input) {
+            getCards[i].style.visibility = 'visible';
+        }
+    }
+
+};
 
