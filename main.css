@@ -5,10 +5,27 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    overflow-x: hidden;
 }
 
-#menu{
-    display: none;
+#menu {
+    position: absolute;
+    transition: 0.5s;
+}
+
+#menu[active = "true"] {
+    background-color: #F71735;
+    box-shadow: 0px 5px 5px 0px rgba(70, 70, 70, 0.2);
+    display: flex;
+    height: 100%;
+    opacity: 1;
+    right: 0px;
+    width: 40%;
+}
+
+#menu[active = "false"] {
+    opacity: 0;
+    right: -400px;
 }
 
 .bookshop_header {
