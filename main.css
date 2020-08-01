@@ -61,7 +61,7 @@ body {
   background-color: #ccc;
 }
 
-.carrousel_label {
+.carousel_label {
   font-family: "Mulish", sans-serif;
   font-weight: 200;
   font-size: 25px;
@@ -149,6 +149,7 @@ body {
   margin: 10px 0;
   position: relative;
 }
+
 .card img {
   width: 300px;
   height: 400px;
@@ -181,6 +182,47 @@ footer {
   justify-content: center;
   align-items: center;
   color: #eee0cb;
+}
+
+/* css carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* background-image: url("img/banner_test.png"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.animated {
+  transform: translateX(-100%);
+  transition: transform 1.35s;
+}
+
+.animated:target {
+  transform: translateX(0px);
+}
+
+.carousel-controls-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.carousel-control-btn {
+  color: #eee0cb;
+  font-size: 3em;
+  text-decoration: none;
 }
 
 @media (min-width: 1498px) {
