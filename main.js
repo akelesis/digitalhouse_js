@@ -35,8 +35,10 @@ window.addEventListener('load', () => {
   btnMenu.addEventListener('click', () => {
     if (dhMenu.classList.contains('show')) {
       dhMenu.classList.remove('show');
+      dhMenu.classList.add('voltar');
     } else {
       dhMenu.classList.add('show');
+      dhMenu.classList.remove('voltar');
     }
   });
 
@@ -86,6 +88,9 @@ window.addEventListener('load', () => {
     });
   }
 
+  let temCategoria = false;
+  let temPreco = false;
+
   selectCategory.addEventListener('change', () => {
     for (let card of cards) {
       if (card.children[2].classList.contains(selectCategory.value)) {
@@ -116,6 +121,22 @@ window.addEventListener('load', () => {
         card.style.display = 'block';
       } else {
         card.style.display = 'none';
+      }
+    }
+  });
+
+  window.addEventListener('keypress', () => {
+    if (event.key === 'Enter') {
+      for (let card of cards) {
+        if (
+          card.children[2].children[0].innerHTML
+            .toLowerCase()
+            .includes(textDigited.value.toLowerCase())
+        ) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
       }
     }
   });

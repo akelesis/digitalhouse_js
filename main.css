@@ -43,10 +43,21 @@ body {
   opacity: 0.95;
 }
 
+.dh_menu.voltar {
+  display: block;
+  position: absolute;
+  top: -80px;
+  width: 100%;
+  right: 0px;
+  background-color: #f71735;
+  animation: up 1.5s ease;
+  opacity: 0;
+}
+
 @keyframes down {
   0% {
     opacity: 0;
-    transform: translateY(-300px);
+    transform: translateY(-200px);
   }
   25% {
     opacity: 0.2;
@@ -56,6 +67,22 @@ body {
   }
   100% {
     opacity: 0.95;
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0.95;
+    transform: translateY(100px);
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
