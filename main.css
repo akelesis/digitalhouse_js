@@ -8,6 +8,38 @@ body {
     overflow-x: hidden;
 }
 
+#carousel_block {
+    align-items: center;
+    background-color:rgba(70, 70, 70, 0.4);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50%;
+    justify-content: center;
+    width: 50%;
+}
+
+#carousel_pipe {
+    background-color: #F71735;
+    height: 120px;
+    margin: 1%;
+    width: 3px;
+}
+
+.carousel_paragraph {
+    color: white;
+    font-family: "Mulish", sans-serif;
+    margin-left: 1%;
+    width: 40%;
+}
+
+.carousel_label {
+    font-family: "Mulish", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: white;
+}
+
 #menu {
     background-color: #F71735;
     box-shadow: 0px 5px 5px 0px rgba(70, 70, 70, 0.2);
@@ -15,16 +47,16 @@ body {
     height: 100%;
     position: absolute;
     transition: 0.5s;
-    width: 40%;
+    width: 30vw;
     z-index: 7;
 }
 
 #menu[active = "true"] {
-    right: 0px;
+    right: 0vw;
 }
 
 #menu[active = "false"] {
-    right: -400px;
+    right: -50vw;
 }
 
 .bookshop_header {
@@ -78,15 +110,11 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #ccc; 
+    background-image:url("./img/carousel/03_1280px.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
-}
 
 .filters {
     width: 100%;
@@ -189,6 +217,12 @@ footer {
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
+}
+
+@media(max-width: 960px) {
+    #menu {
+        width: 50vw;
+    }
 }
 
 @media(min-width: 1498px) {
