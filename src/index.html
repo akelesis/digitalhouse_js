@@ -6,10 +6,28 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./styles/main.css'>
 </head>
 
 <body>
+    <nav class="sidebar">
+        <div class="option">
+            <i class="fa fa-list"></i>
+            <p>Lista de Desejos</p>
+        </div>
+        <div class="option">
+            <i class="fa fa-shopping-basket"></i>
+            <p>Minhas Compras</p>
+        </div>
+        <div class="option">
+            <i class="fa fa-cogs"></i>
+            <p>Painel de Controle</p>
+        </div>
+        <div class="option">
+            <i class="fa fa-sign-out-alt"></i>
+            <p>Logout</p>
+        </div>
+    </nav>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
         <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
@@ -45,7 +63,7 @@
 
         <section class="showcase">
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./assets/300x400.png">
                 <div class="overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -54,7 +72,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./assets/300x400.png">
                 <div class="overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -63,7 +81,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./assets/300x400.png">
                 <div class="overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -72,7 +90,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./assets/300x400.png">
                 <div class="overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -81,7 +99,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./assets/300x400.png">
                 <div class="overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -90,7 +108,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./assets/300x400.png">
                 <div class="overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -103,8 +121,9 @@
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
+    <div class="fade out"></div>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    <script src="./scripts/sideBar.js"></script>
 </body>
 
 </html>

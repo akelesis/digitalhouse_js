@@ -176,3 +176,77 @@ footer {
         width: 60vw;
     }
 }
+
+.sidebar {
+    width: 16%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    left: -16%;
+    z-index: 10;
+    
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 1.5vw;
+    color: #EEE0CB;
+
+    background-color: #F71735;
+
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+.sidebar.active{
+    left: 0;
+}
+
+.sidebar .option {
+    display: flex;
+    align-items: center;
+
+    height: 8%;
+
+    padding-left: 1vw;
+
+    cursor: pointer;
+}
+
+.sidebar .option:hover {
+    background-color: #F83A53;
+}
+
+.sidebar .option i {
+    width: 2.5vw;
+
+    font-size: 1.5vw;
+}
+
+.sidebar .option p {
+    flex: 1;
+
+    font-size: 1.2vw;
+}
+
+.fade {
+    width: 100%;
+    height: 100%;
+    
+    position: fixed;
+
+    background-color: black;
+}
+
+.fade.out {
+    display: none;
+
+    opacity: 0;
+}
+
+.fade.in {
+    z-index: 9;
+
+    opacity: 0.5;
+}
