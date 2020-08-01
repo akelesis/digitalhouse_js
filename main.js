@@ -70,7 +70,8 @@ let imgCarousel = function () {
 // Show the carousel only when the page finishes loading
 window.onload = imgCarousel();
 
-let cardsFill = function () {
+// Filling the books
+let fillCards = function () {
 
     let divCard = document.querySelectorAll("div.card");
     let cardImg = document.querySelectorAll("div.card img");
@@ -101,7 +102,7 @@ let cardsFill = function () {
         },
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/41jEbK-jG+L.jpg',
-            title: 'Clean Code 44444',
+            title: 'Clean Code',
             abstract: 'Robert C. Martin (“Uncle Bob”) has been a programmer since 1970. He is founder of Uncle Bob Consulting, LLC, and cofounder with his son Micah Martin of The Clean Coders LLC. Martin has published dozens of articles in various trade journals and is a regular speaker at international conferences and trade shows.',
             category: '',
             price: ''
@@ -121,35 +122,70 @@ let cardsFill = function () {
             price: ''
         }
     ];
-    
-    for(let i = 0; i < divCard.length; i++) {
+
+    // Setting the attributes according to the books array
+    for (let i = 0; i < divCard.length; i++) {
         cardImg[i].setAttribute('src', books[i].img);
         titleCard[i].textContent = books[i].title;
         pCard[i].textContent = books[i].abstract;
     }
-    
+
 };
 
-window.onload = cardsFill();
+window.onload = fillCards();
 
-let btnSearch = document.getElementById('search_button');
-let inputSearch = document.getElementById('search_bar');
-btnSearch.onclick = function() {
-    searchBook(inputSearch.value);
-};
+// Making a book filter
+let searchingBooks = function() {
+    let btnSearch = document.getElementById('search_button');
+    let inputSearch = document.getElementById('search_bar');
 
-let searchBook = function(input) {
-    let getCards = document.querySelectorAll('.card');
-    getCards.forEach(card => {
-        card.style.visibility = 'hidden';
-    });
-
-    for(let i = 0; i < getCards.length; i++) {
-        let getTitle = getCards[i].querySelector('h2').textContent;
-        if(getTitle == input) {
-            getCards[i].style.visibility = 'visible';
+    // Catch and pass the text when the button is clicked if isn't empty
+    btnSearch.onclick = function () {
+        if (inputSearch.value != '') {
+            searchingBooks(inputSearch.value);
         }
-    }
+    };
 
-};
+    // Catch and pass the text when the enter is pressed if isn't empty
+    inputSearch.addEventListener('keyup', function(event) {
+        if ((event.keyCode === 13) && (inputSearch.value != '')) {
+            searchingBooks(inputSearch.value);
+        }
+    });
+    
+    // Receive the text and does the search
+    searchingBooks = function (input) {
+        let getCards = document.querySelectorAll('.card');
+    
+        // Scrolls through the cards and changes their display
+        for (let i = 0; i < getCards.length; i++) {
+            let getTitle = getCards[i].querySelector('h2').textContent || getCards[i].querySelector('h2').innerText;
+    
+            if (getTitle.toUpperCase() == input.toUpperCase()) {
+                getCards[i].style.display = '';
+            } else  getCards[i].style.display = 'none';
+        }
+
+        // If the user clears the input label, shows all cards again
+        inputSearch.addEventListener('keyup', function(event) {
+            if (event.keyCode === 8) {
+                let timePressed = 0;
+
+                if (timePressed >= inputSearch.value.length) {
+                    for (let i = 0; i < getCards.length; i++) {
+                        getCards[i].style.display = '';
+                    }
+                }
+            }
+        });
+    
+    };
+}
+
+searchingBooks();
+
+
+
+
+
 
