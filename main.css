@@ -2,7 +2,7 @@
 
 body {
     margin: 0;
-    margin-right: 25%;
+    margin-right: 0%;
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
@@ -11,7 +11,7 @@ body {
 nav {
     margin: 0;
     padding: 0;
-    width: 25%;
+    width: 0%;
     background-color: #f71735   ;
     position: fixed;
     right: 0;
