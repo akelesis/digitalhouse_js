@@ -45,6 +45,40 @@ body {
     cursor: pointer;
 }
 
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #F71735;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 80px;
+}
+  
+.sidebar a {
+  padding: 8px 8px 8px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+  display: block;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+  
+.menu_item:hover {
+  color: #f1f1f1;
+  background-color: #ac1226;
+}
+  
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  font-size: 36px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -129,7 +163,7 @@ body {
 .showcase {
     width: 80vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-self: center;
     margin: 50px 0;
