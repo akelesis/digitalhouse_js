@@ -54,11 +54,11 @@ body {
     color: #EEE0CB;
     border-left: 5px solid #F71735;
   }
-  .sidenav .closebtn:hover {
+  .sidenav #closebtn:hover {
     color: #EEE0CB;
   }
   /* Position and style the close button (top right corner) */
-  .sidenav .closebtn {
+  .sidenav #closebtn {
     position: absolute;
     top: 0;
     right: 25px;
