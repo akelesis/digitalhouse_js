@@ -16,7 +16,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1511108690759-009324a90311?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Fantasia 1',
+    title: 'Harry Potter',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -52,7 +52,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1551300316-cc6ced5bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Fantasia 2',
+    title: 'Narnia',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -76,7 +76,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1582547761303-4899595f0f35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Fantasia 3',
+    title: 'Senhor dos Aneis',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -113,7 +113,8 @@ data = [
 // Captura o botão do menu lateral
 const btnMenu = document.getElementById('dh_menu_btn');
 
-const body = document.querySelector('body');
+// captura a seção de filtros
+const filters = document.querySelector('.filters');
 
 // Captura a seção showcase
 const showCase = document.querySelector('.showcase');
@@ -139,8 +140,15 @@ const searchButton = document.getElementById('search_button');
 // Caputa o que foi digitado no Input text
 const textDigited = document.getElementById('search_bar');
 
-let hasCategory = [true, true, true, true, true, true, true, true, true];
-let hasPrice = [true, true, true, true, true, true, true, true, true];
+// Captura os estados dos seletores
+let hasCategory = [];
+let hasPrice = [];
+let hasName = [];
+for (let i = 0; i < data.length; i++) {
+  hasCategory[i] = true;
+  hasPrice[i] = true;
+  hasName[i] = true;
+}
 
 // Imagens do array que será mostrado no carrossel
 const imagesArray = [
@@ -179,17 +187,14 @@ window.addEventListener('load', () => {
 
   // Filtra os resultados por categoria
   selectedCategory.addEventListener('change', () => {
-    for (let countCards = 0; countCards < bookCards.length; countCards++) {
+    for (let count = 0; count < data.length; count++) {
       if (selectedCategory.value === 'todos') {
-        hasCategory[countCards] = true;
+        hasCategory[count] = true;
       } else {
-        if (
-          bookCards[countCards].children[2].children[0].className ===
-          selectedCategory.value
-        ) {
-          hasCategory[countCards] = true;
+        if (data[count].category === selectedCategory.value) {
+          hasCategory[count] = true;
         } else {
-          hasCategory[countCards] = false;
+          hasCategory[count] = false;
         }
       }
     }
@@ -197,34 +202,58 @@ window.addEventListener('load', () => {
     return hasCategory;
   });
 
+  // Filtra os resultados por preço
   selectedPrice.addEventListener('change', () => {
-    for (let countCards = 0; countCards < bookCards.length; countCards++) {
+    for (let count = 0; count < data.length; count++) {
       if (selectedPrice.value === 'todos') {
-        hasPrice[countCards] = true;
+        hasPrice[count] = true;
       } else {
-        if (
-          bookCards[countCards].children[2].children[2].className ===
-          selectedPrice.value
-        ) {
-          hasPrice[countCards] = true;
+        if (data[count].price_range === selectedPrice.value) {
+          hasPrice[count] = true;
         } else {
-          hasPrice[countCards] = false;
+          hasPrice[count] = false;
         }
       }
     }
-
     // console.log(`Price: ${hasPrice}`);
     return hasPrice;
   });
 
-  window.addEventListener('change', () => {
-    for (let count = 0; count < hasCategory.length; count++) {
-      if (hasCategory[count] === true && hasPrice[count] === true) {
+  // Filtra pelo nome digitado
+  searchButton.addEventListener('click', () => {
+    for (let count = 0; count < data.length; count++) {
+      if (
+        data[count].title
+          .toLowerCase()
+          .includes(textDigited.value.toLowerCase())
+      ) {
+        hasName[count] = true;
         bookCards[count].style.display = 'block';
       } else {
+        hasName[count] = false;
         bookCards[count].style.display = 'none';
       }
     }
+    return hasName;
+  });
+
+  // Mostra na tela os resultados finais após aplicação dos filtros
+  filters.addEventListener('change', () => {
+    let result = [];
+    for (let count = 0; count < data.length; count++) {
+      if (
+        hasCategory[count] === true &&
+        hasPrice[count] === true &&
+        hasName[count] == true
+      ) {
+        bookCards[count].style.display = 'block';
+        result[count] = true;
+      } else {
+        bookCards[count].style.display = 'none';
+        result[count] = false;
+      }
+    }
+    console.log(result);
   });
 });
 
@@ -254,7 +283,6 @@ function loadBookData(data) {
 
     // titulo do livro
     const title = document.createElement('h2');
-    title.className = book.category;
     title.textContent = book.title;
     overlay.appendChild(title);
 
@@ -265,7 +293,6 @@ function loadBookData(data) {
 
     // preço do livro
     const price = document.createElement('p');
-    price.className = book.price_range;
     price.textContent = `Price: $ ${book.price}0`;
     overlay.appendChild(price);
 
