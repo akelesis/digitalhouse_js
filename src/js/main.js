@@ -4,7 +4,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1569738713551-2958195b458a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Romance 1',
+    title: 'A culpa e das estrelas',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -28,7 +28,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1535398089889-dd807df1dfaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Ficcao 1',
+    title: 'Matrix',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -40,7 +40,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Auto-Ajuda 1',
+    title: 'Alcance seus sonhos',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -52,7 +52,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1551300316-cc6ced5bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Narnia',
+    title: 'As cronicas de Narnia',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -64,7 +64,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1590310051055-1079d8f48c89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Romance 2',
+    title: 'Dear John',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -88,7 +88,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1541702193626-24fe3a9fbed3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Ficcao 2',
+    title: 'Star Wars',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -100,7 +100,7 @@ data = [
   {
     image_URL:
       'https://images.unsplash.com/photo-1518744386442-2d48ac47a7eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'Outros 1',
+    title: '1000 destinos',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
