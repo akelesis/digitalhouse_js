@@ -80,7 +80,7 @@ let fillCards = function () {
     let pResume = document.querySelectorAll("div.overlay p.resume");
     let pCategory = document.querySelectorAll("div.overlay p.category");
     let pPrice = document.querySelectorAll("div.overlay p.price");
-    
+
     let books = [
         {
             img: 'https://images-na.ssl-images-amazon.com/images/I/41jEbK-jG+L.jpg',
@@ -165,11 +165,32 @@ let searchingBooks = function () {
         // Scrolls through the cards and changes their display
         for (let i = 0; i < getCards.length; i++) {
             let getTitle = getCards[i].querySelector('h2').textContent || getCards[i].querySelector('h2').innerText;
-
             let getCategory = getCards[i].querySelector('.category').textContent || getCards[i].querySelector('.category').innerText;
+            let getPrice = getCards[i].querySelector('.price').textContent || getCards[i].querySelector('.price').innerText;
 
-            if ((getTitle.toUpperCase() == input.toUpperCase())
-             || (getCategory == input )) {
+            switch (input) {
+                case 'barato':
+                    if (getPrice <= 20) getPrice = 'barato';
+                    break;
+
+                case 'medio':
+                    if (getPrice >= 21 && getPrice <= 40) getPrice = 'medio';
+                    break;
+
+                case 'caro':
+                    if (getPrice >= 41 && getPrice <= 60) getPrice = 'caro';
+                    break;
+
+                case 'mais caro':
+                    if (getPrice >= 61) getPrice = 'mais caro';
+                    break;
+                    
+                default:
+                    break;
+            }
+
+
+            if ((getTitle.toUpperCase() == input.toUpperCase()) || (getCategory == input ) || (getPrice == input)) {
                 getCards[i].style.display = '';
             } else getCards[i].style.display = 'none';
 
@@ -194,7 +215,7 @@ let searchingBooks = function () {
     let searchingByCategory = function () {
         let categoryField = document.getElementById("category");
         categoryField.onclick = function () {
-            if(categoryField.value != '') {
+            if (categoryField.value != '') {
                 searchingBooks(categoryField.value);
             }
         }
@@ -202,11 +223,10 @@ let searchingBooks = function () {
     searchingByCategory();
 
 
-    // NOTE: parei aqui
     let searchingByPrice = function () {
         let priceField = document.getElementById("price_range");
         priceField.onclick = function () {
-            if(priceField.value != '') {
+            if (priceField.value != '') {
                 searchingBooks(priceField.value);
             }
         }
@@ -225,7 +245,11 @@ searchingBooks();
 - Verificar side menu em mobile;
 - Baixar as imagens pro projeto;
 - Ao clicar no card, mostra as informações do livro;
-- REAPROVEITAR OS CÓDIGOSSSSSS
-- SAIR DA PROCURA POR CATEGORIA/PREÇO
-.
+
+
+- USAR FILTER MAP E REDUCE!!!!
+- REAPROVEITAR OS CÓDIGOSSSSSS;
+- SAIR DA PROCURA POR CATEGORIA/PREÇO;
+- PESQUISA FUNCIONANDO EM CONJUNTO COM OS 3 CAMPOS;
+- Fixar a div de livros pra não ficar uma sanfona quando pesquisa;
 */
