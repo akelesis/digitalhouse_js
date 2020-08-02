@@ -1,3 +1,4 @@
+//--------------------- Carousel ------------------------
 const carouselImages = document.querySelector('.carousel_images');
 const carouselButtons = document.querySelectorAll('.carousel_button');
 const nmbrImages =  document.querySelectorAll('.carousel_images img').length;
@@ -33,3 +34,15 @@ carouselButtons.forEach(button => {
         carouselImages.style.transform = "translateX(" + translateX + "px)";
     })
 });
+
+//---------------------- Hamburger Menu ----------------------------
+const dhMenuBtn = document.getElementById('dh_menu_btn');
+const sidebar = document.getElementById('sidebar');
+
+dhMenuBtn.addEventListener("click", event => {
+    if(sidebar.getAttribute("class") !== "active"){
+        sidebar.setAttribute("class", "active");
+    } else {
+        sidebar.removeAttribute("class", "active");
+    }
+})
