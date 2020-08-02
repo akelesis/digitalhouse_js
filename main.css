@@ -58,14 +58,41 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #ccc; 
+    background-color: #888;
+
+    background-image: url(./img/c1.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+}
+
+#dh_carousel > nav {
+    align-self: flex-end;
+    margin-bottom: 30px;
+}
+
+.cr_button{
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    opacity: 0.8;
+    border-radius: 100%;
+    border: 0px;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+.cr_button:focus{
+    opacity: 1;
+    text-decoration: none;
 }
 
 .carrousel_label {
     font-family: "Mulish", sans-serif;
-    font-weight: 200;
+    font-weight: 900;
     font-size: 25px;
     color: #777;
+    align-self: flex-end;
 }
 
 .filters {
