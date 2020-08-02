@@ -45,6 +45,55 @@ body {
     cursor: pointer;
 }
 
+/* estilização menu */
+#menu {
+    display: none;
+    justify-content: flex-end;
+    position: relative;
+    right: 10px;
+    
+}
+
+#menu ul {
+    display: flex;
+    flex-direction: column;
+    transition: 3s;
+    
+}
+
+#menu ul li {
+    list-style: none;
+}
+
+#menu ul li {
+    background-color: #f7425a;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 10px;
+    margin: 10px;
+    border-radius: 50%;
+}
+    
+
+#menu ul li a {
+    text-decoration: none;
+    font-family: "Mulish", sans-serif;
+    color: #fff;
+
+}
+
+#menu ul li:hover {
+    transition: 1s;
+    background-color: #fff;
+}
+
+#menu ul li a:hover {
+    color: #f7425a;
+    transition: 1s;
+}
+
 .content {
     display: flex;
     flex-direction: column;
