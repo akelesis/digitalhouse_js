@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
 
+* {
+    font-family: "Mulish", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+}
+
+h2,h3,h4,h5,h6{
+    font-weight: 400;
+}
+
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+}
+
+main{
+    margin: 80px 0 0 0;
 }
 
 .bookshop_header {
@@ -17,12 +31,14 @@ body {
     align-items: center;
     justify-content: space-between;
 
+    position: fixed;
+    z-index: 100;
+
     background-color: #F71735;
     color: #EEE0CB;
 }
 
 .dh_title {
-    font-family: "Mulish", sans-serif;
     font-weight: 300;
 }
 
@@ -34,7 +50,7 @@ body {
     border-radius: 5px;
     outline: none;
 
-    background-color: #f7425a;
+    background-color: #F7425A;
     color: #EEE0CB;
     font-size: 25px;
     transition: filter .3s;
@@ -62,8 +78,6 @@ body {
 }
 
 .carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
     font-size: 25px;
     color: #777;
 }
@@ -92,8 +106,6 @@ body {
     border: 1px solid #888;
     border-right: none;
     outline: none;
-
-    font-family: "Mulish", sans-serif;
     color: #666;
 }
 
@@ -118,7 +130,6 @@ body {
 .advanced_filters select {
     width: 25vw;
     font-size: 20px;
-    font-family: "Mulish", sans-serif;
 
     padding: 10px;
 
