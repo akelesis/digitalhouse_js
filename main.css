@@ -52,7 +52,7 @@ body {
 
 #dh_carousel {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
 
     display: flex;
     justify-content: center;
@@ -142,6 +142,11 @@ body {
     position: relative;
 }
 
+img{
+    width: 100%;
+    height: 100%;
+}
+
 .overlay {
     width: 300px;
     height: 400px;
@@ -152,7 +157,7 @@ body {
 
     background-color: #7777;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -175,4 +180,18 @@ footer {
     .showcase {
         width: 60vw;
     }
+}
+
+@media (max-width: 900px){
+    #dh_carousel {
+        height: 25vh;
+    }
+        
+}
+
+@media (max-width: 400px){
+    #dh_carousel {
+        height: 15vh;
+    }
+        
 }
