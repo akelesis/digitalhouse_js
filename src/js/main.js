@@ -237,6 +237,25 @@ window.addEventListener('load', () => {
     return hasName;
   });
 
+  textDigited.addEventListener('keypress', () => {
+    if (event.key === 'Enter') {
+      for (let count = 0; count < data.length; count++) {
+        if (
+          data[count].title
+            .toLowerCase()
+            .includes(textDigited.value.toLowerCase())
+        ) {
+          hasName[count] = true;
+          bookCards[count].style.display = 'block';
+        } else {
+          hasName[count] = false;
+          bookCards[count].style.display = 'none';
+        }
+      }
+      return hasName;
+    }
+  });
+
   // Mostra na tela os resultados finais após aplicação dos filtros
   filters.addEventListener('change', () => {
     let result = [];
