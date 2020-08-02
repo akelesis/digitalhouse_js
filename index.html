@@ -46,18 +46,20 @@
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
+                    <option value="Todos">Todos</option>
+                    <option value="Terror">Terror</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="Romance">Romance</option>
                 </select>
                 <select name="price_range" id="price_range">
                     <option value="" selected="true" disabled="disabled">Faixa de preço</option>
+                    <option value="todos">Todos</option>
                     <option value="barato">R$1 - R$20</option>
                     <option value="medio">R$21 - R$40</option>
                     <option value="caro">R$41 - R$60</option>
@@ -66,61 +68,7 @@
             </div>
         </section>
 
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
+        <section id="books" class="showcase">
         </section>
     </main>
     <footer>

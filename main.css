@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    font-family: "Mulish", sans-serif;
 }
 
 .bookshop_header {
@@ -226,6 +227,12 @@ body {
     flex-wrap: wrap;
     align-self: center;
     margin: 50px 0;
+}
+
+.cape-book {
+    width: 300px;
+    height: 400px;
+    opacity: 0.5;
 }
 
 .card {
