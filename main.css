@@ -289,3 +289,22 @@ footer {
   background-color: rgba(255, 255, 255, 0.2);
   transition: all 0.5s ease;
 }
+
+div.irtopo {
+  background: #f7425a;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  opacity: 0.85;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1005;
+}
+
+div.irtopo a {
+  display: block;
+  padding: 12px 8px;
+  text-decoration: underline;
+  color: #fff;
+  font-size: 18px;
+}

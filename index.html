@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <header class="bookshop_header">
+  <header id="header" class="bookshop_header">
     <h1 class="dh_title">Digital House - Livraria</h1>
     <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
   </header>
@@ -21,6 +21,7 @@
         </div>
       </div>
     </section>
+
     <section class="filters">
       <div class="name_box">
         <input type="text" id="search_bar" placeholder="Nome do livro...">
@@ -48,8 +49,16 @@
       <!-- populated by js -->
     </section>
 
-    <div id="lateral">
+    <section id="lateral">
       <nav id="menu">
+        <h3 class="link-titulo">Opções</h3>
+        <ul class="box">
+          <li><a href="#">Meus Pedidos</a></li>
+          <li><a href="#">Lista de Desejos</a></li>
+          <li><a href="#">Painel de Controle</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+
         <h3 class="link-titulo">Promoções</h3>
         <ul class="box">
           <li><a href="#">Pague 2 e Leve 1</a></li>
@@ -64,10 +73,14 @@
           <li><a href="#">Romance</a></li>
         </ul>
       </nav>
-    </div>
+      <div>
+    </section>
   </main>
   <footer>
     <p>Todos os direitos reservados - Digital House &#169;</p>
+    <div class="irtopo">
+      <a href="#header">Topo</a>
+    </div>
   </footer>
   <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
   <!-- filtering logic and books rendering -->
