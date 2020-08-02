@@ -58,14 +58,59 @@ body {
     justify-content: center;
     align-items: center;
 
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+
     background-color: #ccc; 
 }
 
-.carrousel_label {
+/* .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
     color: #777;
+} */
+
+.carousel_images {
+    display: flex;
+    transform: translateX(0);
+    transition: transform .25s;
+}
+
+img {
+    border-radius: 5px;
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+}
+
+.carousel_button {
+    background: #000;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: .25;
+    position: absolute;
+    transition: opacity .25s;
+    width: 3rem;
+    z-index: 1;
+}
+
+.previous {
+    left: 5px;
+}
+
+.next {
+    right: 5px;
+}
+
+.carousel_button:hover {
+    opacity: .5;
 }
 
 .filters {

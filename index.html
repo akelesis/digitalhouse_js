@@ -1,110 +1,114 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-</head>
+    <body>
+        <header class="bookshop_header">
+            <h1 class="dh_title">Digital House - Livraria</h1>
+            <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        </header>
+        <main class="content">
+            <section id="dh_carousel">
+                <button class="carousel_button previous" id="previous"><</button>
+                <div class="carousel_images">
+                    <img src="https://www.publicdomainpictures.net/pictures/110000/velka/leyendo-un-libro-en-la-playa.jpg" alt="Lendo na praia">
+                    <img src="https://www.publicdomainpictures.net/pictures/110000/velka/books-14148726655IP.jpg" alt="Livraria">
+                    <img src="https://www.publicdomainpictures.net/pictures/310000/velka/madchen-am-handy.jpg" alt="Lendo pelo Celular">
+                </div>
+                <button class="carousel_button next" id="next">></button>
+            </section>
 
-<body>
-    <header class="bookshop_header">
-        <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
-    </header>
-    <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
-        </section>
-        <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
-                </select>
-                <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
-                </select>
-            </div>
-        </section>
+            <section class="filters">
+                <div class="name_box">
+                    <input type="text" id="search_bar" placeholder="Nome do livro...">
+                    <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="advanced_filters">
+                    <select name="category" id="category">
+                        <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
+                        <option value="Auto Ajuda">Auto Ajuda</option>
+                        <option value="Ficção Científica">Ficção Científica</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Romance">Romance</option>
+                    </select>
+                    <select name="price_range" id="price_range">
+                        <option value="" selected="true" disabled="disabled">Faixa de preço</option>
+                        <option value="barato">R$1 - R$20</option>
+                        <option value="medio">R$21 - R$40</option>
+                        <option value="caro">R$41 - R$60</option>
+                        <option value="mais caro">acima de R$61</option>
+                    </select>
+                </div>
+            </section>
 
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+            <section class="showcase">
+                <div class="card">
+                    <img src="./img/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="./img/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="./img/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="./img/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="./img/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="./img/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>Todos os direitos reservados - Digital House &#169;</p>
-    </footer>
-    <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
-</body>
-
+            </section>
+        </main>
+        <footer>
+            <p>Todos os direitos reservados - Digital House &#169;</p>
+        </footer>
+        <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
+        <script src='main.js'></script>
+        
+    </body>
 </html>
