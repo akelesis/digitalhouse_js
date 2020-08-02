@@ -4,22 +4,48 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Livraria</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilos/main.css'>
 </head>
 
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <button id="dh_menu_btn"><i id="iconBTN" class="fas fa-bars"></i></button>
     </header>
+
+        <nav id="menu">
+        <ul>
+            <li><a href="#">Lista de desejos</a></li>
+            <li><a href="#">Minhas compras</a></li>
+            <li><a href="#">Painel de controle</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
     <main class="content">
+
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+          <ul id="caroussel">
+                <li class="imagensCaroussel"><img class="img-caroussel" src="img/livraria1.jpg" alt="livraria"></li>
+              <li class="imagensCaroussel"><img class="img-caroussel" src="img/livraria2.jpg" alt="livraria"></li>
+              <li class="imagensCaroussel"><img class="img-caroussel" src="img/livraria3.jpg" alt="livraria"></li>
+              <li class="imagensCaroussel"><img class="img-caroussel" src="img/livraria4.jpg" alt="livraria"></li>
+          </ul>
+          <div class="botoes-carrossel">
+          <button id="btn-anterior" class="">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              <span>Anterior</span>
+              </button>
+
+          <button id="btn-proximo" class="">
+              <span>Próximo</span>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>            
+              </button>
+          </div>
         </section>
+
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
@@ -45,54 +71,54 @@
 
         <section class="showcase">
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imagemLivro" src="./img/300x400.png">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
+                    <h2 class="tituloLivro">Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imagemLivro" src="./img/300x400.png">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
+                    <h2 class="tituloLivro">Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imagemLivro" src="./img/300x400.png">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
+                    <h2 class="tituloLivro">Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imagemLivro" src="./img/300x400.png">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
+                    <h2 class="tituloLivro">Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imagemLivro" src="./img/300x400.png">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
+                    <h2 class="tituloLivro">Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imagemLivro" src="./img/300x400.png">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
+                    <h2 class="tituloLivro">Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
@@ -104,7 +130,7 @@
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    <script src='script/main.js'></script>
 </body>
 
 </html>
