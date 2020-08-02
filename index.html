@@ -14,28 +14,35 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="./img/wishlist.png" width='30' height='30'>
-                    <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    <span class = "icon">
+                        <i class="fa fa-list-ul" aria-hidden="true"></i>
+                    </span>
+                    <span class = "title"> Lista de Desejos</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class = "icon">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </span>
+                    <span class = "title"> Minhas Compras</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class = "icon">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </span>
+                    <span class = "title"> Painel de Controle</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class = "icon">
+                        <i class="fa fa-ban" aria-hidden="true"></i>
 
-                    <h3 class = "titulo"> Lista de Desejos</h3>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" class = "item">
-                    <h3 class = "titulo"> Minhas Compras</h3>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" class = "item">
-                    <h3 class = "titulo"> Painel de Controle</h3>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="" class = "item">
-                    <h3 class = "titulo"> Logout</h3>
+                    </span>
+                    <span class = "title"> Logout</span>
                 </a>
             </li>
         </ul>
@@ -53,7 +60,7 @@
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
@@ -78,18 +85,7 @@
                 <a href="#" >
                     <img src="./img/OPoderdoHabito1-300x400.jpg">
                     <div class="overlay">
-                        <h2>Texto Exemplo</h2>
-                        <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                            corrupti error perspiciatis repellat!Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="#">
-                    <img src="./img/300x400.png">
-                    <div class="overlay">
-                        <h2>Texto Exemplo</h2>
+                        <h2 class = "book_title">O Poder do Hábito</h2>
                         <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                             Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                             corrupti error perspiciatis repellat!</p>
@@ -98,9 +94,9 @@
             </div>
             <div class="card">
                 <a href="#">
-                    <img src="./img/300x400.png">
+                    <img src="./img/Harry-Potter.jpg">
                     <div class="overlay">
-                        <h2>Texto Exemplo</h2>
+                        <h2 class = "book_title">Harry Potter e o prisioneiro de Askaban</h2>
                         <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                             Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                             corrupti error perspiciatis repellat!</p>
@@ -109,9 +105,9 @@
             </div>
             <div class="card">
                 <a href="#">
-                    <img src="./img/300x400.png">
+                    <img src="./img/O-Hobbit.jpg">
                     <div class="overlay">
-                        <h2>Texto Exemplo</h2>
+                        <h2 class = "book_title">O Hobbit</h2>
                         <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                             Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                             corrupti error perspiciatis repellat!</p>
@@ -120,9 +116,9 @@
             </div>
             <div class="card">
                 <a href="#">
-                    <img src="./img/300x400.png">
+                    <img src="./img/Percy-Jackson.jpg">
                     <div class="overlay">
-                        <h2>Texto Exemplo</h2>
+                        <h2 class = "book_title">Percy Jackson e os Olimpianos</h2>
                         <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                             Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                             corrupti error perspiciatis repellat!</p>
@@ -131,9 +127,20 @@
             </div>
             <div class="card">
                 <a href="#">
-                    <img src="./img/300x400.png">
+                    <img src="./img/O-morro-dos-ventos-uivantes.jpg">
                     <div class="overlay">
-                        <h2>Texto Exemplo</h2>
+                        <h2 class = "book_title">O Morro dos Ventos Uivantes</h2>
+                        <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                    <img src="./img/Don-Quixote.jpg">
+                    <div class="overlay">
+                        <h2 class = "book_title">Don Quixote</h2>
                         <p class = "description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                             Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                             corrupti error perspiciatis repellat!</p>
