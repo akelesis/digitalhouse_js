@@ -40,9 +40,9 @@ const dhMenuBtn = document.getElementById('dh_menu_btn');
 const sidebar = document.getElementById('sidebar');
 
 dhMenuBtn.addEventListener("click", event => {
-    if(sidebar.getAttribute("class") !== "active"){
-        sidebar.setAttribute("class", "active");
+    if(sidebar.getAttribute("class") === "inactive"){
+        sidebar.classList.remove("inactive");
     } else {
-        sidebar.removeAttribute("class", "active");
+        sidebar.classList.add("inactive");
     }
 })

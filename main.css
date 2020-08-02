@@ -48,15 +48,19 @@ li {
 
     position: absolute;
     top: 2%;
-    right: -13em;
+    right: 0;
     z-index: 2;
-    
-    transition: all 500ms linear;
+
+    overflow: hidden;
+    max-width: 13em;
+    transition: max-width 750ms linear;
+
     background-color: #f7425a;
 }
 
-#sidebar.active {
-    right: 0;
+#sidebar.inactive {
+    max-width: 0;
+    pointer-events: none;
 }
 
 
