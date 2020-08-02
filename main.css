@@ -100,12 +100,18 @@ a:hover{
     background-color: #ccc; 
 }
 
+#dh_carousel > img {
+    width: 100%;
+    height: 100%;
+}
+
 .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
     color: #777;
 }
+
 
 .filters {
     width: 100%;
