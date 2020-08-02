@@ -13,6 +13,7 @@ body {
     padding: 0 20px;
     box-sizing: border-box;
     
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +27,38 @@ body {
     font-weight: 300;
 }
 
-.bookshop_header div #dh_menu_btn {
+.bookshop_header .menu {
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: auto;
+    height: 26vh;
+}
+
+.bookshop_header .menu .options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 2%;
+    padding: 2%;
+    border: 1px solid black;
+    background-color: #ecd3d3;
+}
+
+.bookshop_header .menu .options a {
+    font-size: 20px;
+    color: #da0275e8;
+    text-decoration: none;
+}
+
+.bookshop_header .menu .options a:hover {
+    color: #ee0f0f;
+}
+
+.bookshop_header .menu #dh_menu_btn {
     width: 50px;
     height: 50px;
 
@@ -37,7 +69,7 @@ body {
     background-color: #f7425a;
     color: #EEE0CB;
     font-size: 25px;
-    transition: filter .3s;
+    /*transition: filter .3s;*/
 }
 
 .bookshop_header div #dh_menu_btn:hover {
@@ -59,7 +91,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-image: url("../images/celebration.png");
+    background-image: url("../images/carousel/celebration.png");
 }
 
 .content #dh_carousel #carousel_button_prev {
@@ -137,14 +169,14 @@ body {
     margin: 50px 0;
 }
 
-.card {
+.content .showcase .card {
     width: 300px;
     height: 400px;
     margin: 10px 0;
     position: relative;
 }
 
-.overlay {
+.content .showcase .card .overlay {
     width: 300px;
     height: 400px;
     position: absolute;
