@@ -43,6 +43,7 @@ body {
 .sidebar{
     position: fixed;
     padding: 0;
+    display: none;
     margin: 0;
     width: 250px;
     height: 100%;
