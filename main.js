@@ -1,5 +1,7 @@
 const burgerButton = document.querySelector("#dh_menu_btn");
 const sideMenu = document.querySelector(".side-menu");
+burgerButton.addEventListener("click", showSideMenu);
+window.addEventListener("scroll", hideSideMenuScroll);
 
 const carouselSlider = document.querySelector(".carousel-slider");
 const carouselImages = document.querySelectorAll(".carousel-slider img");
