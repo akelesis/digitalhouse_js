@@ -1,110 +1,122 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-</head>
-
-<body>
-    <header class="bookshop_header">
-        <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
-    </header>
-    <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
-        </section>
-        <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+    <head>
+        <title>Biblioteca Digital House</title>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name="author" content="Guilherme Nunes">
+        <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    </head>
+    <body>
+        <!--O header contém o nome da livraria, um botão e o menu
+        (ativado com o botão)-->
+        <header class="bookshop_header">
+            <h1 class="dh_title">Digital House - Livraria</h1>
+            <div>
+                <nav>Pesquisa</nav>
+                <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
             </div>
-            <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
-                </select>
-                <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
-                </select>
-            </div>
-        </section>
-
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+        </header><!--O header acaba aqui-->
+        <!--Essa parte contém o carrossel, os filtros de pesquisa-->
+        <main class="content">
+            <!--Carrossel-->
+            <section id="dh_carousel">
+                <button id="carousel_button_prev" type="button">Prev</button>
+                <button id="carousel_button_next" type="button">Next</button>
+            </section><!--Fim do carrossel-->
+            <!--Filtros de pesquisa-->
+            <section class="filters">
+                <!--Pesquisa por nome-->
+                <div class="name_box">
+                    <input id="search_bar" type="text" placeholder="Nome do livro...">
+                    <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                </div><!--Fim da pesquisa por nome-->
+                <!--Pesquisa avançada-->
+                <div class="advanced_filters">
+                    <!--Pesquisa por gênero literário-->
+                    <select id="category" name="category">
+                        <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
+                        <option value="Auto Ajuda">Auto Ajuda</option>
+                        <option value="Ficção Científica">Ficção Científica</option>
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Romance">Romance</option>
+                    </select><!--Fim da pesquisa por gênero-->
+                    <!--Pesquisa por preço-->
+                    <select id="price_range" name="price_range">
+                        <option value="" selected="true" disabled="disabled">Faixa de preço</option>
+                        <option value="barato">R$1 - R$20</option>
+                        <option value="medio">R$21 - R$40</option>
+                        <option value="caro">R$41 - R$60</option>
+                        <option value="mais caro">acima de R$61</option>
+                    </select><!--Fim da pesquisa por preço-->
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+            </section><!--Fim dos filtros de pesquisa-->
+            <!--Essa seção mostra alguns livros-->
+            <section class="showcase">
+                <!--Todos os cards de livros são iguais-->
+                <div class="card">
+                    <img src="images/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="images/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="images/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="images/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="card">
+                    <img src="images/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>Todos os direitos reservados - Digital House &#169;</p>
-    </footer>
-    <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
-</body>
-
+                <div class="card">
+                    <img src="images/300x400.png">
+                    <div class="overlay">
+                        <h2>Texto Exemplo</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
+                            Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
+                            corrupti error perspiciatis repellat!</p>
+                    </div>
+                </div>
+                <!--Fim dos cards-->
+            </section><!--Fim da seção de livros-->
+        </main><!--O conteúdo principal termina aqui-->
+        <!--Um footer com informações de direitos de propriedade intelectual-->
+        <footer>
+            <p>Todos os direitos reservados - Digital House &#169;</p>
+        </footer><!--Fim do footer-->
+        <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
+        <script src='js/main.js'></script>
+    </body>
 </html>

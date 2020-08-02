@@ -21,12 +21,12 @@ body {
     color: #EEE0CB;
 }
 
-.dh_title {
+.bookshop_header .dh_title {
     font-family: "Mulish", sans-serif;
     font-weight: 300;
 }
 
-#dh_menu_btn {
+.bookshop_header div #dh_menu_btn {
     width: 50px;
     height: 50px;
 
@@ -40,7 +40,7 @@ body {
     transition: filter .3s;
 }
 
-#dh_menu_btn:hover {
+.bookshop_header div #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
@@ -50,25 +50,27 @@ body {
     flex-direction: column;
 }
 
-#dh_carousel {
+.content #dh_carousel {
     width: 100%;
     height: 60vh;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    background-color: #ccc; 
+    background-image: url("../images/celebration.png");
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+.content #dh_carousel #carousel_button_prev {
+    align-self: flex-start;
 }
 
-.filters {
+.content #dh_carousel #carousel_button_next {
+    align-self: flex-end;
+}
+
+.content .filters {
     width: 100%;
     height: 120px;
 
@@ -80,11 +82,11 @@ body {
 
 }
 
-.name_box {
+.content .filters .name_box {
     display: flex;
 }
 
-#search_bar {
+.content .filters .name_box #search_bar {
     width: 50vw;
     font-size: 20px;
     padding: 10px;
@@ -97,7 +99,7 @@ body {
     color: #666;
 }
 
-#search_button {
+.content .filters .name_box #search_button {
     font-size: 20px;
     padding: 11px;
     border-radius: 0 25px 25px 0;
@@ -110,12 +112,12 @@ body {
     transition: filter .3s;
 }
 
-#search_button:hover {
+.content .filters .name_box #search_button:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
 
-.advanced_filters select {
+.content .filters .advanced_filters select {
     width: 25vw;
     font-size: 20px;
     font-family: "Mulish", sans-serif;
@@ -126,7 +128,7 @@ body {
     border: 1px solid #888;
 }
 
-.showcase {
+.content .showcase {
     width: 80vw;
     display: flex;
     justify-content: space-between;
