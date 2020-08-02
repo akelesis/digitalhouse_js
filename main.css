@@ -55,18 +55,62 @@ body {
     height: 60vh;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
 
     background-color: #ccc; 
+    
+    position: relative;
 }
 
-.carrousel_label {
+#carousel-items {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+#carousel-items::-webkit-scrollbar {
+    display: none;
+  }
+
+.carousel-item {
+    flex: none;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#carousel-buttons-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 60vh;
+    justify-content: space-between;
+}
+
+#carousel-buttons-container button {
+    background-color: transparent;
+    border: 0;
+    color: #00000080;
+    font-size: 10vh;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Mulish", sans-serif;
+    outline: 0;
+}
+
+/* .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
     color: #777;
-}
+} */
 
 .filters {
     width: 100%;
