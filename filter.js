@@ -215,8 +215,8 @@ const filterBooks = (books = library.books) =>
         filters[filter] !== undefined &&
         filters[filter] !== "" &&
         (book[filter] === undefined ||
-          // using toUpperCase and include because we are mading strings
-          // comparison, not the best approach, but i`m running out of coffee
+          // using toUpperCase and include because we are making comparison
+          // between string, not the best approach, but i`m running out of coffee
           // TODO: improve comparison
           !book[filter].toUpperCase().includes(filters[filter].toUpperCase()))
       ) {
