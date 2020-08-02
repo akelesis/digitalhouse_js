@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
-
 body {
     margin: 0;
     display: flex;
@@ -12,11 +11,9 @@ body {
     height: 80px;
     padding: 0 20px;
     box-sizing: border-box;
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background-color: #F71735;
     color: #EEE0CB;
 }
@@ -29,11 +26,9 @@ body {
 #dh_menu_btn {
     width: 50px;
     height: 50px;
-
     border: none;
     border-radius: 5px;
     outline: none;
-
     background-color: #f7425a;
     color: #EEE0CB;
     font-size: 25px;
@@ -52,13 +47,11 @@ body {
 
 #dh_carousel {
     width: 100%;
-    height: 60vh;
-
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: #ccc; 
+    background-color: #ccc;
 }
 
 .carousel-item {
@@ -73,6 +66,9 @@ body {
     perspective: 1000px;
 }
 
+.display {
+    display: initial;
+}
 
 .carrousel_label {
     font-family: "Mulish", sans-serif;
@@ -84,13 +80,10 @@ body {
 .filters {
     width: 100%;
     height: 120px;
-
     display: flex;
     flex-direction: column;
-
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .name_box {
@@ -105,7 +98,6 @@ body {
     border: 1px solid #888;
     border-right: none;
     outline: none;
-
     font-family: "Mulish", sans-serif;
     color: #666;
 }
@@ -117,9 +109,7 @@ body {
     border: 1px solid #888;
     border-left: none;
     outline: none;
-
     color: #666;
-
     transition: filter .3s;
 }
 
@@ -132,9 +122,7 @@ body {
     width: 25vw;
     font-size: 20px;
     font-family: "Mulish", sans-serif;
-
     padding: 10px;
-
     color: #666;
     border: 1px solid #888;
 }
@@ -162,14 +150,11 @@ body {
     left: 0;
     top: 0;
     z-index: 5;
-
     background-color: #7777;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 10px;
     box-sizing: border-box;
 }
@@ -191,29 +176,107 @@ footer {
 }
 
 
+/*Novos estilos carousel*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    display: block;
+    height: 70vh;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    transition: .9s;
+}
+
+.slider input {
+    display: none;
+}
+
+.slider label {
+    /* background-color: blueviolet; */
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 40px;
+}
+
+.slider li:nth-child(3) label {
+    left: 70px;
+}
+
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider li input:checked~img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
+
+
 /* GLOBAL STYLES CAROUSEL
 -------------------------------------------------- */
+
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
+
 /* Carousel base class */
+
 .carousel {
     margin-bottom: 4rem;
-  }
-  /* Since positioning the image, we need to help out the caption */
-  .carousel-caption {
+}
+
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
     bottom: 3rem;
     z-index: 10;
-  }
-  
-  /* Declare heights because of positioning of img element */
-  .carousel-item {
+}
+
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
     height: 32rem;
-  }
-  .carousel-item > img {
+}
+
+.carousel-item>img {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
     height: 32rem;
-  }
+}
