@@ -29,16 +29,17 @@ body {
 
 .dh_menu {
   display: none;
+  cursor: pointer;
+  background-color: #f71735;
+  border-radius: 4px;
+  width: 92%;
+  left: 0px;
 }
 
 .dh_menu.show {
   display: block;
-  cursor: pointer;
   position: absolute;
   top: 60px;
-  width: 100%;
-  right: 0px;
-  background-color: #f71735;
   animation: down 1.5s ease;
   opacity: 0.95;
 }
@@ -46,11 +47,8 @@ body {
 .dh_menu.voltar {
   display: block;
   position: absolute;
-  top: -80px;
-  width: 100%;
-  right: 0px;
-  background-color: #f71735;
-  animation: up 1.5s ease;
+  top: -150px;
+  animation: up 2s ease;
   opacity: 0;
 }
 
@@ -73,7 +71,7 @@ body {
 @keyframes up {
   0% {
     opacity: 0.95;
-    transform: translateY(100px);
+    transform: translateY(200px);
   }
   25% {
     opacity: 0.75;
@@ -127,6 +125,7 @@ i {
 #dh_menu_btn:hover {
   filter: brightness(80%);
   cursor: pointer;
+  z-index: 1;
 }
 
 .content {
@@ -262,7 +261,7 @@ i {
 .showcase {
   width: 80vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-self: center;
   margin: 50px 0;
