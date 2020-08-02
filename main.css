@@ -17,11 +17,7 @@ body {
     background-color: #EEE0CB;
 }
 
-main{
-    margin: 80px 0 0 0;
-}
-
-.bookshop_header {
+.dh_bookshop_header {
     width: 100%;
     height: 80px;
     padding: 0 20px;
@@ -38,11 +34,26 @@ main{
     color: #EEE0CB;
 }
 
+
+
 .dh_title {
-    font-weight: 300;
+    font-weight: 400;
 }
 
-#dh_menu_btn {
+main{
+    margin: 80px 0 0 0;
+}
+
+#dh_menu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+}
+
+.dh_menu_btn {
     width: 50px;
     height: 50px;
 
@@ -56,12 +67,46 @@ main{
     transition: filter .3s;
 }
 
-#dh_menu_btn:hover {
+.dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
 
-.content {
+#dh_menu_list{
+    display: none;
+    border-radius: 10px;
+    margin: 5px 0;
+    padding: 0px;
+}
+#dh_menu_list.dh-show-fixed,#dh_menu_list.dh-show{
+    display: block !important;
+}
+
+.dh_menu_item{
+    display: list-item;
+    border: solid #EEE0CB 1px;
+    font-weight: 500;
+    background-color: #F7425A;
+    list-style: none;
+    text-decoration: none;
+    color: #EEE0CB;
+    margin: 0;
+    padding: 8px 10px;  
+    width: 200px;
+}
+.dh_menu_item:hover{
+    background-color: #F71735;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.dh_menu_item:first-child {
+    border-radius: 10px 10px 0 0;
+}
+.dh_menu_item:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.dh_content {
     display: flex;
     flex-direction: column;
 }
@@ -77,12 +122,12 @@ main{
     background-color: #ccc; 
 }
 
-.carrousel_label {
+.dh_carrousel_label {
     font-size: 25px;
     color: #777;
 }
 
-.filters {
+.dh_filters {
     width: 100%;
     height: 120px;
 
@@ -94,11 +139,11 @@ main{
 
 }
 
-.name_box {
+.dh_name_box {
     display: flex;
 }
 
-#search_bar {
+#dh_search_bar {
     width: 50vw;
     font-size: 20px;
     padding: 10px;
@@ -109,7 +154,7 @@ main{
     color: #666;
 }
 
-#search_button {
+#dh_search_button {
     font-size: 20px;
     padding: 11px;
     border-radius: 0 25px 25px 0;
@@ -122,12 +167,12 @@ main{
     transition: filter .3s;
 }
 
-#search_button:hover {
+#dh_search_button:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
 
-.advanced_filters select {
+.dh_advanced_filters select {
     width: 25vw;
     font-size: 20px;
 
@@ -137,7 +182,7 @@ main{
     border: 1px solid #888;
 }
 
-.showcase {
+.dh_showcase {
     width: 80vw;
     display: flex;
     justify-content: space-between;
@@ -146,14 +191,14 @@ main{
     margin: 50px 0;
 }
 
-.card {
+.dh_card {
     width: 300px;
     height: 400px;
     margin: 10px 0;
     position: relative;
 }
 
-.overlay {
+.dh_overlay {
     width: 300px;
     height: 400px;
     position: absolute;
@@ -183,7 +228,7 @@ footer {
 }
 
 @media(min-width: 1498px) {
-    .showcase {
+    .dh_showcase {
         width: 60vw;
     }
 }

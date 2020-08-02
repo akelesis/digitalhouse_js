@@ -10,22 +10,38 @@
 </head>
 
 <body>
-    <header class="bookshop_header">
+    <header class="dh_bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <div id="dh_menu">
+            <button class="dh_menu_btn"><i class="fas fa-bars"></i></button>
+            <ul id="dh_menu_list">
+                <a href="#" class="dh_menu_item">
+                    <i class="fas fa-cog"></i> Painel de Controle
+                </a>
+                <a href="#" class="dh_menu_item">
+                    <i class="fas fa-shopping-basket"></i> Minhas Compras
+                </a>
+                <a href="#" class="dh_menu_item">
+                    <i class="fas fa-heart"></i> Lista de Desejos
+                </a>
+                <a href="#" class="dh_menu_item">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </ul>
+        </div>
     </header>
-    <main class="content">
+    <main class="dh_content">
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
+            <h2 class="dh_carrousel_label">
                 Carrossel...
             </h2>
         </section>
-        <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+        <section class="dh_filters">
+            <div class="dh_name_box">
+                <input type="text" id="dh_search_bar" placeholder="Nome do livro...">
+                <button id="dh_search_button" onclick="teste()"><i class="fas fa-search"></i></button>
             </div>
-            <div class="advanced_filters">
+            <div class="dh_advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
                     <option value="Auto Ajuda">Auto Ajuda</option>
@@ -43,55 +59,55 @@
             </div>
         </section>
 
-        <section class="showcase">
-            <div class="card">
+        <section class="dh_showcase">
+            <div class="dh_card">
                 <img src="./img/300x400.png">
-                <div class="overlay">
+                <div class="dh_overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="dh_card">
                 <img src="./img/300x400.png">
-                <div class="overlay">
+                <div class="dh_overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="dh_card">
                 <img src="./img/300x400.png">
-                <div class="overlay">
+                <div class="dh_overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="dh_card">
                 <img src="./img/300x400.png">
-                <div class="overlay">
+                <div class="dh_overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="dh_card">
                 <img src="./img/300x400.png">
-                <div class="overlay">
+                <div class="dh_overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
                         corrupti error perspiciatis repellat!</p>
                 </div>
             </div>
-            <div class="card">
+            <div class="dh_card">
                 <img src="./img/300x400.png">
-                <div class="overlay">
+                <div class="dh_overlay">
                     <h2>Texto Exemplo</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
                         Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
