@@ -55,17 +55,63 @@ body {
     height: 60vh;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #ccc; 
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+#dh_carousel .image-list{
+    display: flex;
+    
+    flex: 1;
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+#dh_carousel .image-list img{
+    opacity: 0;
+
+    width: 100vw;
+    height: 100%;
+
+    position: absolute;
+
+    object-fit: cover;
+
+    transition: opacity 2s;
+}
+
+#dh_carousel .image-list img.active{
+    opacity: 100;
+}
+
+#dh_carousel button {    
+    align-self: center;
+    
+    position: absolute;
+    
+    background-color: transparent;
+
+    border: none;
+
+    outline: none;
+
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+#dh_carousel button i {
+    color: #F71735;
+    
+    font-size: 5vw;
+}
+
+#dh_carousel .prev {
+    left: 0.5vw;
+}
+
+#dh_carousel .next {
+    right: 0.5vw;
 }
 
 .filters {

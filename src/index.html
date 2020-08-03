@@ -34,10 +34,19 @@
     </header>
     <main class="content">
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+            <button class="prev">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <div class="image-list">
+                <img class="active" src="https://i.pinimg.com/originals/9a/a1/ba/9aa1ba5d38bd823f51a224455f81da13.jpg" alt="boku no hero">
+                <img src="https://i.pinimg.com/originals/6a/7c/f3/6a7cf3f31f925715969969a45834944c.jpg" alt="hunter x hunter">
+                <img src="https://images5.alphacoders.com/731/731447.jpg" alt="shokugeki no souma">
+            </div>
+            <button class="next">
+                <i class="fa fa-chevron-right"></i>
+            </button>
         </section>
+        
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
@@ -124,6 +133,7 @@
     <div class="fade out"></div>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
     <script src="./scripts/sideBar.js"></script>
+    <script src="./scripts/carousel.js"></script>
 </body>
 
 </html>
