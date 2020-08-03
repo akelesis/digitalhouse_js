@@ -4,9 +4,10 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Digital House - Biblioteca</title>
+    <title>Digital House - Livraria</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/carousel.css'>
 </head>
 
 <body>
@@ -16,9 +17,15 @@
     </header>
     <main class="content">
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+            <img id="carousel-img" src="img/carousel/img1.jpg" alt="books everywhere">
+            <button id="carousel-prev" onclick="goPrevImage()">&larr;</button>
+            <button id="carousel-next" onclick="goNextImage()">&rarr;</button>
+            <div id="carousel-images">
+                <button id="selectedImage" data-image="0" class="carousel-img" onclick="setCarouselImage(event)">&bull;</button>
+                <button data-image="1" class="carousel-img" onclick="setCarouselImage(event)">&bull;</button>
+                <button data-image="2" class="carousel-img" onclick="setCarouselImage(event)">&bull;</button>
+                <button data-image="3" class="carousel-img" onclick="setCarouselImage(event)">&bull;</button>
+            </div>
         </section>
         <section class="filters">
             <div class="name_box">
@@ -105,6 +112,7 @@
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
     <script src='js/main.js'></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>
