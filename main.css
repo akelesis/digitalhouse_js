@@ -319,8 +319,8 @@ body {
 
 .generic-btn {
     background-color: rgb(241, 241, 241);
-    border: 1px solid rgb(182, 182, 182);
-    color: #888;
+    border: 1px solid #888;
+    color: #666;
     font-size: 20px;
 }
 
