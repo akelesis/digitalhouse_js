@@ -40,6 +40,20 @@ body {
     transition: filter .3s;
 }
 
+#dh_closeMenu_btn {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 10px;
+    outline: none;
+
+    background-color: #F71735;
+    color: #EEE0CB;
+    font-size: 20px;
+    transition: filter .3s;
+}
+
 .sidebar{
     position: fixed;
     padding: 0;
@@ -53,6 +67,7 @@ body {
     color: #EEE0CB;
     font-size: 20px;
     transition: right 0.4s ease;
+    z-index: 6;
     
 }
 
@@ -114,16 +129,20 @@ body {
     justify-content: center;
     align-items: center;
 
+    margin: 2rem auto;
+    overflow: hidden;
+    position: relative;
+
     background-color: #ccc; 
 }
 
-.carrousel_label {
+/*.carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
     color: #777;
 }
-
+*/
 .filters {
     width: 100%;
     height: 120px;
@@ -231,4 +250,46 @@ footer {
     .showcase {
         width: 60vw;
     }
+}
+
+
+.carousel_images {
+    display: flex;
+    transform: translateX(0);
+    transition: transform .25s;
+}
+
+img {
+    border-radius: 5px;
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+}
+
+.carousel_button {
+    background: #000;
+    border: 0;
+    border-radius: 50%;
+    color: #F71735;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: .25;
+    position: absolute;
+    transition: opacity .25s;
+    width: 3rem;
+    z-index: 1;
+}
+
+.previous {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel_button:hover {
+    opacity: .8;
 }
