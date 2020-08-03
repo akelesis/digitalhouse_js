@@ -6,6 +6,28 @@ let side_bar = document.querySelector(".navigation");
 let search_button = document.getElementById("search_button");
 let search_bar = document.getElementById("search_bar");
 let book_titles = document.querySelectorAll(".book_title");
+let items = document.querySelector(".items")
+
+items.addEventListener("wheel", function(event){
+    if(event.deltaY > 0){
+        items.scrollBy(1920, 0);
+    }
+    else{
+        items.scrollBy(-1920, 0);
+    }
+})
+
+function carouselRoll(){
+    console.log(items.scrollLeft);
+    if(items.scrollLeft > 3000){
+        items.scrollBy(-3840,0);
+    }
+    else{
+        items.scrollBy(1920,0)
+    }
+}
+
+setInterval(carouselRoll, 3000);
 
 function HaveInTitle(title, search){
     if(title.indexOf(search) == -1){
