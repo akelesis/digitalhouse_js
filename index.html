@@ -4,7 +4,12 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Livraria Digital</title>
+    <link
+      rel="shortcut icon"
+      href="img/book-open-solid.svg"
+      type="image/x-icon"
+    />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
@@ -12,24 +17,35 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <!-- eu implementei -->
             <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                <a class="menu_item" href="#">Lista de Desejos</a>
-                <a class="menu_item" href="#">Minhas Compras</a>
-                <a class="menu_item" href="#">Painel de Controle</a>
-                <a class="menu_item" href="#">Logout</a>
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a class="menu_item" href="#">Lista de Desejos</a>
+              <a class="menu_item" href="#">Minhas Compras</a>
+              <a class="menu_item" href="#">Painel de Controle</a>
+              <a class="menu_item" href="#">Logout</a>
             </div>
-        <!-- eu implementei e coloquei o onclick="openNav()" -->   
         <button id="dh_menu_btn" onclick="openNav()"><i class="fas fa-bars"></i></button>
     </header>
 
     <main class="content">
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+            <div class="carousel_container">      
+                <div class="slide" style="background-image: url('img/imagem1.jpg')"></div>        
+                <div class="slide" style="background-image: url('img/imagem2.jpg')"> </div>        
+                <div class="slide" style="background-image: url('img/imagem3.jpg')"></div>
+                <div class="slide active" style="background-image: url('img/imagem4.jpg')"></div>
+             </div>
+           
+            <!--carousel controls  -->
+            <div class="carousel_controls">
+                <div class="previous"><i class="fas fa-angle-left"></i></div>
+                <div class="next"><i class="fas fa-angle-right"></i></div>
+            </div>
+        
+            <!--carousel counter-->
+            <div class="carousel_counter"></div>
         </section>
+
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
