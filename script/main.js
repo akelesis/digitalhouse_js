@@ -84,8 +84,6 @@ for (let i = 1; i < generos.length; i++){
     genero.push(generos[i].value)
 }
 
-console.log(genero)
-
 //Definindo os precos
 let faixaDePreco = [];
 const precos = document.getElementById("price_range");
@@ -93,56 +91,114 @@ for (let i = 1; i < precos.length; i++){
     faixaDePreco.push(precos.options[i].value)
 }
 
-//Inserindo livros
-const galeriaLivros = document.querySelectorAll(".card")
-const imagensLivros = document.querySelectorAll(".imagemLivro")
-const tituloLivro = document.querySelectorAll(".tituloLivro")
+
 
 const livros = [
     {
         titulo: 'A menina que não sabia ler',
         imagem: "img/a-menina-que-nao-sabia-ler.jpg",
         preco: faixaDePreco[0],
-        genero: genero[2]
+        genero: genero[2],
+        descricao: "Em uma distante e escura mansão, onde nada é o que parece, a pequena Florence é negligenciada pelo seu tutor e tio. Guardada como um brinquedo, a menina passa seus dias perambulando pelos corredores e inventando histórias que conta a si mesma, em uma rotina tediosa e desinteressante."
     },
     {
         titulo: 'O caderno de Maya',
         imagem: "img/o-caderno-de-maya.jpg",
         preco: faixaDePreco[3],
-        genero: genero[2]
+        genero: genero[2],
+        descricao: "O novo romance de Isabel Allende, O caderno de Maya, diferentemente de seus tradicionais romances, é passado nos dias atuais. Apresenta a trama de uma garota americana de 19 anos que encontrou refúgio em uma ilha remota da costa do Chile, depois de cair em uma vida de drogas, crime e prostituição."
     }, 
     {
         titulo: "Capitães da Areia",
         imagem: "img/capitaes-da-areia.jpg",
         preco: faixaDePreco[1],
-        genero: genero[3]
+        genero: genero[3],
+        descricao: "Capitães da Areia é um romance de autoria do escritor brasileiro Jorge Amado, escrito em 1937. A obra retrata a vida de um grupo de menores abandonados, que crescem nas ruas da cidade de Salvador, Bahia, vivendo em um trapiche, roubando para sobreviver, chamados de \"Capitães da Areia\"."
     },    
     {
         titulo: "A fábrica da violência",
         imagem: "img/fabrica-de-violencia.jpg",
         preco: faixaDePreco[2],
-        genero: genero[0]
+        genero: genero[0],
+        descricao: "A Fábrica da Violência é um romance do escritor sueco Jan Guillou, publicado em 1981. É uma obra de ficção, na qual é contada a história de um jovem chamado Erik. Este romance perpassa questões de violência, hierarquia e educação."
     },    
     {
         titulo: "A droga da obediência",
         imagem: "img/droga-da-obediencia.jpg",
         preco: faixaDePreco[1],
-        genero: genero[0]
+        genero: genero[0],
+        descricao: "A Droga da Obediência” é o primeiro livro da série “os Karas”. Escrito em 1984 por Pedro Bandeira, a obra narra as aventuras de um grupo secreto de adolescentes que decidem desvendar os mistérios em torno do sumiço de algumas alunos nas escolas paulistas"
     },    
     {
         titulo: "A hospedeira",
         imagem: "img/a-hospedeira.jpg",
         preco: faixaDePreco[0],
-        genero: genero[1]
+        genero: genero[1],
+        descricao: "A Terra foi colonizada por uma raça alienígena que controla a mente dos humanos e usa seus corpos como hospedeiros. A maioria da humanidade foi erradicada, mas quando Melanie se recusa a aceitar sua nova alma, uma caçada se inicia."
     }
 ]
 
+//Inserindo os livros atravez do array de objetos
+const showcase = document.querySelectorAll(".showcase")
 livros.forEach(livro => {
-    let indice = livros.indexOf(livro)
-    tituloLivro[indice].textContent = livro.titulo;
-    imagensLivros[indice].src = livro.imagem;
-    //inserir preco
-    //inserir genero
+    console.log(livro)
+    let resultado = document.createElement("div");
+    let overlay = document.createElement("div")
+    overlay.setAttribute("class", "overlay")
+    resultado.setAttribute("class", "card")
+
+    resultado.innerHTML =
+    `<img src="${livro.imagem}"></img>`
+
+    overlay.innerHTML = 
+    `<h2>${livro.titulo}</h2>
+    <p>${livro.descricao}</p>` 
+
+    showcase[0].appendChild(resultado)
+    resultado.appendChild(overlay)
 })
 
-console.log(livros)
+
+//Filtro de busca
+const btnBusca = document.getElementById("search_button")
+let nenhumResultado = document.createElement("div");
+
+btnBusca.onclick = function teste() {
+    const cards = document.querySelectorAll(".card")
+    for (let i = 0; i < cards.length; i++){
+        cards[i].style.display = "none";
+    }
+
+    const livrosFiltrados = livros.filter (livro => {
+        let listaFiltrada;
+        if (precos.value == false){
+            listaFiltrada = livro.genero == generos.value;
+        }
+        else if (generos.value && livro.preco){
+            listaFiltrada = livro.genero == generos.value && livro.preco == precos.value;
+        } 
+        else if (generos.value == false) {
+            listaFiltrada = livro.preco == precos.value
+        }
+        return listaFiltrada;
+    })    
+    
+    livrosFiltrados.forEach (livro => {
+        console.log(livro.preco == precos.value)
+        let resultado = document.createElement("div");
+        let overlay = document.createElement("div")
+        overlay.setAttribute("class", "overlay")
+        resultado.setAttribute("class", "card")
+
+        resultado.innerHTML = 
+        `<img src="${livro.imagem}"></img>`
+
+        overlay.innerHTML = 
+        `<h2>${livro.titulo}</h2>
+        <p>${livro.descricao}</p>` 
+
+        showcase[0].appendChild(resultado)
+        resultado.appendChild(overlay)
+    })
+
+}
