@@ -1,0 +1,51 @@
+[
+  {
+    "capa": "./img/aDamaDasCamelias.jpg",
+    "titulo": "A Dama das Camélias",
+    "categoria": "Romance",
+    "preco": 15
+  },
+  {
+    "capa": "./img/asCronicasDeNarnia.jpg",
+    "titulo": "As Crônicas de Nárnia",
+    "categoria": "Fantasia",
+    "preco": 22
+  },
+  {
+    "capa": "./img/euRobo.jpg",
+    "titulo": "Eu Robô",
+    "categoria": "Ficção Científica",
+    "preco": 43
+  },
+  {
+    "capa": "./img/lordOfRings.jpg",
+    "titulo": "Lord Of The Rings",
+    "categoria": "Fantasia",
+    "preco": 70
+  },
+  {
+    "capa": "./img/mindset.jpg",
+    "titulo": "Mindset",
+    "categoria": "Auto Ajuda",
+    "preco": 19
+  },
+  {
+    "capa": "./img/oGuiadoMochileiroDasGalaxias.jpg",
+    "titulo": "O Guia do Mochileiro das Galáxias",
+    "categoria": "Ficção Científica",
+    "preco": 25
+  },
+
+  {
+    "capa": "./img/oPoderDoHabito.jpg",
+    "titulo": "O Poder do Hábito",
+    "categoria": "Auto Ajuda",
+    "preco": 47
+  },
+  {
+    "capa": "./img/osMiseraveis.jpg",
+    "titulo": "Os Miseráveis",
+    "categoria": "Romancd",
+    "preco": 99
+  }
+]
