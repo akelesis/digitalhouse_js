@@ -22,6 +22,11 @@ body {
     color: #EEE0CB;
 }
 
+.bookshop_header a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
 .dh_title {
     font-family: "Mulish", sans-serif;
     font-weight: 300;

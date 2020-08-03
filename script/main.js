@@ -161,7 +161,8 @@ livros.forEach(livro => {
 
 //Filtro de busca
 const btnBusca = document.getElementById("search_button")
-let nenhumResultado = document.createElement("div");
+const barraDePesquisa = document.getElementById("search_bar");
+// let nenhumResultado = document.createElement("div");
 
 btnBusca.onclick = function teste() {
     const cards = document.querySelectorAll(".card")
@@ -180,7 +181,9 @@ btnBusca.onclick = function teste() {
         else if (generos.value == false) {
             listaFiltrada = livro.preco == precos.value
         }
+
         return listaFiltrada;
+ 
     })    
     
     livrosFiltrados.forEach (livro => {
