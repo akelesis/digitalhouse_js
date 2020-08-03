@@ -45,6 +45,43 @@ body {
     cursor: pointer;
 }
 
+
+#menu-opt {
+    position: absolute;
+
+    height: calc(4 * (1.3em+16px));
+    width: 0;
+    
+    top: 80px;
+    right: 0;
+    padding-top: 0.5%;
+    z-index: 5;
+    
+    background-color: rgb(61, 61, 61);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+#menu-opt a {
+    display: block;
+
+    top: 0;
+    padding: 8px 8px 8px 20px;
+
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: "Mulish", sans-serif;
+    
+    color: #818181;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#menu-opt a:hover {
+    color: #f1f1f1;
+  }
+
+
 .content {
     display: flex;
     flex-direction: column;
@@ -58,14 +95,18 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #ccc; 
+    background-color: rgb(255, 255, 255);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+
 }
 
 .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
-    color: #777;
+/*     color: #777; */
 }
 
 .filters {
