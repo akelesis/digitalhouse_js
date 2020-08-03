@@ -13,6 +13,7 @@ body {
     background-color: #EEE0CB;
     font-size: 62.5%;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .bookshop_header {
@@ -27,7 +28,7 @@ body {
     
     background-color: #F71735;
     color: #EEE0CB;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);    
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25); 
 }
 
 .bookshop_header #logo_header {
@@ -41,7 +42,9 @@ body {
     padding: 0px 0;
     border-bottom-left-radius: 10px;
     background-color: hsl(352, 93%, 53%);
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);    
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    z-index: 100;
 }
 
 .bookshop_header nav ul {
@@ -105,21 +108,24 @@ body {
 }
 
 #dh_carousel {
+    position: relative;
     width: 100%;
-    height: 60vh;
+    max-width: 1362px;
+    margin: 0 auto 40px auto;
 
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-
-    background-color: #ccc; 
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 2.5em;
-    color: #777;
+#dh_carousel img {
+    position: relative;
+    width: 100%;
+    right: 0px;
+    flex: none;
+    transition: 0.1s;
 }
 
 .filters {
@@ -190,29 +196,41 @@ body {
 }
 
 .card {
-    width: 300px;
-    height: 400px;
+    width: 30%;
     margin: 10px 0;
+    padding: 24px 16px;
     position: relative;
-}
-
-.overlay {
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 5;
-
-    background-color: #7777;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
 
-    padding: 10px;
-    box-sizing: border-box;
+.card img {
+    width: 60%;
+}
+
+.card h2 {
+    width: 100%;
+    margin: 16px 0;
+    font-family: "Mulish", sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
+}
+
+.card p {
+    font-family: "Mulish", sans-serif;
+    font-size: 1.6em;
+    line-height: 1.4em;
+}
+
+.card span {
+    margin-top: 24px;
+    align-self: flex-end;
+    font-family: "Mulish", sans-serif;
+    font-size: 1.8em;
+    font-weight: 900;
 }
 
 footer {
@@ -223,6 +241,12 @@ footer {
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
+}
+
+footer p {
+    font-family: "Mulish", sans-serif;
+    font-size: 1.4em;
+    font-weight: 900;
 }
 
 @media(min-width: 1498px) {
