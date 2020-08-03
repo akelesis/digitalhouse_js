@@ -40,7 +40,6 @@ function showSideMenu(event) {
     sideMenu.classList.toggle("side-menu-toggle");
 }
 
-
 function hideSideMenuScroll(event) {
     if (sideMenu.classList.contains("side-menu-toggle")) {
         sideMenu.classList.remove("side-menu-toggle");
@@ -67,7 +66,7 @@ function filterByCategoryAndByPriceRangeAndByTitle(event) {
         const displayCategoryResult = filterByCategory(book);
         const displayTitleResult = filterByTitleName(book)
         book.style.display = (displayCategoryResult === "block" && displayRangeResult == "block"
-        && displayTitleResult === "block") ? "block" : "none";
+            && displayTitleResult === "block") ? "block" : "none";
     })
 }
 
@@ -105,7 +104,7 @@ function filterByCategory(book) {
 // Insert new book functions
 function showInsertForm(event) {
     const form = document.querySelector(".insert-book-form");
-    form.classList.toggle("inactive-element")    
+    form.classList.toggle("inactive-element")
 }
 
 function insertNewBook(event) {
@@ -116,9 +115,9 @@ function insertNewBook(event) {
     const overlayItems = Array.from(newBook.children[1].children);
     const frontCoverItems = Array.from(newBook.children[0].children);
 
-    frontCoverItems[0].src = formInputs[formInputs.length - 1].value;    
+    frontCoverItems[0].src = formInputs[formInputs.length - 1].value;
 
-    for (let i = 0; i < overlayItems.length; i++ ){
+    for (let i = 0; i < overlayItems.length; i++) {
         overlayItems[i].textContent = formInputs[i].value;
     }
 

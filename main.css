@@ -45,20 +45,19 @@ body {
     filter: brightness(80%);
     cursor: pointer;
 }
+
 /* Side menu */
 .side-menu {
     position: absolute;
     top: 80px;
     right: 0;
-
     width: 28%;
     z-index: 10;
-    background-color: #F71735;
 
+    background-color: #F71735;
+    border-radius: 5px;
     transform: translateX(100%);
     transition: transform 200ms ease-in;
-
-    border-radius: 5px;
 }
 
 .side-menu-toggle {
@@ -93,13 +92,14 @@ body {
 
 .side-menu-list a::after  {
     content:"";
-    border-bottom: 2px solid #f5baba;
-    width: 100%;
-    
+
     display: inline-block;
     position: absolute;
     left: 0;
     top: 18px;
+    width: 100%;
+
+    border-bottom: 2px solid #f5baba;    
     transform: translateX(-101%);
     transition: 500ms transform ease;
 }
@@ -107,13 +107,11 @@ body {
 .side-menu-list li {
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
     width: 100%;
     height: 100%;
 
     cursor: pointer;
-
     border-top: 2px solid #f5baba;
 }
 
@@ -129,15 +127,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;    
     padding: 0;
     margin: 0;    
     height: calc(100vh - 80px);
+
     list-style: none;
 }
 
 .side-menu-list a {
+    display: inline-block;
+    height: 20px;
     position: relative;
     overflow-x: hidden;
 
@@ -146,20 +146,17 @@ body {
     font-family: "Mulish", sans-serif;
     font-weight: bold;
     font-size: 14px;
-
-    display: inline-block;
-    height: 20px;
 }
 
 .side-menu-list a::after  {
     content:"";
-    border-bottom: 2px solid #f5baba;
-    width: 100%;
-    
     display: inline-block;
     position: absolute;
     left: 0;
     top: 18px;
+    width: 100%;
+    
+    border-bottom: 2px solid #f5baba;
     transform: translateX(-101%);
     transition: 500ms transform ease;
 }
@@ -167,13 +164,11 @@ body {
 .side-menu-list li {
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
     width: 100%;
     height: 100%;
 
     cursor: pointer;
-
     border-top: 2px solid #f5baba;
 }
 
@@ -192,12 +187,11 @@ body {
 
 /* Carousel */
 #dh_carousel {
-    width: 100%;
-    height: 60vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 60vh;
 
     background-color: #ccc; 
 }
@@ -302,16 +296,15 @@ body {
 
 .advanced_filters select {
     width: 25vw;
-    font-size: 20px;
-    font-family: "Mulish", sans-serif;
-
     padding: 10px;
 
+    font-size: 20px;
+    font-family: "Mulish", sans-serif;
     color: #666;
     border: 1px solid #888;
 }
 
-/* Book insertion ///////////////////////////////////////////////////////////// */
+/* Book insertion */
 .insert-book {
     font-family: "Mulish", sans-serif;
     position: relative;
@@ -374,20 +367,12 @@ body {
 }
 
 .insert-book-form label {
-    /* position: relative; */
-    letter-spacing: 2px;
     font-weight: bold;
+    letter-spacing: 2px;
     color: #262626;    
 }
 
-.insert-book-form label::after { 
-    content: "";
-    border-bottom: 5px solid black;
-    position: absolute;
-}
-
 .inactive-element {
-    /* display: none; */
     pointer-events: all;
     opacity: 1;
     transform: translateY(10px);
@@ -396,28 +381,30 @@ body {
 #submit-new-book {
     display: inline-block;
     width: 150px;
-    margin: 0 auto;
     height: 40px;
+
+    margin: 0 auto;
     text-align: center;
 }
 
-/* //////////////// */
-
 .showcase {
-    width: 80vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-self: center;
+
+    width: 80vw;
     margin: 50px 0;
 }
 
 .card {
+    position: relative;
     width: 300px;
     height: 400px;
     margin: 10px 0;
-    position: relative;
+
     text-align: center;
+
     transform-style: preserve-3d;
     transition: transform 500ms ease-in-out;
 }
@@ -441,9 +428,9 @@ body {
 }
 
 .front-cover img {
-    margin: 0;
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
 .overlay {
