@@ -1,4 +1,4 @@
-//Aplicando evento ao clicar no botão do menu, para que ele apareça na lateral da tela
+//Aplicando evento para menu lateral
 const body = document.querySelector("body");
 const navbar = document.getElementById("menu");
 let menuBTN = document.getElementById("dh_menu_btn");
@@ -78,38 +78,51 @@ btnAnterior.addEventListener("click", function () {
 })
 
 //Inserindo livros
-const galeriaLivros = document.querySelectorAll(".cards")
+const galeriaLivros = document.querySelectorAll(".card")
 const imagensLivros = document.querySelectorAll(".imagemLivro")
 const tituloLivro = document.querySelectorAll(".tituloLivro")
 
-//Livro1
-const livro1 = imagensLivros[0]
-tituloLivro[0].textContent = "A menina que não sabia ler"
+const livros = [
+    {
+        titulo: 'A menina que não sabia ler',
+        imagem: "img/a-menina-que-nao-sabia-ler.jpg",
+        preco: "",
+        genero: 'romance'
+    },
+    {
+        titulo: 'O caderno de Maya',
+        imagem: "img/o-caderno-de-maya.jpg",
+        preco: "",
+        genero: ''
+    }, 
+    {
+        titulo: "Capitães da Areia",
+        imagem: "img/capitaes-da-areia.jpg",
+        preco: "",
+        genero: ''
+    },    
+    {
+        titulo: "A fábrica da violência",
+        imagem: "img/fabrica-de-violencia.jpg",
+        preco: "",
+        genero: ''
+    },    
+    {
+        titulo: "A droga da obediência",
+        imagem: "img/droga-da-obediencia.jpg",
+        preco: "",
+        genero: ''
+    },    
+    {
+        titulo: "A hospedeira",
+        imagem: "img/a-hospedeira.jpg",
+        preco: "",
+        genero: ''
+    }
+]
 
-livro1.src = "img/a-menina-que-nao-sabia-ler.jpg"
-
-//Livro2
-const livro2 = imagensLivros[1]
-tituloLivro[1].textContent = "O caderno de Maya"
-livro2.src = "img/o-caderno-de-maya.jpg"
-
-//Livro3
-const livro3 = imagensLivros[2]
-tituloLivro[2].textContent = "Capitães da Areia"
-livro3.src = "img/capitaes-da-areia.jpg"
-
-//Livro4
-const livro4 = imagensLivros[3]
-tituloLivro[3].textContent = "A fábrica da violência"
-livro4.src = "img/fabrica-de-violencia.jpg"
-
-//Livro5
-const livro5 = imagensLivros[4]
-tituloLivro[4].textContent = "A droga da obediência"
-livro5.src = "img/droga-da-obediencia.jpg"
-
-//Livro6
-const livro6 = imagensLivros[5]
-tituloLivro[5].textContent = "A hospedeira"
-livro6.src = "img/a-hospedeira.jpg"
-
+livros.forEach(livro => {
+    let indice = livros.indexOf(livro)
+    tituloLivro[indice].textContent = livro.titulo;
+    imagensLivros[indice].src = livro.imagem;
+})
