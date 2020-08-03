@@ -224,6 +224,12 @@ img {
     margin: 50px 0;
 }
 
+.no_results {
+    font-size: 20px;
+    font-family: "Mulish", sans-serif;
+    justify-content: center;
+}
+
 .card {
     width: 300px;
     height: 400px;

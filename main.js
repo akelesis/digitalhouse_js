@@ -61,21 +61,21 @@ const books = [
         title: "As Crônicas de Nárnia",
         description: "Viagens ao fim do mundo, criaturas fantásticas e batalhas épicas entre o bem e o mal - o que mais um leitor poderia querer de um livro? O livro que tem tudo isso é 'O leão, a feiticeira e o guarda-roupa', escrito em 1949 por Clive Staples Lewis. MasLewis não parou por aí. Seis outros livros vieram depois e, juntos, ficaram conhecidos como 'As crônicas de Nárnia'.",
         category: "Fantasia",
-        price: 60.00
+        price: 60
     },
     {
         cover: "https://images-na.ssl-images-amazon.com/images/I/51BG+Wr5KDL._SX322_BO1,204,203,200_.jpg",
         title: "O Ladrão de Raios - Volume 1",
         description: "Os cinco livros da série que se tornou fenômeno mundial, em edição limitada e com design exclusivo: as cinco lombadas dos livros compõem, juntas, uma ilustração especial de John Rocco. Em O ladrão de raios, Percy Jackson, o menino que aos doze anos descobre que é um semideus, filho de Poseidon, precisa impedir uma guerra entre os deuses que destruiria a civilização ocidental.",
         category: "Fantasia",
-        price: 23.90
+        price: 23.9
     },
     {
         cover: "https://m.media-amazon.com/images/I/512ERYcB18L.jpg",
         title: "O guia do mochileiro das galáxias",
         description: "Considerado um dos maiores clássicos da literatura de ficção científica, O Guia do Mochileiro das Galáxias vem encantando gerações de leitores ao redor do mundo com seu humor afiado. Este é o primeiro título da famosa série escrita por Douglas Adams, que conta as aventuras espaciais do inglês Arthur Dent e de seu amigo Ford Prefect.",
-        category: "Ficcção Científica",
-        price: 27.90
+        category: "Ficção Científica",
+        price: 27.9
     },
     {
         cover: "https://images-na.ssl-images-amazon.com/images/I/511c2+CJ30L._SX326_BO1,204,203,200_.jpg",
@@ -94,14 +94,91 @@ const books = [
     
 ];
 
+function addBooks(books) {
+    const showcase = document.querySelector('.showcase');
+    if(books.length == 0){
+        showcase.textContent = "Nenhum resultado.";
+        showcase.classList.add("no_results");
+    } else {
+        showcase.hasAttribute("class", "no_results") ? showcase.classList.remove("no_results") : "";
+        
+        let divs = "";
+        books.forEach(book => {
+            divs += 
+            "<div class='card'>" +
+                "<img class='book_cover' src='" + book.cover + "'>" +
+                "<div class='overlay'>" +
+                    "<h2>" + book.title + "</h2>" +
+                    "<p>" + book.description + "</p>" +
+                "</div>" +
+            "</div>";
+        });
+
+        showcase.innerHTML = divs;
+    }
+}
+
+function listBooks() {
+    addBooks(books);
+}
+
+//-------------------------- Filters -------------------------- 
+//Title
 const divBooks = document.querySelectorAll('.card');
+function searchTitle () {
+    let titleFilter = document.getElementById('search_bar').value;
 
-for (let i = 0; i < divBooks.length; i++) {
-    // Insert Book Cover
-    divBooks[i].children[0].setAttribute("src", books[i].cover);
-    // Insert Book Title
-    divBooks[i].children[1].children[0].innerHTML = books[i].title;
-    // Insert Book Description
-    divBooks[i].children[1].children[1].innerHTML = books[i].description;
+    const filterList = books.filter(book =>{
+        return book.title.includes(titleFilter);
+    });
 
-}; 
+    addBooks(filterList);
+
+    document.getElementById('category').value = "";
+    document.getElementById('price_range').value = "";
+}
+
+//Category
+function searchCategory () {
+    const categoryFilter = document.getElementById('category');
+    let selectedCategory = categoryFilter.options[categoryFilter.selectedIndex].value;
+    
+    const filterList = books.filter(book =>{
+        return book.category === selectedCategory;
+    })
+
+    addBooks(filterList);
+
+    document.getElementById('search_bar').value = "";
+    document.getElementById('price_range').value = "";
+};
+
+//Price
+function searchPrice () {
+    const priceFilter = document.getElementById('price_range');
+    let selectedPrice = priceFilter.options[priceFilter.selectedIndex].value;
+    
+    const filterList = books.filter(book =>{
+        switch (selectedPrice) {
+            case "barato":
+                return book.price >= 1 && book.price <= 20;
+                break;
+            case "medio":
+                return book.price >= 21 && book.price <= 40;
+                break;
+            case "caro":
+                return book.price >= 41 && book.price <= 60;
+                break;
+            case "mais caro":
+                return book.price > 60;
+                break;
+            default:
+                break;
+        }
+    });
+    
+    addBooks(filterList);
+
+    document.getElementById('search_bar').value = "";
+    document.getElementById('category').value = "";
+};
