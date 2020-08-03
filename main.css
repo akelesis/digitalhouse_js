@@ -20,7 +20,6 @@ body {
     background-color: #F71735;
     color: #EEE0CB;
 }
-
 .dh_title {
     font-family: "Mulish", sans-serif;
     font-weight: 300;
@@ -34,7 +33,7 @@ body {
     border-radius: 5px;
     outline: none;
 
-    background-color: #f7425a;
+    background-color: #f71725;
     color: #EEE0CB;
     font-size: 25px;
     transition: filter .3s;
@@ -44,6 +43,60 @@ body {
     filter: brightness(80%);
     cursor: pointer;
 }
+
+nav{
+    width: 20%;
+    height: 40vh;
+    z-index: 5;
+    position: absolute;
+    right: -50%;
+    margin-top: 80px;
+    background-color: #f71725;
+    border-style: groove;
+    border-width: 2px;
+    border-color: transparent;
+    transition: 1s;
+}
+
+nav.show{
+    right: 0;
+}
+
+ul{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;    
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+li:hover {
+    background-color: #f71726e1;
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+a{
+    margin-left: 10%;
+    text-decoration: none;
+    color: #EEE0CB;
+    font-family: "Mulish", sans-serif;  
+}
+
+img.menu{
+    width: 25px;
+    height: 50px;
+    margin: 0 7%;
+}
+
 
 .content {
     display: flex;
