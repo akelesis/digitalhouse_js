@@ -13,8 +13,13 @@
         (ativado com o botão)-->
         <header class="bookshop_header">
             <h1 class="dh_title">Digital House - Livraria</h1>
-            <section class="menu">
-                
+            <section id="menu">
+                <nav id="options">
+                    <a href="#dh_carousel">Carrossel</a>
+                    <a href="#search_bar">Pesquisa por nome</a>
+                    <a href="#category">Pesquisa por categoria</a>
+                    <a href="#price_range">Pesquisa por preço</a>
+                </nav>
                 <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
             </section>
         </header><!--O header acaba aqui-->
@@ -29,15 +34,15 @@
             <section class="filters">
                 <!--Pesquisa por nome-->
                 <div class="name_box">
-                    <input id="search_bar" type="text" placeholder="Nome do livro...">
-                    <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                    <input id="search_bar" type="text" placeholder="Nome do livro..." value="">
+                    <button id="search_button"><i class="fas fa-search"></i></button>
                 </div><!--Fim da pesquisa por nome-->
                 <!--Pesquisa avançada-->
                 <div class="advanced_filters">
                     <!--Pesquisa por gênero literário-->
                     <select id="category" name="category">
                         <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                        <option value="Distopia">Distopia</option>
+                        <option value="Distopia" onselect="buscaPorCategoria(this)">Distopia</option>
                         <option value="Divulgação Científica">Divulgação Científica</option>
                         <option value="Ficção Histórica">Ficção Histórica</option>
                         <option value="Suspense">Suspense</option>
@@ -57,7 +62,7 @@
             <section class="showcase">
                 <!--Todos os cards de livros são iguais-->
                 <div class="card">
-                    <!--<img src="images/300x400.png">-->
+                    <img src="images/300x400.png">
                     <div class="overlay">
                         <h2>Texto Exemplo</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -66,7 +71,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <!--<img src="images/300x400.png">-->
+                    <img src="images/300x400.png">
                     <div class="overlay">
                         <h2>Texto Exemplo</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -75,7 +80,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <!--<img src="images/300x400.png">-->
+                    <img src="images/300x400.png">
                     <div class="overlay">
                         <h2>Texto Exemplo</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -84,7 +89,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <!--<img src="images/300x400.png">-->
+                    <img src="images/300x400.png">
                     <div class="overlay">
                         <h2>Texto Exemplo</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -93,7 +98,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <!--<img src="images/300x400.png">-->
+                    <img src="images/300x400.png">
                     <div class="overlay">
                         <h2>Texto Exemplo</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
@@ -102,7 +107,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <!--<img src="images/300x400.png">-->
+                    <img src="images/300x400.png">
                     <div class="overlay">
                         <h2>Texto Exemplo</h2>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.

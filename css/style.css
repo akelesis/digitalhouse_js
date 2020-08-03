@@ -27,19 +27,17 @@ body {
     font-weight: 300;
 }
 
-.bookshop_header .menu {
+.bookshop_header #menu {
     position: absolute;
     top: 3%;
     right: 2%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     width: auto;
     height: 26vh;
 }
 
-.bookshop_header .menu .options {
-    display: flex;
+.bookshop_header #menu #options {
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     margin-right: 2%;
@@ -48,17 +46,17 @@ body {
     background-color: #ecd3d3;
 }
 
-.bookshop_header .menu .options a {
+.bookshop_header #menu #options a {
     font-size: 20px;
     color: #da0275e8;
     text-decoration: none;
 }
 
-.bookshop_header .menu .options a:hover {
+.bookshop_header #menu #options a:hover {
     color: #ee0f0f;
 }
 
-.bookshop_header .menu #dh_menu_btn {
+.bookshop_header #menu #dh_menu_btn {
     width: 50px;
     height: 50px;
 
@@ -69,10 +67,10 @@ body {
     background-color: #f7425a;
     color: #EEE0CB;
     font-size: 25px;
-    /*transition: filter .3s;*/
+    transition: filter .3s;
 }
 
-.bookshop_header div #dh_menu_btn:hover {
+.bookshop_header #menu #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
@@ -174,6 +172,11 @@ body {
     height: 400px;
     margin: 10px 0;
     position: relative;
+}
+
+.content .showcase .card img{
+    width: 100%;
+    height: 100%;
 }
 
 .content .showcase .card .overlay {
