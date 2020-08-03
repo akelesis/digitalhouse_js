@@ -1,0 +1,234 @@
+button {
+  cursor: pointer;
+}
+
+.side-menu-wrapper {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  width: min(400px, 100vw);
+
+  background-color: #333;
+
+  transition: transform 0.4s ease-out;
+
+  z-index: 1000;
+}
+
+.menu-hidden {
+  transform: translateX(100%);
+
+  display: hidden;
+}
+
+.menu-shown {
+  transform: translateX(0%);
+
+  display: block;
+}
+
+.fixed-wrapper {
+  height: 100vh;
+  width: 90%;
+
+  padding-top: 80px;
+  position: relative;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-menu-btn {
+  width: fit-content;
+
+  position: absolute;
+  top: 10px;
+  left: 0;
+
+  background: none;
+  color: white;
+
+  border: none;
+  outline: none;
+
+  font-size: 25px;
+
+  transition: opacity 0.5s ease-out;
+}
+
+.menu-user-avatar {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+
+  background-color: #ddd;
+  color: #333;
+
+  border-radius: 10px;
+
+  font-size: 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+
+  cursor: pointer;
+}
+
+.main-menu-options {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main-menu-link {
+  background-color: #f71735;
+  color: #eee0cb;
+
+  border: none;
+
+  margin-bottom: 10px;
+  padding: 10px;
+
+  font-size: 1.25rem;
+  font-family: "Mulish", sans-serif;
+  text-decoration: none;
+  text-align: center;
+}
+
+.carousel-img {
+  max-height: calc(100% - 80px);
+  width: auto;
+  max-width: 100%;
+
+  position: absolute;
+
+  margin: auto;
+
+  transition: opacity 0.8s ease-out;
+}
+
+.carousel-hidden {
+  opacity: 0;
+}
+
+.carousel-shown {
+  opacity: 1;
+}
+
+.carousel-control {
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+
+  background: rgba(20, 20, 20, 0.6);
+  color: white;
+  outline: none;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 18px;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-control > i {
+  transition: transform 0.25s ease-out;
+}
+
+.carousel-control:active {
+  opacity: 1 !important;
+}
+
+.carousel-prev-btn {
+  left: 0;
+}
+
+.carousel-next-btn {
+  right: 0;
+}
+
+.book-card-background-img {
+  height: 100%;
+  width: 100%;
+}
+
+.book-card-more-info {
+  width: fit-content;
+  height: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 8px;
+
+  text-decoration: none;
+  color: #eee0cb;
+  background-color: rgba(20, 20, 20, 0.7);
+}
+
+.link-icon {
+  margin-left: 6px;
+
+  transition: transform 0.2s ease-out;
+}
+
+.fa-spinner {
+  color: #f7425a;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.warning {
+  width: 100%;
+  padding: 10px;
+}
+
+.warning-text {
+  font-size: 1.2rem;
+  text-align: center;
+
+  color: #202020;
+}
+
+@media (min-width: 992px) {
+  .main-menu-link:hover {
+    background-color: #f71735e1;
+  }
+
+  .close-menu-btn:hover {
+    opacity: 0.8;
+  }
+
+  .carousel-control:hover {
+    opacity: 0.8;
+  }
+
+  .carousel-prev-btn:hover > i {
+    transform: translateX(-4px);
+  }
+
+  .carousel-next-btn:hover > i {
+    transform: translateX(4px);
+  }
+
+  .book-card-more-info:hover {
+    text-decoration: underline;
+  }
+
+  .book-card-more-info:hover > .link-icon {
+    transform: translateX(4px);
+  }
+}
