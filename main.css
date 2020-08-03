@@ -183,11 +183,8 @@ body {
 
 .side-menu-list li:hover a::after {
     transform: translateX(0);
-    /* opacity: 1; */
-    /* overflow: visible; */
 }
 
-/*  */
 .content {
     display: flex;
     flex-direction: column;
@@ -257,17 +254,15 @@ body {
     left: 10px;
 }
 
-/* End carousel */
+
 .filters {
     width: 100%;
     height: 120px;
 
     display: flex;
     flex-direction: column;
-
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .name_box {
@@ -316,6 +311,98 @@ body {
     border: 1px solid #888;
 }
 
+/* Book insertion ///////////////////////////////////////////////////////////// */
+.insert-book {
+    font-family: "Mulish", sans-serif;
+    position: relative;
+}
+
+.insert-book-btn {
+    display: block;   
+    margin: auto;  
+    padding: 10px 55px;
+ 
+}
+
+.generic-btn {
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(182, 182, 182);
+    color: #888;
+    font-size: 20px;
+}
+
+.generic-btn:hover {
+    cursor: pointer;
+    background-color: rgb(229, 226, 226);
+    color: rgb(104, 103, 103);
+}
+
+.insert-book-form {
+    display: flex;
+    flex-direction: column;  
+
+    position: absolute;  
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    left:0;
+    right: 0;
+
+    width: 40%;
+    padding: 10px;
+
+    background-color: rgb(240, 235, 235);
+    border: #d3cece 1px solid;
+    border-radius: 5px;
+    
+    pointer-events: none;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.insert-book-form input {
+    height: 30px;
+    margin-bottom: 10px;
+
+    background: none;
+    border: none;
+    color: #666;
+
+    border-bottom: #666 1px solid;
+    border-radius: 0;
+}
+
+.insert-book-form label {
+    /* position: relative; */
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #262626;    
+}
+
+.insert-book-form label::after { 
+    content: "";
+    border-bottom: 5px solid black;
+    position: absolute;
+}
+
+.inactive-element {
+    /* display: none; */
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+#submit-new-book {
+    display: inline-block;
+    width: 150px;
+    margin: 0 auto;
+    height: 40px;
+    text-align: center;
+}
+
+/* //////////////// */
+
 .showcase {
     width: 80vw;
     display: flex;
@@ -358,7 +445,6 @@ body {
     width: 100%;
     height: 100%;
 }
-
 
 .overlay {
     width: 300px;
