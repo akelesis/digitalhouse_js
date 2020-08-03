@@ -1,17 +1,9 @@
-document.getElementById("search-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-});
+const mainMenu = document.getElementById("main-menu");
 
-function toggleMainMenu() {
-  const mainMenu = document.getElementById("main-menu");
-  const mainMenuCurrentClasses = mainMenu.getAttribute("class");
-  console.log(mainMenuCurrentClasses);
-  let newClasses = "";
-  if (mainMenuCurrentClasses.includes("menu-hidden")) {
-    newClasses = mainMenuCurrentClasses.replace("menu-hidden", "menu-shown");
-  } else if (mainMenuCurrentClasses.includes("menu-shown")) {
-    newClasses = mainMenuCurrentClasses.replace("menu-shown", "menu-hidden");
-  }
+function openMainMenu() {
+  replaceClasses(mainMenu, "side-menu-wrapper menu-shown");
+}
 
-  replaceClasses(mainMenu, newClasses);
+function closeMainMenu() {
+  replaceClasses(mainMenu, "side-menu-wrapper menu-hidden");
 }
