@@ -46,4 +46,12 @@ const fillShowcase = (bookList) => {
     }
 }
 
+const fillCategories = (bookList) => {
+    const categories = [...new Set(bookList.map(book => book.category))]
+    categories.forEach(category => {
+        document.getElementById('category').innerHTML += `<option value="${category}">${category}</option>`
+    })
+}
+
 fillShowcase(books)
+fillCategories(books)
