@@ -54,11 +54,11 @@ body {
     width: 100%;
     height: 60vh;
 
-    display: flex;
+    display: relative;
     justify-content: center;
     align-items: center;
 
-    background-color: #ccc; 
+    background-color: #ccc;
 }
 
 .carrousel_label {
@@ -146,7 +146,7 @@ body {
     top: 0;
     z-index: 5;
 
-    background-color: #7777;
+    background-color: #fff8;
 
     display: flex;
     flex-direction: column;
@@ -175,7 +175,7 @@ footer {
 #slider a { 
     position: absolute;  
     opacity: 0;
-    left:33%;
+    left: 20%;
 }
 
 .ativo {
@@ -245,11 +245,11 @@ figure:hover span {
 }
 
 figure {
-    max-width: 937px;
-    height: 354px;
+    max-width: 500px;
+    height: 330px;
     position: relative;
     overflow: hidden;
-    margin: 50px auto;
+    margin: 25px auto;
 }
 
 #bookName {
@@ -260,7 +260,7 @@ figure {
     position: absolute; 
     top:80%; 
     left: 0; 
-    line-height: 55px; 
+    line-height: 50px; 
     height: 55px; 
     z-index: 5;
     text-align: center;
