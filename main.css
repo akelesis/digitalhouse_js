@@ -231,6 +231,12 @@ main{
     position: relative;
 }
 
+.dh_card img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
 .dh_overlay {
     width: 300px;
     height: 400px;
@@ -238,16 +244,27 @@ main{
     left: 0;
     top: 0;
     z-index: 5;
-
-    background-color: #7777;
-
+    background-color: #FFFFFFD2;
+    display: none;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.dh_overlay.dh_show{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+}
+.dh_overlay h2, .dh_overlay p{
+    max-width: 100%;
+    word-break: break-word;
+    font-weight: 600;
+    margin: 0;
     padding: 10px;
-    box-sizing: border-box;
+}
+.dh_overlay h2{
+    color: #F71735;
 }
 
 footer {
@@ -264,4 +281,4 @@ footer {
     .dh_showcase {
         width: 60vw;
     }
-}
+}dh_overlay
