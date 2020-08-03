@@ -27,6 +27,13 @@ categorySelector.addEventListener("change", filterByCategoryAndByPriceRangeAndBy
 priceRangeSelector.addEventListener("change", filterByCategoryAndByPriceRangeAndByTitle);
 searchButton.addEventListener("click", filterByCategoryAndByPriceRangeAndByTitle);
 
+// Insert new book variables
+const insertNewBookButtton = document.querySelector(".insert-book-btn");
+const submitNewBook = document.querySelector("#submit-new-book");
+
+insertNewBookButtton.addEventListener("click", showInsertForm);
+submitNewBook.addEventListener("click", insertNewBook);
+
 // Burger menu functions
 function showSideMenu(event) {
     console.log(sideMenu);
@@ -93,4 +100,33 @@ function filterByCategory(book) {
     const selectedCategory = categorySelector.options[categorySelector.selectedIndex].value.toLowerCase();
     const bookCategory = book.querySelector(".categoria").textContent.toLowerCase();
     return (bookCategory === selectedCategory || selectedCategory == "todos") ? "block" : "none";
+}
+
+// Insert new book functions
+function showInsertForm(event) {
+    const form = document.querySelector(".insert-book-form");
+    form.classList.toggle("inactive-element")    
+}
+
+function insertNewBook(event) {
+    event.preventDefault();
+    const form = document.querySelector(".insert-book-form");
+    const formInputs = document.querySelectorAll(".insert-book-form input");
+    const newBook = createNewBook();
+    const overlayItems = Array.from(newBook.children[1].children);
+    const frontCoverItems = Array.from(newBook.children[0].children);
+
+    frontCoverItems[0].src = formInputs[formInputs.length - 1].value;    
+
+    for (let i = 0; i < overlayItems.length; i++ ){
+        overlayItems[i].textContent = formInputs[i].value;
+    }
+
+    const showCase = document.querySelector(".showcase");
+    showCase.appendChild(newBook);
+    form.reset();
+}
+
+function createNewBook() {
+    return document.querySelector(".card").cloneNode(true);
 }
