@@ -182,6 +182,11 @@ body {
     margin: 10px 0;
     position: relative;
 }
+.capa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
 .overlay {
     width: 300px;
@@ -191,7 +196,7 @@ body {
     top: 0;
     z-index: 5;
 
-    background-color: #7777;
+    /* background-color: #7777; */
 
     display: flex;
     flex-direction: column;
@@ -201,7 +206,15 @@ body {
     padding: 10px;
     box-sizing: border-box;
 }
-
+.overlay:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+h2{
+    text-align: center;
+}
+p{
+    text-align: justify;
+}
 footer {
     width: 100%;
     height: 80px;
