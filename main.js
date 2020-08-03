@@ -5,6 +5,9 @@ const sectionBook = document.getElementById("books");
 const filterAdv = document.getElementById("category");
 const filterPrice = document.getElementById("price_range");
 const searchFilter = document.getElementById("search_bar");
+const img = document.getElementById("img_carrousel");
+const img_carrousel = ['./img/carousel-1.jpg', './img/carousel-2.jpg', './img/carousel-3.png'];
+var contador = 1;
 
 const listBooks = [
     {
@@ -84,7 +87,7 @@ filterPrice.addEventListener("change", () => {
     verifyPrice(category, priceRang);
 })
 
-searchFilter.addEventListener("change", () => {
+searchFilter.addEventListener("keyup", () => {
     var name = searchFilter.value;
 
     verifyName(name);
@@ -138,7 +141,7 @@ const upgradeBooks = (books) => {
 
 const verifyName = (name) => {
     listBooks.forEach((books) => {
-        
+
         upgradeBooks(books);
 
         if (books.name.toLowerCase().indexOf(name.toLowerCase()) != -1)
@@ -148,7 +151,7 @@ const verifyName = (name) => {
 
 const verifyPrice = (category, range) => {
     listBooks.forEach((books) => {
-        
+
         upgradeBooks(books);
 
         if (range === "todos" && category === books.genrer) {
@@ -182,3 +185,23 @@ const verifyCategory = (category, range) => {
         }
     })
 }
+
+const carrosel = () => {
+
+    img.setAttribute("src", img_carrousel[0]);
+
+    setInterval(() => {
+        img.setAttribute("src", img_carrousel[contador]);
+        contador < img_carrousel.length - 1 ? contador++ : contador = 0;
+    }, 5000)
+}
+
+const init = () => {
+    listBooks.forEach((books) => {
+        populateBooks(books);
+    })
+    
+    carrosel();
+}
+
+init()
