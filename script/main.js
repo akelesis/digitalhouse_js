@@ -77,6 +77,22 @@ btnAnterior.addEventListener("click", function () {
     }
 })
 
+//Definindo genero 
+let genero = [];
+const generos = document.getElementById("category")
+for (let i = 1; i < generos.length; i++){
+    genero.push(generos[i].value)
+}
+
+console.log(genero)
+
+//Definindo os precos
+let faixaDePreco = [];
+const precos = document.getElementById("price_range");
+for (let i = 1; i < precos.length; i++){
+    faixaDePreco.push(precos.options[i].value)
+}
+
 //Inserindo livros
 const galeriaLivros = document.querySelectorAll(".card")
 const imagensLivros = document.querySelectorAll(".imagemLivro")
@@ -86,38 +102,38 @@ const livros = [
     {
         titulo: 'A menina que não sabia ler',
         imagem: "img/a-menina-que-nao-sabia-ler.jpg",
-        preco: "",
-        genero: 'romance'
+        preco: faixaDePreco[0],
+        genero: genero[2]
     },
     {
         titulo: 'O caderno de Maya',
         imagem: "img/o-caderno-de-maya.jpg",
-        preco: "",
-        genero: ''
+        preco: faixaDePreco[3],
+        genero: genero[2]
     }, 
     {
         titulo: "Capitães da Areia",
         imagem: "img/capitaes-da-areia.jpg",
-        preco: "",
-        genero: ''
+        preco: faixaDePreco[1],
+        genero: genero[3]
     },    
     {
         titulo: "A fábrica da violência",
         imagem: "img/fabrica-de-violencia.jpg",
-        preco: "",
-        genero: ''
+        preco: faixaDePreco[2],
+        genero: genero[0]
     },    
     {
         titulo: "A droga da obediência",
         imagem: "img/droga-da-obediencia.jpg",
-        preco: "",
-        genero: ''
+        preco: faixaDePreco[1],
+        genero: genero[0]
     },    
     {
         titulo: "A hospedeira",
         imagem: "img/a-hospedeira.jpg",
-        preco: "",
-        genero: ''
+        preco: faixaDePreco[0],
+        genero: genero[1]
     }
 ]
 
@@ -125,4 +141,8 @@ livros.forEach(livro => {
     let indice = livros.indexOf(livro)
     tituloLivro[indice].textContent = livro.titulo;
     imagensLivros[indice].src = livro.imagem;
+    //inserir preco
+    //inserir genero
 })
+
+console.log(livros)
