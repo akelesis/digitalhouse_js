@@ -1,3 +1,7 @@
+document.getElementById("search-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
 const targetSection = document.getElementById("main-showcase");
 const categoryTitles = [
   "Auto Ajuda",
@@ -57,15 +61,15 @@ function filterByTitleSearchQuery() {
     return title.includes(queryValue);
   });
 
+  const categoryFilterSelect = document.getElementById("category");
+  categoryFilterSelect.selectedIndex = 0;
+
   if (filteredBooks.length === 0) {
     appendWarning(
       "Não foi possível encontrar livros para a sua pesquisa. Tente alterar o texto no campo e pesquisar novamente. Ou pesquise por categoria"
     );
     return;
   }
-
-  const categoryFilterSelect = document.getElementById("category");
-  categoryFilterSelect.selectedIndex = 0;
 
   updateRenderedCards(filteredBooks);
 }
@@ -139,11 +143,6 @@ function removeBookCards() {
   targetSection.innerHTML = "";
 }
 
-function getApiUrl(query, numberOfResults) {
-  const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&maxResults=${numberOfResults}`;
-  return apiUrl;
-}
-
 function appendLoadingSpinner() {
   const spinner = document.createElement("i");
   spinner.className = "fas fa-spinner fa-spin fa-5x";
@@ -169,4 +168,9 @@ function appendWarning(warning) {
   warningText.innerText = warning;
   warningWrapper.appendChild(warningText);
   targetSection.appendChild(warningWrapper);
+}
+
+function getApiUrl(query, numberOfResults) {
+  const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&maxResults=${numberOfResults}`;
+  return apiUrl;
 }
