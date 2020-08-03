@@ -65,6 +65,10 @@ const listBooks = [
         "cape": "./img/sejaoamor.jpeg"
     }];
 
+btnOpen.onblur = () => {
+    list.style.width = "0";
+}
+
 btnOpen.addEventListener("click", () => {
     list.style.width = "250px";
 })
@@ -154,19 +158,19 @@ const verifyPrice = (category, range) => {
 
         upgradeBooks(books);
 
-        if (range === "todos" && category === books.genrer) {
+        if (range === "Todos" && category === books.genrer) {
             populateBooks(books);
         }
-        if (range === "barato" && (books.price >= 1 && books.price <= 20)) {
+        if (range === "Barato" && (books.price >= 1 && books.price <= 20)) {
             populateBooks(books);
         }
-        if (range === "medio" && (books.price >= 21 && books.price <= 40)) {
+        if (range === "Medio" && (books.price >= 21 && books.price <= 40)) {
             populateBooks(books);
         }
-        if (range === "caro" && (books.price >= 41 && books.price <= 60)) {
+        if (range === "Caro" && (books.price >= 41 && books.price <= 60)) {
             populateBooks(books);
         }
-        if (range === "mais caro" && (books.price >= 61)) {
+        if (range === "Mais Caro" && (books.price >= 61)) {
             populateBooks(books);
         }
     })
