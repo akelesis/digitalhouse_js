@@ -4,6 +4,8 @@ const crPrevious = document.getElementById("cr_previous");
 const dhMenuBtn = document.getElementById("dh_menu_btn");
 const dhMenuNavegacao = document.querySelector(".menu");
 
+window.onload = addbooks;
+
 var menuNavegacao = false;
 dhMenuBtn.onclick = menuSidebar;
 
@@ -31,58 +33,70 @@ function menuSidebar(){
 
 }
 
-function addBooks(){
 
-    
 
-}
-
-let books = {
-    book0: {
+let books = [
+    {
         title: "Livro 1",
         subtitle: "Descrição do Livro 1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
         src: "./img/l0.png"
     },
-    book1: {
+    {
         title: "Livro 2",
         subtitle: "Descrição do Livro 2: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
         src: "./img/l1.png"
     },
-    book2: {
+    {
         title: "Livro 3",
         subtitle: "Descrição do Livro 3: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
         src: "./img/l2.png"
     },
-    book3: {
+    {
         title: "Livro 4",
         subtitle: "Descrição do Livro 4: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
         src: "./img/l3.png"
     },
-    book4: {
+    {
         title: "Livro 5",
         subtitle: "Descrição do Livro 5: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
         src: "./img/l4.png"
     },
-    book5: {
+    {
         title: "Livro 6",
         subtitle: "Descrição do Livro 6: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
         src: "./img/l5.png"
     }
-}
+]
 
-const cards = document.getElementsByClassName("card");
+function addbooks(){
+// Capturando a classe que receberá os livros
+let showcase = document.getElementsByClassName("showcase");
 
-    for(let i=0; i < cards.length; i++){
-        let imgCards = cards[i].children[0];
-        let divCards = cards[i].children[1];
-        let titleBook = divCards.getElementsByTagName("h2")
-        let subtitleBook = divCards.getElementsByTagName("p")
+    for(let i=0; i < books.length; i++){
+ 
+        //Criando a div do livro (pai) e colocando a classe card
+        let divCard = document.createElement("div");
+        divCard.setAttribute("class","card")
 
-        let imgCardsSrc = books["book"+[i]].src;
+        // Criando a img que irá receber a capa do livro e inserindo o link do arquivo
+        let imgCard = document.createElement("img");
+        imgCard.setAttribute("src", books[i].src)
 
-        imgCards.setAttribute("src", imgCardsSrc);
-        titleBook[0].textContent = books["book"+[i]].title;
-        subtitleBook[0].textContent = books["book"+[i]].subtitle;
+        // Criando a div que reunirá o título e a descrição do livro
+        let divInfoCard = document.createElement("div");
+        divInfoCard.setAttribute("class", "overlay");
+
+        // Criando o título e a descrição do livro
+        let titleCard = document.createElement("h2");
+        titleCard.textContent = books[i].title;
+        let subtitleCard = document.createElement("p");
+        subtitleCard.textContent = books[i].subtitle;
+
+        showcase[0].appendChild(divCard);
+        divCard.appendChild(imgCard);
+        divCard.appendChild(divInfoCard);
+        divInfoCard.appendChild(titleCard);
+        divInfoCard.appendChild(subtitleCard);
 
     }
-
+}
