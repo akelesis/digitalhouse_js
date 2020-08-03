@@ -61,6 +61,15 @@ body {
     background-color: #ccc; 
 }
 
+#dh_carousel img {
+    width: 100%;
+    height: 60vh;
+}
+
+#slide {
+    transition: 0.3s;
+}
+
 .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
@@ -70,7 +79,7 @@ body {
 
 .filters {
     width: 100%;
-    height: 120px;
+    height: 200px;
 
     display: flex;
     flex-direction: column;
@@ -82,6 +91,33 @@ body {
 
 .name_box {
     display: flex;
+}
+
+.button {
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button #button {
+    width: 40%;
+
+    font-size: 20px;
+    color: #fff;
+
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+
+    background-color: #f7425a;
+}
+
+#button:hover {
+    outline: none;
 }
 
 #search_bar {
@@ -142,6 +178,11 @@ body {
     position: relative;
 }
 
+.card img {
+    width: 300px;
+    height: 400px;
+}
+
 .overlay {
     width: 300px;
     height: 400px;
@@ -157,8 +198,31 @@ body {
     justify-content: center;
     align-items: center;
 
+    opacity: 0;
+
     padding: 10px;
     box-sizing: border-box;
+
+    transition: opacity 1s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.overlay h2 {
+    text-align: center;
+}
+
+.overlay_into {
+    background-color: #d3d3d395;
+    padding: 10px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
