@@ -12,6 +12,8 @@ const bookTemplate = (book) => {
     `
 }
 
+const notFoundTemplate = `<p style="color: red; font-size: 1.5em;">Nenhum livro encontrado.</p>`
+
 const getBookTitle = (event) => {
     event.preventDefault()
     const title = document.getElementById("search_bar").value
@@ -30,14 +32,18 @@ document.getElementById("price_range").addEventListener("change", () => {
     const booksFinded = books.filter((book) => book.priceRange === priceRange)
     fillShowcase(booksFinded)
 })
-const fillShowcase = (bookList) => {
-    bookList = bookList.length === 0 ? books : bookList
-    const showcase = document.querySelector('.showcase')
 
+const fillShowcase = (bookList) => {
+    const showcase = document.querySelector('.showcase')
     showcase.innerHTML = ""
-    bookList.forEach(book => {
-        showcase.innerHTML += bookTemplate(book)
-    })
+
+    if (bookList.length === 0) {
+        showcase.innerHTML = notFoundTemplate;
+    } else {
+        bookList.forEach(book => {
+            showcase.innerHTML += bookTemplate(book)
+        })
+    }
 }
 
 fillShowcase(books)
