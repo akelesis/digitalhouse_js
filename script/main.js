@@ -202,3 +202,10 @@ btnBusca.onclick = function teste() {
     })
 
 }
+
+//Habilitando tecla enter no botao de busca
+document.addEventListener('keydown', function(e) {
+    if(e.key == "Enter"){
+        btnBusca.click();
+    }
+});
