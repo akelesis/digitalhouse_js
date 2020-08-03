@@ -1,110 +1,126 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Digital House Livraria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="custom.css" />
+  </head>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-</head>
-
-<body>
+  <body>
     <header class="bookshop_header">
-        <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+      <h1 class="dh_title">Digital House - Livraria</h1>
+      <button id="dh_menu_btn" onclick="toggleMainMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <aside id="main-menu" class="side-menu-wrapper menu-hidden">
+        <div class="fixed-wrapper">
+          <button
+            id="close-main-menu-btn"
+            onclick="toggleMainMenu()"
+            class="close-menu-btn"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <span id="menu-user-avatar" class="menu-user-avatar">
+            <i class="fas fa-user"></i>
+          </span>
+          <nav class="main-menu-options">
+            <button class="main-menu-link">Minha Conta</button>
+            <button class="main-menu-link">Meus Favoritos</button>
+            <button class="main-menu-link">Meus Pedidos</button>
+            <a href="/" class="main-menu-link">Procurar Livros</a>
+            <button class="main-menu-link">Logout</button>
+          </nav>
+        </div>
+      </aside>
     </header>
     <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
-        </section>
-        <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
-                </select>
-                <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
-                </select>
-            </div>
-        </section>
+      <section id="dh_carousel">
+        <button
+          class="carousel-control carousel-prev-btn"
+          onclick="prevCarouselImg()"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          class="carousel-control carousel-next-btn"
+          onclick="nextCarouselImg()"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <img
+          src="./img/logo-DH.png"
+          class="carousel-img carousel-shown"
+          alt="Logo Digital House"
+        />
+        <img
+          src="./img/digital-house1.png"
+          class="carousel-img carousel-hidden"
+          alt="Foto Digital House"
+        />
+        <img
+          src="./img/santander-coders.jpg"
+          class="carousel-img carousel-hidden"
+          alt="Santander Coders"
+        />
+      </section>
+      <section class="filters">
+        <div class="name_box">
+          <form id="search-form" class="name_box">
+            <input
+              type="text"
+              id="search_bar"
+              placeholder="Nome do livro..."
+              minlength="3"
+              required
+            />
+            <button
+              type="submit"
+              id="search_button"
+              onclick="filterByTitleSearchQuery()"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="advanced_filters">
+          <select name="category" id="category" onchange="filterByCategory()">
+            <option value="" selected="true" disabled="disabled"
+              >Selecione a categoria</option
+            >
+            <option value="">Todos</option>
+            <option value="Auto Ajuda">Auto Ajuda</option>
+            <option value="Ficção Científica">Ficção Científica</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Romance">Romance</option>
+          </select>
+          <select name="price_range" id="price_range" disabled="true">
+            <option value="" selected="true" disabled="disabled"
+              >Não implementado</option
+            >
+            <option value="barato">R$1 - R$20</option>
+            <option value="medio">R$21 - R$40</option>
+            <option value="caro">R$41 - R$60</option>
+            <option value="mais caro">acima de R$61</option>
+          </select>
+        </div>
+      </section>
 
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-        </section>
+      <section id="main-showcase" class="showcase"></section>
     </main>
     <footer>
-        <p>Todos os direitos reservados - Digital House &#169;</p>
+      <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
-    <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/37a6fc82c8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+    <script src="./menu.js"></script>
+    <script src="./carousel.js"></script>
+    <script src="./booksShowcase.js"></script>
+  </body>
 </html>
