@@ -13,8 +13,8 @@ function prevCarouselImg() {
   }
   const nextSlide = carouselImages[nextCarouselIndex];
 
-  currentSlide.className = "carousel-img carousel-hidden";
-  nextSlide.className = "carousel-img carousel-shown";
+  replaceClasses(currentSlide, "carousel-img carousel-hidden");
+  replaceClasses(nextSlide, "carousel-img carousel-shown");
 
   currentCarouselIndex = nextCarouselIndex;
 }
@@ -25,8 +25,8 @@ function nextCarouselImg() {
   const nextCarouselIndex = (currentCarouselIndex + 1) % numberOfCarouselImgs;
   const nextSlide = carouselImages[nextCarouselIndex];
 
-  currentSlide.className = "carousel-img carousel-hidden";
-  nextSlide.className = "carousel-img carousel-shown";
+  replaceClasses(currentSlide, "carousel-img carousel-hidden");
+  replaceClasses(nextSlide, "carousel-img carousel-shown");
 
   currentCarouselIndex = nextCarouselIndex;
 }
