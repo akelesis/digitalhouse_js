@@ -96,25 +96,37 @@ const books = [
 
 function addBooks(books) {
     const showcase = document.querySelector('.showcase');
+    showcase.innerHTML = "";
+
     if(books.length == 0){
         showcase.textContent = "Nenhum resultado.";
         showcase.classList.add("no_results");
     } else {
         showcase.hasAttribute("class", "no_results") ? showcase.classList.remove("no_results") : "";
         
-        let divs = "";
         books.forEach(book => {
-            divs += 
-            "<div class='card'>" +
-                "<img class='book_cover' src='" + book.cover + "'>" +
-                "<div class='overlay'>" +
-                    "<h2>" + book.title + "</h2>" +
-                    "<p>" + book.description + "</p>" +
-                "</div>" +
-            "</div>";
-        });
+            let card = document.createElement("div");
+            card.className = "card";
+        
+            let bookCover = document.createElement("img");
+            bookCover.className = "book_cover";
+            let overlay = document.createElement("div");
+            overlay.className = "overlay";
+        
+            let h2 = document.createElement("h2");
+            let p = document.createElement("p");
 
-        showcase.innerHTML = divs;
+            bookCover.src = book.cover;
+
+            h2.textContent = book.title;
+            p.textContent = book.description;
+
+            showcase.appendChild(card);
+            card.appendChild(bookCover);
+            card.appendChild(overlay);
+            overlay.appendChild(h2);
+            overlay.appendChild(p);
+        });
     }
 }
 
@@ -124,16 +136,16 @@ function listBooks() {
 
 //-------------------------- Filters -------------------------- 
 //Title
-const divBooks = document.querySelectorAll('.card');
 function searchTitle () {
     let titleFilter = document.getElementById('search_bar').value;
 
     const filterList = books.filter(book =>{
-        return book.title.includes(titleFilter);
+        return (book.title.toUpperCase()).includes(titleFilter.toUpperCase());
     });
 
     addBooks(filterList);
 
+    //Cleans Others Filters
     document.getElementById('category').value = "";
     document.getElementById('price_range').value = "";
 }
@@ -149,6 +161,7 @@ function searchCategory () {
 
     addBooks(filterList);
 
+    //Cleans Others Filters
     document.getElementById('search_bar').value = "";
     document.getElementById('price_range').value = "";
 };
@@ -179,6 +192,7 @@ function searchPrice () {
     
     addBooks(filterList);
 
+    //Cleans Others Filters
     document.getElementById('search_bar').value = "";
     document.getElementById('category').value = "";
 };
