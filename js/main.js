@@ -26,25 +26,31 @@ const getBookTitle = (event) => {
     fillShowcase(booksByName)
 }
 
-document.getElementById("category").addEventListener("change", () => {
+const filterBooks = () => {
     const category = document.getElementById("category").value
+    let booksFiltered = []
     if (category === 'todos') {
-        fillShowcase(books)
-        return
+        booksFiltered = books
+    } else {
+        booksFiltered = books.filter((book) => book.category === category)
     }
-    const booksFinded = books.filter((book) => book.category === category)
-    fillShowcase(booksFinded)
-})
 
-document.getElementById("price_range").addEventListener("change", () => {
     const priceRange = document.getElementById("price_range").value
-    if (priceRange === 'todos') {
-        fillShowcase(books)
-        return
+    if (priceRange != 'todos') {
+        booksFiltered = booksFiltered.filter((book) => book.priceRange === priceRange)
     }
-    const booksFinded = books.filter((book) => book.priceRange === priceRange)
-    fillShowcase(booksFinded)
-})
+    
+    fillShowcase(booksFiltered)
+}
+
+document.getElementById("category").addEventListener("change", filterBooks)
+document.getElementById("price_range").addEventListener("change", filterBooks)
+
+document.getElementById("search_bar").addEventListener("keyup", event => {
+    if (event.keyCode === 13) {
+    	document.getElementById("search_button").click()
+    }
+});
 
 const fillShowcase = (bookList) => {
     const showcase = document.querySelector('.showcase')
