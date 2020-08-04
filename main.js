@@ -13,17 +13,20 @@ dh_closeMenu_btn.onclick = function() {
 
 //Carousel
 
+
 const promos = [
     { id: "1", title: "Slide1", promo_banner: "./img/slide1.jpg" },
     { id: "2", title: "Slide2", promo_banner: "./img/slide2.jpg" },
     { id: "3", title: "Slide3", promo_banner: "./img/slide3.jpg" },
 ];
   
+
 const carouselContainer = document.querySelector(".carousel-container");
 const carouselControlsContainer = document.querySelector(
     ".carousel-controls-container"
 );
-  
+
+
 for (const { id, title, promo_banner: banner } of promos) {
     const carouselItem = document.createElement("div");
     const carouselItemTitle = document.createElement("h2");
@@ -92,7 +95,7 @@ const library = {
       {
         title: "As Melhores histórias de Viagens no Tempo",
         description:
-          "Dentre as temáticas do universo scifi- , nenhuma delas é tão popular, envolvente e plural quanto a de viagens no tempo. Esta coletânea reúne, em um único volume e pela primeira vez no Brasil, dezoito contos de alguns dos gigantes da ficção científica, abrangendo cinco décadas, de 1940 a 1990, e incluindo desde (Um Som de Trovão), de Ray Bradbury, que inspirou o nome da famosa teoria do Efeito Borboleta.",
+          "Dentre as temáticas do universo scifi- , nenhuma delas é tão popular, envolvente e plural quanto a de viagens no tempo. Esta coletânea reúne, em um único volume e pela primeira vez no Brasil, dezoito contos de alguns dos gigantes da ficção científica, abrangendo cinco décadas, de 1940 a 1990, e incluindo desde 'Um Som de Trovão', de Ray Bradbury, que inspirou o nome da famosa teoria do Efeito Borboleta.",
         img_url:
           "./img/ficcao2.jpg",
         category: "Ficção Científica",
