@@ -56,7 +56,7 @@ body {
 }
 
 #menu[active = "false"] {
-    right: -50vw;
+    right: -60vw;
 }
 
 .bookshop_header {
@@ -221,7 +221,7 @@ footer {
 
 @media(max-width: 960px) {
     #menu {
-        width: 50vw;
+        width: 60vw;
     }
 }
 
