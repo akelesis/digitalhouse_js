@@ -94,9 +94,67 @@ class Slide {
   }
 }
 
+// Gera o html do livro
 class Book {
   constructor(props) {
+    this.tags = [];
     this.props = props;
+    return this;
+  }
+  createTag(tag, className, content) {
+    const element = document.createElement(tag);
+    element.classList.add(className || '');
+    element.innerHTML = content || '';
+    return element;
+  }
+  getCoverHTML() {
+    const front = this.createTag('div', 'front', '');
+    const back = this.createTag('div', 'back', '');
+    const img = this.createTag('img', 'image_cover', '');
+    img.setAttribute('src', this.props.coverURI);
+    front.appendChild(img);
+    const coverHTML = this.createTag(
+      'div',
+      'card-cover',
+      front.outerHTML + back.outerHTML);
+    return coverHTML;
+  }
+  getPriceHTML() {
+    const [price, cents] = this.props.price.toFixed(2).split('.');
+    const currencyHTML = this.createTag('currency', 'book_price_currency', 'R$');
+    const centsHTML = this.createTag('small', 'book_price_cents', ',' + cents);
+    const priceHTML = this.createTag('h3', 'book_price',
+      currencyHTML.outerHTML + price);
+    priceHTML.appendChild(centsHTML);
+    return priceHTML;
+  }
+  getOverlayHTML() {
+    const title = this.createTag('h2', 'book_title', this.props.title);
+    const description = this.createTag('p', 'book_description', this.props.description);
+    const author = this.createTag('p', 'book_author', this.props.author);
+    const category = this.createTag('p', 'book_category', this.props.category);
+    const price = this.getPriceHTML();
+    const cardInfoHTML = this.createTag('div', 'card-info',
+      title.outerHTML +
+      description.outerHTML +
+      author.outerHTML + 
+      category.outerHTML +
+      price.outerHTML
+    )
+    return cardInfoHTML;
+  }
+  getBookHTML() {
+    this.tags.push(this.getCoverHTML());
+    this.tags.push(this.getOverlayHTML());
+    this.appendElements();
+    return this.bookHTML;
+  }
+  setVisibility(visibility) {
+    this.bookHTML.style.display = visibility ? 'block' : 'none';
+  }
+  appendElements() {
+    this.bookHTML = this.createTag('div', 'card', '');
+    this.tags.forEach(tag => this.bookHTML.appendChild(tag));
   }
 }
 
@@ -136,6 +194,30 @@ const slide = new Slide({
 
 // console.log(loading)
 
+const showCase = s('.showcase');
 fetch('books.json')
   .then(res => res.json())
-  .then(res => console.log(res));
+  .then(res => {
+    const books = res;
+    [...books].forEach(book => {
+      const bookHTML = new Book(book);
+      showCase.appendChild(bookHTML.getBookHTML());
+    });
+  });
+
+/**
+ * Filters
+ * 
+ * ids:
+ * search_bar
+ * search_button
+ * category
+ * price_range 
+ * 
+ * values:
+ * barato // 1 - 20
+ * medio // 21 - 40
+ * caro // 41 - 60
+ * mais caro // >= 61
+ */
+

@@ -272,24 +272,119 @@ body {
 .card {
   width: 300px;
   height: 400px;
-  margin: 10px 0;
+  margin: 20px;
   position: relative;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+  border-radius: 4px;
+  border: none;
+  perspective: 2000px;
+  transition: .4s;
 }
 
-.overlay {
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-cover .back, .card-cover .front {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  backface-visibility: hidden;
+  display: block;
+  border-radius: 0 5px 5px 0;
+  
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.card-cover .back {
+  transform: rotate3d(0,1,0,180deg);
+  background: #cecece;
+  border-radius: 5px 0 0 5px;
+}
+
+.card-cover {
+  transform: rotate3d(0,1,0,-15deg);
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: .4s;
+  background: transparent;
+  position: relative;
+  border-radius: 0 5px 5px 0;
+}
+
+.card:hover .card-cover {
+  transform: rotate3d(0,1,0,-95deg);
+}
+
+.card:hover{
+  transform: rotate3d(0,0,1,3deg) translate3d(0, -6px, 0);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card-info {
   width: 300px;
   height: 400px;
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 5;
-  background-color: #7777;
+  z-index: -5;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+
+.book_title, .book_price  {
+  color: #F71735;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  /* flex: 2; */
+}
+
+.book_description {
+  margin-top: 20px;
+  flex: 3;
+}
+
+.book_author {
+  font-weight: bold;
+  flex: 1;
+}
+
+.book_category {
+  display: none;
+}
+
+.book_price {
+  color: #0098ac;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  line-height: 1;
+  flex: 1;
+}
+
+.book_price_currency{
+  font-size: 20px;
+  margin: 0 2px;
+}
+
+.book_price_cents {
+  font-size: 15px;
+  margin-top: -12px;
 }
 
 footer {

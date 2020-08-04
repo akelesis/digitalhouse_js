@@ -5,8 +5,8 @@
     "author": "Gustavo Ferreira",
     "price": 31.68,
     "tags": [""],
-    "cathegory": "Marketing Digital",
-    "cover-url": "img/book_gatilhos.jpg"
+    "category": "Marketing Digital",
+    "coverURI": "img/book_gatilhos.jpg"
   },
   {
     "title": "Clean Code",
@@ -14,8 +14,8 @@
     "author": "Martin Robert C.",
     "price": 95.17,
     "tags": [""],
-    "cathegory": "Tecnologia",
-    "cover-url": "img/book_clean_code.jpg"
+    "category": "Tecnologia",
+    "coverURI": "img/book_clean_code.jpg"
   },
   {
     "title": "A revolução dos bichos",
@@ -23,8 +23,8 @@
     "author": "George Orwell",
     "price": 23.9,
     "tags": [""],
-    "cathegory": "Ficção",
-    "cover-url": "img/book_revolucao.jpg"
+    "category": "Ficção",
+    "coverURI": "img/book_revolucao.jpg"
   },
   {
     "title": "Mindset: A nova psicologia do sucesso",
@@ -32,8 +32,8 @@
     "author": "Carol S. Dweck",
     "price": 29.9,
     "tags": [""],
-    "cathegory": "Auto-ajuda",
-    "cover-url": "img/book_mindset.jpg"
+    "category": "Auto-ajuda",
+    "coverURI": "img/book_mindset.jpg"
   },
   {
     "title": "As armas da persuasão",
@@ -41,8 +41,8 @@
     "author": "Robert Cialdini",
     "price": 26.91,
     "tags": [""],
-    "cathegory": "Auto-ajuda",
-    "cover-url": "img/book_armas.jpg"
+    "category": "Auto-ajuda",
+    "coverURI": "img/book_armas.jpg"
   },
   {
     "title": "Do mil ao milhão",
@@ -50,7 +50,7 @@
     "author": "Thiago Nigro",
     "price": 22.41,
     "tags": [""],
-    "cathegory": "Finanças",
-    "cover-url": "img/mil_milhao.jpg"
+    "category": "Finanças",
+    "coverURI": "img/book_mil_milhao.jpg"
   }
 ]
