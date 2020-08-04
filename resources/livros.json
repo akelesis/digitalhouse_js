@@ -1,0 +1,65 @@
+[
+    {
+        "Nome": "Orgulho e Preconceito",
+        "Autor": "Jane Austen",
+        "Categoria": "Romance",
+        "Preco": 49.90,
+        "Sipnose": "Se você procura bons livros para ler, os romances de Jane Austen são sempre uma ótima escolha. Poucas histórias de amor se comparam ao clássico da literatura inglesa Orgulho e Preconceito. Quando Elizabeth Bennett conhece o senhor Darcy, de início eles se odeiam. Mas, através de várias aventuras, cada um vai descobrir o bom carácter do outro. Mesmo assim, será que conseguem largar o orgulho (e o preconceito) para admitir o que sentem?"
+    },
+    {
+        "Nome": "1984",
+        "Autor": "George Orwell",
+        "Categoria": "Ficção Científica",
+        "Preco": 59.90,
+        "Sipnose": "Em um país controlado por um regime totalitário, um homem vai se rebelar contra o sistema. Mas cada ação e até cada pensamento dele está sendo vigiado… Escrito em 1948, esse livro é quase profético sobre os perigos modernos da vigilância do Estado, da alteração da História e da criação de fake news."
+    },
+    {
+        "Nome": "Dom Quixote de la Mancha",
+        "Autor": "Miguel de Cervantes",
+        "Categoria": "Romance",
+        "Preco": 79.90,
+        "Sipnose": "Um dos maiores clássicos da literatura espanhola, Dom Quixote conta a história de um cavaleiro que leu demasiados romances e enlouqueceu. Dom Quixote agora pensa que é um herói, como nos livros que leu, e sai em busca de aventuras com seu leal escudeiro, Sancho Pança. Esse livro cômico inspirou muitas outras sátiras ao longo da História."
+    },
+    {
+        "Nome": "O Pequeno Príncipe",
+        "Autor": "Antoine de Saint-Exupéry",
+        "Categoria": "Fantasia",
+        "Preco": 29.90,
+        "Sipnose": "Esse livro vale tanto pelas palavras quanto pelas ilustrações. Embora seja (oficialmente) um livro infantil, O Pequeno Príncipe analisa questões profundas sobre a vida humana. O príncipe da história vive em um pequeno planeta, onde cuida de um rosa. Quando decide visitar outros planetas, aprende o valor do amor e da criatividade."
+    },
+    {
+        "Nome": "Dom Casmurro",
+        "Autor": "Machado de Assis",
+        "Categoria": "Romance",
+        "Preco": 25.90,
+        "Sipnose": "Existem muitos livros que exploram o ciúme no casamento, mas poucos o fazem tão bem como Dom Casmurro. A história se centra na vida de Bento Santiago, que ganhou o apelido de Casmurro. Bento se apaixona e casa com uma mulher pobre chamada Capitu, mas começa a desconfiar de sua infidelidade. E o resto… Só lendo!"
+    },
+    {
+        "Nome": "Eu, Robô",
+        "Autor": "Isaac Asimov",
+        "Categoria": "Ficção Científica",
+        "Preco": 59.90,
+        "Sipnose": "E se toda inteligência artificial fosse programada com 3 leis para proteger a humanidade? Essa é a ideia central desta série de contos de Isaac Asimov, que tem inspirado cientistas pelo mundo inteiro. Em um futuro não tão distante, a inteligência artificial é real mas as 3 Leis da Robótica nem sempre funcionam como esperado…"
+    },
+    {
+        "Nome": "A Sutil Arte De Ligar o F*Da-Se",
+        "Autor": "Mark Manson",
+        "Categoria": "Auto Ajuda",
+        "Preco": 39.90,
+        "Sipnose": "Bem-humorado e irreverente, Mark Manson consegue fisgar até aqueles leitores mais críticos que costumam não se render aos livros de autoajuda. Indo na contramão dos clássicos livros dessa área, Manson não se propõe a criar uma “fórmula perfeita” para que o leitor siga e alcance o sucesso e a felicidade, e sim expor - e questionar - as consequências negativas que essa eterna busca por padrões inalcançáveis tem sobre nós. Com sua linguagem leve (vide o título!), A Sutil Arte de Ligar o F*oda-se fala sobre como superar as angústias modernas e trilhar um caminho mais consciente e coerente para se ter uma vida melhor."
+    },
+    {
+        "Nome": "Pulp",
+        "Autor": "Charles Bukowski",
+        "Categoria": "Ficção Científica",
+        "Preco": 89.90,
+        "Sipnose": "Charles Bukowski pode não agradar a todos, mas o conjunto de sua obra é sem dúvida uma grande influência para muitos artistas contemporâneos. Seu último romance, Pulp, reúne os temas e a escrita pela qual o 'autor' ficou mais famoso: álcool, mulheres, assassinatos, investigação, e outros. É um ótimo livro para começar a conhecer este escritor que é ao mesmo tempo cultuado e odiado"
+    },
+    {
+        "Nome": "Mais Esperto que o Diabo",
+        "Autor": "Napoleon Hill",
+        "Categoria": "Auto Ajuda",
+        "Preco": 89.90,
+        "Sipnose": "Apesar de ter sido originalmente escrito em 1938, Mais Esperto que o Diabo só foi publicado pela primeira vez mais de quarenta anos após a morte do seu 'autor', por ter sido considerado muito controverso para a sua época. O livro narra uma suposta entrevista do 'autor' com o Diabo, onde eles discutem e revelam os segredos para o sucesso e os obstáculos que o homem encara ao longo de sua vida para alcançar seu desenvolvimento pleno, como medos, ciúmes e procrastinação. O manuscrito passou por diversas mãos antes de ser publicado pela primeira vez em 2011, após ter sido revisado com edições e anotações da 'autor' a Sharon Lechter."
+    }
+]
