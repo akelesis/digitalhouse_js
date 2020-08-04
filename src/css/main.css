@@ -454,15 +454,43 @@ footer div {
   align-items: center;
 }
 
+.modal-content .modal-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-content .modal-img img {
-  width: 30vw;
-  height: 25vh;
+  width: 40vw;
+  height: 30vh;
 }
 
 .modal-content .modal-info {
   width: 80%;
   padding: 32px;
   text-align: justify;
+}
+
+.modal-content .modal-info h2 {
+  color: #444;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.modal-content .modal-info h3 {
+  color: #666;
+  font-size: 24px;
+}
+
+.modal-content .modal-info p {
+  color: #333;
+  font-size: 18px;
+}
+
+.modal-content .modal-info p.modal-price {
+  font-weight: 700;
+  font-size: 22px;
+  color: #222;
 }
 
 @media (min-width: 800px) {
