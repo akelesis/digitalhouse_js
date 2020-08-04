@@ -129,20 +129,16 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin: 2rem auto;
-    overflow: hidden;
-    position: relative;
-
     background-color: #ccc; 
 }
 
-/*.carrousel_label {
+.carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
     color: #777;
 }
-*/
+
 .filters {
     width: 100%;
     height: 120px;
@@ -182,7 +178,7 @@ body {
 
     color: #666;
 
-    transition: filter .3s;
+    transition: filter 0.3s;
 }
 
 #search_button:hover {
@@ -209,6 +205,25 @@ body {
     align-self: center;
     margin: 50px 0;
 }
+/*Filtros*/
+
+.no-books{
+    font-size: 24px;
+    color: #f71735;
+    font-weight: bold;
+
+    flex: 1;
+    text-align: center;
+}
+
+.card img {
+    width: 300px;
+    height: 400px;
+}
+
+/**/
+
+
 
 .card {
     width: 300px;
@@ -253,43 +268,75 @@ footer {
 }
 
 
-.carousel_images {
-    display: flex;
-    transform: translateX(0);
-    transition: transform .25s;
+/*Carousel*/
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-img {
-    border-radius: 5px;
-    max-width:100%;
-    max-height:100%;
-    object-fit: contain;
-}
-
-.carousel_button {
-    background: #000;
-    border: 0;
-    border-radius: 50%;
-    color: #F71735;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-    height: 3rem;
-    opacity: .25;
+.carousel-item {
     position: absolute;
-    transition: opacity .25s;
-    width: 3rem;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* background-image: url("img/banner_test.png"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.previous {
-    left: 10px;
+.animated {
+    transform: translateX(-100%);
+    transition: transform 1.35s;
 }
 
-.next {
-    right: 10px;
+  
+.animated:target {
+    transform: translateX(0px);
 }
 
-.carousel_button:hover {
-    opacity: .8;
+.carousel-controls-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
 }
+  
+.carousel-control-btn {
+    color: #eee0cb;
+    font-size: 3em;
+    text-decoration: none;
+}
+
+
+#lateral {
+    padding: 0;
+    transition: all 0.5s ease;
+    font-size: 1.2em;
+    background: #f7425a;
+    height: 100%;
+    overflow: hidden;
+    width: 370px;
+    position: fixed;
+    top: 0;
+    right: -370px;
+    z-index: 1000;
+}
+  
+#lateral .box {
+    list-style-type: none;
+}
+  
+#lateral h3 {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.4em;
+    font-style: normal;
+    padding-bottom: 0.2em;
+    margin: 0 0 0 0.8em;
+    color: #eee0cb;
+    border-bottom: 1px solid #eee0cb;
+}
+
