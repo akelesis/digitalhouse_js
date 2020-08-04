@@ -31,3 +31,13 @@ cardLivro[i].addEventListener("mouseout",()=>{
 });
 
 }
+
+//MENU HAMBURGUER
+function toogle(){
+    let menu = document.getElementById("dh_menu");
+    if(menu.style.display === "block"){
+        menu.style.display = "none";
+    }else{
+        menu.style.display = "block";
+    }
+}
