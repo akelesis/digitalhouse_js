@@ -25,7 +25,6 @@ class Slide {
     this.slideWrap = this.slideContainer.parentElement;
     this.items = this.slideContainer.children;
     this.currentSlide = 0;
-    if (this.props.auto) this.autoSlide();
     if (this.props.controls)
       this.slideWrap.appendChild(this.createControls());
     this.changeSlide(this.props.startAtSlide || 0);
@@ -56,17 +55,16 @@ class Slide {
     this.currentSlide = slide;
     this.makeActive(slide);
     this.moveSlide(-left);
+    if (this.props.auto) this.autoSlide();
   }
 
   prevSlide() {
     this.changeSlide(this.currentSlide + 1);
-
   }
 
   autoSlide() {
     if (this.props.auto) {
-      setTimeout(this.autoSlide, this.props.time);
-      this.prevSlide();
+      this.timer = setTimeout(this.prevSlide, this.props.time);
     }
   }
 
@@ -76,7 +74,10 @@ class Slide {
       (_, index) => {
         const button = document.createElement('button');
         button.textContent = index + 1;
-        ae(button, 'click', () => this.changeSlide(index));
+        ae(button, 'click', () => {
+          clearTimeout(this.timer);
+          this.changeSlide(index);
+        });
         this.controls.appendChild(button);
       }
     );
@@ -84,10 +85,12 @@ class Slide {
     return this.controls;
   }
 
+  // O bind seta o this para 
   bind() {
     this.autoSlide = this.autoSlide.bind(this);
     this.createControls = this.createControls.bind(this);
     this.changeSlide = this.changeSlide.bind(this);
+    this.prevSlide = this.prevSlide.bind(this);
   }
 }
 
@@ -126,4 +129,13 @@ const slide = new Slide({
   controls: true,
 })
 
-// slide.changeSlide(1);
+// const loading = document.createElement('div');
+// loading.classList.add('loading')
+// for (let i = 1; i < 6; i++)
+//   loading.appendChild(document.createElement('div'))
+
+// console.log(loading)
+
+fetch('books.json')
+  .then(res => res.json())
+  .then(res => console.log(res));

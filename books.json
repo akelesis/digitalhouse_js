@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Gatilhos Mentais",
+    "description": "Nessa obra, você descobrirá como aplicar na prática 32 \"gatilhos\" no seu negócio, indo muito além de uma simples comunicação de vendas.",
+    "author": "Gustavo Ferreira",
+    "price": 31.68,
+    "tags": [""],
+    "cathegory": "Marketing Digital",
+    "cover-url": "img/book_gatilhos.jpg"
+  },
+  {
+    "title": "Clean Code",
+    "description": "Even bad code can function. But if code isn’t clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn’t have to be that way.",
+    "author": "Martin Robert C.",
+    "price": 95.17,
+    "tags": [""],
+    "cathegory": "Tecnologia",
+    "cover-url": "img/book_clean_code.jpg"
+  },
+  {
+    "title": "A revolução dos bichos",
+    "description": "Verdadeiro clássico moderno, concebido por um dos mais influentes escritores do século XX, A revolução dos bichos é uma fábula sobre o poder. Narra a insurreição dos animais de uma granja contra seus donos. Progressivamente, porém, a revolução degenera numa tirania ainda mais opressiva que a dos humanos.",
+    "author": "George Orwell",
+    "price": 23.9,
+    "tags": [""],
+    "cathegory": "Ficção",
+    "cover-url": "img/book_revolucao.jpg"
+  },
+  {
+    "title": "Mindset: A nova psicologia do sucesso",
+    "description": "Carol S. Dweck, ph.D., professora de psicologia na Universidade Stanford e especialista internacional em sucesso e motivação, desenvolveu, ao longo de décadas de pesquisa, um conceito fundamental: a atitude mental com que encaramos a vida, que ela chama de “mindset”, é crucial para o sucesso. ",
+    "author": "Carol S. Dweck",
+    "price": 29.9,
+    "tags": [""],
+    "cathegory": "Auto-ajuda",
+    "cover-url": "img/book_mindset.jpg"
+  },
+  {
+    "title": "As armas da persuasão",
+    "description": "Depois de passar anos caindo na lábia de vendedores, arrecadadores de doações e operadores de telemarketing, o psicólogo Robert B. Cialdini resolveu se dedicar ao estudo da persuasão. Ele queria entender quais são os fatores que levam uma pessoa a dizer \"sim\" a um pedido e que técnicas exploram melhor esses fatores.",
+    "author": "Robert Cialdini",
+    "price": 26.91,
+    "tags": [""],
+    "cathegory": "Auto-ajuda",
+    "cover-url": "img/book_armas.jpg"
+  },
+  {
+    "title": "Do mil ao milhão",
+    "description": "Em seu primeiro livro, Thiago Nigro, criador da plataforma O Primo Rico, ensina aos leitores os três pilares para atingir a independência financeira: gastar bem, investir melhor e ganhar mais. Por meio de dados e de sua própria experiência como investidor e assessor, Nigro mostra que a riqueza é possível para todos – basta estar disposto a aprender e se dedicar.",
+    "author": "Thiago Nigro",
+    "price": 22.41,
+    "tags": [""],
+    "cathegory": "Finanças",
+    "cover-url": "img/mil_milhao.jpg"
+  }
+]
