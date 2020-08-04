@@ -51,14 +51,59 @@ body {
 }
 
 #dh_carousel {
-    width: 100%;
-    height: 60vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    background-color: #ccc; 
+.caroussel_banner{
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.caroussel_banner li {
+    height: 400px;
+    background-color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    display: none;
+
+    font-family: "Mulish", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+li.active{
+    display: flex;
+}
+
+.btn-caroussel{
+    font-family: "Mulish", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: #777;
+    position: absolute;
+    text-decoration: none;
+
+}
+
+.right{
+    right: 20px;
+}
+
+.left{
+    left: 20px;
+}
+
+.right:hover,.left:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .carrousel_label {
@@ -142,6 +187,10 @@ body {
     position: relative;
 }
 
+.card img{
+    width: 300px;
+    height: 400px;
+}
 .overlay {
     width: 300px;
     height: 400px;
