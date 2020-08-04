@@ -7,6 +7,44 @@ body {
     background-color: #EEE0CB;
 }
 
+.menu_opened {
+    display: none !important;
+}
+
+#menu {
+    display: none;
+    color: #FFFFFF;
+    position: absolute;
+    border-radius: 12px;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+    list-style-type: none;
+    background: #F71735;
+    box-shadow: 6px 6px 15px #000;
+}
+
+nav li {
+    padding: 20px;
+    border-bottom: solid 5px #FFF;
+    border-radius: 5px;
+}
+
+nav li:hover {
+    background: #8a2a36;
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+nav a{
+   text-decoration: none;
+   color: #FFFFFF; 
+   font-size: larger;
+   font-family: 'Mulish';
+
+}
+
 .bookshop_header {
     width: 100%;
     height: 80px;
