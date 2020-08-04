@@ -112,7 +112,7 @@ function filtraPreco() {
 function procuraLivro() {
 
     const newList = listaLivros.filter(value => {
-        return value.name.indexOf(seachLivro.value) >= 0
+        return value.name.toLowerCase().indexOf(seachLivro.value.toLowerCase()) >= 0
     })
 
     carregaLivros(newList)
