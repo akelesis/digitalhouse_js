@@ -149,6 +149,9 @@ class Book {
     this.appendElements();
     return this.bookHTML;
   }
+  getProperty(property) {
+    return this.props[property];
+  }
   setVisibility(visibility) {
     this.bookHTML.style.display = visibility ? 'block' : 'none';
   }
@@ -194,16 +197,36 @@ const slide = new Slide({
 
 // console.log(loading)
 
+const books = [];
+
+const category = sid('category');
+
 const showCase = s('.showcase');
 fetch('books.json')
   .then(res => res.json())
   .then(res => {
-    const books = res;
-    [...books].forEach(book => {
-      const bookHTML = new Book(book);
-      showCase.appendChild(bookHTML.getBookHTML());
+    res.categories = [];
+    res.forEach(book => {
+      const bookElement = new Book(book);
+      books.push(bookElement);
+      const categoryName = bookElement.getProperty('category');
+      const categoryExits = res.categories.find(c=>c===categoryName);
+      if (!categoryExits) {
+        res.categories.push(categoryName);
+      }
+      showCase.appendChild(bookElement.getBookHTML());
     });
-  });
+    return res;
+  })
+  .then(res => {
+    res.categories.forEach(categoryName => {
+      const option = document.createElement('option');
+      option.value = categoryName;
+      option.innerHTML = categoryName;
+      category.appendChild(option);
+    });
+    return res
+  })
 
 /**
  * Filters
@@ -221,3 +244,75 @@ fetch('books.json')
  * mais caro // >= 61
  */
 
+// Procura por título
+
+const searchBar = sid('search_bar');
+const searchButton = sid('search_button');
+
+function searchBook(search) {
+  books.forEach(book => {
+    const title = book.getProperty('title');
+    const match = title.toLowerCase().search(search)
+    book.setVisibility(match >- 1)
+  })
+}
+
+ae(searchBar, 'change', (e) => {
+  const search = e.target.value.toLowerCase();
+  searchBook(search);
+})
+
+ae(searchButton, 'click', () => {
+  const search = searchBar.value.toLowerCase();
+  searchBook(search);
+})
+
+
+// Advanced Filters
+const priceRange =sid('price_range');
+
+function filterByPrice(value) {
+  books.forEach(book => {
+    const price = book.getProperty('price');
+    let min = 0, max = 0;
+    switch(value) {
+      case 'barato':
+        min = 1;
+        max = 20;
+        break;
+      case 'medio':
+        min = 21;
+        max = 40;
+        break;
+      case 'caro':
+        min = 41;
+        max = 60;
+        break;
+      case 'mais caro':
+        min = 61;
+        break;
+    }
+    book.setVisibility(price >= min && (max ? price <= max : true));
+  })
+}
+
+function filterByCategory(filter) {
+  books.forEach(book => {
+    const categoryBook = book.getProperty('category');
+    book.setVisibility(categoryBook.toLowerCase() === filter.toLowerCase());
+  })
+}
+
+function combineFilters(...filters) {
+  filters.forEach(
+
+  )
+}
+
+ae(category, 'change', (e) => {
+  filterByCategory(e.target.value);
+})
+
+ae(priceRange, 'change', (e) => {
+  filterByPrice(e.target.value);
+})

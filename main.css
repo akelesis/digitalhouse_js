@@ -267,6 +267,7 @@ body {
   flex-wrap: wrap;
   align-self: center;
   margin: 50px 0;
+  transition: all .4s;
 }
 
 .card {
@@ -274,11 +275,11 @@ body {
   height: 400px;
   margin: 20px;
   position: relative;
+  transition: all .4s;
   box-shadow: 2px 2px 4px rgba(0,0,0,.3);
   border-radius: 4px;
   border: none;
   perspective: 2000px;
-  transition: .4s;
 }
 
 .card img {
@@ -338,7 +339,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 30px 20px;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
   font-size: 15px;
@@ -353,7 +354,7 @@ body {
 }
 
 .book_description {
-  margin-top: 20px;
+  margin: 15px 0;
   flex: 3;
 }
 
