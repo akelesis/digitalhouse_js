@@ -4,14 +4,10 @@ const filterCategory = document.getElementById("category")
 const filterPrice = document.getElementById("price_range")
 const seachLivro = document.getElementById("search_bar")
 const btnSearch = document.getElementById("search_button")
+const banners = document.getElementById("banners")
 const menuItems = document.querySelector('.menu-items')
 const conteinerLivros = document.querySelector('.showcase')
-//const banners = document.querySelectorAll('.banners')
-const banners2 = document.getElementById("banners")
 
-
-
-let len = 0
 let bgNumber = 0
 
 function carregaLivros(filterLivros) {
@@ -61,7 +57,7 @@ const sliderBanner = () => {
     if (bgNumber == allBanners.length) {
         bgNumber = 0
     }
-    banners2.style.backgroundImage = `url('${allBanners[bgNumber].banner_url}')`
+    banners.style.backgroundImage = `url('${allBanners[bgNumber].banner_url}')`
     bgNumber++
 }
 
