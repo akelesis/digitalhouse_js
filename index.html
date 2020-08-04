@@ -13,8 +13,8 @@
   <header class="bookshop_header">
     <h1 class="dh_title">Digital House - Livraria</h1>
     <div class="dh_container_menu">
-      <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
-      <ul class="dh_menu_popup active">
+    <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+      <ul id="dh_menu_popup">
         <li><a href="#" data-text="Lista de Desejos">Lista de Desejos</a></li>
         <li><a href="#" data-text="Minhas Compras">Minhas Compras</a></li>
         <li><a href="#" data-text="Painel de controle">Painel de controle</a></li>
@@ -24,9 +24,11 @@
   </header>
   <main class="content">
     <section id="dh_carousel">
-      <h2 class="carrousel_label">
-        Carrossel...
-      </h2>
+      <ul class="slide_carousel" data-slide="carousel" data-time="3s" data-auto>
+        <li class="slide_item_1"><h1>Slide 1</h1></li>
+        <li class="slide_item_2"><h1>Slide 2</h1></li>
+        <li class="slide_item_3"><h1>Slide 3</h1></li>
+      </ul>
     </section>
     <section class="filters">
       <div class="name_box">
