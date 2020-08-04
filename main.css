@@ -12,7 +12,7 @@ body {
     height: 80px;
     padding: 0 20px;
     box-sizing: border-box;
-    
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,9 +27,9 @@ body {
 }
 
 #dh_menu_btn {
+
     width: 50px;
     height: 50px;
-
     border: none;
     border-radius: 5px;
     outline: none;
@@ -40,47 +40,11 @@ body {
     transition: filter .3s;
 }
 
+
 #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
 }
-
-
-#menu-opt {
-    position: absolute;
-
-    height: calc(4 * (1.3em+16px));
-    width: 0;
-    
-    top: 80px;
-    right: 0;
-    padding-top: 0.5%;
-    z-index: 5;
-    
-    background-color: rgb(61, 61, 61);
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-#menu-opt a {
-    display: block;
-
-    top: 0;
-    padding: 8px 8px 8px 20px;
-
-    text-decoration: none;
-    font-size: 1.3em;
-    font-family: "Mulish", sans-serif;
-    
-    color: #818181;
-    white-space: nowrap;
-    transition: 0.3s;
-}
-
-#menu-opt a:hover {
-    color: #f1f1f1;
-  }
-
 
 .content {
     display: flex;
@@ -88,26 +52,46 @@ body {
 }
 
 #dh_carousel {
+
     width: 100%;
     height: 60vh;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    background-color: rgb(255, 255, 255);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: center;
-    background-position-x: center;
+    overflow: hidden;
+    background-color: whitesmoke;
 
 }
+
+
+
+#dh_carousel img{
+
+    padding: 2em;
+    width: 14em;
+    height: auto;
+    animation: moveCarousel 60s linear infinite;
+
+
+}
+
+@keyframes moveCarousel {
+    0% {
+        transform: translateX(0);
+
+    }
+
+    100% {
+        transform: translateX(-2700%);
+
+    }
+  }
+
 
 .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
-/*     color: #777; */
+    color: #777;
 }
 
 .filters {
@@ -177,58 +161,82 @@ body {
     margin: 50px 0;
 }
 
-
 .card {
     width: 300px;
     height: 400px;
-    margin: 10px 0;
+    margin: 15px 0;
     position: relative;
+    font-family: 'Oswald', sans-serif;
+
 }
 
-.imagebook{
-    width: 225px;
-    height: 300px;
-    margin-left: calc(50% - 112.5px);
-    background-color: #7777;  
-} 
-
-.titlebook{
-    font-size: 18px;
-    text-align: center;
+.card img{
+    width: 300px;
+    height: 400px;
 }
 
-.authorbook{
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: -10px;
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
 }
-
-.pricebook{
-    font-size: 13px;
-    color: rgb(0, 109, 109);
-    text-align: center;
-}
-
 
 .overlay {
     width: 300px;
-    height: 100px;
+    height: 400px;
     position: absolute;
     left: 0;
-    top: 200;
-
+    top: 0;
+    z-index: 5;
+    background-color: #7777;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 10px;
     box-sizing: border-box;
 }
+/* Menu Lateraç */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(112, 33, 33);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    font-family: 'Oswald', sans-serif;
+  }
 
-p{
-    text-align: justify;
-}
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+
+    color: #000000;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
 
 footer {
     width: 100%;

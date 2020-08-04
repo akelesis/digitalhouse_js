@@ -7,38 +7,40 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 </head>
 
-<body onload="start()">
+<body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
-        <div id="menu-opt">
-            <a href="#">Lista de desejos</a>
-            <a href="#">Minhas Compras</a>
-            <a href="#">Painel de Controle</a>
-            <a href="#">Logout</a>
-        </div>
+        <button id="dh_menu_btn" onclick="abreNav()"><i class="fas fa-bars"></i></button>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="fechaNav()">&times;</a>
+            <a href="#">Menu 1</a>
+            <a href="#">Menu 2</a>
+            <a href="#">Menu 3</a>
+            <a href="#">Menu 4</a>
+          </div>
     </header>
+
     <main class="content">
-
-        <section id="dh_carousel"></section>
-
+        <section id="dh_carousel">
+        </section>
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="pesquisa()"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
+                <select name="category" id="category" onchange="pesquisa()">
+                    <option value="" selected="true" disabled="disabled">Selecione o autor</option>
+                    <!-- <option value="Auto Ajuda">Auto Ajuda</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
+                    <option value="Romance">Romance</option> -->
                 </select>
-                <select name="price_range" id="price_range">
-                    <option value="" >Faixa de preço</option>
+                <select name="price_range" id="price_range" onchange="pesquisa()">
+                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
                     <option value="barato">R$1 - R$20</option>
                     <option value="medio">R$21 - R$40</option>
                     <option value="caro">R$41 - R$60</option>
@@ -47,13 +49,18 @@
             </div>
         </section>
 
-        <section class="showcase"></section>
+        <section class="showcase">
+
+
+        </section>
     </main>
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
+    <script src='livros.js'></script>
     <script src='main.js'></script>
+
 </body>
 
 </html>
