@@ -47,7 +47,11 @@ let livros=[{
     categoria: "Romance",
     preco: 29.90
 }];
+//DECLARACAO DE VARIAVEIS
 let cards= document.querySelectorAll(".card");
+var input = document.getElementById("search_bar");
+var categorias = document.getElementById("category");
+var precos = document.getElementById("price_range");
 
 const img = document.getElementById("img");
 let contador=0;
@@ -86,3 +90,89 @@ for(let i=0; i<cards.length;i++){
         cards[i].children[1].children[1].innerHTML="";
     });
 }
+//INSERCAO DOS 3 FILTROS 
+function selecionar(){
+    for(let i=0;i<livros.length;i++){
+        if(livros[i].categoria===categorias.value){
+            cards[i].children[0].setAttribute("src",livros[i].capa);
+            cards[i].addEventListener("mouseover", function(){
+                cards[i].children[1].children[0].innerHTML=livros[i].titulo;
+                cards[i].children[1].children[1].innerHTML=livros[i].descricao;
+            });
+            cards[i].addEventListener("mouseout", function(){
+                cards[i].children[1].children[0].innerHTML="";
+                cards[i].children[1].children[1].innerHTML="";
+            });
+        }
+        else{
+            cards[i].children[0].style.display="none";
+            cards[i].children[1].children[0].style.display="none";
+            cards[i].children[1].children[1].style.display="none";
+        }
+    }
+}
+categorias.addEventListener("change",selecionar);
+
+precos.addEventListener("change",function(){
+    var precoCategoria=[];
+    for(let i=0;i<livros.length;i++){
+        
+                if(livros[i].preco>=1 && livros[i].preco<=20){
+                    precoCategoria.push("barato");
+                }
+                else if(livros[i].preco>=21 && livros[i].preco<=40){
+                    precoCategoria.push("medio");
+                }
+                else if(livros[i].preco>=41 && livros[i].preco<=60){
+                    precoCategoria.push("caro");
+                }
+                else if(livros[i].preco>=61){
+                    precoCategoria.push("mais caro");
+                }
+        
+    
+        if(precoCategoria[i]===precos.value){
+            cards[i].children[0].setAttribute("src",livros[i].capa);
+            cards[i].addEventListener("mouseover", function(){
+                cards[i].children[1].children[0].innerHTML=livros[i].titulo;
+                cards[i].children[1].children[1].innerHTML=livros[i].descricao;
+            });
+            cards[i].addEventListener("mouseout", function(){
+                cards[i].children[1].children[0].innerHTML="";
+                cards[i].children[1].children[1].innerHTML="";
+            });
+        }
+        else{
+            cards[i].children[0].style.display="none";
+            cards[i].children[1].children[0].style.display="none";
+            cards[i].children[1].children[1].style.display="none";
+        }
+    }
+});
+
+
+function teste(){
+    var pegar = input.value.toUpperCase();
+    console.log(pegar);
+    
+    for(let i=0;i<livros.length;i++){
+        if(livros[i].titulo.toUpperCase().indexOf(pegar)>-1){
+            cards[i].children[0].setAttribute("src",livros[i].capa);
+            cards[i].addEventListener("mouseover", function(){
+                cards[i].children[1].children[0].innerHTML=livros[i].titulo;
+                cards[i].children[1].children[1].innerHTML=livros[i].descricao;
+            });
+            cards[i].addEventListener("mouseout", function(){
+                cards[i].children[1].children[0].innerHTML="";
+                cards[i].children[1].children[1].innerHTML="";
+            });
+        }
+        else{
+            cards[i].children[0].style.display="none";
+            cards[i].children[1].children[0].style.display="none";
+            cards[i].children[1].children[1].style.display="none";
+        }
+    }
+}
+
+
