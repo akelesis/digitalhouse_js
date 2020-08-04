@@ -1,7 +1,21 @@
 
 let i = 1;
 const slide = document.getElementById('slide');
+const frase = document.getElementById('frase');
 
+const alt = ["O livro é um mudo que fala, um surdo que responde, um cego que guia, um morto que vive.",
+            "Sempre imaginei que o paraíso fosse uma espécie de biblioteca.", 
+            //"Alguém dissera um dia que se podia viver sem tudo, menos água e comida, mas que viver sem livros e sem música não seria o mesmo que viver.", 
+            "Bendito aquele que semeia livros e faz o povo pensar.",
+            "Um livro é um brinquedo feito com letras. Ler é brincar.", 
+            "Há livros escritos para evitar espaços vazios...", 
+            "Livros não mudam o mundo, quem muda o mundo são as pessoas. Os livros só mudam as pessoas.", 
+            "Cresci no meio de livros, fazendo amigos invisíveis em páginas que se desfaziam em pó cujo cheiro ainda conservo nas mãos.", 
+            "Da letra à palavra e daqui a pouco um livro.", 
+            "Livro que não é lido é conhecimento adormecido.", 
+            "O livro é um mestre que fala mas que não responde.", 
+            "Não é livro que negocio, mas um pedaço do meu sonho.",
+            "Cada livro tem uma alma, a alma de quem o tinha escrito e a alma de quem o tinha lido e sonhado com ele."]
 
 function slideShow () {
 
@@ -9,12 +23,13 @@ function slideShow () {
         if (i < 12) {
             slide.style.opacity = 0;
             slide.setAttribute("src", `img/carrossel/Carrossel_${i}.png`);
+            frase.innerHTML = `${alt[i]}`;
             slide.style.opacity = 1;
             i++;
         } else {
             i = 1;
         }
-    }, 3000);
+    }, 5000);
 
 }
 

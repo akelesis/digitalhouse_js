@@ -127,11 +127,28 @@ body {
     align-items: center;
 
     background-color: #ccc; 
+
+    position: relative;
 }
 
 #dh_carousel img {
     width: 100%;
     height: 60vh;
+}
+
+#dh_carousel #frase {
+    position: absolute;
+    bottom: 50px;
+
+    font-family: "Mulish", sans-serif;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #ccc;
+    text-align: center;
+    text-shadow: 25px;
+
+    background-color: #00000095;
+    width: 100%;
 }
 
 #slide {
