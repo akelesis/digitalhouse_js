@@ -1,0 +1,42 @@
+[{
+	"id":1,
+	"name":"Ficção Científica",
+	"book":"clean architecture",
+	"type":"medio",
+	"images":"clean-architecture.jpg"
+},
+{
+	"id":2,
+	"name":"Auto Ajuda",
+	"book":"design pattern",
+	"type":"barato",
+	"images":"design_pattern.jpg"
+},
+{
+	"id":3,
+	"name":"Fantasia",
+	"book":"clean code",
+	"type":"mais caro",
+	"images":"clean_code.jpg"
+},
+{
+	"id":4,
+	"name":"Romance",
+	"book":"domain drive design",
+	"type":"caro",
+	"images":"domain_drive_design.jpg"
+},
+{
+	"id":5,
+	"name":"Romance",
+	"book":"refatoracao pattern",
+	"type":"caro",
+	"images":"refatoracao_pattern.jpg"
+},
+{
+	"id":6,
+	"name":"Ficção Científica",
+	"book":"java como programar",
+	"type":"barato",
+	"images":"java_como_programar.jpg"
+}]
