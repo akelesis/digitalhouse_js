@@ -27,9 +27,14 @@ body {
     box-shadow: 6px 6px 15px #000;
 }
 
+
 nav li {
     padding: 20px;
-    border-bottom: solid 5px #FFF;
+    border-top: solid 5px #FFF;
+    border-radius: 5px;
+}
+.lastLi{
+    border-bottom: solid 5px #FFF !important;
     border-radius: 5px;
 }
 
