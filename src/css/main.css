@@ -290,7 +290,7 @@ i {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  z-index: 1;
+  z-index: 2;
   background-color: #777;
   color: #fff;
   padding: 8px;
@@ -319,8 +319,6 @@ i {
   display: none;
   color: #fff;
   text-align: center;
-
-  transition: 2s;
 }
 
 .overlay h2 {
@@ -356,6 +354,7 @@ i {
   color: #fff;
   padding: 8px 16px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .overlay a:hover {
@@ -380,5 +379,101 @@ footer div {
 @media (min-width: 1498px) {
   .showcase {
     width: 60vw;
+  }
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.815);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  background-color: #fff;
+  opacity: 1;
+  border-radius: 8px;
+
+  width: 70vw;
+  max-width: 800px;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 16px;
+
+  display: flex;
+}
+
+.close-modal {
+  color: #000;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+
+  width: 20%;
+  background-color: #f7425a;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.close-modal:hover {
+  width: 25%;
+  border-radius: 8px;
+  background-color: #f71735;
+  transition: 500ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+
+  transition: 400ms;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content .modal-img img {
+  width: 30vw;
+  height: 25vh;
+}
+
+.modal-content .modal-info {
+  width: 80%;
+  padding: 32px;
+  text-align: justify;
+}
+
+@media (min-width: 800px) {
+  .modal-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .modal-content .modal-img img {
+    width: 80%;
+    height: 400px;
+    max-height: 30vh;
   }
 }

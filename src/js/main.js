@@ -2,9 +2,11 @@
 // Dados dos livros da página inicial
 data = [
   {
+    id: 1,
     image_URL:
       'https://images.unsplash.com/photo-1569738713551-2958195b458a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'A culpa e das estrelas',
+    author: 'Não sei',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -14,9 +16,11 @@ data = [
     price_range: 'medio',
   },
   {
+    id: 2,
     image_URL:
       'https://images.unsplash.com/photo-1511108690759-009324a90311?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'Harry Potter',
+    author: 'JK',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -26,9 +30,11 @@ data = [
     price_range: 'medio',
   },
   {
+    id: 3,
     image_URL:
       'https://images.unsplash.com/photo-1535398089889-dd807df1dfaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'Matrix',
+    author: 'Irmãos wheihaeibd',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -38,9 +44,11 @@ data = [
     price_range: 'maisCaro',
   },
   {
+    id: 4,
     image_URL:
       'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'Alcance seus sonhos',
+    author: 'Edward Lichenstein',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -50,9 +58,11 @@ data = [
     price_range: 'barato',
   },
   {
+    id: 5,
     image_URL:
       'https://images.unsplash.com/photo-1551300316-cc6ced5bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-    title: 'As cronicas de Narnia',
+    title: 'Narnia',
+    author: 'Não faço ideia',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -62,9 +72,11 @@ data = [
     price_range: 'medio',
   },
   {
+    id: 6,
     image_URL:
       'https://images.unsplash.com/photo-1590310051055-1079d8f48c89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'Dear John',
+    author: 'Alguma Ai',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -74,9 +86,11 @@ data = [
     price_range: 'caro',
   },
   {
+    id: 7,
     image_URL:
       'https://images.unsplash.com/photo-1582547761303-4899595f0f35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'Senhor dos Aneis',
+    author: 'Tolkien',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -86,9 +100,11 @@ data = [
     price_range: 'caro',
   },
   {
+    id: 8,
     image_URL:
       'https://images.unsplash.com/photo-1541702193626-24fe3a9fbed3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: 'Star Wars',
+    author: 'George Lucas',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -98,9 +114,11 @@ data = [
     price_range: 'medio',
   },
   {
+    id: 9,
     image_URL:
       'https://images.unsplash.com/photo-1518744386442-2d48ac47a7eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
     title: '1000 destinos',
+    author: 'Alguem que já viajou muito',
     description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit
     Obcaecati minus eaque quos assumenda Culpa commodi repudiandae
     asperiores ipsa hic dicta cumque earum omnis aperiam eaque iste
@@ -149,6 +167,9 @@ for (let i = 0; i < data.length; i++) {
   hasPrice[i] = true;
   hasName[i] = true;
 }
+
+// Modal
+const modalOverlay = document.querySelector('.modal-overlay');
 
 // Imagens do array que será mostrado no carrossel
 const imagesArray = [
@@ -272,7 +293,43 @@ window.addEventListener('load', () => {
         result[count] = false;
       }
     }
-    console.log(result);
+  });
+
+  // Função para mostrar o modal com mais informações
+  for (let bookCard of bookCards) {
+    bookCard.querySelector('a').addEventListener('click', () => {
+      const cardId = bookCard.getAttribute('id');
+      modalOverlay.classList.add('active');
+      console.log(bookCard.children[0].src);
+      modalOverlay
+        .querySelector('img')
+        .setAttribute('src', bookCard.querySelector('img').src);
+
+      modalOverlay.querySelector('h2').textContent = `Title: ${
+        data[cardId - 1].title
+      } `;
+
+      modalOverlay.querySelector('h3').textContent = `Author: ${
+        data[cardId - 1].author
+      }`;
+
+      modalOverlay.querySelector(
+        '.modal-description'
+      ).textContent = `Description: ${data[cardId - 1].description} `;
+
+      modalOverlay.querySelector('.modal-category').textContent = `Category: ${
+        data[cardId - 1].category
+      } `;
+
+      modalOverlay.querySelector('.modal-price').textContent = `Price: $${
+        data[cardId - 1].price
+      }0 `;
+    });
+  }
+
+  // funcao para fechar o modal
+  document.querySelector('.close-modal').addEventListener('click', () => {
+    modalOverlay.classList.remove('active');
   });
 });
 
@@ -281,6 +338,7 @@ function loadBookData(data) {
     // cria a div card
     const card = document.createElement('div');
     card.className = 'card';
+    card.setAttribute('id', book.id);
     // atribui a showcase o filho card
     showCase.appendChild(card);
 
@@ -317,6 +375,7 @@ function loadBookData(data) {
 
     // link saiba mais
     const knowMore = document.createElement('a');
+    knowMore.setAttribute('id', book.id);
     knowMore.textContent = `Saiba mais ...`;
     overlay.appendChild(knowMore);
   });
