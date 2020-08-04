@@ -45,6 +45,43 @@ body {
     cursor: pointer;
 }
 
+
+#menu-opt {
+    position: absolute;
+
+    height: calc(4 * (1.3em+16px));
+    width: 0;
+    
+    top: 80px;
+    right: 0;
+    padding-top: 0.5%;
+    z-index: 5;
+    
+    background-color: rgb(61, 61, 61);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+#menu-opt a {
+    display: block;
+
+    top: 0;
+    padding: 8px 8px 8px 20px;
+
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: "Mulish", sans-serif;
+    
+    color: #818181;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#menu-opt a:hover {
+    color: #f1f1f1;
+  }
+
+
 .content {
     display: flex;
     flex-direction: column;
@@ -58,14 +95,19 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: #ccc; 
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+
 }
 
 .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
-    color: #777;
+/*     color: #777; */
 }
 
 .filters {
@@ -135,6 +177,7 @@ body {
     margin: 50px 0;
 }
 
+
 .card {
     width: 300px;
     height: 400px;
@@ -142,15 +185,37 @@ body {
     position: relative;
 }
 
+.imagebook{
+    width: 225px;
+    height: 300px;
+    margin-left: calc(50% - 112.5px);
+    background-color: #7777;  
+} 
+
+.titlebook{
+    font-size: 18px;
+    text-align: center;
+}
+
+.authorbook{
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.pricebook{
+    font-size: 13px;
+    color: rgb(0, 109, 109);
+    text-align: center;
+}
+
+
 .overlay {
     width: 300px;
-    height: 400px;
+    height: 100px;
     position: absolute;
     left: 0;
-    top: 0;
-    z-index: 5;
-
-    background-color: #7777;
+    top: 200;
 
     display: flex;
     flex-direction: column;
@@ -159,6 +224,10 @@ body {
 
     padding: 10px;
     box-sizing: border-box;
+}
+
+p{
+    text-align: justify;
 }
 
 footer {
