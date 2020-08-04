@@ -6,6 +6,9 @@ const filterAdv = document.getElementById("category");
 const filterPrice = document.getElementById("price_range");
 const searchFilter = document.getElementById("search_bar");
 const img = document.getElementById("img_carrousel");
+const btnNext = document.getElementById("next");
+const btnPrev = document.getElementById("prev");
+
 const img_carrousel = ['./img/carousel-1.jpg', './img/carousel-2.jpg', './img/carousel-3.png'];
 var contador = 1;
 
@@ -68,6 +71,16 @@ const listBooks = [
 btnOpen.onblur = () => {
     list.style.width = "0";
 }
+
+btnNext.addEventListener("click", () => {
+    contador < img_carrousel.length - 1 ? contador++ : contador = 0;
+    img.setAttribute("src", img_carrousel[contador]);
+})
+
+btnPrev.addEventListener("click", () => {
+    contador > 0 ? contador-- : contador = img_carrousel.length - 1;
+    img.setAttribute("src", img_carrousel[contador]);
+})
 
 btnOpen.addEventListener("click", () => {
     list.style.width = "250px";
@@ -191,9 +204,6 @@ const verifyCategory = (category, range) => {
 }
 
 const carrosel = () => {
-
-    img.setAttribute("src", img_carrousel[0]);
-
     setInterval(() => {
         img.setAttribute("src", img_carrousel[contador]);
         contador < img_carrousel.length - 1 ? contador++ : contador = 0;
@@ -204,6 +214,8 @@ const init = () => {
     listBooks.forEach((books) => {
         populateBooks(books);
     })
+
+    img.setAttribute("src", img_carrousel[0]);
     
     carrosel();
 }

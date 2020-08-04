@@ -154,6 +154,34 @@ body {
     font-size: 1.2em;
 }
 
+#dh_carousel .container .next,
+#dh_carousel .container .prev {
+    position: absolute;
+    display: flex;
+    padding: 30px 15px 30px 15px;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 1;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+#dh_carousel .container .next:hover,
+#dh_carousel .container .prev:hover {
+    color: #f1f1f1;
+    filter: brightness(80%);
+    background-color: rgba(18, 18, 18, 0.5);
+    border: rgba(18, 18, 18, 0.5)
+}
+
 .filters {
     width: 100%;
     height: 120px;
