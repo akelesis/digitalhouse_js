@@ -19,6 +19,8 @@ function slideShow () {
 }
 
 function cardBook () {
+
+    document.getElementById('container-card').innerHTML = "";
     
     const card = livraria.results.map(livro => {
         return(
