@@ -27,7 +27,7 @@ class Slide {
     this.currentSlide = 0;
     if (this.props.controls)
       this.slideWrap.appendChild(this.createControls());
-    this.changeSlide(this.props.startAtSlide || 0);
+    this.changeSlide(this.props.startAtSlide ? this.props.startAtSlide : 0);
   }
 
   makeActive(slide) {
