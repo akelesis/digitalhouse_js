@@ -67,6 +67,12 @@ const livros = [
   },
 ];
 
+const showAll = (card) => {
+  for (let j = 0; j < card.length; j++) {
+    card[j].style.display = 'block';
+  }
+};
+
 let cards = () => {
   return document.getElementsByClassName('card');
 };
@@ -88,6 +94,7 @@ const filterCategory = (categoria, card) => {
   var livroFiltrado = livros.filter((livro) => {
     return livro.categoria === categoria;
   });
+
   clearDisplay();
   for (let i = 0; i < livroFiltrado.length; i++) {
     for (let j = 0; j < card.length; j++) {
@@ -171,8 +178,12 @@ const fnSearchBar = (event, card) => {
   let searched = [];
   const regex = new RegExp(`${event.target.value}`, 'gmi');
   if (event.keyCode === 13) {
-    searched = livros.filter((livro) => livro.titulo.match(regex));
-    updateDisplay(searched, card);
+    if (event.target.value === '') {
+      showAll(card);
+    } else {
+      searched = livros.filter((livro) => livro.titulo.match(regex));
+      updateDisplay(searched, card);
+    }
   }
 };
 
