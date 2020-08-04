@@ -43,12 +43,12 @@ body {
     margin-right: 2%;
     padding: 2%;
     border: 1px solid black;
-    background-color: #ecd3d3;
+    background-color: #ffffff;
 }
 
 .bookshop_header #menu #options a {
     font-size: 20px;
-    color: #da0275e8;
+    color: #141314e8;
     text-decoration: none;
 }
 
@@ -83,21 +83,31 @@ body {
 .content #dh_carousel {
     width: 100%;
     height: 60vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
     background-image: url("../images/carousel/celebration.png");
 }
 
-.content #dh_carousel #carousel_button_prev {
-    align-self: flex-start;
+.content #dh_carousel .buttons{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
 }
 
-.content #dh_carousel #carousel_button_next {
-    align-self: flex-end;
+.content #dh_carousel .buttons button{
+    width: 3%;
+    height: 10%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content #dh_carousel .buttons #carousel_button_prev {
+    align-self: center;
+    background-image: url("../images/arrow-back.png");
+}
+
+.content #dh_carousel .buttons #carousel_button_next {
+    align-self: center;
+    background-image: url("../images/arrow-forward.png");
 }
 
 .content .filters {
