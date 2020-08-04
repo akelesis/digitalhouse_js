@@ -13,9 +13,7 @@ const re = (element, event, callback) =>
 
 // Controlador Slide
 class Slide {
-  constructor({...props }) {
-    if (!props)
-      return console.log('Você deve informar as propriedades do Objeto');
+  constructor(props) {
     this.props = props;
     this.init();
     return this;
@@ -28,12 +26,20 @@ class Slide {
     this.items = this.slideContainer.children;
     this.currentSlide = 0;
     if (this.props.auto) this.autoSlide();
-
+    if (this.props.controls)
+      this.slideWrap.appendChild(this.createControls());
+    this.changeSlide(this.props.startAtSlide || 0);
   }
 
   makeActive(slide) {
-    this.items.forEach(item => item.classList.remove('active'));
+    [...this.items].forEach(item => item.classList.remove('active'));
     this.items[slide].classList.add('active');
+    if (this.controls) {
+      [...this.controls.children].forEach(
+        item => item.classList.remove('active')
+      );
+      this.controls.children[slide].classList.add('active');
+    }
   }
 
   moveSlide(pos) {
@@ -46,11 +52,10 @@ class Slide {
     if (slide >= this.items.length) {
       slide = 0;
     }
+    const left = this.items[slide].offsetLeft;
     this.currentSlide = slide;
-    const left = this.items[this.currentSlide].offsetLeft;
-
+    this.makeActive(slide);
     this.moveSlide(-left);
-
   }
 
   prevSlide() {
@@ -65,15 +70,30 @@ class Slide {
     }
   }
 
+  createControls() {
+    this.controls = document.createElement('div');
+    [...this.items].forEach(
+      (_, index) => {
+        const button = document.createElement('button');
+        button.textContent = index + 1;
+        ae(button, 'click', () => this.changeSlide(index));
+        this.controls.appendChild(button);
+      }
+    );
+    this.controls.setAttribute('data-control-slide', this.props.slide);
+    return this.controls;
+  }
+
   bind() {
     this.autoSlide = this.autoSlide.bind(this);
+    this.createControls = this.createControls.bind(this);
+    this.changeSlide = this.changeSlide.bind(this);
   }
 }
 
 class Book {
-  constructor({...props }) {
-    this.props = props || {};
-    console.log(this.props);
+  constructor(props) {
+    this.props = props;
   }
 }
 
@@ -103,7 +123,7 @@ const slide = new Slide({
   slide: 'carousel',
   time: 3500,
   auto: true,
+  controls: true,
 })
-
 
 // slide.changeSlide(1);

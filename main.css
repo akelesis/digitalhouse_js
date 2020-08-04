@@ -144,6 +144,7 @@ body {
   align-items: center;
   background-color: #ccc;
   overflow: hidden;
+  position: relative;
 }
 
 [data-slide] {
@@ -164,6 +165,31 @@ body {
   align-items: center;
   color: #fff;
   font-family: "Mulish", sans-serif;
+}
+
+[data-control-slide] {
+  position: absolute;
+  display: flex;
+  bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+[data-control-slide] > * {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  overflow: hidden;
+  text-indent: -50px;
+  border: 2px solid #cecece;
+  background:#fff4;
+  cursor: pointer;
+}
+
+[data-control-slide] > .active {
+  border: 2px solid orangered;
 }
 
 .slide_item_1 {
