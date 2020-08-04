@@ -17,11 +17,9 @@ menuBTN.addEventListener("click", function () {
 })
 
 //Carrossel
-//Encontrando no html
 const imagensCarroussel = document.querySelectorAll(".imagensCaroussel");
 const btnAnterior = document.getElementById("btn-anterior");
 const btnProximo = document.getElementById("btn-proximo");
-
 
 /*mostra cada imagem uma só vez com um intervalo entre elas, 
 responsavel por baixar a primeira imagem do carrossel e termina com ultima imagem da lista
@@ -126,7 +124,7 @@ const livros = [
         imagem: "img/droga-da-obediencia.jpg",
         preco: faixaDePreco[1],
         genero: genero[0],
-        descricao: "A Droga da Obediência” é o primeiro livro da série “os Karas”. Escrito em 1984 por Pedro Bandeira, a obra narra as aventuras de um grupo secreto de adolescentes que decidem desvendar os mistérios em torno do sumiço de algumas alunos nas escolas paulistas"
+        descricao: "A Droga da Obediência” é o primeiro livro da série “os Karas”. Escrito em 1984 por Pedro Bandeira, a obra narra as aventuras de um grupo secreto de adolescentes que decidem desvendar os mistérios em torno do sumiço de algumas alunos nas escolas paulistas."
     },    
     {
         titulo: "A hospedeira",
@@ -170,12 +168,16 @@ btnBusca.onclick = function teste() {
 
     const livrosFiltrados = livros.filter (livro => {
         let listaFiltrada;
+        let listaFiltradaPorTitulo;
         if (barraDePesquisa.value != 0){
             let livroProcurado = barraDePesquisa.value;
-            let livroAchado = livro.titulo.indexOf(livroProcurado) > -1 ? true : false;
-            listaFiltrada = livroAchado;
+            let tituloLivro = livro.titulo.toLowerCase()
+            let livroAchado = tituloLivro.indexOf(livroProcurado) > -1 ? true : false;
+            listaFiltradaPorTitulo = livroAchado;
         } else {
-        if (precos.value == false){
+            listaFiltradaPorTitulo = false;
+        }
+            if (precos.value == false){
             listaFiltrada = livro.genero == generos.value;
         }
         else if (generos.value && livro.preco){
@@ -184,9 +186,7 @@ btnBusca.onclick = function teste() {
         else if (generos.value == false) {
             listaFiltrada = livro.preco == precos.value
         }
-    }
-        return listaFiltrada;
- 
+        return listaFiltradaPorTitulo && listaFiltrada || listaFiltradaPorTitulo || listaFiltrada;
     })    
     
     livrosFiltrados.forEach (livro => {
