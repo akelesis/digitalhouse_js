@@ -56,7 +56,7 @@ body {
 
 .navigation ul li a .title{
     position: relative;
-    display: block;
+    display: flex;
     height: 60px;
     line-height: 60px;
     justify-content: flex-start;
@@ -66,6 +66,51 @@ body {
     font-size: 1.2em;
     font-family: "Mulish", sans-serif;
 }
+
+.navigation ul li button{
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    color: #EEE0CB;
+    border: none;
+    background: none;
+    width: 100%;
+    text-decoration: none;
+    margin: 0;
+    font-size: 100%;
+    padding: 0;
+}
+
+.navigation ul li button:hover{
+    cursor: pointer;
+}
+
+.navigation ul li button .title{
+    position: relative;
+    display: flex;
+    height: 60px;
+    line-height: 60px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+    white-space: nowrap;
+    font-size: 1.2em;
+    font-family: "Mulish", sans-serif;
+}
+
+.navigation ul li button .icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+
 
 .bookshop_header {
     position: fixed;
@@ -207,7 +252,7 @@ body {
 .showcase {
     width: 80vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-self: center;
     margin: 50px 0;
@@ -227,20 +272,20 @@ body {
 
 .overlay {
     font-family: "Mulish", sans-serif;
+    top: 0;
+    margin: 0;
     overflow-y: hidden;
     display: flex;
+    justify-content: space-around;
     color: transparent;
-    width: 300px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
+    text-align: center;
     left: 0;
-    top: 20px;
     z-index: 1;
-    padding: 50px;
-    box-sizing: border-box;
     transition: background-color 1s, color 1s, top 0.5s;
 }
 
