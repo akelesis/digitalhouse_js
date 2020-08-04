@@ -92,7 +92,6 @@ for (let i = 1; i < precos.length; i++){
 }
 
 
-
 const livros = [
     {
         titulo: 'A menina que não sabia ler',
@@ -141,7 +140,6 @@ const livros = [
 //Inserindo os livros atravez do array de objetos
 const showcase = document.querySelectorAll(".showcase")
 livros.forEach(livro => {
-    console.log(livro)
     let resultado = document.createElement("div");
     let overlay = document.createElement("div")
     overlay.setAttribute("class", "overlay")
@@ -172,6 +170,11 @@ btnBusca.onclick = function teste() {
 
     const livrosFiltrados = livros.filter (livro => {
         let listaFiltrada;
+        if (barraDePesquisa.value != 0){
+            let livroProcurado = barraDePesquisa.value;
+            let livroAchado = livro.titulo.indexOf(livroProcurado) > -1 ? true : false;
+            listaFiltrada = livroAchado;
+        } else {
         if (precos.value == false){
             listaFiltrada = livro.genero == generos.value;
         }
@@ -181,7 +184,7 @@ btnBusca.onclick = function teste() {
         else if (generos.value == false) {
             listaFiltrada = livro.preco == precos.value
         }
-
+    }
         return listaFiltrada;
  
     })    
