@@ -98,19 +98,44 @@ nav a{
 #dh_carousel {
     width: 100%;
     height: 60vh;
-
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-
     background-color: #ccc; 
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+.btn_carousel {
+    height: 100%;
+    width: 50px;
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    background-color: rgba(55, 55, 55, 0.2);
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: filter .3s;
+}
+
+.btn_carousel:hover {
+    background-color: rgba(55, 55, 55, 0.5);
+}
+
+#dv_load {
+    width: 100%;
+    height: 8px;
+    margin-top: 25%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#dv_bar {
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
 }
 
 .filters {
