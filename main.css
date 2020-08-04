@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     display: flex;
@@ -17,7 +20,7 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background-color: #F71735;
+    background-color: lightcoral;
     color: #EEE0CB;
 }
 
@@ -48,24 +51,6 @@ body {
 .content {
     display: flex;
     flex-direction: column;
-}
-
-#dh_carousel {
-    width: 100%;
-    height: 60vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #ccc; 
-}
-
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
 }
 
 .filters {
@@ -126,53 +111,12 @@ body {
     border: 1px solid #888;
 }
 
-.showcase {
-    width: 80vw;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-self: center;
-    margin: 50px 0;
-}
-
-.card {
-    width: 300px;
-    height: 400px;
-    margin: 10px 0;
-    position: relative;
-}
-
-.overlay {
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 5;
-
-    background-color: #7777;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-    box-sizing: border-box;
-}
-
 footer {
     width: 100%;
     height: 80px;
-    background-color: #F71735;
+    background-color: lightcoral;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
-}
-
-@media(min-width: 1498px) {
-    .showcase {
-        width: 60vw;
-    }
 }

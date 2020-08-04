@@ -1,0 +1,59 @@
+[
+    {
+    "id": 1,
+    "name": "Deuses Americanos",
+    "img": "deuses_americanos.jpg",
+    "category": "ficcao",
+    "price": 45.00,
+    "description": " A saga de Deuses americanos é contada ao longo da jornada de Shadow Moon, um ex-presidiário de trinta e poucos anos que acabou de ser libertado e cujo único objetivo é voltar para casa e para a esposa, Laura. Os planos de Shadow se transformam em poeira quando ele descobre que Laura morreu em um acidente de carro. Sem lar, sem emprego e sem rumo, ele conhece Wednesday, um homem de olhar enigmático que está sempre com um sorriso no rosto, embora pareça nunca achar graça de nada. Depois de apostas, brigas e um pouco de hidromel, Shadow aceita trabalhar para Wednesday e embarca em uma viagem tumultuada e reveladora por cidades inusitadas dos Estados Unidos, um país tão estranho para Shadow quanto para Gaiman. É nesses encontros e desencontros que o protagonista se depara com os deuses - os antigos (que chegaram ao Novo Mundo junto dos imigrantes) e os modernos (o dinheiro, a televisão, a tecnologia, as drogas) -, que estão se preparando para uma guerra que ninguém viu, mas que já começou. O motivo? O poder de não ser esquecido."
+},
+{
+    "id": 2,
+    "name": "As Travessuras da Menina Má",
+    "img": "travessuras_menina.jpg",
+    "category": "romance",
+    "price": 15.00,
+    "description": "O peruano Ricardo vê realizado, ainda jovem, o sonho que sempre alimentou: o de viver em Paris. O reencontro com um amor da adolescência o trará de volta à realidade. Lily - inconformista, aventureira e pragmática - o arrastará para fora do pequeno mundo de suas ambições. Ricardo e Lily - ela sempre mudando de nome e de marido - se reencontram várias vezes ao longo da vida, em diferentes partes do mundo. Na Paris revolucionária dos anos 60; na Londres das drogas, da cultura hippie e do amor livre dos anos 70; na Tóquio dos grandes mafiosos; e na Madri em transição política dos anos 80. Uma narrativa ágil, ao mesmo tempo vigorosa e terna, conduz o leitor nesta dança de encontros e desencontros. Criando uma admirável tensão entre o cômico e o trágico, Mario Vargas Llosa joga com a realidade e a ficção para contar uma história em que o amor se mostra indefinível, senhor de mil faces, como a menina má do título. Paixão e distância, acaso e destino, dor e prazer..." 
+},
+{
+    "id": 3,
+    "name": "A Insustentável Leveza do Ser",
+    "img": "insustentavel.jpg",
+    "category": "romance",
+    "price": 22.00,
+    "description": "Sobre este romance, Italo Calvino escreveu: 'O peso da vida, para Kundera, está em toda forma de opressão. O romance nos mostra como, na vida, tudo aquilo que escolhemos e apreciamos pela leveza acaba bem cedo se revelando de um peso insustentável. Apenas, talvez, a vivacidade e a mobilidade da inteligência escapam à condenação - as qualidades de que se compõe o romance e que pertencem a um universo que não é mais aquele do viver' (Seis propostas para o próximo milênio). O livro, de 1982, tem quatro protagonistas: Tereza e Tomas, Sabina e Franz. Por força de suas escolhas ou por interferência do acaso, cada um deles experimenta, à sua maneira, o peso insustentável que baliza a vida, esse permanente exercício de reconhecer a opressão e de tentar amenizá-la."
+},
+{
+    "id": 4,
+    "name": "Orgulho e Preconceito",
+    "img": "orgulho.jpg",
+    "category": "romance",
+    "price": 54.00,
+    "description": "Orgulho e preconceito é o livro mais famoso de Jane Austen e possui uma série de personagens inesquecíveis e um enredo memorável. Austen nos apresenta Elizabeth Bennet como heroína irresistível e seu pretendente aristocrático, o sr. Darcy. Nesse livro, aspectos diferentes são abordados: orgulho encontra preconceito, ascendência social confronta desprezo social, equívocos e julgamentos antecipados conduzem alguns personagens ao sofrimento e ao escândalo. O livro pode ser considerado a obra-prima da escritora, que equilibra comédia com seriedade, observação meticulosa das atitudes humanas e sua ironia refinada."
+},
+{
+    "id": 5,
+    "name": "A Sutil Arte de Ligar o Foda-se",
+    "img": "fodase.jpg",
+    "category": "autoajuda",
+    "price": 39.90,
+    "description": "Chega de tentar buscar um sucesso que só existe na sua cabeça. Chega de se torturar para pensar positivo enquanto sua vida vai ladeira abaixo. Chega de se sentir inferior por não ver o lado bom de estar no fundo do poço. Coaching, autoajuda, desenvolvimento pessoal, mentalização positiva — sem querer desprezar o valor de nada disso, a grande verdade é que às vezes nos sentimos quase sufocados diante da pressão infinita por parecermos otimistas o tempo todo. É um pecado social se deixar abater quando as coisas não vão bem. Ninguém pode fracassar simplesmente, sem aprender nada com isso. Não dá mais. É insuportável. E é aí que entra a revolucionária e sutil arte de ligar o foda-se. Mark Manson usa toda a sua sagacidade de escritor e seu olhar crítico para propor um novo caminho rumo a uma vida melhor, mais coerente com a realidade e consciente dos nossos limites. E ele faz isso da melhor maneira. Como um verdadeiro amigo, Mark se senta ao seu lado e diz, olhando nos seus olhos: você não é tão especial. Ele conta umas piadas aqui, dá uns exemplos inusitados ali, joga umas verdades na sua cara e pronto, você já se sente muito mais alerta e capaz de enfrentar esse mundo cão. Para os céticos e os descrentes, mas também para os amantes do gênero, enfim uma abordagem franca e inteligente que vai ajudar você a descobrir o que é realmente importante na sua vida, e f*da-se o resto. Livre-se agora da felicidade maquiada e superficial e abrace esta arte verdadeiramente transformadora."
+},
+{
+    "id": 6,
+    "name": "O Hobbit",
+    "img": "hobbit.jpg",
+    "category": "fantasia",
+    "price": 30.00,
+    "description": "Bilbo Baggins, the hobbit, is a peaceful sort of  cozy hole in the Shire, a place where adventures  are uncommon and rather unwanted. So when the  wizard Gandalf whisks him away on a treasure hunting  expedition with a troop of rowdy dwarves, he's not  entirely thrilled. Encountering ruthless trolls,  beastly orcs, gigantic spiders, and hungry wolves,  Bilbo discovers within himself astonishing strength  and courage. And at the ultimate confrontation  with the fearsome dragon Smaug, the hobbit will brave  the dangers of dark and dragon fire alone and  unaided. Brilliantly conceived to evoke Tolkien's  richly imagined Middle Earth, this production features  an original score written for Renaissance era  instruments outstanding ensemble acting by the best  performers available to the BBC and innovative sound  techniques designed to present a hobbit's eye view  of Bilbo's adventures. A fitting tribute to the  centenary of J.R Tolkien's birth. The Hobbit will  captivate longtime fans and the newly initiated  alike."
+},
+{
+    "id": 7,
+    "name": "As Cidades Invisiveis",
+    "img": "cidades.jpg",
+    "category": "fantasia",
+    "price": 60.00,
+    "description": "Se meu livro As cidades invisíveis continua sendo para mim aquele em que penso haver dito mais coisas, será talvez porque tenha conseguido concentrar em um único símbolo todas as minhas reflexões, experiências e conjeturas. Assim se refere a este livro o próprio Italo Calvino - um dos escritores mais importantes e instigantes da segunda metade do século xx. O famoso viajante Marco Polo descreve para Kublai Khan as incontáveis cidades do imenso império do conquistador mongol. Neste livro surpreendente, a cidade deixa de ser um conceito geográfico para se tornar um símbolo complexo e inesgotável da experiência humana. Esta edição traz oito desenhos inéditos de Matteo Pericoli realizados especialmente para a Companhia das Letras."
+}
+
+]
