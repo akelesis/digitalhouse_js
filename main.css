@@ -21,6 +21,7 @@ body {
     color: #EEE0CB;
 }
 
+
 .dh_title {
     font-family: "Mulish", sans-serif;
     font-weight: 300;
@@ -113,21 +114,13 @@ body {
     position: relative;
 }
 
-.banners{
-    width: 100%;
+#banners{
+    width: 100vw;
     height: 100%;
-    display: none;
-    left: -100%;
-    position: absolute;
-}
-
-.active-banner{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: left .10s;
-    transform: translateX(100%);
-    /*-1311px*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .25s linear;
 }
 
 .carrousel_label {
@@ -211,6 +204,10 @@ body {
     position: relative;
 }
 
+.card img{
+    border-radius: 5px;
+}
+
 .overlay {
     width: 300px;
     height: 400px;
@@ -229,6 +226,7 @@ body {
 
     padding: 10px;
     box-sizing: border-box;
+    border-radius: 5px;
 }
 
 footer {
