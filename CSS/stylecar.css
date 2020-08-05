@@ -1,0 +1,64 @@
+body{
+    background-image: url(https://i.pinimg.com/originals/32/7e/98/327e983bf836dbfcf8ca12241fa1f0a6.jpg);
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: blanchedalmond;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    font-size: 30pt;
+}
+
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: snow;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#interface{
+    background-color: rgba(50, 50, 75, 0.8);
+    margin: 30px;
+    padding: 10px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.5)
+}
+
+#menu{
+    display: block;
+}
+
+#menu ul{
+    position: absolute;
+    top: 20px;
+    left: 50vw;
+}
+
+#menu li{
+    display: inline-block;
+    background-color: #666666;
+    color: white;
+    padding: 4px;
+    margin-left: 0px;
+    transition: background-color 1s;
+}
+
+#menu li:hover{
+    background-color: rgb(50, 50, 75);
+}
+
+.largura{
+    display: inline-block;
+    width: 30vw;
+    margin: auto;
+    text-align: center;
+}
+
+#novidades, #sagas{
+    border-bottom: 40px rgb(255, 240, 200) solid;
+}
+
+.img{
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background 1s;
+}

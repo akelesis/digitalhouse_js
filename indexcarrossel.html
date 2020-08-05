@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estante de Livros</title>
+    <link rel="stylesheet" href="css/stylecar.css">
+</head>
+<body>
+    <div id="interface">
+        <header>
+            <h1>Estante de Livros</h1>
+            <h2>Escolha um e boa leitura!</h2>
+
+            <nav id="menu">
+                <ul>
+                    <li>HOME</li>
+                    <li>NOVIDADES</li>
+                    <li>SAGAS</li>
+                    <li>CATEGORIA: <select name="Categoria" id="filtro">
+                            <option value="Todos">Todas</option>
+                            <option value="Fantasia">Fantasia</option>
+                            <option value="Policial">Policial</option>
+                            <option value="Romance">Romance</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="novidades">
+                <div id="livro1" class="largura img"></div>
+                <div id="livro2" class="largura img"></div>
+                <div id="livro3" class="largura img"></div>
+            </section>      
+            <section id="sagas">
+                <div id="livro4" class="largura img"></div>
+                <div id="livro5" class="largura img"></div>
+                <div id="livro6" class="largura img"></div>
+            </section>
+
+        </main>
+
+    </div>
+    
+    <script src="carrossel.js"></script>
+</body>
+</html>
