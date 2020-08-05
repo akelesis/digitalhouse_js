@@ -194,7 +194,7 @@ btnBusca.onclick = function teste() {
             listaFiltradaPorPreco = faixaDePreco == precos.value;
         }
         return (listaFiltradaPorTitulo && listaFiltradaPorGenero || listaFiltradaPorPreco) 
-        || listaFiltradaPorTitulo || listaFiltrada || (listaFiltradaPorPreco && listaFiltradaPorGenero);
+        || listaFiltradaPorTitulo || listaFiltrada || listaFiltradaPorGenero || listaFiltradaPorPreco || (listaFiltradaPorPreco && listaFiltradaPorGenero);
     })    
     
     livrosFiltrados.forEach (livro => {
