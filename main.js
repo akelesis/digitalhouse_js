@@ -61,41 +61,66 @@ function cardBook () {
 
 }
 
+function filtroNome (nome, objLivro) {
+    const bookName = objLivro.filter(livro => livro.titulo === nome || livro.editora === nome || livro.autor === nome)
+
+    return bookName;
+}
+
+function filtroCategoria (categoria, objLivro){
+
+    const bookCategoria = objLivro.filter(livro => livro.categoria === categoria);
+
+    return bookCategoria;
+}
+
+function filtroPreco (preco, objLivro) {
+    
+    const bookPreco = objLivro.filter(livro => livro.precoR === preco)
+
+    return bookPreco;
+}
+
 function filtro () {
 
     document.getElementById('container-card').innerHTML = "";
 
-    const acharName = document.getElementById("search_bar").value;
+    const inputName = "Darkside" //document.getElementById("search_bar").value;
 
     const categoria = document.getElementById("category");
-    const acharCategoria = categoria.options[categoria.selectedIndex].value;
+    const inputCategoria = "Terror" //categoria.options[categoria.selectedIndex].value;
 
     const precoRange = document.getElementById("price_range");
-    const acharPreco = precoRange.options[precoRange.selectedIndex].value;
-    
-    const bookName = livraria.results.filter(livro => livro.titulo === acharName || livro.editora === acharName || livro.autor === acharName || livro.categoria === acharCategoria || livro.precoR === acharPreco)
-    
-    for (let i = 0; i < bookName.length; i++) {
+    const inputPreco = "medio" //precoRange.options[precoRange.selectedIndex].value;
+
+    let resultLivros = livraria.results
+
+    if (inputName != "") {
+        resultLivros = filtroNome(inputName, resultLivros);
+    }
+    if (inputCategoria != "") {
+        resultLivros = filtroCategoria(inputCategoria, resultLivros);
+    }
+    if (inputPreco != "") {
+        resultLivros = filtroPreco(inputPreco, resultLivros);
+    }
+
+    resultLivros.forEach(livro => {
         document.getElementById('container-card').innerHTML += `
             <div class="card" >
-                <img src=${bookName[i].capa} id="card-img">
+                <img src=${livro.capa} id="card-img">
                 <div class="overlay">
                     <div class="overlay_into">
-                        <h2>${bookName[i].titulo}</h2>
-                        <h3>${bookName[i].autor}</h3>
-                        <p>${bookName[i].descricao}</p>
-                        <p>R$ ${(bookName[i].preco).toFixed(2)}</p>
+                        <h2>${livro.titulo}</h2>
+                        <h3>${livro.autor}</h3>
+                        <p>${livro.descricao}</p>
+                        <p>R$ ${(livro.preco).toFixed(2)}</p>
                     </div>
                 </div>
             </div>
         `;
-    }
-
+    })
 }
-
 
 slideShow();
 cardBook();
-
-
-
