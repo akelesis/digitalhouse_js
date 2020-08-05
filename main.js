@@ -155,20 +155,25 @@ function filterProductsByPriceAndCategory(productsArray, getPriceRange, getProdu
 
 function getSelectedBooksPriceRange(){
     
-    /* Padrão do valor recebido do select(elemento html) num(início do range)?num(final do range). Ex: "20?40" */
+    /* Padrão do valor recebido do select(elemento html) num(início do range)...num(final do range). Ex: "20...40" */
 
-    const myPriceRangeArray = filterSelectPrice.value.split('?');
+    const myPriceRangeArray = filterSelectPrice.value.split('...').map(num => parseInt(num));
 
     return {
 
-        initialPrice: parseInt(myPriceRangeArray[0]),
-        finalPrice: parseInt(myPriceRangeArray[1])
+        initialPrice: myPriceRangeArray[0],
+        finalPrice: myPriceRangeArray[1]
     }
 }
 
 function getSelectedBookCategory(){
 
     return filterSelectCategory.value;
+}
+
+function getFilteredBooks(){
+
+    return filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory);
 }
 
 window.addEventListener('load', function(){
@@ -179,12 +184,5 @@ window.addEventListener('load', function(){
 
     menuButton.addEventListener('click', toggleHtmlElementAttribute('active', menuSection, {on: 'true', off: 'false'}));
     
-    booksFiltersSelects.forEach(select => select.addEventListener('change', function(event){
-
-        const filteredBooks = filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory);
- 
-        console.log(filteredBooks);
-        console.log(event);
-     }))
-    
+    booksFiltersSelects.forEach(select => select.addEventListener('change', getFilteredBooks));
 })
