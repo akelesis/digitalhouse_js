@@ -163,6 +163,10 @@ btnBusca.onclick = function teste() {
     }
 
     const livrosFiltrados = livros.filter (livro => {
+        function removerAcentos(s) {
+            return s.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
+        }
+
         let precoDoLivro = livro.preco; 
         let faixaDePreco;
         if (precoDoLivro >= 1 && precoDoLivro <= 20) {
@@ -179,11 +183,12 @@ btnBusca.onclick = function teste() {
         let listaFiltradaPorGenero;
         let listaFiltradaPorTitulo;
         if (barraDePesquisa.value != 0){
-            let livroProcurado = barraDePesquisa.value;
+            let livroProcurado = barraDePesquisa.value.toLowerCase();
             let tituloLivro = livro.titulo.toLowerCase();
-            let livroAchado = tituloLivro.indexOf(livroProcurado) > -1 ? true : false;
+            let tituloLivroSemAcento = removerAcentos(tituloLivro)
+            let livroAchado = tituloLivroSemAcento.indexOf(livroProcurado) > -1 ? true : false;
             listaFiltradaPorTitulo = livroAchado;
-        } 
+        }
             if (precos.value == false){
             listaFiltradaPorGenero = livro.genero == generos.value;
         }
