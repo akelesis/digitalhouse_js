@@ -20,25 +20,79 @@ body {
 }
 
 .book_add{
+    font-family: "Mulish",sans-serif;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     align-self: center;
-    top: 80px;
-    width: 500px;
+    top: 40vh;
+    width: 33%;
     height: 0px;
     background-color: #F71735;
     transition: 0.5s;
     overflow: hidden;
     z-index: 2;
+    border-radius: 10px;
+
 }
+
+.book_add .container_input{
+    width: 50%;
+    height: 50px;
+    position: relative;
+}
+
+.book_add .container_input .input_label{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.book_add .container_input .input_label .input_content{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.2s;
+}
+
+.book_add .container_input .book_input{
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    border: none;
+    background: transparent;
+    font-family: "Mulish",sans-serif;
+}
+
+
 .book_add #add_buttons{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .book_add button{
-    width: 20%;
+    width: 100%;
+    background-color: #F71735;
+    color: #EEE0CB;
+    border: none;
+    background: none;
+    text-decoration: none;
+    font-size: 100%;
+    margin: 10px;
+    padding: 10;
+    transition: 1s;
+}
+
+.book_add button:hover{
+    background-color: #EEE0CB;
+    color: black;
+    cursor: pointer;
+
 }
 
 .navigation ul{
@@ -92,7 +146,6 @@ body {
 .navigation ul li button{
     position: relative;
     display: flex;
-    text-decoration: none;
     color: #EEE0CB;
     border: none;
     background: none;
@@ -177,10 +230,12 @@ body {
 .content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 #dh_carousel {
     width: 100vw;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,7 +254,6 @@ body {
     flex: none;
 
     width: 100%;
-    height: 650px;
     scroll-snap-align: center;
     pointer-events: none;
 
@@ -294,7 +348,7 @@ body {
 
 .overlay {
     font-family: "Mulish", sans-serif;
-    top: 0;
+    top: 20px;
     margin: 0;
     overflow-y: hidden;
     display: flex;
@@ -310,7 +364,6 @@ body {
     z-index: 1;
     transition: background-color 1s, color 1s, top 0.5s;
 }
-
 
 
 footer {

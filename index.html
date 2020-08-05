@@ -74,14 +74,14 @@
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
+                    <option value="" selected="true">Selecione a categoria</option>
                     <option value="Auto Ajuda">Auto Ajuda</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="Romance">Romance</option>
                 </select>
                 <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
+                    <option value="" selected="true">Faixa de preço</option>
                     <option value="barato">R$1 - R$20</option>
                     <option value="medio">R$21 - R$40</option>
                     <option value="caro">R$41 - R$60</option>
@@ -94,9 +94,24 @@
         </section>
     </main>
     <div class="book_add">
-        <input type="text" id="book_title_add" class = "book_input" placeholder="Título">
-        <input type="text" id="book_img_add" class = "book_input" placeholder="Imagem">
-        <input type="text" id="book_description_add" class = "book_input" placeholder="Descrição">
+        <div class="container_input">
+            <div class="input_label">
+                <span class = "input_content">Título do livro</span>
+            </div>
+            <input type="text" id="book_title_add" class = "book_input">
+        </div>
+        <div class="container_input">
+            <div class="input_label">
+                <span class = "input_content">Link da imagem</span>
+            </div>
+            <input type="text" id="book_img_add" class = "book_input" >
+        </div>
+        <div class="container_input">
+            <div class="input_label">
+                <span class = "input_content">Descrição do livro</span>
+            </div>
+            <input type="text" id="book_description_add" class = "book_input" >
+        </div>
         <div id="add_buttons">
             <button id="book_confirm_cancel">Cancelar</button>
             <button id="book_confirm_add">Adicionar Livro</button>
