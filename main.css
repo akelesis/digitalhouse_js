@@ -1,3 +1,4 @@
+/* ----- Geral ----- */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
 
 body {
@@ -7,6 +8,7 @@ body {
     background-color: #EEE0CB;
 }
 
+/* ----- header ----- */
 .bookshop_header {
     width: 100%;
     height: 80px;
@@ -44,21 +46,20 @@ body {
     cursor: pointer;
 }
 
+/* ----- menu lateral ----- */
 nav{
     width: 20%;
     height: 40vh;
-    z-index: 5;
+    z-index: 10;
     position: absolute;
-    right: -50%;
+    display: none;
     margin-top: 80px;
     background-color: #f71725;
-    border-style: groove;
-    border-width: 2px;
-    border-color: transparent;
     transition: 1s;
 }
 
 nav.show{
+    display: block;
     right: 0;
 }
 
@@ -97,30 +98,61 @@ img.menu{
     margin: 0 7%;
 }
 
-
+/* ----- main ----- */
 .content {
     display: flex;
     flex-direction: column;
 }
 
+/* ----- Carrosel ----- */
 #dh_carousel {
     width: 100%;
     height: 60vh;
+    margin-bottom: 5vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #ccc; 
 }
 
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+#carousel {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: relative; 
+}
+    
+#carousel img {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
+#carousel img.active{
+    display: block;
+}
+
+#back, #next{
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    position: absolute;
+    top: 40%;
+    border: none;
+    outline: none;
+}
+
+#back{
+    left: 5%;
+    background: url(img/back.svg) no-repeat center;
+    background-size: 40px;
+}
+
+#next{
+    right: 5%;
+    background: url(img/next.svg) no-repeat center;
+    background-size: 40px;
+}
+
+/* ----- pesquisa ----- */
 .filters {
     width: 100%;
     height: 120px;
@@ -179,6 +211,7 @@ img.menu{
     border: 1px solid #888;
 }
 
+/* ----- livros ----- */
 .showcase {
     width: 80vw;
     display: flex;
@@ -188,7 +221,13 @@ img.menu{
     margin: 50px 0;
 }
 
-.card {
+.showcase h2{
+    width: 50%;
+    text-align: center;
+    padding: 0 25%;
+}
+
+.card{
     width: 300px;
     height: 400px;
     margin: 10px 0;

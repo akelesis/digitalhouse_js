@@ -1,5 +1,0 @@
-Carrossel
-
-Inserção de livros por javascript
-
-Filtragem de pesquisa
