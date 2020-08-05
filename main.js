@@ -7,6 +7,7 @@ const btn_book_cancel = document.getElementById("book_confirm_cancel");
 const book_add_inputs = document.querySelectorAll(".book_input");
 const book_title_add = document.getElementById("book_title_add");
 const book_img_add = document.getElementById("book_img_add");
+const book_price_add = document.getElementById("book_price_add");
 const book_description_add = document.getElementById("book_description_add");
 const side_bar = document.querySelector(".navigation");
 const search_button = document.getElementById("search_button");
@@ -271,20 +272,22 @@ btn_book_add.addEventListener("click",function(){
     if(!IsNotEmpty()){
         alert("Preencha todos os campos!")
     }
+    else if(isNaN(parseInt(book_price_add.value))){
+        alert("Coloque um preço válido!")
+    }
     else{
         const book = {
             title: book_title_add.value,
             image: book_img_add.value,
+            price: book_price_add.value,
             description: book_description_add.value,
-            category: [
-                "Auto Ajuda"
-            ],
-            price: 25
+            category: book_category_add.value,
         }
         books_list.push(book);
         LoadBooks();
         RefreshCards();
         book_add_menu.style.height = "0%";
+        book_add_menu.style.border = "none";
         alert("Livro adicionado!")
         EmptyInputs()
     }
