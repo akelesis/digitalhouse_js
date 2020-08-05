@@ -38,8 +38,15 @@ const filterByName = () => {
     }
 }
 
-const filterByCategory = (listBooks) => {
-
+const filterByCategory = () => {
+    const category = document.getElementById("category").value
+    const newSearch = listBooks.filter(book => {
+        return book.category.match(category)
+    })
+    cardSection.innerHTML = ""
+    for (i=0; i<newSearch.length; i++){
+        cardSection.innerHTML += cards(newSearch[i])
+    }
 }
 
 const filterByPrice = (listBooks) => {
