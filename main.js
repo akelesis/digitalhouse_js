@@ -9,6 +9,7 @@ const menuItems = document.querySelector('.menu-items')
 const conteinerLivros = document.querySelector('.showcase')
 
 let bgNumber = 0
+let bkpListLivros
 
 function carregaLivros(filterLivros) {
 
@@ -70,6 +71,7 @@ function filtraCategoria() {
         newList = listaLivros.filter(livros => {
             return livros.category == filterCategory.value
         })
+        bkpListLivros = newList
     }
 
     carregaLivros(newList)
@@ -79,7 +81,9 @@ function filtraPreco() {
     let newList
     let min, max
 
-    if (filterPrice.value == "Todos") {
+    const newArr = (filterCategory.value != "Todos" && bkpListLivros.length != undefined) ? bkpListLivros : listaLivros
+
+    if (filterPrice.value == "Todos" && filterCategory.value == "Todos") {
         newList = listaLivros
     } else {
         switch (filterPrice.value) {
@@ -100,12 +104,15 @@ function filtraPreco() {
                 max = 99999
                 break;
             default:
+                min = 0
+                max = 99999
                 break;
         }
-        newList = listaLivros.filter(livros => {
+        newList = newArr.filter(livros => {
             return livros.price >= min && livros.price <= max
         })
     }
+
     carregaLivros(newList)
 }
 
