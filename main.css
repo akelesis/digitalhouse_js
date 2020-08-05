@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    font-family: "Mulish", sans-serif; /* Alteração da Fonte */
 }
 
 .bookshop_header {
@@ -17,8 +18,12 @@ body {
     align-items: center;
     justify-content: space-between;
 
-    background-color: #F71735;
-    color: #EEE0CB;
+    /* background-color: #F71735;
+    color: #EEE0CB; */
+    /* Atualização de cor */
+    background-color: #bc002e;
+    color: #fff;
+
 }
 
 .dh_title {
@@ -34,8 +39,13 @@ body {
     border-radius: 5px;
     outline: none;
 
-    background-color: #f7425a;
-    color: #EEE0CB;
+    /* background-color: #f7425a;
+    color: #EEE0CB; */
+
+    /* Atualização de cor */
+    background-color: #EEE;
+    color: #040e3c;
+
     font-size: 25px;
     transition: filter .3s;
 }
@@ -49,7 +59,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-
+/*
 #dh_carousel {
     width: 100%;
     height: 60vh;
@@ -67,7 +77,7 @@ body {
     font-size: 25px;
     color: #777;
 }
-
+*/
 .filters {
     width: 100%;
     height: 120px;
@@ -126,23 +136,23 @@ body {
     border: 1px solid #888;
 }
 
-.showcase {
+/* .showcase {
     width: 80vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-self: center;
     margin: 50px 0;
-}
+} */
 
-.card {
+/* .card {
     width: 300px;
     height: 400px;
     margin: 10px 0;
     position: relative;
-}
+} */
 
-.overlay {
+ /* .overlay {
     width: 300px;
     height: 400px;
     position: absolute;
@@ -159,20 +169,200 @@ body {
 
     padding: 10px;
     box-sizing: border-box;
-}
+} */
 
 footer {
     width: 100%;
     height: 80px;
-    background-color: #F71735;
+    /* background-color: #F71735;
+    color: #EEE0CB; */
+    /* Atualização de cor */
+    background-color: #333;
+    color: #fff;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #EEE0CB;
 }
 
 @media(min-width: 1498px) {
     .showcase {
         width: 60vw;
     }
+}
+
+/* Alterações Douglas Reis - Vespertino */
+
+/* Menu */
+*{
+    box-sizing: border-box;
+}
+.sidenav {
+    background-color: #bc002e;
+    list-style: none;
+    
+    height: 100%;
+    width: 266px;
+    
+    position: fixed;
+    top: 0;
+    right: -266px;
+    z-index: 10;
+    
+    margin: 0;
+    padding: 60px 20px;
+    
+    transition: 1s;
+}
+
+.sidenav a {
+    color: #ccc;
+    
+    text-decoration: none;
+    font-size: 25px;
+    
+    display: block;
+    padding: 8px;
+    border-bottom: 1px solid #fff;
+}
+
+.sidenav a:hover{
+    background-color: #cb1e40;
+    color: #fff;
+}
+
+.sidenav .closeNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    font-size: 36px;
+    border: none;
+}
+
+/* Carousel */
+
+#dh_carousel{
+    overflow: hidden;
+}
+
+#carousel_container{
+    display: flex;
+    width: 300%; /* relativo ao nº de elementos */
+    height: 60vh;
+    /* Animação com css */
+    position: relative;
+    animation: slider 20s linear infinite;
+}
+
+.slide_carousel{
+    width: 100%;
+    height: 100%;
+}
+
+.text_carousel{
+    width: 60%;
+    margin: auto;
+}
+
+.slide_carousel h2{
+    color: #fff;
+    font-size: 4em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.slide_carousel p{
+    color: #fff;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#slide1{
+    background-image: url('./img/slides/slide1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#slide2{
+    background-image: url('./img/slides/slide2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes slider {
+    0%{
+        left: 0%;
+    }
+    45%{
+        left: 0%;
+    }
+    50%{
+        left: -100%;
+    }
+    95%{
+        left: -100%;
+    }
+    100%{
+        left: -200%;
+    }
+}
+
+/* Showcase */
+
+.showcase {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-self: center;
+    margin: 50px 0;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background-color: #fff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition-duration: 0.5s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h2{
+    color: #bc002e;
+    font-size: 1.25em;
+    padding: 3px;
+    text-transform: uppercase;
+}
+
+.overlay p{
+    color: #888;
+    margin: 0;
+    padding: 6px;
+    font-size: 0.9em;
 }

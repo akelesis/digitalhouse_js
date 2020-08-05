@@ -12,14 +12,59 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+
+        <!-- Menu – Alterações Douglas Reis - Vespertino -->
+        <nav>
+            <button id="dh_menu_btn" onclick="openNav()"><i class="fas fa-bars"></i></button>
+            <ul id="sideNav" class="sidenav">
+                <li><a href="#" class="closeNav" onclick="closeNav()">&times;</a></li>
+                <li><a href="#">Lista de Desejos</a></li>
+                <li><a href="#">Minhas Compras</a></li>
+                <li><a href="#">Painel de Controle</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+        <!-- Fim -->
+
     </header>
     <main class="content">
+
+        <!-- Carousel – Alterações Douglas Reis - Vespertino -->
         <section id="dh_carousel">
+            <!--
             <h2 class="carrousel_label">
                 Carrossel...
             </h2>
+            -->
+            <div id="carousel_container" class="carousel">
+                <span id="slide1" class="slide_carousel">
+                    <div class="text_carousel">
+                        <h2>Título h2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ipsum voluptate, unde id
+                            sequi similique molestiae enim amet, possimus voluptatibus omnis ut iste deserunt minima
+                            reiciendis ullam. Culpa, ipsa quisquam.</p>
+                    </div>
+                </span>
+                <span id="slide2" class="slide_carousel">
+                    <div class="text_carousel">
+                        <h2>Título h2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ipsum voluptate, unde id
+                            sequi similique molestiae enim amet, possimus voluptatibus omnis ut iste deserunt minima
+                            reiciendis ullam. Culpa, ipsa quisquam.</p>
+                    </div>
+                </span>
+                <span id="slide1" class="slide_carousel">
+                    <div class="text_carousel">
+                        <h2>Título h2</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ipsum voluptate, unde id
+                            sequi similique molestiae enim amet, possimus voluptatibus omnis ut iste deserunt minima
+                            reiciendis ullam. Culpa, ipsa quisquam.</p>
+                    </div>
+                </span>
+            </div>
         </section>
+        <!-- Fim -->
+
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
