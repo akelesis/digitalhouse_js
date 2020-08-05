@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    font-family: "Mulish", sans-serif;
 }
 
 .bookshop_header {
@@ -23,7 +24,7 @@ body {
 
 .dh_title {
     font-family: "Mulish", sans-serif;
-    font-weight: 300;
+    font-weight: 300;   
 }
 
 #dh_menu_btn {
@@ -45,6 +46,68 @@ body {
     cursor: pointer;
 }
 
+.side-menu {
+    font-family: "Mulish", sans-serif;
+    background-color: #FFFFFF;
+    width: 0;
+    height: 100%;
+    z-index: 6;
+    overflow-x: hidden;
+    
+    position: fixed;
+    right: 0;
+    top: 0;
+    
+    transition: 0.5s;
+}
+
+.btn-close-menu {
+    font-size: 2.5em;
+    font-style: normal;
+    color: black;
+    margin: 15px; 
+    border: 0;
+    background-color: transparent;
+}
+
+.btn-close-menu:hover {
+    color: #F71735;
+}
+
+.btn-close-menu:before {
+    content: "\00D7";
+    cursor: pointer;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-item:hover {
+    background-color: #F71735;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px 30px;
+    line-height: 4em;
+    border-bottom: 1px solid rgb(213, 213, 213);
+    white-space: nowrap;
+}
+
+.side-menu li:first-child {
+    border-top: 1px solid rgb(213, 213, 213);
+}
+
+.side-menu a:hover {
+    color: #FFF;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -59,13 +122,8 @@ body {
     align-items: center;
 
     background-color: #ccc; 
-}
-
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
+    
+    position: relative;
 }
 
 .filters {
@@ -77,7 +135,6 @@ body {
 
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 .name_box {
@@ -150,8 +207,6 @@ body {
     top: 0;
     z-index: 5;
 
-    background-color: #7777;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,6 +214,34 @@ body {
 
     padding: 10px;
     box-sizing: border-box;
+    
+    opacity: 0;
+    
+}
+
+.overlay:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.overlay h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.overlay h3 {
+    font-size: 1.3em
+    
+}
+
+.overlay h4 {
+    margin: 0;
+}
+
+.overlay p {
+    text-align: center;
+    margin: 10px;
 }
 
 footer {
