@@ -1,7 +1,6 @@
 const listBooks = []
 const endpoint = './data/books.json'
 const cardSection = document.getElementById('card-section')
-const search_bar = document.getElementById("search_bar")
 
 fetch(endpoint)
 .then(status => status.json())
@@ -28,12 +27,14 @@ function cards(json){
 
 
 const filterByName = () => {
-    const regex = new RegExp(search_bar.value, 'gi')
+    const search_bar = document.getElementById("search_bar").value
+    const regex = new RegExp(search_bar, 'gi')
     const newList = listBooks.filter(book => {
         return book.name.match(regex)
     })
+    cardSection.innerHTML = ""
     for (i=0; i<newList.length; i++){
-        cardSection.innerHTML = cards(listBooks[i])
+        cardSection.innerHTML += cards(newList[i])
     }
 }
 
