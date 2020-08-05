@@ -135,43 +135,98 @@ function listBooks() {
 }
 
 //-------------------------- Filters -------------------------- 
+
+////Checks if some filter is applied
+let hasFilter = () => {
+    const showcase = document.querySelector(".showcase");
+
+    let shownList = [];
+    //Some filter is applied
+    if (showcase.hasAttribute("class", "filter_applied")){
+        let shownBooks = showcase.children;
+        let titleBook = [];
+
+        //Populates a array of book titles
+        for (let i = 0; i < shownBooks.length; i++) {
+            titleBook.push(shownBooks[i].children[1].children[0].textContent);
+        }
+
+        //Populates a array of books (just the shown books)
+        for (let i = 0; i < books.length; i++) {
+            for (let j = 0; j < titleBook.length; j++) {
+                if(books[i].title === titleBook[j]) {
+                    shownList.push(books[i]);
+                }
+            }
+        }
+
+    }
+
+    return shownList;
+} 
+
 //Title
 function searchTitle () {
+    let booksList = hasFilter();
+    if (booksList.length > 0) {
+        filterTitle(booksList);
+    } else {
+        filterTitle(books);
+    }
+}
+
+function filterTitle (booksList) {
+    document.querySelector(".showcase").classList.add("filter_applied");
+
     let titleFilter = document.getElementById('search_bar').value;
 
-    const filterList = books.filter(book =>{
+    const filterList = booksList.filter(book =>{
         return (book.title.toUpperCase()).includes(titleFilter.toUpperCase());
     });
 
     addBooks(filterList);
-
-    //Cleans Others Filters
-    document.getElementById('category').value = "";
-    document.getElementById('price_range').value = "";
 }
 
 //Category
 function searchCategory () {
+    let booksList = hasFilter();
+    if (booksList.length > 0) {
+        filterCategory(booksList);
+    } else {
+        filterCategory(books);
+    }
+}
+
+function filterCategory (booksList) {
+    document.querySelector(".showcase").classList.add("filter_applied");
+
     const categoryFilter = document.getElementById('category');
     let selectedCategory = categoryFilter.options[categoryFilter.selectedIndex].value;
     
-    const filterList = books.filter(book =>{
+    const filterList = booksList.filter(book =>{
         return book.category === selectedCategory;
     })
 
     addBooks(filterList);
-
-    //Cleans Others Filters
-    document.getElementById('search_bar').value = "";
-    document.getElementById('price_range').value = "";
 };
 
 //Price
 function searchPrice () {
+    let booksList = hasFilter();
+    if (booksList.length > 0) {
+        filterPrice(booksList);
+    } else {
+        filterPrice(books);
+    }
+}
+
+function filterPrice (booksList) {
+    document.querySelector(".showcase").classList.add("filter_applied");
+
     const priceFilter = document.getElementById('price_range');
     let selectedPrice = priceFilter.options[priceFilter.selectedIndex].value;
     
-    const filterList = books.filter(book =>{
+    const filterList = booksList.filter(book =>{
         switch (selectedPrice) {
             case "barato":
                 return book.price >= 1 && book.price <= 20;
@@ -191,8 +246,4 @@ function searchPrice () {
     });
     
     addBooks(filterList);
-
-    //Cleans Others Filters
-    document.getElementById('search_bar').value = "";
-    document.getElementById('category').value = "";
 };
