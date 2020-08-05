@@ -168,8 +168,6 @@ body {
     box-sizing: border-box;
 }
 
-/* MENU */
-
 #dh_menu{
     display: none;
     background-color: #333;
@@ -203,6 +201,10 @@ footer {
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
+}
+
+.card:hover .overlay{
+    display: flex;        
 }
 
 @media(min-width: 1498px) {
