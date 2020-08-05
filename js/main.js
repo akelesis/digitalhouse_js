@@ -23,8 +23,9 @@ const getBookTitle = (event) => {
         fillShowcase(books)
         return
     }
-
-    const booksByName = books.filter((book) => book.title === title)
+    // book.title.indexOf(title) !== -1
+    const booksByName = books.filter(book => book.title.toLowerCase().includes(title.toLowerCase()))
+    console.log(booksByName)
     fillShowcase(booksByName)
 }
 
