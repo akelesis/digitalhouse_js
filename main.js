@@ -1,31 +1,10 @@
 const menuButton = document.querySelector('button#dh_menu_btn');
 const menuSection = document.querySelector('section#menu');
 
-const carouselSection = document.querySelector('section#dh_carousel');
-const carouselLabel = document.querySelector('h2.carousel_label');
-const carouselParagraph = document.querySelector('p.carousel_paragraph');
-
 const filtersInputBookName = document.querySelector('input#search_bar');
-const filtersSelectCategory = document.querySelector('select#category');
-const filtersSelectPrice = document.querySelector('select#price_range');
-
-/* Conteúdos do carrossel */
-const carouselImgSources = ["./img/carousel/01_1024px.png", "./img/carousel/02_1140px.jpg"];
-const carouselTextContents = [
-    {
-        label: "Lorem it", 
-        paragraph: "A prática cotidiana prova que o surgimento do comércio virtual aponta para a melhoria das diretrizes de desenvolvimento para o futuro.", 
-        color:"white"
-    },
-    {
-        label: "Uti", 
-        paragraph:"As experiências acumuladas demonstram que o entendimento das metas propostas aponta para a melhoria do sistema de participação geral.", 
-        color:"black"
-    }
-];
-
-/* Variáveis de controle de índices dos conteúdos de carrossel(imagem/label) */
-let carouselControl = 0;
+const booksFiltersSelects = document.querySelectorAll('select.books_filters');
+const filterSelectCategory = booksFiltersSelects[0];
+const filterSelectPrice = booksFiltersSelects[1];
 
 /* Conteúdos da sessão de produtos */
 const books = [
@@ -38,28 +17,11 @@ const books = [
     {name: "e", price: 37.50, category: "Fantasia"},
 ];
 
-function selectCarouselContents(){
-    
-    if(carouselControl === carouselImgSources.length){
-        
-        carouselControl = 0;
-    }
-    const selectedContents = {   
-        
-        imgSrc: carouselImgSources[carouselControl],
-        textContents: carouselTextContents[carouselControl]
-    };
-
-    carouselControl++;
-
-    return selectedContents;
-}
-
-function clearElemsTextsContents(){
+function clearHtmlElementsTextsContents(){
     
     [...arguments].forEach(htmlElement => htmlElement.textContent = "");
 }
-   
+    
 function toggleHtmlElementAttribute(attr, htmlElement, {on, off}){
     
     return function(){
@@ -73,7 +35,7 @@ function toggleHtmlElementAttribute(attr, htmlElement, {on, off}){
     }
 }
 
-function recursiveAddCharToTextContent(htmlElement, text, control = 0){
+function recursiveConcatHtmlElementTextContent(htmlElement, text, control = 0){
     
     return function(){        
     
@@ -81,34 +43,93 @@ function recursiveAddCharToTextContent(htmlElement, text, control = 0){
     
             htmlElement.textContent += text[control];
             
-            return recursiveAddCharToTextContent(htmlElement, text, control++);
+            return recursiveConcatHtmlElementTextContent(htmlElement, text, control++);
         }
     }
 }
 
-function typingAnimation(htmlElement, text, time){
+function htmlElementTypingAnimation(htmlElement, text, time){
     
-    return setInterval(recursiveAddCharToTextContent(htmlElement, text), time);
+    return setInterval(recursiveConcatHtmlElementTextContent(htmlElement, text), time);
 }
 
-function setCarouselStyleSection(color, imageSource){
-    
-    carouselSection.style.color = color;
-    carouselSection.style.backgroundImage = `url(${imageSource})`;
-    
-    return carouselSection.style;
+function setHtmlElementStyleColor(htmlElement, color){
+
+    htmlElement.style.color = color;
 }
 
-function carousel(){
+function setHtmlElementStyleBgImage(htmlElement, imageSource){
 
-    const selectedContents = selectCarouselContents();
-
-    setCarouselStyleSection(selectedContents.textContents.color, selectedContents.imgSrc);
-    clearElemsTextsContents(carouselLabel, carouselParagraph);~
-    typingAnimation(carouselLabel, selectedContents.textContents.label, 300);
-    typingAnimation(carouselParagraph, selectedContents.textContents.paragraph, 50);
+    htmlElement.style.backgroundImage = `url(${imageSource})`;
 }
+
+function getHtmlElementStyleAttribute(htmlElement, attribute){
+
+    return htmlElement.style[attribute];
+}
+
+/* Módulo do banner principal da página */
+function bannerCarousel(){
+
+    /* Elementos HTML do banner */
+    const carouselSection = document.querySelector('section#dh_carousel');
+    const carouselLabel = document.querySelector('h2.carousel_label');
+    const carouselParagraph = document.querySelector('p.carousel_paragraph');
+    
+    /* Conteúdos do carrossel(backgroundImages/textContents) */
+    const carouselContents = [
+        {
+            imgSrc: "./img/carousel/01_1024px.png",
+            textContents: {
+                            label: "Lorem it", 
+                            paragraph: "A prática cotidiana prova que o surgimento do comércio virtual aponta para a melhoria das diretrizes de desenvolvimento para o futuro.", 
+                            color:"white"
+            }
+        }, 
+        {
+            imgSrc: "./img/carousel/02_1140px.jpg",
+            textContents: {
+                            label: "Uti", 
+                            paragraph:"As experiências acumuladas demonstram que o entendimento das metas propostas aponta para a melhoria do sistema de participação geral.", 
+                            color:"black"
+            }
+        }
+    ];
+    
+    /* Variável de controle de índices dos conteúdos de carrossel(backgroundImages/textContents) */
+    let carouselControl = 0;
+
+    function selectCarouselContents(){
         
+        if(carouselControl === carouselContents.length){
+            
+            carouselControl = 0;
+        }
+
+        const selectedContents = carouselContents[carouselControl];
+    
+        carouselControl++;
+        
+        return selectedContents;
+    }
+
+    function changeBannerContentCarousel(){
+    
+        const selectedContents = selectCarouselContents();
+    
+        setHtmlElementStyleColor(carouselSection, selectedContents.textContents.color);
+        setHtmlElementStyleBgImage(carouselSection, selectedContents.imgSrc);
+        clearHtmlElementsTextsContents(carouselLabel, carouselParagraph);
+        htmlElementTypingAnimation(carouselLabel, selectedContents.textContents.label, 300);
+        htmlElementTypingAnimation(carouselParagraph, selectedContents.textContents.paragraph, 50);
+    }
+
+    return {
+
+        change: changeBannerContentCarousel
+    }
+}
+
 function actionByPriceAndCategory({initialPrice, finalPrice}, productCategory){
 
     if(productCategory){
@@ -128,20 +149,15 @@ function actionByPriceAndCategory({initialPrice, finalPrice}, productCategory){
 }
 
 function filterProductsByPriceAndCategory(productsArray, getPriceRange, getProductCategory){
-
-    return function(){
-
-        const filtered = productsArray.filter(actionByPriceAndCategory(getPriceRange(), getProductCategory()));
-
-        console.log(filtered);
-
-        return filtered;
-    }
+    
+    return productsArray.filter(actionByPriceAndCategory(getPriceRange(), getProductCategory()));
 }
 
 function getSelectedBooksPriceRange(){
     
-    const myPriceRangeArray = filtersSelectPrice.value.split('?');
+    /* Padrão do valor recebido do select(elemento html) num(início do range)?num(final do range). Ex: "20?40" */
+
+    const myPriceRangeArray = filterSelectPrice.value.split('?');
 
     return {
 
@@ -152,17 +168,23 @@ function getSelectedBooksPriceRange(){
 
 function getSelectedBookCategory(){
 
-    return filtersSelectCategory.value;
+    return filterSelectCategory.value;
 }
 
 window.addEventListener('load', function(){
     
-    setInterval(carousel, 10000);
+    const pageBannerCarousel = bannerCarousel();
+
+    setInterval(pageBannerCarousel.change, 10000);
 
     menuButton.addEventListener('click', toggleHtmlElementAttribute('active', menuSection, {on: 'true', off: 'false'}));
     
-    filtersSelectCategory.addEventListener('change', filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory));
-    
-    filtersSelectPrice.addEventListener('change', filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory));
+    booksFiltersSelects.forEach(select => select.addEventListener('change', function(event){
+
+        const filteredBooks = filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory);
+ 
+        console.log(filteredBooks);
+        console.log(event);
+     }))
     
 })
