@@ -12,23 +12,33 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <button id="dh_menu_btn" onclick="open_menu()"><i class="fas fa-bars"></i></button>
     </header>
     <main class="content">
+        <div id="lateral_menu" class="lateral_menu">
+            <ul>
+                <li class="menu_item, close_menu" onclick="close_menu()">&times;</li>
+                <li class="menu_item" id="all_books">Todos os Livros</li>
+                <li class="menu_item" id="autoajuda">Autoajuda</li>
+                <li class="menu_item" id="fantasia">Fantasia</li>
+                <li class="menu_item" id="ficcao_cientifica">Ficção Científica</li>
+                <li class="menu_item" id="romance">Romance</li>
+            </ul>
+        </div>
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+            <img id = "selected_image" src="https://i.imgur.com/FUW7Zul.jpg"/>
+            <a class="prev" onclick="plus_slides(-1)">&#10094;</a>
+            <a class="next" onclick="plus_slides(1)">&#10095;</a>
         </section>
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="books_filter()"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
+                    <option value="Autoajuda">Autoajuda</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="Romance">Romance</option>
@@ -44,60 +54,7 @@
         </section>
 
         <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
+            <!-- As images dos livros buscados aparecerão aqui -->
         </section>
     </main>
     <footer>
