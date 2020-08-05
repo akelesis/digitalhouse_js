@@ -19,7 +19,6 @@ setTimeout("slide1()", 3000);
 
 
 
-
 //-------------------------MENU HAMBURGUER-----------------------------
 
 function toogle(){
@@ -30,6 +29,8 @@ function toogle(){
         menu.style.display = "block";
     }
 }
+
+
 
 //----------------------POPULAR PÁGINA COM LIVROS-----------------------
 
