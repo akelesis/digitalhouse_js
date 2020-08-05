@@ -422,8 +422,6 @@ footer div {
   transform: translateX(-50%);
   cursor: pointer;
 
-  width: 20%;
-  background-color: #f7425a;
   border-radius: 8px;
 
   display: flex;
@@ -432,11 +430,16 @@ footer div {
   margin-bottom: 16px;
 }
 
+.close-modal i {
+  align-self: center;
+}
+
 .close-modal:hover {
-  width: 25%;
   border-radius: 8px;
-  background-color: #f71735;
-  transition: 500ms;
+  width: 4vw;
+  height: 32px;
+  background-color: #ccc;
+  transition: 1000ms;
   display: flex;
   justify-content: center;
   align-items: center;
