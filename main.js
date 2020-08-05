@@ -3,8 +3,8 @@ const crNext = document.getElementById("cr_next");
 const crPrevious = document.getElementById("cr_previous");
 const dhMenuBtn = document.getElementById("dh_menu_btn");
 const dhMenuNavegacao = document.querySelector(".menu");
+const showcase = document.getElementsByClassName("showcase");
 
-window.onload = addbooks;
 
 var menuNavegacao = false;
 dhMenuBtn.onclick = menuSidebar;
@@ -35,11 +35,13 @@ function menuSidebar(){
 
 
 
-let books = [
+const books = [
     {
         title: "Livro 1",
         subtitle: "Descrição do Livro 1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
-        src: "./img/l0.png"
+        src: "./img/l0.png",
+        price: 18.50, // if (books.price >= 0 && books.price < 20) {faz alguma coisa}
+        priceRange: "barato" // if (books.priceRange === "barato") {faz outra coisa}
     },
     {
         title: "Livro 2",
@@ -68,19 +70,20 @@ let books = [
     }
 ]
 
-function addbooks(){
-// Capturando a classe que receberá os livros
-let showcase = document.getElementsByClassName("showcase");
+function addBooks(books){
+    // Capturando a classe que receberá os livros
 
-    for(let i=0; i < books.length; i++){
- 
+    // Limpa os livros 
+    showcase[0].innerHTML = ""
+    
+    books.forEach(book => {
         //Criando a div do livro (pai) e colocando a classe card
         let divCard = document.createElement("div");
         divCard.setAttribute("class","card")
 
         // Criando a img que irá receber a capa do livro e inserindo o link do arquivo
         let imgCard = document.createElement("img");
-        imgCard.setAttribute("src", books[i].src)
+        imgCard.setAttribute("src", book.src)
 
         // Criando a div que reunirá o título e a descrição do livro
         let divInfoCard = document.createElement("div");
@@ -88,9 +91,9 @@ let showcase = document.getElementsByClassName("showcase");
 
         // Criando o título e a descrição do livro
         let titleCard = document.createElement("h2");
-        titleCard.textContent = books[i].title;
+        titleCard.textContent = book.title;
         let subtitleCard = document.createElement("p");
-        subtitleCard.textContent = books[i].subtitle;
+        subtitleCard.textContent = book.subtitle;
 
         showcase[0].appendChild(divCard);
         divCard.appendChild(imgCard);
@@ -98,5 +101,34 @@ let showcase = document.getElementsByClassName("showcase");
         divInfoCard.appendChild(titleCard);
         divInfoCard.appendChild(subtitleCard);
 
+    })
+}
+
+function filterBooks(){
+const search_bar = document.getElementById("search_bar")
+
+const listaFiltrada = books.filter(book =>{
+    return book.title === search_bar.value;
+})
+
+console.log(search_bar.length)
+
+if(search_bar.value === ""){
+    addBooks(books)
+}else{
+    if(!listaFiltrada.length){
+        showcase[0].innerHTML = ""
+        const textNotFound = document.createElement("p");
+        textNotFound.textContent = "Nenhum resultado encontrado."
+        showcase[0].appendChild(textNotFound);
+
+    }else{
+    addBooks(listaFiltrada); 
     }
 }
+
+
+
+}
+
+window.onload = addBooks(books);
