@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     display: flex;
+    overflow-x: hidden;
     flex-direction: column;
     background-color: #EEE0CB;
 }
@@ -19,6 +24,54 @@ body {
 
     background-color: #F71735;
     color: #EEE0CB;
+}
+
+#sidebar_nav {
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    background-color: #EEE0CB;
+    color: #000;
+    z-index: 55;
+}
+
+@keyframes open_menu {
+    from {right: -200px;}
+    to {right: 0;}
+}
+
+@keyframes close_menu {
+    from {right: 0;}
+    to {right: -200px;}
+}
+
+#sidebar_nav ul {
+    margin-top: 3em;
+    list-style: none;
+}
+
+#sidebar_nav ul li {
+    padding-bottom: 1.5em;
+}
+
+#sidebar_nav ul li a {
+    text-decoration: none;
+    color: #F71735;
+    padding-bottom: 3em;
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+}
+
+#sidebar_nav button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    color: #F71735;
+    background-color: transparent;
 }
 
 .dh_title {

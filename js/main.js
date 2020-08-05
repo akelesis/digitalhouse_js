@@ -72,5 +72,19 @@ const fillCategories = (bookList) => {
     })
 }
 
-fillShowcase(books)
-fillCategories(books)
+
+// MENU
+
+document.getElementById('dh_menu_btn').addEventListener('click', (event) => {
+    event.preventDefault()
+    const sidebarMenu = document.getElementById('sidebar_nav')
+    sidebarMenu.style.animation = "open_menu 1.5s";
+    sidebarMenu.style.right = '0'
+})
+
+document.getElementById('close_menu_btn').addEventListener('click', (event) => {
+    event.preventDefault()
+    const sidebarMenu = document.getElementById('sidebar_nav')
+    sidebarMenu.style.animation = "close_menu 1.5s";
+    sidebarMenu.style.right = '-200px'
+})
