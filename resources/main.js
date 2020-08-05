@@ -23,7 +23,7 @@ btn_menu.addEventListener("click", () => {
 /* Carrossel de imagens */
 const carrossel = document.querySelector("#dh_carousel");
 
-let imgN = 1;
+let imgN = 2;
 function trocaImagem() {
     if (imgN === 4) { imgN = 1 }
     carrossel.innerHTML = `<img src="img/livros${imgN}.jpeg" class="img-livros">`
@@ -66,24 +66,26 @@ function mostrarResultado (arrayResultado) {
 }
 
 /*Filtro por nome*/
-const botaoPesquisarNome = document.querySelector("#search_button")
+const campoBuscaNome = document.querySelector("#search_bar");
 
-botaoPesquisarNome.addEventListener("click", () => {
-    let NomeBuscado = (String((document.querySelector("#search_bar").value))).toLowerCase();
+campoBuscaNome.addEventListener("input", () => {
+    let NomeBuscado = (String((campoBuscaNome.value))).toLowerCase();
 
-    function obterResultado (callback) {
+    function obterResultadoNome (callback) {
         resultadoBusca.forEach((resultado) => {
             resultadoBusca.pop(resultado)
         })
     
         livros.forEach(livro => {
-            let nome = (String(livro.Nome)).toLowerCase();
-            if (NomeBuscado == nome) {
-                resultadoBusca.push(livro)
+            let nomeLivro = (String(livro.Nome)).toLowerCase();
+            if (NomeBuscado.length > 2) {
+                if (nomeLivro.indexOf(NomeBuscado) !== -1) {
+                    resultadoBusca.push(livro)
+                }
             }
         })
         callback(resultadoBusca)
     }
 
-    obterResultado(mostrarResultado)
+    obterResultadoNome(mostrarResultado)
 })

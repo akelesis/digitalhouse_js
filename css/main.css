@@ -7,6 +7,8 @@ body {
     background-color: #EEE0CB;
 }
 
+/* Cabeçalho */
+
 .bookshop_header {
     width: 100%;
     height: 80px;
@@ -66,10 +68,13 @@ li > a {
     color: white;
 }
 
+/* Corpo da página */
+
 .content {
     display: flex;
     flex-direction: column;
 }
+ /* Carrossel de imagens */
 
 #dh_carousel {
     width: 100%;
@@ -81,12 +86,13 @@ li > a {
 
     background-color: #ccc;
 }
-/* key-frames */
 
 .img-livros {
     width: 100%;
     height: 100%;
 }
+
+/* Filtros de pesquisa */
 
 .filters {
     width: 100%;
@@ -146,6 +152,8 @@ li > a {
     border: 1px solid #888;
 }
 
+/* Resultado da pesquisa */
+
 #respesquisa {
     display: flex;
     flex-wrap: wrap;
@@ -167,6 +175,8 @@ li > a {
     border: 3px solid black;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.467);
 }
+
+/* Cards dos livros */
 
 .showcase {
     width: 80vw;
@@ -211,6 +221,8 @@ li > a {
     width: 100%;
     height: 100%;
 }
+
+/* Rodapé */
 
 footer {
     width: 100%;
