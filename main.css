@@ -176,3 +176,30 @@ footer {
         width: 60vw;
     }
 }
+
+.arrow_previous,
+.arrow_next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .arrow_next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .arrow_previous:hover,
+  .arrow_next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }

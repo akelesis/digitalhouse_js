@@ -57,16 +57,78 @@ const books = [
 ];
 
 // UI Controller
-var uiController = (function() {
+var uiController = (() => {
 
     var DOMStrings = {
         categorySelect: document.getElementById('category'),
         priceRangeSelect: document.getElementById('price_range'),
         searchButton: document.getElementById('search_button'),
         searchText: document.getElementById('search_bar'),
-        showcaseSection: document.querySelector('.showcase')
+        showcaseSection: document.querySelector('.showcase'),
+        carouselSection: document.getElementById('dh_carousel')
     }
 
+    // Adiciona um livro no carousel
+    var addCarouselItem = (book) => {
+        /*
+        let title = document.createElement('h2');
+        title.textContent = book.name;
+
+        let details = document.createElement('div');
+        details.className = 'overlay';
+        details.appendChild(title);
+
+        let image = document.createElement('img');
+        image.setAttribute('src', book.image);
+
+        let item = document.createElement('div');
+        item.className = 'carousel_item';
+        item.appendChild(image);
+        item.appendChild(details);
+        item.style.display = 'none';
+        */
+
+        let cardTitle = document.createElement('h2');
+        cardTitle.className = 'card_title';
+        cardTitle.textContent = book.name;
+
+        let cardAuthor = document.createElement('h3');
+        cardAuthor.className = 'card_author';
+        cardAuthor.textContent = book.author;
+
+        let cardPrice = document.createElement('p');
+        cardPrice.className = 'card_price';
+        cardPrice.textContent = book.price;
+
+        let cardDetails = document.createElement('div');
+        cardDetails.className = 'card_details';
+        cardDetails.appendChild(cardTitle);
+        cardDetails.appendChild(cardAuthor);
+        cardDetails.appendChild(cardPrice);
+
+        let img = document.createElement('img');
+        img.className
+        DOMStrings.carouselSection.appendChild(item); 
+    };
+
+    var runCarousel = (itemIndex) => {
+        carouselItems = document.querySelectorAll('.carousel_item');
+        
+        if (itemIndex >= carouselItems.length) {
+            itemIndex = 0;
+            carouselItems[carouselItems.length - 1].style.display = 'none';
+        }
+
+        if (itemIndex > 0) {
+            index = itemIndex - 1
+            carouselItems[index].style.display = 'none';
+        } 
+         
+        carouselItems[itemIndex].style.display = 'block';
+        setTimeout(runCarousel, 2500, ++itemIndex);
+    }
+
+    // Adiciona um livro no showcase
     var addShowcaseItem = (book) => {
         let title = document.createElement('h2');
         title.textContent = book.name;
@@ -95,21 +157,34 @@ var uiController = (function() {
             return DOMStrings;
         },
 
+        // Atualiza o showcase
         updateShowcase: (books) => {
             DOMStrings.showcaseSection.innerHTML = '';
 
             books.forEach((book) => {
                 addShowcaseItem(book);
             });
+        },
+        updateCarousel: (book) => {
+            //DOMStrings.carouselSection.innerHTML = '';
+
+            books.forEach((book) => {
+                addCarouselItem(book);
+            });
+            runCarousel(0);
         }
     }
 })();
 
-// Global App Controller
-var controller = (function(UICtrl, booklist) {
+// App Controller
+var controller = ((UICtrl, booklist) => {
 
     var loadShowcase = (books) => {
         UICtrl.updateShowcase(books);
+    };
+
+    var loadCarousel = (books) => {
+        UICtrl.updateCarousel(books);
     };
 
     var setupEventListeners = () => {
@@ -154,6 +229,7 @@ var controller = (function(UICtrl, booklist) {
     return {
         init: () => {
             loadShowcase(booklist);
+            loadCarousel(booklist);
             setupEventListeners();
         }
     }
