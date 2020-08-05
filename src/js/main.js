@@ -219,7 +219,6 @@ window.addEventListener('load', () => {
         }
       }
     }
-    //console.log(`Category: ${hasCategory}`);
     return hasCategory;
   });
 
@@ -236,7 +235,6 @@ window.addEventListener('load', () => {
         }
       }
     }
-    // console.log(`Price: ${hasPrice}`);
     return hasPrice;
   });
 
@@ -261,37 +259,24 @@ window.addEventListener('load', () => {
   textDigited.addEventListener('keypress', () => {
     if (event.key === 'Enter') {
       for (let count = 0; count < data.length; count++) {
-        if (
-          data[count].title
-            .toLowerCase()
-            .includes(textDigited.value.toLowerCase())
-        ) {
-          hasName[count] = true;
-          bookCards[count].style.display = 'block';
-        } else {
-          hasName[count] = false;
-          bookCards[count].style.display = 'none';
-        }
+        data[count].title
+          .toLowerCase()
+          .includes(textDigited.value.toLowerCase())
+          ? (hasName[count] = true)
+          : (hasName[count] = false);
       }
-      return hasName;
     }
+    return hasName;
   });
 
   // Mostra na tela os resultados finais após aplicação dos filtros
   filters.addEventListener('change', () => {
-    let result = [];
     for (let count = 0; count < data.length; count++) {
-      if (
-        hasCategory[count] === true &&
-        hasPrice[count] === true &&
-        hasName[count] == true
-      ) {
-        bookCards[count].style.display = 'block';
-        result[count] = true;
-      } else {
-        bookCards[count].style.display = 'none';
-        result[count] = false;
-      }
+      hasCategory[count] === true &&
+      hasPrice[count] === true &&
+      hasName[count] == true
+        ? (bookCards[count].style.display = 'block')
+        : (bookCards[count].style.display = 'none');
     }
   });
 
@@ -300,7 +285,7 @@ window.addEventListener('load', () => {
     bookCard.querySelector('a').addEventListener('click', () => {
       const cardId = bookCard.getAttribute('id');
       modalOverlay.classList.add('active');
-      console.log(bookCard.children[0].src);
+
       modalOverlay
         .querySelector('img')
         .setAttribute('src', bookCard.querySelector('img').src);
