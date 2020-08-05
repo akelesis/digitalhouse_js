@@ -125,6 +125,8 @@ const showcase = document.querySelectorAll(".showcase")
 livros.forEach(livro => {
     let resultado = document.createElement("div");
     let overlay = document.createElement("div");
+    let tagGenero = document.createElement("div")
+    tagGenero.setAttribute("class", "tagGenero")
     overlay.setAttribute("class", "overlay");
     resultado.setAttribute("class", "card");
 
@@ -133,10 +135,15 @@ livros.forEach(livro => {
 
     overlay.innerHTML = 
     `<h2>${livro.titulo}</h2>
+    <span>R$${livro.preco}</span>
     <p>${livro.descricao}</p>`;
+
+    tagGenero.innerHTML = 
+    `<span>${livro.genero}</span>`;
 
     showcase[0].appendChild(resultado);
     resultado.appendChild(overlay);
+    overlay.appendChild(tagGenero)
 })
 
 
@@ -167,44 +174,51 @@ btnBusca.onclick = function teste() {
         } else {
             faixaDePreco = "mais caro";
         }
-
         let listaFiltrada;
+        let listaFiltradaPorPreco;
+        let listaFiltradaPorGenero;
         let listaFiltradaPorTitulo;
         if (barraDePesquisa.value != 0){
             let livroProcurado = barraDePesquisa.value;
             let tituloLivro = livro.titulo.toLowerCase();
             let livroAchado = tituloLivro.indexOf(livroProcurado) > -1 ? true : false;
             listaFiltradaPorTitulo = livroAchado;
-        } else {
-            listaFiltradaPorTitulo = false;
-        }
+        } 
             if (precos.value == false){
-            listaFiltrada = livro.genero == generos.value;
+            listaFiltradaPorGenero = livro.genero == generos.value;
         }
         else if (generos.value && precos.value){
             listaFiltrada = livro.genero == generos.value && faixaDePreco == precos.value;
         } 
         else if (generos.value == false) {
-            listaFiltrada = faixaDePreco == precos.value;
+            listaFiltradaPorPreco = faixaDePreco == precos.value;
         }
-        return listaFiltradaPorTitulo && listaFiltrada || listaFiltradaPorTitulo || listaFiltrada;
+        return (listaFiltradaPorTitulo && listaFiltradaPorGenero || listaFiltradaPorPreco) 
+        || listaFiltradaPorTitulo || listaFiltrada || (listaFiltradaPorPreco && listaFiltradaPorGenero);
     })    
     
     livrosFiltrados.forEach (livro => {
         let resultado = document.createElement("div");
         let overlay = document.createElement("div");
+        let tagGenero = document.createElement("div")
+        tagGenero.setAttribute("class", "tagGenero")
         overlay.setAttribute("class", "overlay");
         resultado.setAttribute("class", "card");
-
-        resultado.innerHTML = 
+    
+        resultado.innerHTML =
         `<img src="${livro.imagem}"></img>`;
-
+    
         overlay.innerHTML = 
-        `<h2>${livro.titulo}</h2>;
+        `<h2>${livro.titulo}</h2>
+        <span>R$${livro.preco}</span>
         <p>${livro.descricao}</p>`;
-
+    
+        tagGenero.innerHTML = 
+        `<span>${livro.genero}</span>`;
+    
         showcase[0].appendChild(resultado);
         resultado.appendChild(overlay);
+        overlay.appendChild(tagGenero)
     })
 
 }
@@ -215,3 +229,17 @@ document.addEventListener('keydown', function(e) {
         btnBusca.click();
     }
 });
+
+
+//Evento que mostra sinopse escondida - Por que não aplica quando a função filtro é chamada?
+const overlay = document.querySelectorAll(".overlay");
+const sinopse = document.getElementsByTagName('p'); 
+
+for (let i = 0; i < overlay.length; i++){
+    overlay[i].addEventListener("mouseover", function () {  
+            sinopse[i].style.display = "block";
+    })
+    overlay[i].addEventListener("mouseout", function () {
+        sinopse[i].style.display = "none";
+    })
+}

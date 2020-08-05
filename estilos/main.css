@@ -269,6 +269,7 @@ body {
 
 .card p {
     position: absolute;
+    display: none;
     padding: 0.6vw;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.8);
@@ -276,7 +277,19 @@ body {
     font-weight: bold;
     margin: 0;
     bottom: 0;
+}
 
+.card span {
+    position: absolute;
+    width: 15vw;
+    bottom: 1vh;
+
+    border: 2px solid black;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
 }
 
 .overlay {
@@ -298,12 +311,21 @@ body {
     box-sizing: border-box;
 }
 
-.overlay:hover {
-    background-color: transparent;
+.tagGenero span {
+    position: absolute;
+    bottom: 35vh;
+    right: 0;
+    margin: auto;
+    width: auto;
+    padding: 4px;
+
+    font-size: 0.9em;
+    border: none;
+
 }
 
-.nenhumResultado { 
-    text-align: center;
+.overlay:hover {
+    background-color: transparent;
 }
 
 footer {
