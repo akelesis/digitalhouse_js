@@ -59,6 +59,13 @@ body {
     align-items: center;
 
     background-color: #ccc; 
+    flex-direction: column-reverse;
+}
+
+.btns-carousel {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .carrousel_label {
@@ -170,6 +177,11 @@ footer {
     align-items: center;
     color: #EEE0CB;
 }
+
+.image-size {
+    width: 300px;
+    height: 400px;
+}  
 
 @media(min-width: 1498px) {
     .showcase {
