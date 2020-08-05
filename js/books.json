@@ -1,4 +1,4 @@
-const books = [
+[
     {
         "id": 1,
         "title": "Amor de Perdição",

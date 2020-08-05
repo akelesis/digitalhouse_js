@@ -1,3 +1,5 @@
+// BOOKS
+
 const bookTemplate = (book) => {
     return `
     <div class="card">
@@ -72,6 +74,19 @@ const fillCategories = (bookList) => {
     })
 }
 
+let books
+fetch('./js/books.json')
+    .then(response => {
+        return response.json()
+    })
+    .then(bookList => {
+        fillShowcase(bookList)
+        fillCategories(bookList)
+        books = bookList
+    })
+    .catch(err => {
+        console.error(err)
+    })
 
 // MENU
 
