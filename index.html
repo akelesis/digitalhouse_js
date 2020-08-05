@@ -12,100 +12,97 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <button class="dh_menu_btn" id="dh_menu_btn"><i class="fas fa-bars"></i></button>
     </header>
-    <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
-        </section>
-        <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
-            </div>
-            <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
-                </select>
-                <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
-                </select>
-            </div>
-        </section>
+    <div id="mySidebar" class="nav">
+        <div class="linhaBotaoFechar">
+            <a class="dh_menu_btn botaoFechar" id="fechar"><i class="fas fa-times-circle"></i></a>
+        </div>
 
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+        <ul>
+
+            <li>
+                <a class="fonteBotao" href="#dh_carousel">Carousel</a>
+
+            </li>
+            <li>
+                <a class="fonteBotao" href="#filtros">
+                    Pesquisa</a>
+            </li>
+            <li>
+                <a class="fonteBotao" href="#livros">Livros</a>
+            </li>
+        </ul>
+    </div>
+    <main class="content">
+       
+            <section  id="dh_carousel">
+                <h2 class="carrousel_label">
+                    <img class="img-carrousel" id="ImagemCarrosel01" src="./img/HTML-Carrousel.jpg" alt="">
+                    <img class="img-carrousel" hidden id="ImagemCarrosel02" src="./img/Java-Carrousel.jpg" alt="">
+                    <img class="img-carrousel" hidden id="ImagemCarrosel03" src="./img/javascript-Carrousel.jpg" alt="">
+                    <img class="img-carrousel" hidden id="ImagemCarrosel04" src="./img/git-Carrousel.jpg" alt="">
+                </h2>
+            </section>
+            <section id="filtros" class="filters">
+                <div class="name_box">
+                    <input type="text" id="search_bar" placeholder="Nome do livro...">
+                    <button id="search_button"><i class="fas fa-search"></i></button>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div class="advanced_filters">
+                    <select name="category" id="category">
+                        <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
+                        <option value="Java">Java</option>
+                        <option value="git">Git</option>
+                        <option value="C">Liguagem de programação C</option>
+                        <option value="csharp">Liguagem de programação #C</option>
+                        <option value="php">Liguagem de programação php</option>
+                        <option value="Algoritmos">Algoritmos lógica para desenvolvimento</option>
+                    </select>
+                    <select name="price_range" id="price_range">
+                        <option value="" selected="true" disabled="disabled">Faixa de preço</option>
+                        <option value="barato">R$1 - R$50</option>
+                        <option value="medio">R$51 - R$100</option>
+                        <option value="caro">R$101 - R$200</option>
+                        <option value="mais caro">acima de R$250</option>
+                    </select>
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+            </section>
+
+            <section id="livros" class="showcase">
+                <div id="csharp" class="card">
+                    <img class="img-filter" src="./img/csharp.jpg">
+
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div id="git" class="card">
+                    <img class="img-filter" src="./img/git.jpg">
+
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div id="java" class="card">
+                    <img class="img-filter" src="./img/Java.jpg">
+
                 </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                <div id="c" class="card">
+                    <img class="img-filter" src="./img/linguagemC.jpg">
+
                 </div>
-            </div>
-        </section>
+                <div id="php" class="card">
+                    <img class="img-filter" src="./img/PHP.jpg">
+
+                </div>
+                <div id="algoritmos" class="card">
+                    <img class="img-filter" src="./img/Algoritmos.jpg">
+
+
+                </div>
+            </section>
+        
     </main>
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
     <script src='main.js'></script>
-    
 </body>
 
 </html>
