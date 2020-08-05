@@ -90,7 +90,8 @@ const clearDisplay = () => {
   }
 };
 
-const filterCategory = (categoria, card) => {
+const filterCategory = (categoria) => {
+  let card = cards();
   var livroFiltrado = livros.filter((livro) => {
     return livro.categoria === categoria;
   });
@@ -105,7 +106,8 @@ const filterCategory = (categoria, card) => {
   }
 };
 
-let updateDisplay = (listLivros, card) => {
+let updateDisplay = (listLivros) => {
+  let card = cards();
   clearDisplay();
   for (let i = 0; i < listLivros.length; i++) {
     for (let j = 0; j < card.length; j++) {
@@ -139,7 +141,7 @@ const filterPriceRange = (priceRange, card) => {
   var livroFiltrado = livros.filter((livro) => {
     return livro.preco >= range.min && livro.preco <= range.max;
   });
-  updateDisplay(livroFiltrado, card);
+  updateDisplay(livroFiltrado);
 };
 
 let selectCategory = document.getElementById('category');
@@ -174,22 +176,40 @@ const loadCarousel = (livros) => {
   }, 2000);
 };
 
-const fnSearchBar = (event, card) => {
-  let searched = [];
-  const regex = new RegExp(`${event.target.value}`, 'gmi');
-  if (event.keyCode === 13) {
-    if (event.target.value === '') {
-      showAll(card);
-    } else {
-      searched = livros.filter((livro) => livro.titulo.match(regex));
-      updateDisplay(searched, card);
-    }
+const getSearchBar = () => {
+  let searchBar = document.getElementById('search_bar');
+  return searchBar;
+};
+
+const getLivros = () => {
+  return livros;
+};
+const updateItems = () => {
+  let searchBar = getSearchBar();
+  let card = cards();
+  let livros = getLivros();
+  let filtered = [];
+  const regex = new RegExp(searchBar.value, 'gmi');
+  filtered = livros.filter((livro) => livro.titulo.match(regex));
+
+  if (searchBar.value === '') {
+    showAll(card);
+  } else {
+    updateDisplay(filtered);
   }
 };
 
 let searchBar = document.getElementById('search_bar');
 searchBar.addEventListener('keypress', (event) => {
-  fnSearchBar(event, cards());
+  if (event.keyCode === 13) {
+    updateItems();
+  }
+});
+
+let btnSearch = document.getElementById('search_button');
+btnSearch.addEventListener('click', (event) => {
+  console.log(event.type);
+  updateItems();
 });
 
 loadCarousel(livros);
