@@ -19,6 +19,28 @@ body {
     z-index: 2;
 }
 
+.book_add{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    top: 80px;
+    width: 500px;
+    height: 0px;
+    background-color: #F71735;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 2;
+}
+.book_add #add_buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.book_add button{
+    width: 20%;
+}
+
 .navigation ul{
     position: absolute;
     width: 100%;
