@@ -57,7 +57,7 @@ body {
 #dh_menu_list{
     display: none;
     border-radius: 10px;
-    margin: 5px 0;
+    margin: 0;
     padding: 15px;
     background-color: rgba(255, 50, 0, 0.76);
 }
@@ -71,6 +71,7 @@ body {
 #dh_menu_list a:hover{
     color:rgb(255, 50, 0);
     background-color: white;
+    font-weight: bold;
 }
 
 #dh_menu_list.dh-show-fixed,#dh_menu_list.dh-show{
@@ -266,6 +267,16 @@ span {
 
 .prev:after {
     -webkit-transform: rotate(132deg);
+    top: 19px;
+}
+
+.next:before {
+    -webkit-transform: rotate(132deg);
+    top: 5px;
+}
+
+.next:after {
+    -webkit-transform: rotate(42deg);
     top: 19px;
 }
 

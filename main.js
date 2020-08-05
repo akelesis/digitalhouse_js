@@ -182,31 +182,30 @@ function addBookShowcase(){
         overlayDiv.appendChild(descricaoLivro);
     }
 }
-
 addBookShowcase();
 
 function menu(){
-    let dhMenu = document.getElementById("dh_menu");
-    let dhMenuList = document.getElementById("dh_menu_list");
-    let dhMenuBtn = document.getElementsByClassName("dh_menu_btn");
-    for(let element of dhMenuBtn){
+    let menuHamb = document.getElementById("dh_menu");
+    let listaOp = document.getElementById("dh_menu_list");
+    let botao = document.getElementsByClassName("dh_menu_btn");
+    for(let element of botao){
         element.addEventListener("click",function(){
-            if(dhMenuList.classList.contains("dh-show-fixed")){
-                dhMenuList.classList.remove("dh-show-fixed");
+            if(listaOp.classList.contains("dh-show-fixed")){
+                listaOp.classList.remove("dh-show-fixed");
             }else{
-                dhMenuList.classList.add("dh-show-fixed");
+                listaOp.classList.add("dh-show-fixed");
             }
         });
     }
     document.addEventListener("click",function(){
-        dhMenuList.classList.remove("dh-show-fixed");
+        listaOp.classList.remove("dh-show-fixed");
     });
-    dhMenu.addEventListener("mouseover",function(){
-        dhMenuList.classList.add("dh-show");
+    menuHamb.addEventListener("mouseover",function(){
+        listaOp.classList.add("dh-show");
     });
-    dhMenu.addEventListener("mouseout",function(){
-        dhMenuList.classList.remove("dh-show");
+    menuHamb.addEventListener("mouseout",function(){
+        listaOp.classList.remove("dh-show");
     });
 }
-
 menu();
+
