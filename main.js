@@ -24,6 +24,10 @@ const carouselTextContents = [
     }
 ];
 
+/* Variáveis de controle de índices dos conteúdos de carrossel(imagem/label) */
+let carouselControl = 0;
+
+/* Conteúdos da sessão de produtos */
 const books = [
     {name: "Alooo", price: 30.50, category: "Auto Ajuda"},
     {name: "Olaaaa", price: 22.50, category: "Romance"},
@@ -32,10 +36,7 @@ const books = [
     {name: "c", price: 70.50, category: "Romance"},
     {name: "d", price: 13.50, category: "Ficção Científica"},
     {name: "e", price: 37.50, category: "Fantasia"},
-]
-
-/* Variáveis de controle de índices dos conteúdos de carrossel(imagem/label) */
-let carouselControl = 0;
+];
 
 function selectCarouselContents(){
     
@@ -43,84 +44,51 @@ function selectCarouselContents(){
         
         carouselControl = 0;
     }
-    
-    const selectedContents = {
+    const selectedContents = {   
         
         imgSrc: carouselImgSources[carouselControl],
         textContents: carouselTextContents[carouselControl]
     };
-    
+
     carouselControl++;
-    
+
     return selectedContents;
-}
-
-function actionByPriceAndCategory(initialPrice, finalPrice, category){
-
-    if(category){
-
-        return function(elem){
-    
-            return (elem.price > initialPrice && elem.price < finalPrice) && (elem.category === category);
-        }
-    }
-    else{
-
-        return function(elem){
-    
-            return (elem.price > initialPrice && elem.price < finalPrice);
-        }
-    }
-}
-
-function filterBooksByPriceAndCategory(){
-
-    const filterCategory = filtersSelectCategory.value; 
-    const myPriceRangeArray = filtersSelectPrice.value.split('?');
-    const initialPrice = parseInt(myPriceRangeArray[0]);
-    const finalPrice = parseInt(myPriceRangeArray[1]);
-
-    const filtered = books.filter(actionByPriceAndCategory(initialPrice, finalPrice, filterCategory));
-
-    console.log(filtered);
-
-    return filtered;
 }
 
 function clearElemsTextsContents(){
     
-    [...arguments].forEach(elm => elm.textContent = "");
+    [...arguments].forEach(htmlElement => htmlElement.textContent = "");
 }
-
-function swapAttribute(attr, elm, states){
+   
+function toggleHtmlElementAttribute(attr, htmlElement, {on, off}){
     
     return function(){
-
-        if(elm.getAttribute(attr) === states.on){
+    
+        if(htmlElement.getAttribute(attr) === on){
             
-            return elm.setAttribute(attr, states.off);
+            return htmlElement.setAttribute(attr, off);
         }
         
-        return elm.setAttribute(attr, states.on);
+        return htmlElement.setAttribute(attr, on);
     }
 }
 
-function typing(box, text, control = 0){
-
-    return function(){
-
+function recursiveAddCharToTextContent(htmlElement, text, control = 0){
+    
+    return function(){        
+    
         if(control !== text.length){
+    
+            htmlElement.textContent += text[control];
             
-            box.textContent += text[control];
-
-            return typing(box, text, control++);
+            return recursiveAddCharToTextContent(htmlElement, text, control++);
         }
     }
 }
 
-function typingAnimation(box, text, time){
-
-    return setInterval(typing(box, text), time);
+function typingAnimation(htmlElement, text, time){
+    
+    return setInterval(recursiveAddCharToTextContent(htmlElement, text), time);
 }
 
 function setCarouselStyleSection(color, imageSource){
@@ -131,27 +99,70 @@ function setCarouselStyleSection(color, imageSource){
     return carouselSection.style;
 }
 
-function initCarousel(){
+function carousel(){
 
-    return setInterval(() => {
+    const selectedContents = selectCarouselContents();
 
-                const selectedContents = selectCarouselContents();
+    setCarouselStyleSection(selectedContents.textContents.color, selectedContents.imgSrc);
+    clearElemsTextsContents(carouselLabel, carouselParagraph);~
+    typingAnimation(carouselLabel, selectedContents.textContents.label, 300);
+    typingAnimation(carouselParagraph, selectedContents.textContents.paragraph, 50);
+}
+        
+function actionByPriceAndCategory({initialPrice, finalPrice}, productCategory){
 
-                setCarouselStyleSection(selectedContents.textContents.color, selectedContents.imgSrc);
-                clearElemsTextsContents(carouselLabel, carouselParagraph);
-                typingAnimation(carouselLabel, selectedContents.textContents.label, 300);
-                typingAnimation(carouselParagraph, selectedContents.textContents.paragraph, 50);
-            
-            }, 10000);
+    if(productCategory){
+
+        return function(product){
+    
+            return (product.price > initialPrice && product.price < finalPrice) && (product.category === productCategory);
+        }
+    }
+    else{
+
+        return function(product){
+    
+            return (product.price > initialPrice && product.price < finalPrice);
+        }
+    }
+}
+
+function filterProductsByPriceAndCategory(productsArray, getPriceRange, getProductCategory){
+
+    return function(){
+
+        const filtered = productsArray.filter(actionByPriceAndCategory(getPriceRange(), getProductCategory()));
+
+        console.log(filtered);
+
+        return filtered;
+    }
+}
+
+function getSelectedBooksPriceRange(){
+    
+    const myPriceRangeArray = filtersSelectPrice.value.split('?');
+
+    return {
+
+        initialPrice: parseInt(myPriceRangeArray[0]),
+        finalPrice: parseInt(myPriceRangeArray[1])
+    }
+}
+
+function getSelectedBookCategory(){
+
+    return filtersSelectCategory.value;
 }
 
 window.addEventListener('load', function(){
-        
-    menuButton.addEventListener('click', swapAttribute('active', menuSection, {on: 'true', off: 'false'}));
+    
+    setInterval(carousel, 10000);
 
-    filtersSelectCategory.addEventListener('change', filterBooksByPriceAndCategory);
-
-    filtersSelectPrice.addEventListener('change', filterBooksByPriceAndCategory);
-
-    initCarousel();
+    menuButton.addEventListener('click', toggleHtmlElementAttribute('active', menuSection, {on: 'true', off: 'false'}));
+    
+    filtersSelectCategory.addEventListener('change', filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory));
+    
+    filtersSelectPrice.addEventListener('change', filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory));
+    
 })
