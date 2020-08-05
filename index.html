@@ -31,8 +31,16 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <div id="dh_menu">
+            <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+            <ul id="dh_menu_list">
+                <a href="#" class="dh_menu_item">Config</a>
+                <a href="#" class="dh_menu_item">Compras</a>
+                <a href="#" class="dh_menu_item">Sair</a>
+            </ul>
+        </div>
     </header>
+
     <main class="content">
         <section id="dh_carousel">
             <figure>
@@ -54,8 +62,6 @@
                 <figcaption></figcaption>
                 <h2 id="bookName" class="carrousel_label"></h2>
              </figure>
-                
-
         </section>
         <section class="filters">
             <div class="name_box">
@@ -80,17 +86,7 @@
             </div>
         </section>
 
-        <section class="showcase">
-            <!-- <div class="card">
-                <img src="./img/a_porta_encantada.PNG">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div> -->
-        </section>
+        <section class="showcase"></section>
     </main>
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
