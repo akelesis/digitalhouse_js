@@ -383,7 +383,7 @@ footer div {
 }
 
 .modal-overlay {
-  background-color: rgba(0, 0, 0, 0.815);
+  background-color: rgba(0, 0, 0, 0.623);
   width: 100%;
   height: 100%;
   z-index: 3;
@@ -397,7 +397,7 @@ footer div {
 .modal {
   background-color: #fff;
   opacity: 1;
-  border-radius: 8px;
+  border-radius: 4px;
 
   width: 70vw;
   max-width: 800px;
@@ -410,6 +410,8 @@ footer div {
   padding: 16px;
 
   display: flex;
+
+  box-shadow: 4px 4px 4px #888;
 }
 
 .close-modal {

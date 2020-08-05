@@ -285,7 +285,6 @@ window.addEventListener('load', () => {
     bookCard.querySelector('a').addEventListener('click', () => {
       const cardId = bookCard.getAttribute('id');
       modalOverlay.classList.add('active');
-
       modalOverlay
         .querySelector('img')
         .setAttribute('src', bookCard.querySelector('img').src);
