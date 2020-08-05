@@ -8,9 +8,11 @@ const searchFilter = document.getElementById("search_bar");
 const img = document.getElementById("img_carrousel");
 const btnNext = document.getElementById("next");
 const btnPrev = document.getElementById("prev");
-
+const carousel = document.getElementById("dh_carousel");
+const btnRadio = document.getElementById("radio");
 const img_carrousel = ['./img/carousel-1.jpg', './img/carousel-2.jpg', './img/carousel-3.png'];
 var contador = 1;
+var timer;
 
 const listBooks = [
     {
@@ -68,47 +70,15 @@ const listBooks = [
         "cape": "./img/sejaoamor.jpeg"
     }];
 
-btnOpen.onblur = () => {
-    list.style.width = "0";
+const populateRadios = () => {
+    img_carrousel.forEach( (index) => {
+        var button = document.createElement('div');
+        button.setAttribute("id", 'radio-button-' + img_carrousel.indexOf(index));
+        button.setAttribute("class", 'radio-button-' + img_carrousel.indexOf(index) + " disable")
+        btnRadio.appendChild(button)
+        carousel.appendChild(btnRadio);
+    })
 }
-
-btnNext.addEventListener("click", () => {
-    contador < img_carrousel.length - 1 ? contador++ : contador = 0;
-    img.setAttribute("src", img_carrousel[contador]);
-})
-
-btnPrev.addEventListener("click", () => {
-    contador > 0 ? contador-- : contador = img_carrousel.length - 1;
-    img.setAttribute("src", img_carrousel[contador]);
-})
-
-btnOpen.addEventListener("click", () => {
-    list.style.width = "250px";
-})
-
-btnClose.addEventListener("click", () => {
-    list.style.width = "0";
-})
-
-filterAdv.addEventListener("change", () => {
-    var category = filterAdv.options[filterAdv.selectedIndex].value;
-    var priceRang = filterPrice.options[filterPrice.selectedIndex].value;
-
-    verifyCategory(category, priceRang);
-})
-
-filterPrice.addEventListener("change", () => {
-    var category = filterAdv.options[filterAdv.selectedIndex].value;
-    var priceRang = filterPrice.options[filterPrice.selectedIndex].value;
-
-    verifyPrice(category, priceRang);
-})
-
-searchFilter.addEventListener("keyup", () => {
-    var name = searchFilter.value;
-
-    verifyName(name);
-})
 
 const populateBooks = (books) => {
     var card = document.createElement('div');
@@ -203,11 +173,28 @@ const verifyCategory = (category, range) => {
     })
 }
 
+const updateRadio = () => {
+    if(contador == 0) {
+        btnRadio0.style.backgroundColor = "#0008"
+        btnRadio1.style.backgroundColor = "#ccc8"
+        btnRadio2.style.backgroundColor = "#ccc8"
+    }
+    if(contador == 1){
+        btnRadio0.style.backgroundColor = "#ccc8"
+        btnRadio1.style.backgroundColor = "#0008"
+        btnRadio2.style.backgroundColor = "#ccc8"
+    }
+    if(contador == 2){
+        btnRadio0.style.backgroundColor = "#ccc8"
+        btnRadio1.style.backgroundColor = "#ccc8"
+        btnRadio2.style.backgroundColor = "#0008"
+    }
+}
+
 const carrosel = () => {
-    setInterval(() => {
-        img.setAttribute("src", img_carrousel[contador]);
-        contador < img_carrousel.length - 1 ? contador++ : contador = 0;
-    }, 5000)
+    img.setAttribute("src", img_carrousel[contador]);
+    contador < img_carrousel.length - 1 ? contador++ : contador = 0;
+    updateRadio();
 }
 
 const init = () => {
@@ -217,7 +204,76 @@ const init = () => {
 
     img.setAttribute("src", img_carrousel[0]);
     
-    carrosel();
+    timer = setInterval(carrosel, 2500)
+    
+    populateRadios();
 }
 
 init()
+
+const btnRadio0 = document.getElementById("radio-button-0");
+const btnRadio1 = document.getElementById("radio-button-1");
+const btnRadio2 = document.getElementById("radio-button-2");
+
+btnOpen.onblur = () => {
+    list.style.width = "0";
+}
+
+btnNext.addEventListener("click", () => {
+    contador < img_carrousel.length - 1 ? contador++ : contador = 0;
+    img.setAttribute("src", img_carrousel[contador]);
+    updateRadio()
+})
+
+btnPrev.addEventListener("click", () => {
+    contador > 0 ? contador-- : contador = img_carrousel.length - 1;
+    img.setAttribute("src", img_carrousel[contador]);
+    updateRadio()
+})
+
+btnOpen.addEventListener("click", () => {
+    list.style.width = "250px";
+})
+
+btnClose.addEventListener("click", () => {
+    list.style.width = "0";
+})
+
+filterAdv.addEventListener("change", () => {
+    var category = filterAdv.options[filterAdv.selectedIndex].value;
+    var priceRang = filterPrice.options[filterPrice.selectedIndex].value;
+
+    verifyCategory(category, priceRang);
+})
+
+filterPrice.addEventListener("change", () => {
+    var category = filterAdv.options[filterAdv.selectedIndex].value;
+    var priceRang = filterPrice.options[filterPrice.selectedIndex].value;
+
+    verifyPrice(category, priceRang);
+})
+
+searchFilter.addEventListener("keyup", () => {
+    var name = searchFilter.value;
+
+    verifyName(name);
+})
+
+btnRadio0.addEventListener("click", () => {
+    contador = 0;
+    console.log(timer)
+    img.setAttribute("src", img_carrousel[contador]);
+    updateRadio()
+})
+
+btnRadio1.addEventListener("click", () => {
+    contador = 1;
+    img.setAttribute("src", img_carrousel[contador]);
+    updateRadio()
+})
+
+btnRadio2.addEventListener("click", () => {
+    contador = 2;
+    img.setAttribute("src", img_carrousel[contador]);
+    updateRadio()
+})

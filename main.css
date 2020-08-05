@@ -160,10 +160,10 @@ body {
     display: flex;
     padding: 30px 15px 30px 15px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 0;
     z-index: 1;
     user-select: none;
-    transition: 0.3s;
+    transition: all 0.3s ease 0s;
 }
 
 .next {
@@ -177,9 +177,42 @@ body {
 #dh_carousel .container .next:hover,
 #dh_carousel .container .prev:hover {
     color: #f1f1f1;
+    font-size: 30px;
     filter: brightness(80%);
     background-color: rgba(18, 18, 18, 0.5);
     border: rgba(18, 18, 18, 0.5)
+}
+
+.radio-button-0,
+.radio-button-1,
+.radio-button-2 {
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 0.6em;
+    height: 0.6em;
+    border-radius: 50%;
+    background-color: #0008;
+
+    margin-top: 68vh;
+    cursor: pointer;
+}
+
+.radio-button-0 {
+    margin-left: 48vw;
+}
+
+.radio-button-1 {
+    margin-left: 50vw;
+}
+
+.radio-button-2 {
+    margin-left: 52vw;
+}
+
+.disable {
+    background-color: #ccc8;
 }
 
 .filters {
