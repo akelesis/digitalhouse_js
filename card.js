@@ -49,5 +49,43 @@ const filterByCategory = () => {
     }
 }
 
-const filterByPrice = (listBooks) => {
+const filterByPrice = () => {
+    const price = document.getElementById("price_range").value
+    console.log(price)
+
+    let newSearch = []
+
+    if(price == "barato"){
+        newSearch = listBooks.filter(book => {
+            return book.price > 0 && book.price < 21
+        })
+        cardSection.innerHTML = ""
+    for (i=0; i<newSearch.length; i++){
+        cardSection.innerHTML += cards(newSearch[i])
+        } 
+    } else if(price =="medio"){
+        newSearch = listBooks.filter(book => {
+            return book.price >= 21 && book.price < 41
+        })
+        cardSection.innerHTML = ""
+        for (i=0; i<newSearch.length; i++){
+            cardSection.innerHTML += cards(newSearch[i])
+        }
+    } else if(price == "caro"){
+        newSearch = listBooks.filter(book => {
+            return book.price >= 41 && book.price < 41
+        })
+        cardSection.innerHTML = ""
+        for (i=0; i<newSearch.length; i++){
+            cardSection.innerHTML += cards(newSearch[i])
+        }
+    } else {
+        newSearch = listBooks.filter(book => {
+            return book.price >= 61
+        })
+        cardSection.innerHTML = ""
+        for (i=0; i<newSearch.length; i++){
+            cardSection.innerHTML += cards(newSearch[i])
+        }
+    }
 }
