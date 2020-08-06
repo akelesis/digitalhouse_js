@@ -113,5 +113,5 @@ function filtroPreco(){
     })
     adcLivros(listaFiltro);
     tituloLivro.value = "";
-    precoLivro.value = "";
+    categoriaLivro.value = "";
 }
