@@ -44,11 +44,15 @@ body {
     filter: brightness(80%);
     cursor: pointer;
 }
+.imagem{
+    opacity: 0.5;
+}
 
 .content {
     display: flex;
     flex-direction: column;
 }
+
 
 #dh_carousel {
     width: 100%;
@@ -175,4 +179,45 @@ footer {
     .showcase {
         width: 60vw;
     }
+}
+
+/*MINHAS MODIFICAÇÕES */
+#menu_imagem {
+
+}
+#menu_itens a:hover{
+ color:black;
+
+}
+#menu{
+   
+    top: -280px;
+    left:1130px;
+    height: 270px;
+    position: fixed;
+    background-color: rgb(204, 204, 204);
+    box-shadow:  -5px 5px 10px grey;
+
+}
+
+#menu  a {
+    box-sizing: border-box;
+    margin: 5px;
+    text-decoration: none;
+    color:red;
+    font-weight: 2px;
+    
+}
+#menu li{
+    list-style-type: none;
+    padding: 4px 0px 0px 0px;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.menu .abrir{
+    top: 280px;
 }
