@@ -1,18 +1,22 @@
 //Clique Menu
 const menuArea = document.getElementById("dh_menu_btn");
-menuArea.addEventListener("click", showHideMenu, false);
+//menuArea.addEventListener("click", showHideMenu);
+document.addEventListener("click", showHideMenu);
+const menuOpened = document.getElementById("menu");
 
 //Função mostrar/esconder menu
-function showHideMenu(){
-    let menuOpened = document.getElementById("menu");
-    if(menuOpened.style.display == 'block'){
+function showHideMenu(e){
+    if(e.target.id != 'dh_menu_btn' && e.target.id != 'menu_bars')
         menuOpened.style.display = 'none';
-    }else{
-        menuOpened.style.display = 'block';
-    }
+    else{
+        if(menuOpened.style.display == 'block')
+            menuOpened.style.display = 'none';
+        else
+            menuOpened.style.display = 'block';
+    }        
 }
-
-//CRIANDO CARROSSEL
+    
+    //CRIANDO CARROSSEL
 
 var imgs = [];
 var slider;
