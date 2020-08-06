@@ -55,12 +55,11 @@ nav{
     display: none;
     margin-top: 80px;
     background-color: #f71725;
-    transition: 1s;
+    animation: anim 0.5s forwards;
 }
 
 nav.show{
     display: block;
-    right: 0;
 }
 
 ul{
@@ -261,6 +260,15 @@ footer {
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
+}
+
+@keyframes anim{
+    0%{
+        right: -50%;
+    }
+    100%{
+        right: 0;
+    }
 }
 
 @media(min-width: 1498px) {

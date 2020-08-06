@@ -62,6 +62,7 @@ next.addEventListener("click", avancar);
 
 /* ----- Inserção de livros -----*/
 const container = document.querySelector(".showcase");
+const divCard = document.querySelectorAll(".card");
 
 const livros = [
     {
@@ -108,14 +109,83 @@ const livros = [
     },
 ]
 
-livros.forEach(livro => {
-    const card = document.createElement("div")
-    card.setAttribute("class", "card")
-    card.innerHTML = `<img src="${livro.imagem}">`
-    container.appendChild(card);
-       const overlay = document.createElement("div")
-        overlay.setAttribute("class", "overlay")
-        overlay.innerHTML = `<h2>${livro.titulo}</h2><p>${livro.texto}</p>`
-        card.appendChild(overlay);
-});
+function inserir(){
+    for (let i = divCard.length; i < livros.length ; i++) {
+        container.innerHTML += `
+        <div class="card" >
+            <img src=${livros[i].imagem} id="card-img">
+            <div class="overlay">
+                    <h2>${livros[i].titulo}</h2>
+                    <p>${livros[i].texto}</p>
+            </div>
+        </div>
+    `
+    }
+}
 
+inserir();
+
+/* ----- filtrar pesquisa -----*/
+const search = document.getElementById("search_button")
+const category = document.getElementById("category");
+const price = document.getElementById("price_range");
+const text = document.getElementById("search_bar");
+
+function filtros () {
+
+    container.innerHTML = "";
+
+    let texto = text.value.toLowerCase();
+    let categoria = category.options[category.selectedIndex].value;
+    let preco = price.options[price.selectedIndex].value;
+ 
+
+    const categoriaSelect = livros.filter(livro =>{
+        if (categoria === livro.categoria){
+            return livro;
+        } 
+        else if (categoria === ""){
+            return livros;
+        }
+    });
+
+    const precoSelect = categoriaSelect.filter(livro =>{
+        if (preco === livro.preco){
+            return livro;
+        } 
+        else if (preco === ""){
+            return categoriaSelect;
+        }
+    });
+
+    const livrosFiltro = precoSelect.filter(livro =>{
+        if (texto === livro.titulo.toLowerCase()){
+            return livro; 
+        } 
+        else if (texto === ""){
+            return precoSelect;
+        }
+    });
+
+    //Não encontrei material sobre como fazer a pesquisa do título aproximada :(
+  
+    if (livrosFiltro.length == 0){
+        container.innerHTML = `<h2> Nenhum resultado encontrado </h2>`
+    } 
+    else {
+    for (let i = 0; i < livrosFiltro.length; i++) {
+        container.innerHTML += `
+        <div class="card" >
+            <img src=${livrosFiltro[i].imagem} id="card-img">
+            <div class="overlay">
+                    <h2>${livrosFiltro[i].titulo}</h2>
+                    <p>${livrosFiltro[i].texto}</p>
+            </div>
+        </div>
+    `
+         }
+    }
+
+}
+
+search.addEventListener("click", filtros); 
