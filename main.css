@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    font-family: "Mulish", sans-serif;
 }
 
 .bookshop_header {
@@ -19,6 +20,52 @@ body {
 
     background-color: #F71735;
     color: #EEE0CB;
+}
+
+#side-menu {
+    background-color: #b6061d;
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 300px;
+    z-index: 1000;
+    position: fixed;
+    transition: all 0.5s;
+    right: -350px;
+    top: -16px;
+    padding: 20px;
+}
+
+.side-menu-item {
+    padding: 15px 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+    align-items: center;
+}
+
+.side-menu-item h2, button {
+    color: #fff;
+    font-size: 28px;
+}
+
+.side-menu-item button {
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.side-menu-item a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 21px;
 }
 
 .dh_title {
