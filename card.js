@@ -73,16 +73,15 @@ const filterByPrice = () => {
         newSearch = listBooks.filter(book => {
             return book.price >= 61
         })
-
-        document.getElementById("search_bar").value = ""
-        document.getElementById("category").value = ""
-
     }
-
     cardSection.innerHTML = ""
     for (i=0; i<newSearch.length; i++){
         cardSection.innerHTML += cards(newSearch[i])
     }
+
+    document.getElementById("search_bar").value = ""
+    document.getElementById("category").value = ""
+
 }
 
 const seeAll = () => {
