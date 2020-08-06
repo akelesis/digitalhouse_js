@@ -46,10 +46,10 @@ const showcase = document.querySelector(".showcase");
 
 function renderizar() {
 const filteredBooks = filterBooks();
-// clear showcase before insertion
+// limpa o showcase
 showcase.innerHTML = "";
 
-// iterate over books array and insert
+// cria a div card e os filhos dinamicamente 
 filteredBooks.forEach(function (book) {
   const card = document.createElement('div');
   card.className = 'card';
@@ -78,10 +78,10 @@ filteredBooks.forEach(function (book) {
 }
 
 /* filters */
-// apply filter on books, return array with filtered results
+//
 function filterBooks (books = livros) {
   function filtro(book) {
-    for (let filter in appliedFilters) { // first run: name
+    for (let filter in appliedFilters) { 
       if (appliedFilters[filter] !== "" && filter === "price_range") {
         switch (appliedFilters[filter]) {
           case "barato": /* compara o valor do value (barato/caro) com o preço do livro */
