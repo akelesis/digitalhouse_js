@@ -20,7 +20,6 @@ body {
   background-color: #f71735;
   color: #eee0cb;
   position: relative;
-  z-index: 5;
 }
 
 .dh_title {
@@ -28,13 +27,14 @@ body {
   font-weight: 300;
 }
 
-.dh_menu {
+.bookshop_header .dh_menu {
   display: none;
   cursor: pointer;
   background-color: #f71735;
   border-radius: 4px;
   width: 92%;
   left: 0px;
+  z-index: 1;
 }
 
 .dh_menu.show {
@@ -51,7 +51,7 @@ body {
   top: -150px;
   animation: up 2s ease;
   opacity: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 @keyframes down {
@@ -73,7 +73,7 @@ body {
 @keyframes up {
   0% {
     opacity: 0.95;
-    transform: translateY(200px);
+    transform: translateY(190px);
   }
   25% {
     opacity: 0.5;
@@ -501,5 +501,9 @@ footer div {
     width: 65%;
     height: 400px;
     max-height: 30vh;
+  }
+
+  .modal-content .modal-info {
+    padding-right: 24px;
   }
 }
