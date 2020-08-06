@@ -104,6 +104,23 @@ nav a{
     background-color: #ccc; 
 }
 
+.btn_livros{
+    height: 100%;
+    width: 50px;
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    background-color: rgba(55, 55, 55, 0.2);
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: filter .3s;
+}
+
 .btn_carousel {
     height: 100%;
     width: 50px;
@@ -196,13 +213,27 @@ nav a{
     border: 1px solid #888;
 }
 
+#middle{
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn_livros_ant {
+    margin-left: 100px;
+}
+
+#btn_livros_prox {
+    margin-right: 100px;;
+}
+
 .showcase {
-    width: 80vw;
+    width: 60vw;
+    height: 1000px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-self: center;
-    margin: 50px 0;
+    margin: 30px 0;
 }
 
 .card {
@@ -210,6 +241,26 @@ nav a{
     height: 400px;
     margin: 10px 0;
     position: relative;
+    margin: 40px;
+    cursor: pointer;
+}
+
+.card:hover {
+    border: solid 10px #555;
+}
+
+.linkBooks{
+    text-decoration: none;
+    color: #000;
+}
+
+.titulo{
+    font-size: 20px;
+    text-align: center;
+}
+
+.preco, .autor {
+    text-align: center;
 }
 
 .overlay {
@@ -219,14 +270,11 @@ nav a{
     left: 0;
     top: 0;
     z-index: 5;
-
-    background-color: #7777;
-
+    background-color: #777;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 10px;
     box-sizing: border-box;
 }
@@ -239,10 +287,4 @@ footer {
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
-}
-
-@media(min-width: 1498px) {
-    .showcase {
-        width: 60vw;
-    }
 }

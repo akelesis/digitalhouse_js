@@ -6,7 +6,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Luiz Araujo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
 </head>
 
 <body>
@@ -31,16 +31,14 @@
         <section id="dh_carousel">
             <button id="btn_carousel_ant" class="btn_carousel"><</button>
             <div id="dv_load">
-                <div id="dv_bar">
-
-                </div>
+                <div id="dv_bar"></div>
             </div>
             <button id="btn_carousel_prox" class="btn_carousel">></button>
         </section>
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
@@ -59,69 +57,22 @@
                 </select>
             </div>
         </section>
-
-        <section class="showcase">
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
+        <section id="middle">
+            <section><button id="btn_livros_ant" class="btn_carousel"><</button></section>
+            <section class="showcase">
+            </section>
+            <section><button id="btn_livros_prox" class="btn_carousel">></button></section>
         </section>
+        
     </main>
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    <script src="js/carrossel.js"></script>
+    <script src='js/main.js'></script>
+    <script src="js/menu.js"></script>
+    
 </body>
 
 </html>

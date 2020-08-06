@@ -1,0 +1,201 @@
+[
+    {
+        "titulo":"Harry Potter e a Pedra Filosofal",
+        "autor":"J. K. Rowling",
+        "ano":"1997",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP1_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural."
+        
+    },
+    {
+        "titulo":"Harry Potter e a Camara Secreta",
+        "autor":"J. K. Rowling",
+        "ano":"1998",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP2_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Depois de férias aborrecidas na casa dos tios trouxas, está na hora de Harry Potter voltar a estudar. Coisas acontecem, no entanto, para dificultar o regresso de Harry. Persistente e astuto, o herói não se deixa intimidar pelos obstáculos e, com a ajuda dos fiéis amigos Weasley"
+    },
+    {
+        "titulo":"Harry Potter e o Prisioneiro de Azkaban",
+        "autor":"J. K. Rowling",
+        "ano":"2000",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP3_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"As aulas estão de volta à Hogwarts e Harry Potter não vê a hora de embarcar no expresso a vapor que o levará de volta à escola de bruxaria. Mais uma vez suas férias na rua dos Alfeneiros foi triste e solitária. "
+    },
+    {
+        "titulo":"Harry Potter e o Cálice de Fogo",
+        "autor":"J. K. Rowling",
+        "ano":"2001",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP4_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Nesta aventura, o feiticeiro cresceu e está com 14 anos. O início do ano letivo de Harry Potter reserva muitas emoções, mágicas, e acontecimentos inesperados, além de um novo torneio em que os alunos de Hogwarts terão de demonstrar todas as habilidade mágicas e nãomágicas que vêm adquirindo ao longo de suas vidas."
+    },
+    {
+        "titulo":"Harry Potter e a Ordem da Fênix",
+        "autor":"J. K. Rowling",
+        "ano":"2002",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP5_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Harry não é mais um garoto. Aos 15 anos, continua sofrendo a rejeição dos Dursdley, sua estranha família no mundo dos 'trouxas'. Também continua contando com Rony Weasley e Hermione Granger, seus melhores amigos em Hogwarts, para levar adiante suas investigações e aventuras. Mas o bruxinho começa a sentir e descobrir coisas novas, como o primeiro amor e a sexualidade."
+    },
+    {
+        "titulo":"Harry Potter e o Enigma do Princípe",
+        "autor":"J. K. Rowling",
+        "ano":"2004",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP6_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Harry Potter e o enigma do príncipe' dá continuidade à saga do jovem bruxo Harry Potter a partir do ponto em que o livro anterior parou o momento em que fica provado que o poder de Voldemort e dos Comensais da Morte, seus seguidores, cresce mais a cada dia, em meio à batalha entre o bem e o mal. A onda de terror provocada pelo Lorde das Trevas estaria afetando."
+    },
+    {
+        "titulo":"Harry Potter e as Relíquias da Morte",
+        "autor":"J. K. Rowling",
+        "ano":"2006",
+        "editora":"Rocco",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/HP7_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Harry Potter e as relíquias da morte', de J.K. Rowling, é o sétimo e último livro da série. Voldemorte está cada vez mais forte e Harry Potter precisa encontrar e aniquilar as Horcruxes para enfraquecer o lorde e poder enfrentálo. "
+    },
+    {
+        "titulo":"O Iluminado",
+        "autor":"Stephen King",
+        "ano":"1970",
+        "editora":"SUMA",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/SK1_300x400.jpg",
+        "genero":"Terror",
+        "faixa":"médio",
+        "descricao":"O lugar perfeito para recomeçar”, é o que pensa Jack Torrance ao ser contratado como zelador para o inverno. Hora de deixar para trás o alcoolismo, os acessos de fúria, os repetidos fracassos. Isolado pela neve com a esposa e o filho, tudo o que Jack deseja é um pouco de paz para se dedicar à escrita."
+    },
+    {
+        "titulo":"It: A Coisa",
+        "autor":"Stephen King",
+        "ano":"1986",
+        "editora":"SUMA",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/SK2_300x400.jpg",
+        "genero":"Terror",
+        "faixa":"médio",
+        "descricao":"Durante as férias de 1958, em uma pacata cidadezinha do Maine, Bill, Richie, Stan, Mike, Eddie, Ben e Beverly aprenderam o real sentido da amizade, do amor, da confiança... e do medo."
+    },
+    {
+        "titulo":"Novembro de 63",
+        "autor":"Stephen King",
+        "ano":"2011",
+        "editora":"SUMA",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/SK3_300x400.jpg",
+        "genero":"Ficção Científica",
+        "faixa":"médio",
+        "descricao":"A vida pode mudar em um instante e dar guinadas extraordinárias. É o que acontece com Jake Epping, um professor de inglês de uma cidade no Maine, quando Al, dono da lanchonete da cidade, o recruta para assumir a missão que se tornou a obsessão de sua vida: deter o assassinato de John Kennedy."
+    },
+    {
+        "titulo":"A Dança da Morte",
+        "autor":"Stephen King",
+        "ano":"1987",
+        "editora":"SUMA",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/SK4_300x400.jpg",
+        "genero":"Terror",
+        "faixa":"médio",
+        "descricao":"Após um erro de computação no Departamento de Defesa, um vírus é liberado, e um milhão de contatos casuais formam uma cadeia de morte: é assim que o mundo acaba. O que surge em seu lugar é um ambiente árido, sem instituições e esvaziado de 99% da população."
+    },
+    {
+        "titulo":"O Senhor dos Anéis e a Sociedade do Anel",
+        "autor":"J. R. R. Tolkien",
+        "ano":"1954",
+        "editora":"Allen & Unwin",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/TK1_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"O volume inicial de O Senhor dos Anéis, lançado originalmente em julho de 1954, foi o primeiro grande épico de fantasia moderno, conquistando milhões de leitores e se tornando o padrão de referência para todas as outras obras do gênero até hoje."
+    },
+    {
+        "titulo":"O Senhor dos Anéis e as Duas Torres",
+        "autor":"J. R. R. Tolkien",
+        "ano":"1954",
+        "editora":"Allen & Unwin",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/TK2_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"O segundo volume de O Senhor dos Anéis, mais importante épico de fantasia moderno, narra os caminhos separados seguidos pelos membros da Sociedade do Anel em sua luta para deter Sauron, o Senhor Sombrio da terra de Mordor, e destruir o Um Anel, no qual está contida a maior parte do poder do tirano demoníaco"
+    },
+    {
+        "titulo":"O Senhor dos Anéis e o Retorno do Rei",
+        "autor":"J. R. R. Tolkien",
+        "ano":"1955",
+        "editora":"Allen & Unwin",
+        "preco":"R$ 25,00",
+        "imagem":"img/img-books/TK3_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"A guerra entre os Povos Livres da Terra-média e Sauron, o Senhor Sombrio da terra de Mordor, chega a seu clímax neste terceiro volume do romance O Senhor dos Anéis. As batalhas grandiosas que estão prestes a acontecer, no entanto, são apenas o pano de fundo para o verdadeiro drama: a missão quase suicida dos hobbits Frodo e Sam, que tentam destruir o Um Anel, fonte do poder de Sauron, infiltrando-se no coração do território do Inimigo."
+    },
+    {
+        "titulo":"O Hobbit",
+        "autor":"J. R. R. Tolkien",
+        "ano":"1937",
+        "editora":"Allen & Unwin",
+        "preco":"R$ 31,41",
+        "imagem":"img/img-books/TK4_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Bilbo Bolseiro era um dos mais respeitáveis hobbits de todo o Condado até que, um dia, o mago Gandalf bate à sua porta. A partir de então, toda sua vida pacata e campestre soprando anéis de fumaça com seu belo cachimbo começa a mudar."
+    },
+    {
+        "titulo":"As Crônicas de Nárnia",
+        "autor":"C. S. Lewis",
+        "ano":"1950",
+        "editora":"Allen & Unwin",
+        "preco":"R$ 25,55",
+        "imagem":"img/img-books/CL1_300x400.jpg",
+        "genero":"Fantasia",
+        "faixa":"médio",
+        "descricao":"Bilbo Bolseiro era um dos mais respeitáveis hobbits de todo o Condado até que, um dia, o mago Gandalf bate à sua porta. A partir de então, toda sua vida pacata e campestre soprando anéis de fumaça com seu belo cachimbo começa a mudar."
+    },
+    {
+        "titulo":"Ilíada",
+        "autor":"Homero",
+        "ano":"700 A.C.",
+        "editora":"",
+        "preco":"R$ 96,76",
+        "imagem":"img/img-books/HM1_300x400.jpg",
+        "genero":"Romance",
+        "faixa":"mais caro",
+        "descricao":"Composta no século VIII a.C., a Ilíada é considerada o marco inaugural da literatura ocidental. Tradicionalmente atribuída a Homero, a obra aborda o período de algumas semanas no último ano da Guerra de Troia"
+    },
+    {
+        "titulo":"Odisséia",
+        "autor":"Homero",
+        "ano":"700 A.C.",
+        "editora":"",
+        "preco":"R$ 96,76",
+        "imagem":"img/img-books/HM2_300x400.jpg",
+        "genero":"Romance",
+        "faixa":"mais caro",
+        "descricao":"Os mais de doze mil versos do grande épico de Homero em uma tradução premiada do helenista português Frederico Lourenço."
+    }
+]
