@@ -25,8 +25,7 @@ function cards(json){
         </div>
         </a>
     </div>    
-    `
-    
+    ` 
 }
 
 const trocarLivrosProx = document.getElementById("btn_livros_prox");
