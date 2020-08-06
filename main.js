@@ -7,8 +7,6 @@ var book = {
 };
 var books = [];
 
-
-
 window.addEventListener("load", function (event) {
   addBook(
     (book = {
@@ -52,54 +50,49 @@ var currentCarouselimg = 0;
 let imagesToCarousel = ["../img/saldaoDH1.png", "../img/melhoresLivros.jpg"];
 
 function carousel() {
-  
   let imgCarousel = document.getElementById("imgCarousel");
 
   imgCarousel.src = imagesToCarousel[currentCarouselimg];
 
   currentCarouselimg++;
 
-checkCarousel();
-  
+  checkCarousel();
 }
 
 const buttonColapse = document.getElementById("dh_menu_btn");
 
-buttonColapse.addEventListener("click",colapseMenu)
+buttonColapse.addEventListener("click", colapseMenu);
 
 //menu copalsável
-function colapseMenu(){
+function colapseMenu() {
+  let colapse = true;
 
-let colapse = true;
+  colapse = !colapse;
 
-colapse = !colapse;
-
-if (colapse){
-  closeNav();
+  if (colapse) {
+    closeNav();
+  } else {
+    openNav();
+  }
 }
-else{openNav();}
-
-}
-
 
 function openNav() {
   document.getElementById("Sidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
 }
 
-
 function closeNav() {
   document.getElementById("Sidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
-} 
+}
 
-function checkCarousel(){
+function checkCarousel() {
   if (currentCarouselimg >= imagesToCarousel.length) {
     currentCarouselimg = 0;
   }
 
-  if (currentCarouselimg < 0){
-    currentCarouselimg = imagesToCarousel.length-1;
+  if (currentCarouselimg < 0) {
+    currentCarouselimg = imagesToCarousel.length - 1;
   }
 }
 
@@ -128,86 +121,95 @@ function addBook(objeto) {
 
 function InsertBook(books) {
   for (let i = 0; i < books.length; i++) {
-    inner(books[i]);
+    inner(books[i], "showcase");
   }
 }
 
-  function inner(objeto) {
-   
-    let livro = document.createElement("div");
-    let overlay = document.createElement("div");
-    let livroCapa = document.createElement("img");
-    let TituloLivro = document.createElement("h2");
-    let descricaoLivro = document.createElement("p");
-    let Showcase = document.getElementById("showcase");
+function inner(objeto, IDPai) {
+  let livro = document.createElement("div");
+  let overlay = document.createElement("div");
+  let livroCapa = document.createElement("img");
+  let TituloLivro = document.createElement("h2");
+  let descricaoLivro = document.createElement("p");
+  let Pai = document.getElementById(IDPai);
 
-    livro.classList.add("card");
-    livroCapa.classList.add("capa");
-    overlay.classList.add("overlay");
+  livro.classList.add("card");
+  livroCapa.classList.add("capa");
+  overlay.classList.add("overlay");
 
-    livroCapa.src = objeto.imagem;
-    TituloLivro.innerText = objeto.titulo;
-    descricaoLivro.innerText = objeto.descricao;
+  livroCapa.src = objeto.imagem;
+  TituloLivro.innerText = objeto.titulo;
+  descricaoLivro.innerText = objeto.descricao;
 
-    Showcase.appendChild(livro);
-    livro.appendChild(livroCapa);
-    livro.appendChild(overlay);
-    overlay.appendChild(TituloLivro);
-    overlay.appendChild(descricaoLivro);
-  }
+  Pai.appendChild(livro);
+  livro.appendChild(livroCapa);
+  livro.appendChild(overlay);
+  overlay.appendChild(TituloLivro);
+  overlay.appendChild(descricaoLivro);
+}
 
 //sistema de pesquisa
 
-let searchBar = document.getElementById("search_bar").value
-let searchCategoty = document.getElementById("category").value
-let searchPrice = document.getElementById("price_range").value
+let searchBar = document.getElementById("search_bar").value;
+let searchCategoty = document.getElementById("category").value;
+let searchPrice = document.getElementById("price_range").value;
 
 let searchbutton = document.getElementById("search_button");
 
+searchbutton.addEventListener("click", () => {
+  pesquisa(searchBar, searchCategoty, searchPrice);
+});
 
-
- searchbutton.addEventListener("click",() => {pesquisa(searchBar,searchCategoty,searchPrice)})
-
-
-function pesquisa(name, category, price){
+function pesquisa(name, category, price) {
   let livrosFiltrados = [];
-  
 
-  for(let i = 0; i< books.length; i++){
+  for (let i = 0; i < books.length; i++) {
+    let nameInc, categoryInc, priceInc;
 
-    let nameInc, categoryInc, priceInc
-    
-    if(name != undefined){
-     nameInc = books[i].titulo.includes(name);
-
+    if (name != undefined) {
+      nameInc = books[i].titulo.includes(name);
+    } else {
+      nameInc = true;
     }
 
-    else{nameInc = true}
-
-    if(category != ""){
-     categoryInc = books[i].categoria.includes(category);
-
+    if (category != "") {
+      categoryInc = books[i].categoria.includes(category);
+    } else {
+      categoryInc = true;
     }
-    else{categoryInc = true}
 
-    if(price != ""){
-
-    priceInc =  books[i].preco.includes(price);
-
+    if (price != "") {
+      priceInc = books[i].preco.includes(price);
+    } else {
+      priceInc = true;
     }
-    else{priceInc = true}
-    
 
-    if(nameInc && categoryInc && priceInc){
-    livrosFiltrados.push(books[i]);
-
+    if (nameInc && categoryInc && priceInc) {
+      livrosFiltrados.push(books[i]);
     }
-    }
-    if (livrosFiltrados.length > 0){
-
-      console.log(livrosFiltrados);
-      let showcase = document.getElementById("showcase");
-    //  showcase.classList.add("invisivel");
   }
+  console.log(livrosFiltrados);
+  template(livrosFiltrados);
+}
+
+//liga e insere os livros no template
+let Template = document.getElementById("template");
+
+function template(livros) {
+  for (let i = 0; i < livros.length; i++) {
+    inner(livros[i], "template");
   }
 
+  Template.classList.toggle("invisivel");
+}
+
+let buttonCloseTemplate = document.getElementById("closeTemplate");
+
+buttonCloseTemplate.addEventListener("click", () => {
+  Template.classList.add("invisivel");
+
+  for (let i = 0; i < Template.children.length; i++) {
+      Template.querySelector('div.card').remove();
+  }
+
+});

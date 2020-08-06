@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>livraria</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
 
-<body>
-   <!--aqui é o menu lateral-->
+  <body>
+    <!--aqui é o menu lateral-->
     <div id="Sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">alguma</a>
-        <a href="#">coisa</a>
-        <a href="#">escrita</a>
-        <a href="#">aqui</a>
-      </div>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="#">alguma</a>
+      <a href="#">coisa</a>
+      <a href="#">escrita</a>
+      <a href="#">aqui</a>
+    </div>
 
-      <!--aqui começa o resto da pag-->
-      <div id="main">
-    <header class="bookshop_header">
-        <h1 class="dh_title"> Digital House - Livraria </h1>
-        <button id="dh_menu_btn"><i  class="fas fa-bars"></i></button>
-    </header>
-    <main class="content">
+    <!--aqui começa o resto da pag-->
+    <div id="main">
+      <header class="bookshop_header">
+        <h1 class="dh_title">Digital House - Livraria</h1>
+        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+      </header>
+      <main class="content">
         <section id="dh_carousel">
-       <!-- <input class="botaoCarrossel" name="CarouselBack" type="button" value="<" > -->
-            <img id="imgCarousel" src="" alt="">
-      <!--<input class="botaoCarrossel" name="CarouselNext" type="button" value=">">-->
+          <!-- <input class="botaoCarrossel" name="CarouselBack" type="button" value="<" > -->
+          <img id="imgCarousel" src="" alt="" />
+          <!--<input class="botaoCarrossel" name="CarouselNext" type="button" value=">">-->
         </section>
         <section class="filters">
-            <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" ><i class="fas fa-search"></i></button>
-            </div>
-            <div class="advanced_filters">
-                <select name="category" id="category">
-                    <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="comedia">comedia</option>
-                    <option value="Biografia">Biografia</option>
-                    <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
-                </select>
-                <select name="price_range" id="price_range">
-                    <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
-                </select>
-            </div>
+          <div class="name_box">
+            <input type="text" id="search_bar" placeholder="Nome do livro..." />
+            <button id="search_button"><i class="fas fa-search"></i></button>
+          </div>
+          <div class="advanced_filters">
+            <select name="category" id="category">
+              <option value="" selected="true" disabled="disabled"
+                >Selecione a categoria</option
+              >
+              <option value="comedia">comedia</option>
+              <option value="Biografia">Biografia</option>
+              <option value="Fantasia">Fantasia</option>
+              <option value="Romance">Romance</option>
+            </select>
+            <select name="price_range" id="price_range">
+              <option value="" selected="true" disabled="disabled"
+                >Faixa de preço</option
+              >
+              <option value="barato">R$1 - R$20</option>
+              <option value="medio">R$21 - R$40</option>
+              <option value="caro">R$41 - R$60</option>
+              <option value="mais caro">acima de R$61</option>
+            </select>
+          </div>
         </section>
 
         <section id="showcase"></section>
-        <section id="showcase1"></section>
-    </main>
-</div>
-    <footer>
-        <p>Todos os direitos reservados - Digital House &#169;</p>
-    </footer>
-    <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
-</body>
 
+        <div class="invisivel" id="template">
+          <input id="closeTemplate" type="button" value="X" />
+        </div>
+      </main>
+    </div>
+    <footer>
+      <p>Todos os direitos reservados - Digital House &#169;</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/37a6fc82c8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
 </html>
