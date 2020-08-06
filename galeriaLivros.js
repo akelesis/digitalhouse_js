@@ -39,6 +39,6 @@ const livros = [
         titulo: "Harry Potter e a Criança Amaldiçoada",
         descricao: "Sempre foi difícil ser Harry Potter e não é mais fácil agora que ele é um sobrecarregado funcionário do Ministério da Magia, marido e pai de três crianças em idade escolar.",
         categoria: "Fantasia",
-        preco: 50.20
+        preco: 62
     }
 ]

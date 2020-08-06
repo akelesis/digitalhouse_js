@@ -29,17 +29,17 @@
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="filtroTitulo()"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
-                <select name="category" id="category">
+                <select name="category" id="category" onchange="filtroCategoria()">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
                     <option value="Auto Ajuda">Auto Ajuda</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="Romance">Romance</option>
                 </select>
-                <select name="price_range" id="price_range">
+                <select name="price_range" id="price_range" onchange="filtroPreco()">
                     <option value="" selected="true" disabled="disabled">Faixa de preço</option>
                     <option value="barato">R$1 - R$20</option>
                     <option value="medio">R$21 - R$40</option>

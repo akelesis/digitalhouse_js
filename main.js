@@ -34,7 +34,7 @@ function toogle(){
 
 //----------------------POPULAR PÁGINA COM LIVROS-----------------------
 
-function adcLivros(){
+function adcLivros(livros){
     const showcase = document.querySelector(".showcase");
     showcase.innerHTML = "";
     livros.forEach(livro=>{
@@ -57,4 +57,61 @@ function adcLivros(){
     });
 }
 
-adcLivros();
+adcLivros(livros);
+
+//------------------------FILTROS DE PESQUISA------------------------
+
+
+
+function filtroTitulo(){
+    const tituloLivro = document.getElementById("search_bar").value;   
+    const categoriaLivro = document.getElementById("category");
+    const precoLivro = document.getElementById("price_range");
+
+    const listaFiltro = livros.filter(livro=>{
+       return (livro.titulo.toUpperCase()).includes(tituloLivro.toUpperCase());
+    });
+    adcLivros(listaFiltro);
+    categoriaLivro.value = "";
+    precoLivro.value = "";
+}
+
+function filtroCategoria(){
+    const tituloLivro = document.getElementById("search_bar");   
+    const categoriaLivro = document.getElementById("category").value;
+    const precoLivro = document.getElementById("price_range");
+
+    console.log(categoriaLivro);
+    const listaFiltro = livros.filter(livro=>{
+        return (livro.categoria === categoriaLivro)
+    });
+    adcLivros(listaFiltro);
+    tituloLivro.value = "";
+    precoLivro.value = "";
+}
+
+function filtroPreco(){
+    const tituloLivro = document.getElementById("search_bar");   
+    const categoriaLivro = document.getElementById("category");
+    const precoLivro = document.getElementById("price_range").value;
+
+    const listaFiltro = livros.filter(livro=>{
+        switch(precoLivro){
+            case "barato":
+                return livro.preco >= 1 && livro.preco <=20;
+                break;
+            case "medio":
+                return livro.preco >= 21 && livro.preco <=40;
+                break;
+            case "caro":
+                return livro.preco >= 41 && livro.preco <=60;
+                break;
+            case "mais caro":
+                return livro.preco >= 61;
+                break;
+        }
+    })
+    adcLivros(listaFiltro);
+    tituloLivro.value = "";
+    precoLivro.value = "";
+}
