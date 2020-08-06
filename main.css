@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #EEE0CB;
+}
+
+.bookshop_header {
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #F71735;
+    color: #EEE0CB;
+}
+
+.dh_title {
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+}
+
+#dh_menu_btn {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+    background-color: #f7425a;
+    color: #EEE0CB;
+    font-size: 25px;
+    transition: filter .3s;
+}
+
+#dh_menu_btn:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+#dh_carousel {
+    width: 100%;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ccc; 
+}
+
+.carrousel_label {
+    font-family: "Mulish", sans-serif;
+    font-weight: 200;
+    font-size: 25px;
+    color: #777;
+}
+
+.filters {
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.name_box {
+    display: flex;
+}
+
+#search_bar {
+    width: 50vw;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #888;
+    border-right: none;
+    outline: none;
+
+    font-family: "Mulish", sans-serif;
+    color: #666;
+}
+
+#search_button {
+    font-size: 20px;
+    padding: 11px;
+    border-radius: 0 25px 25px 0;
+    border: 1px solid #888;
+    border-left: none;
+    outline: none;
+
+    color: #666;
+
+    transition: filter .3s;
+}
+
+#search_button:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.advanced_filters select {
+    width: 25vw;
+    font-size: 20px;
+    font-family: "Mulish", sans-serif;
+
+    padding: 10px;
+
+    color: #666;
+    border: 1px solid #888;
+}
+
+.showcase {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-self: center;
+    margin: 50px 0;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.overlay {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+
+    background-color: #7777;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.img {
+    width: 300px;
+    height: 400px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.container{
+    width: 100%;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ccc; 
+    /*width: 150px;
+    height: 150px;*/
+  }
+   
+  .wall{
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+   
+  .wall:target{
+    position: flex;
+    display: block;
+    z-index: 5;
+  }
+
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: #F71735;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EEE0CB;
+}
+
+@media(min-width: 1498px) {
+    .showcase {
+        width: 60vw;
+    }
+}
