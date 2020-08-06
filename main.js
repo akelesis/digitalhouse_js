@@ -1,4 +1,5 @@
-var intervalo = 1000;
+/* carrossel*/
+intervalo = 1000;
 
 function slide1(){
     document.getElementById("banner").src="img/livro1.jpg";
@@ -13,3 +14,7 @@ function slide3(){
     document.getElementById("banner").src="img/livro3.jpg";
     setTimeout("slide1()",intervalo);
 }
+
+$('abrir').click(function(){
+$('.menuLateral').toggleClass('.mostrar');
+});

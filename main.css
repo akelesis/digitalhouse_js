@@ -191,14 +191,15 @@ footer {
 }
 #menu{
    
-    top: -280px;
+    top: 80px;
     left:1130px;
     height: 270px;
     position: fixed;
     background-color: rgb(204, 204, 204);
     box-shadow:  -5px 5px 10px grey;
-
+    display:none;
 }
+
 
 #menu  a {
     box-sizing: border-box;
@@ -218,6 +219,6 @@ footer {
     text-align: center;
 }
 
-.menu .abrir{
-    top: 280px;
+.menuLateral .mostrar{
+    display:block;
 }
