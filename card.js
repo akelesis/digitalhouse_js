@@ -18,8 +18,7 @@ function cards(json){
     <img style="width:100%" src="./img/books/${json.img}" alt="Capa do livro ${json.name}">
     <div class="container">
     <p class=""><b>${json.name}</b></p>
-    <p class="">Preço: R$${json.price}</p>    
-    <p class="">Categoria: ${json.category}</p> 
+    <p class="">Preço: R$${json.price},00</p>    
     <p class="">Descrição: ${json.description}</p>
     </div> 
     </div>`
@@ -52,7 +51,7 @@ const filterByCategory = () => {
 const filterByPrice = () => {
     const price = document.getElementById("price_range").value
     
-    let newSearch = []
+    const newSearch = []
 
     if(price == "barato"){
         newSearch = listBooks.filter(book => {
@@ -68,7 +67,7 @@ const filterByPrice = () => {
             return book.price >= 61
         })
     }
-    
+
     cardSection.innerHTML = ""
     for (i=0; i<newSearch.length; i++){
         cardSection.innerHTML += cards(newSearch[i])
