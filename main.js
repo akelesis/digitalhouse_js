@@ -59,7 +59,7 @@ const books = [
 // UI Controller
 var uiController = (() => {
 
-    var DOMStrings = {
+    const DOMStrings = {
         categorySelect: document.getElementById('category'),
         priceRangeSelect: document.getElementById('price_range'),
         searchButton: document.getElementById('search_button'),
@@ -68,9 +68,29 @@ var uiController = (() => {
         carouselSection: document.getElementById('dh_carousel')
     }
 
+    // Formata o preço do livro para R$0.00
+    const formatPrice = (value) => {
+        return "R$ " + value.toFixed(2);
+    }
+
+    // Limita o tamanho do texto garantindo que
+    // palavras fiquem inteiras.
+    const truncateText = (text, limit) => {
+        const newText = [];
+
+        if (text.length > limit) {
+            text.split(' ').reduce((acc, cur) => {
+                if (acc + cur.length <= limit) {
+                    newText.push(cur);
+                }
+                return acc + cur.length;
+            }, 0);
+        }
+        return newText.join(' ') + '...';
+    }
+
     // Adiciona um livro no carousel
-    var addCarouselItem = (book) => {
-        /*
+    const addCarouselItem = (book) => {
         let title = document.createElement('h2');
         title.textContent = book.name;
 
@@ -86,32 +106,12 @@ var uiController = (() => {
         item.appendChild(image);
         item.appendChild(details);
         item.style.display = 'none';
-        */
-
-        let cardTitle = document.createElement('h2');
-        cardTitle.className = 'card_title';
-        cardTitle.textContent = book.name;
-
-        let cardAuthor = document.createElement('h3');
-        cardAuthor.className = 'card_author';
-        cardAuthor.textContent = book.author;
-
-        let cardPrice = document.createElement('p');
-        cardPrice.className = 'card_price';
-        cardPrice.textContent = book.price;
-
-        let cardDetails = document.createElement('div');
-        cardDetails.className = 'card_details';
-        cardDetails.appendChild(cardTitle);
-        cardDetails.appendChild(cardAuthor);
-        cardDetails.appendChild(cardPrice);
-
-        let img = document.createElement('img');
-        img.className
+        
         DOMStrings.carouselSection.appendChild(item); 
     };
 
-    var runCarousel = (itemIndex) => {
+    // Executa o carousel
+    const runCarousel = (itemIndex) => {
         carouselItems = document.querySelectorAll('.carousel_item');
         
         if (itemIndex >= carouselItems.length) {
@@ -133,14 +133,25 @@ var uiController = (() => {
         let title = document.createElement('h2');
         title.textContent = book.name;
 
+        let author = document.createElement('p');
+        author.className = 'book-author';
+        author.textContent = book.author;
+
         let description = document.createElement('p');
-        description.textContent = book.description;
+        description.className = 'book-description';
+        description.textContent = truncateText(book.description, 120);
+
+        let price = document.createElement('p');
+        price.className = 'book-price';
+        price.textContent = formatPrice(book.price);
 
         let details = document.createElement('div');
-        details.className = 'overlay';
+        details.className = 'book-details';
         details.appendChild(title);
+        details.appendChild(author);
         details.appendChild(description);
-
+        details.appendChild(price);
+        
         let image = document.createElement('img');
         image.setAttribute('src', book.image);
 
@@ -165,9 +176,7 @@ var uiController = (() => {
                 addShowcaseItem(book);
             });
         },
-        updateCarousel: (book) => {
-            //DOMStrings.carouselSection.innerHTML = '';
-
+        startCarousel: (book) => {
             books.forEach((book) => {
                 addCarouselItem(book);
             });
@@ -179,12 +188,9 @@ var uiController = (() => {
 // App Controller
 var controller = ((UICtrl, booklist) => {
 
-    var loadShowcase = (books) => {
+    var loadUI = (books) => {
         UICtrl.updateShowcase(books);
-    };
-
-    var loadCarousel = (books) => {
-        UICtrl.updateCarousel(books);
+        UICtrl.startCarousel(books);
     };
 
     var setupEventListeners = () => {
@@ -228,8 +234,7 @@ var controller = ((UICtrl, booklist) => {
 
     return {
         init: () => {
-            loadShowcase(booklist);
-            loadCarousel(booklist);
+            loadUI(booklist)
             setupEventListeners();
         }
     }
