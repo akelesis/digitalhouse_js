@@ -66,46 +66,85 @@ const divCard = document.querySelectorAll(".card");
 
 const livros = [
     {
-        titulo: "Auto Ajuda",
-        imagem: "./img/300x400.png",
-        categoria: "Auto Ajuda",
-        preco: "caro",
-        texto: "Esse livro vai te ajudar"
-    },
-    {
-        titulo: "Ficção Científica",
-        imagem: "./img/300x400.png",
+        titulo: "A Fundação",
+        autor: "Isaac Asimov",
+        imagem: "https://images-na.ssl-images-amazon.com/images/I/81ZwYoGHefL.jpg",
         categoria: "Ficção Científica",
-        preco: "mais caro",
-        texto: "Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia?"
+        preco: "medio",
+        precoReal: "R$ 30,00",
+        texto: "Lançado originalmente em 1951, o livro Fundação, de Isaac Asimov, é o primeiro volume da clássica Trilogia Fundação, vencedora do prêmio Hugo de melhor série de todos os tempos."
     },
     {
-        titulo: "Fantasia",
-        imagem: "./img/300x400.png",
+        titulo: "Fundação e Império",
+        autor: "Isaac Asimov",
+        imagem: "https://lojasaraiva.vteximg.com.br/arquivos/ids/12101503/1008537390.jpg?v=637142219974170000",
+        categoria: "Ficção Científica",
+        preco: "medio",
+        precoReal: "R$ 29,90",
+        texto: "Lançado originalmente em 1952, o livro Fundação e Império, de Isaac Asimov, é o segundo volume da clássica Trilogia Fundação, vencedora do prêmio Hugo de melhor série de todos os tempos."
+    },
+    {
+        titulo: "Segunda Fundação",
+        autor: "Isaac Asimov",
+        imagem: "https://images-na.ssl-images-amazon.com/images/I/41qZ+NKVlDL._SX347_BO1,204,203,200_.jpg",
+        categoria: "Ficção Científica",
+        preco: "caro",
+        precoReal: "R$ 41,90",
+        texto: "Segunda fundação é o terceiro livro da trilogia da Fundação, composta ainda pelos livros Fundação (livro 1) e Fundação e império (livro 2)."
+    },
+    {
+        titulo: "O Hobbit",
+        autor: "J.R.R. Tolkien",
+        imagem: "https://m.media-amazon.com/images/I/51S6-VeaHJL.jpg",
         categoria: "Fantasia",
-        preco: "barato",
-        texto: "Tender fire ship smartly lass Corsair aft spyglass Sail ho long boat grapple. Brig starboard maroon dance the hempen jig Arr Jolly Roger jack flogging cog bowsprit. Yardarm Shiver me timbers lateen sail scurvy hang the jib heave to haul wind rum topmast splice the main brace."
+        preco: "caro",
+        precoReal: "R$ 59,90",
+        texto: "Situado em um tempo -Entre o Alvorecer das Fadas e o Domínio dos Homens-, o livro segue a busca do hobbit caseiro Bilbo Bolseiro para conquistar uma parte do tesouro guardado pelo dragão Smaug. "
     },
     {
-        titulo: "Filosofia auto ajuda",
-        imagem: "./img/300x400.png",
+        titulo: "Ansiedade",
+        autor: "Augusto Cury",
+        imagem: "https://images-americanas.b2w.io/produtos/imagens/117753356/117753364_1GG.jpg",
+        categoria: "Auto Ajuda",
+        preco: "barato",
+        precoReal: "R$ 11,67",
+        texto: "Vivemos em uma sociedade de excessos. Somos bombardeados por informações que, na maior parte das vezes, não conseguimos absorver. Somos cobrados, pressionados, nos tornamos reféns da nossa mente. Essa situação alterou algo que dever..."
+    },
+    {
+        titulo: "Os Quatro Compromissos",
+        autor: "Don Miguel Ruiz",
+        imagem: "https://images-na.ssl-images-amazon.com/images/I/51vnnCCazOL._SX322_BO1,204,203,200_.jpg",
         categoria: "Auto Ajuda",
         preco: "medio",
-        texto: "More fundamental than religion is our basic human spirituality. We have a basic human disposition towards love, kindness and affection, irrespective of whether we have a religious framework or not."
+        precoReal: "R$ 21,90",
+        texto: "Baseado na sabedoria ancestral tolteca, este livro nos oferece um poderoso código de conduta que pode rapidamente transformar nossas vidas em uma nova experiência de liberdade, verdadeira felicidade e amor, através dos seguintes compromissos: seja impecável com sua palavra; não leve nada para o lado pessoal; não tire conclusões e dê sempre o melhor de si."
     },
     {
-        titulo: "Romance",
-        imagem: "./img/300x400.png",
+        titulo: "A Mulher do Viajante do Tempo",
+        autor: "Audrey Niffenegger",
+        imagem: "https://images-na.ssl-images-amazon.com/images/I/81ynYkWZFOL.jpg",
         categoria: "Romance",
         preco: "barato",
-        texto: "The best feeling on Earth is to hold you in my arms and bloom, nourished by your love. You are the love of my life."
+        precoReal: "R$ 18,00",
+        texto: "Quando se conhecem, Henry tem 28 anos e Clare, vinte. Ele é um moderno bibliotecário; ela, uma linda estudante de arte. Mas o seu casamento nunca poderá ser normal. Henry sofre de um distúrbio genético raro e de tempos em tempos, seu relógio biológico dá uma guinada para frente ou para trás, e ele então é capaz de viajar no tempo..."
     },
     {
-        titulo: "Ficção",
-        imagem: "./img/300x400.png",
-        categoria: "Ficção Científica",
+        titulo: "Principios",
+        autor: "Ray Dalio",
+        imagem: "https://images-na.ssl-images-amazon.com/images/I/41JN3eVnBUL.jpg",
+        categoria: "Auto Ajuda",
         preco: "mais caro",
-        texto: "Alien ships appear on Earth and a linguist is recruited by the military to try to communicate with extraterrestrial creatures and determine whether they are on a peacekeeping mission or whether they are a threat."
+        precoReal: "R$ 64,69",
+        texto: "Conhecido como o “Steve Jobs dos investimentos”, Ray Dalio é fundador da Bridgewater Associates, a quinta empresa privada mais importante dos Estados Unidos e a mais eficaz gestora de fundos hedge do mundo. "
+    },
+    {
+        titulo: "Tudo é Eventual",
+        autor: "Stephen King",
+        imagem: "https://images-na.ssl-images-amazon.com/images/I/41UpqOIaJlL._SX346_BO1,204,203,200_.jpg",
+        categoria: "Fantasia",
+        preco: "mais caro",
+        precoReal: "R$ 62,90",
+        texto: "São catorze histórias de suspense, surpresas e terror, certeiras na arte de agarrar o leitor pelo pescoço e não largá-lo mais, até a última frase."
     },
 ]
 
@@ -159,7 +198,7 @@ function filtros () {
     });
 
     const livrosFiltro = precoSelect.filter(livro =>{
-        if (texto === livro.titulo.toLowerCase()){
+        if (texto === livro.titulo.toLowerCase() || texto === livro.autor.toLowerCase()){
             return livro; 
         } 
         else if (texto === ""){
@@ -170,7 +209,7 @@ function filtros () {
     //Não encontrei material sobre como fazer a pesquisa do título aproximada :(
   
     if (livrosFiltro.length == 0){
-        container.innerHTML = `<h2> Nenhum resultado encontrado </h2>`
+        container.innerHTML = `<h2 id="error"> Nenhum resultado encontrado </h2>`
     } 
     else {
     for (let i = 0; i < livrosFiltro.length; i++) {
