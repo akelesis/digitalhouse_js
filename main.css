@@ -266,6 +266,22 @@ main{
 .dh_overlay h2{
     color: #F71735;
 }
+.dh_overlay .price{
+    background: #EEE0CB;
+    border-radius: 15px;
+    border: solid #F71635 2px;
+}
+.dh_overlay .category {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    color: black;
+    text-align: center;
+    background: white;
+    padding: 5px 0;
+    margin-bottom: 0;
+    border-bottom: solid #666 2px;
+}
 
 footer {
     width: 100%;

@@ -42,11 +42,12 @@
         <section class="dh_filters">
             <div class="dh_name_box">
                 <input type="text" id="dh_search_bar" placeholder="Nome do livro...">
-                <button id="dh_search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="dh_search_button"><i class="fas fa-search"></i></button>
             </div>
             <div class="dh_advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
+                    <option value="0">TODAS AS CATEGORIAS</option>
                     <option value="1">Desenvolvimento Pessoal</option>
                     <option value="2">Ferramentas</option>
                     <option value="3">Padrões de Projeto</option>
@@ -54,10 +55,11 @@
                 </select>
                 <select name="price_range" id="price_range">
                     <option value="" selected="true" disabled="disabled">Faixa de preço</option>
-                    <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
+                    <option value="0">QUALQUER PREÇO</option>
+                    <option value="1">Até R$20</option>
+                    <option value="2">R$20 - R$50</option>
+                    <option value="3">R$50 - R$80</option>
+                    <option value="4">Acima de R$80</option>
                 </select>
             </div>
         </section>

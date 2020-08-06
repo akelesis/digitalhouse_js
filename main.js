@@ -1,9 +1,10 @@
 dropDownMenu();
 carousel();
 books();
+filters();
 
 
-// DropDown Menu (dh_menu)
+// DropDown Menu
 function dropDownMenu(){
     let dhMenu = document.getElementById("dh_menu");
     let dhMenuList = document.getElementById("dh_menu_list");
@@ -80,8 +81,8 @@ function carousel(){
     }
 }
 
-function books(){
-    var books = [
+function books(search = '', category = 0, price_range = 0){
+    const books = [
         {bookId:1, title:"Como Dormir Melhor", description:"Não é exagero afirmar que o sono é tão vital para nossa qualidade de vida quanto comer, beber, exercitar-se. Dormir bem contribui para um melhor funcionamento do corpo e da mente, tornando-nos mais ativos.", link:"#", imgSrc:"./img/001.jpeg", categoryId:1, price:19.90},
         {bookId:2, title:"KIT Gay", description:"guia completo para lhe ensinar e estimular o homossexualismo e a promiscuidade.", link:"#", imgSrc:"./img/002.jpg", categoryId:1, price:35.49},
         {bookId:3, title:"Ódio: Como posso superar isso?", description:"Computador travou? rodou compilação 832699 vezes e não funciona? Mudança de requisitos no dia da Publicação? Encomenda presa em Curitiba? NÃO SE PREOCUPE MAIS! Este livro vai lhe ensinar como controlar seu ódio nos momentos mais delicados.", link:"#", imgSrc:"./img/003.jpg", categoryId:1, price:35.49},
@@ -97,64 +98,117 @@ function books(){
         {bookId:11, title:"Gambi Design Patterns", description:"Desenvolvimento rápido, com qualidade, 100% orientado ao paradigma GAMBI. Leitura obrigatória para todo desenvolvedor que se preze.", link:"#", imgSrc:"./img/011.png", categoryId:3, price:99.30},
         
         {bookId:12, title:"Variable Naming", description:"'x', 'i', 'coffe_Requentado', 'rWFZX', 'f1', 'varForUsoDoDataBaseDuranteConnection'.", link:"#", imgSrc:"./img/012.png", categoryId:4, price:66.80},
-        {bookId:13, title:"Develping in Production", description:"Credenciais de procdução: se você tem, é porque você pode! Acredite no seu potêncial.", link:"#", imgSrc:"./img/013.jpg", categoryId:4, price:20.00},
+        {bookId:13, title:"Develping in Production", description:"Credenciais de produção: se você tem, é porque você pode! Acredite no seu potêncial.", link:"#", imgSrc:"./img/013.jpg", categoryId:4, price:20.00},
         {bookId:14, title:"Regex by Trial and Error", description:"", link:"#", imgSrc:"./img/014.jpeg", categoryId:4, price:9.99},
         {bookId:15, title:"Web Development With Assembly", description:"Sempre atual", link:"#", imgSrc:"./img/015.png", categoryId:4, price:29.99}
     ];
 
-
-
     let showCase = document.querySelector(".dh_showcase");
     showCase.innerHTML = ` `;
-        for(let i of books){
-            let card = document.createElement("div");
-            card.setAttribute("class","dh_card");
-            card.setAttribute("bookId",i.bookId);
-            let img = document.createElement("img");
-            img.setAttribute("src",i.imgSrc);
-            img.setAttribute("bookId",i.bookId);
-            card.append(img);
-            let overlay = document.createElement("div");
-            overlay.setAttribute("class","dh_overlay");
-            overlay.setAttribute("bookId",i.bookId);
-            let overlayTitle = document.createElement("h2");
-            overlayTitle.innerText = i.title;
-            let overlayText = document.createElement("p");
-            overlayText.innerText = i.description;
 
-            overlay.append(overlayTitle);
-            overlay.append(overlayText);
+    for(let i of books){        
+        if(search.length>0 && i.title.toLowerCase().includes(search.toLowerCase()) == false ){
+            continue;
+        }
+        if(category>0 && i.categoryId != category){
+            continue;
+        }
+        if(price_range>0){
+            switch(parseInt(price_range,10)){
+                case 1: 
+                    if(i.price > 20){ continue; }
+                    break;
+                case 2: 
+                    if(i.price < 20 || i.price > 50){ continue; }
+                    break;
+                case 3: 
+                    if(i.price < 50 || i.price > 80){ continue; }
+                    break;
+                case 4: 
+                    if(i.price < 80){ continue; }
+                    break;
+                default: continue;
+            }
+        }
 
-            card.append(overlay);
-            
-            showCase.append(card);
+        let card = document.createElement("div");
+        card.setAttribute("class","dh_card");
+        card.setAttribute("bookId",i.bookId);
+
+        let img = document.createElement("img");
+        img.setAttribute("src",i.imgSrc);
+        img.setAttribute("bookId",i.bookId);
+        card.append(img);
+
+        let overlay = document.createElement("div");
+        overlay.setAttribute("class","dh_overlay");
+        overlay.setAttribute("bookId",i.bookId);
+
+        let overlayTitle = document.createElement("h2");
+        overlayTitle.innerText = i.title;
+
+        let overlayText = document.createElement("p");
+        overlayText.innerText = i.description;
+
+        let priceText = document.createElement("p");
+        priceText.setAttribute("class","price");
+        priceText.innerText = i.price.toLocaleString("pt-BR", { style: "currency" , currency:"BRL"});;
+        
+        let categoryText = document.createElement("p");
+        categoryText.setAttribute("class","category");
+        switch(i.categoryId){
+            case 1:
+                categoryText.innerText = "Desenvolvimento Pessoal";
+                break;
+            case 2:
+                categoryText.innerText = "Ferramentas";
+                break;
+            case 3:
+                categoryText.innerText = "Padrões de Projeto";
+                break;
+            case 4:
+                categoryText.innerText = "Programação";
+                break;
         }
         
-        let cards = document.querySelectorAll(".dh_showcase .dh_card");
-        for(let i of cards){
-            i.addEventListener("mouseover",function(event){
-                let id = event.target.getAttribute("bookId");
-                let overlay = document.querySelector(`.dh_showcase .dh_overlay[bookId="${id}"]`);
-                console.log(overlay.classList);
+        overlay.append(overlayTitle);
+        overlay.append(overlayText);
+        overlay.append(priceText);
+        overlay.append(categoryText);
+
+        card.append(overlay);
+        
+        showCase.append(card);
+    }
+    
+    let cards = document.querySelectorAll(".dh_showcase .dh_card");
+    for(let i of cards){
+        i.addEventListener("mouseover",function(event){
+            let id = event.target.getAttribute("bookId");
+            let overlay = document.querySelector(`.dh_showcase .dh_overlay[bookId="${id}"]`);
+            try{
                 overlay.classList.add("dh_show");
                 overlay.addEventListener("mouseout", function(){
                     overlay.classList.remove("dh_show");
                 });
-            });
-        }
-        
-        //dhMenu.addEventListener("mouseout",function(){
-            //dhMenuList.classList.remove("dh-show");
-        //});
+            }catch(error){ }
+        });
+    }
+}
 
-    /*<div class="dh_card">
-                <img src="./img/300x400.png">
-                <div class="dh_overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-    */
+
+function filters(){
+    let search = document.getElementById("dh_search_bar");
+    let searchBtn = document.getElementById("dh_search_button");
+    let category = document.getElementById("category");
+    let priceRange = document.getElementById("price_range");
+
+    search.addEventListener("change",function(){realoadBooks()});
+    searchBtn.addEventListener("click",function(){realoadBooks()});
+    category.addEventListener("change",function(){realoadBooks()});
+    priceRange.addEventListener("change",function(){realoadBooks()});
+
+    function realoadBooks(){
+        books(search.value, category.value, price_range.value);
+    }
 }
