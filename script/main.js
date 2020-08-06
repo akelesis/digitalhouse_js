@@ -166,7 +166,55 @@ btnBusca.onclick = function teste() {
         function removerAcentos(s) {
             return s.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
         }
+        
+        let listaFiltradaPorTitulo;
+        if (barraDePesquisa.value != 0){
+            let livroProcurado = barraDePesquisa.value.toLowerCase();
+            let tituloLivro = livro.titulo.toLowerCase();
+            let tituloLivroSemAcento = removerAcentos(tituloLivro)
+            let livroAchado = tituloLivroSemAcento.indexOf(livroProcurado) > -1 ? true : false;
+            listaFiltradaPorTitulo = livroAchado;
+        }
+        return listaFiltradaPorTitulo
+    })    
+    
+    livrosFiltrados.forEach (livro => {
+        let resultado = document.createElement("div");
+        let overlay = document.createElement("div");
+        let tagGenero = document.createElement("div")
+        tagGenero.setAttribute("class", "tagGenero")
+        overlay.setAttribute("class", "overlay");
+        resultado.setAttribute("class", "card");
+    
+        resultado.innerHTML =
+        `<img src="${livro.imagem}"></img>`;
+    
+        overlay.innerHTML = 
+        `<h2>${livro.titulo}</h2>
+        <span>R$${livro.preco}</span>
+        <p>${livro.descricao}</p>`;
+    
+        tagGenero.innerHTML = 
+        `<span>${livro.genero}</span>`;
+    
+        showcase[0].appendChild(resultado);
+        resultado.appendChild(overlay);
+        overlay.appendChild(tagGenero)
+    })
 
+}
+
+
+//Filtro pelas caixas de seleção
+var optionsGeneros = generos.options[generos.selectedIndex].value;
+
+function filtraPrecos () {
+    const cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++){
+        cards[i].style.display = "none";
+    }
+
+    const livrosFiltrados = livros.filter (livro => {
         let precoDoLivro = livro.preco; 
         let faixaDePreco;
         if (precoDoLivro >= 1 && precoDoLivro <= 20) {
@@ -178,17 +226,11 @@ btnBusca.onclick = function teste() {
         } else {
             faixaDePreco = "mais caro";
         }
+
         let listaFiltrada;
         let listaFiltradaPorPreco;
         let listaFiltradaPorGenero;
-        let listaFiltradaPorTitulo;
-        if (barraDePesquisa.value != 0){
-            let livroProcurado = barraDePesquisa.value.toLowerCase();
-            let tituloLivro = livro.titulo.toLowerCase();
-            let tituloLivroSemAcento = removerAcentos(tituloLivro)
-            let livroAchado = tituloLivroSemAcento.indexOf(livroProcurado) > -1 ? true : false;
-            listaFiltradaPorTitulo = livroAchado;
-        }
+
             if (precos.value == false){
             listaFiltradaPorGenero = livro.genero == generos.value;
         }
@@ -198,8 +240,67 @@ btnBusca.onclick = function teste() {
         else if (generos.value == false) {
             listaFiltradaPorPreco = faixaDePreco == precos.value;
         }
-        return (listaFiltradaPorTitulo && listaFiltradaPorGenero || listaFiltradaPorPreco) 
-        || listaFiltradaPorTitulo || listaFiltrada || listaFiltradaPorGenero || listaFiltradaPorPreco || (listaFiltradaPorPreco && listaFiltradaPorGenero);
+        return listaFiltrada || listaFiltradaPorGenero || listaFiltradaPorPreco
+    })    
+    
+    livrosFiltrados.forEach (livro => {
+        let resultado = document.createElement("div");
+        let overlay = document.createElement("div");
+        let tagGenero = document.createElement("div")
+        tagGenero.setAttribute("class", "tagGenero")
+        overlay.setAttribute("class", "overlay");
+        resultado.setAttribute("class", "card");
+    
+        resultado.innerHTML =
+        `<img src="${livro.imagem}"></img>`;
+    
+        overlay.innerHTML = 
+        `<h2>${livro.titulo}</h2>
+        <span>R$${livro.preco}</span>
+        <p>${livro.descricao}</p>`;
+    
+        tagGenero.innerHTML = 
+        `<span>${livro.genero}</span>`;
+    
+        showcase[0].appendChild(resultado);
+        resultado.appendChild(overlay);
+        overlay.appendChild(tagGenero)
+    })
+
+}
+
+function filtraGenero () {
+    const cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++){
+        cards[i].style.display = "none";
+    }
+
+    const livrosFiltrados = livros.filter (livro => {
+        let precoDoLivro = livro.preco; 
+        let faixaDePreco;
+        if (precoDoLivro >= 1 && precoDoLivro <= 20) {
+            faixaDePreco = "barato";
+        } else if  (precoDoLivro >= 21 && precoDoLivro <= 40) {
+            faixaDePreco = "medio";
+        } else if (precoDoLivro >= 41 && precoDoLivro <= 60){
+            faixaDePreco = "caro";
+        } else {
+            faixaDePreco = "mais caro";
+        }
+
+        let listaFiltrada;
+        let listaFiltradaPorPreco;
+        let listaFiltradaPorGenero;
+            if (precos.value == false){
+            listaFiltradaPorGenero = livro.genero == generos.value;
+        }
+        else if (generos.value && precos.value){
+            listaFiltrada = livro.genero == generos.value && faixaDePreco == precos.value;
+        } 
+        else if (generos.value == false) {
+            listaFiltradaPorPreco = faixaDePreco == precos.value;
+        }
+        return listaFiltrada || listaFiltradaPorGenero || listaFiltradaPorPreco;
     })    
     
     livrosFiltrados.forEach (livro => {
