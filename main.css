@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
-
+html,body{
+    height: 100%;
+}
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
+    
 }
 
 .bookshop_header {
@@ -19,6 +22,7 @@ body {
 
     background-color: #F71735;
     color: #EEE0CB;
+    
 }
 
 .dh_title {
@@ -38,8 +42,88 @@ body {
     color: #EEE0CB;
     font-size: 25px;
     transition: filter .3s;
+    position: absolute;
+    right: 30px;
 }
+/* começo */
+.menu{
+    position: relative;
+    background-color:  #F71735;;
+    margin-top: 320px;
+    margin-right: -20px;
+    display: none;
+    /*transform: translateX(100%);
+    transition: trasmorm 200ms linear;*/
+}
+.menu_open{
+    transform: translateX(0);
+    
+  
+}
+.menu ul{
+    list-style: none;
+   
+}    
+.menu li{
+    padding: 20px  15px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+.menu a{
+    display: block;
+    text-decoration: none;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    
+}
+#container{
+    max-width: 1300px;
+    
+}
+#container img{
+    max-width: 100%;
+}
+/*
+#container{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+#container img{
+   width: 1350px;
+   height: 400px;
+   position: absolute;
+   opacity: 0;
+   animation: animacao 20s infinite;
+}
+#container img:nth-of-type(1){
 
+}
+#container img:nth-of-type(2){
+  animation-delay: 5s;
+}
+#container img:nth-of-type(3){
+    animation-delay: 10s;
+}
+#container img:nth-of-type(4){
+    animation-delay: 15s;
+}
+@keyframes animacao{
+    0%{
+        opacity: 0.1;
+    }
+    25%{
+        opacity: 1;
+        transform: scale(1.1,1.1);
+    }
+    50%{
+        opacity: 0.1;
+    }
+}*/
+/* fim */
 #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
@@ -140,6 +224,7 @@ body {
     height: 400px;
     margin: 10px 0;
     position: relative;
+   
 }
 
 .overlay {
@@ -148,7 +233,7 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 5;
+    z-index: 1;
 
     background-color: #7777;
 
