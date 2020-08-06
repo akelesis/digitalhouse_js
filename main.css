@@ -100,12 +100,24 @@ body {
     cursor: pointer;
 }
 
+
+#see_all_button {
+    font-size: 20px;
+    padding: 11px;
+    margin: 5px;
+    border-radius: 25px;
+    border: 1px solid #888;
+    outline: none;
+    color: #666;
+}
+
 .advanced_filters select {
     width: 25vw;
     font-size: 20px;
     font-family: "Mulish", sans-serif;
 
     padding: 10px;
+    margin: 5px;    
 
     color: #666;
     border: 1px solid #888;

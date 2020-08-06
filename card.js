@@ -51,7 +51,7 @@ const filterByCategory = () => {
 const filterByPrice = () => {
     const price = document.getElementById("price_range").value
     
-    const newSearch = []
+    let newSearch = []
 
     if(price == "barato"){
         newSearch = listBooks.filter(book => {
@@ -71,5 +71,12 @@ const filterByPrice = () => {
     cardSection.innerHTML = ""
     for (i=0; i<newSearch.length; i++){
         cardSection.innerHTML += cards(newSearch[i])
+    }
+}
+
+const seeAll = () => {
+    cardSection.innerHTML = ""
+    for (i=0; i<listBooks.length; i++){
+        cardSection.innerHTML += cards(listBooks[i])
     }
 }
