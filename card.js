@@ -24,7 +24,6 @@ function cards(json){
     </div>`
 }
 
-
 const filterByName = () => {
     const search_bar = document.getElementById("search_bar").value
     const regex = new RegExp(search_bar, 'gi')
@@ -35,6 +34,10 @@ const filterByName = () => {
     for (i=0; i<newList.length; i++){
         cardSection.innerHTML += cards(newList[i])
     }
+
+    document.getElementById("category").value = ""
+    document.getElementById("price_range").value = ""
+
 }
 
 const filterByCategory = () => {
@@ -46,6 +49,10 @@ const filterByCategory = () => {
     for (i=0; i<newSearch.length; i++){
         cardSection.innerHTML += cards(newSearch[i])
     }
+
+    document.getElementById("search_bar").value = ""
+    document.getElementById("price_range").value = ""
+
 }
 
 const filterByPrice = () => {
@@ -66,6 +73,10 @@ const filterByPrice = () => {
         newSearch = listBooks.filter(book => {
             return book.price >= 61
         })
+
+        document.getElementById("search_bar").value = ""
+        document.getElementById("category").value = ""
+
     }
 
     cardSection.innerHTML = ""
@@ -79,4 +90,11 @@ const seeAll = () => {
     for (i=0; i<listBooks.length; i++){
         cardSection.innerHTML += cards(listBooks[i])
     }
+    cleanSelected()
+}
+
+const cleanSelected = () => {
+    document.getElementById("search_bar").value = ""
+    document.getElementById("category").value = ""
+    document.getElementById("price_range").value = ""
 }
