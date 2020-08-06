@@ -18,7 +18,7 @@ let livros=[
     {titulo:"Artificial Condition",
     autor:"Felipe 02",
     editora:"Editora 02",
-    preco:"R$ 30,00",
+    preco:"R$ 40,00",
     categoria:"Fantasia",
     imagem:"img/artificial_condition.png",
     descricao: "Lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun"},
@@ -26,7 +26,7 @@ let livros=[
     {titulo:"Herói nas Highlands",
     autor:"Felipe 02",
     editora:"Editora 02",
-    preco:"R$ 30,00",
+    preco:"R$ 50,00",
     categoria:"Fantasia",
     imagem:"img/heroi_nas_highlands.png",
     descricao: "Lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun"},
@@ -34,7 +34,7 @@ let livros=[
     {titulo:"Jardins da Lua Volume Um",
     autor:"Felipe 02",
     editora:"Editora 02",
-    preco:"R$ 30,00",
+    preco:"R$ 60,00",
     categoria:"Fantasia",
     imagem:"img/jardins_da_lua_volume_um.png",
     descricao: "Lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun"},
@@ -42,7 +42,7 @@ let livros=[
     {titulo:"O poder do Hábito",
     autor:"Felipe 02",
     editora:"Editora 02",
-    preco:"R$ 30,00",
+    preco:"R$ 45,00",
     categoria:"Fantasia",
     imagem:"img/o_poder_do_habito.png",
     descricao: "Lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun"},
@@ -50,7 +50,7 @@ let livros=[
     {titulo:"Os sete hábitos das pessoas altamente eficazes",
     autor:"Felipe 02",
     editora:"Editora 02",
-    preco:"R$ 30,00",
+    preco:"R$ 35,00",
     categoria:"Fantasia",
     imagem:"img/os_sete_habitos_das_pessoas_altamente_eficazes.png",
     descricao: "Lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun"},
@@ -58,7 +58,7 @@ let livros=[
     {titulo:"Um casamento conveniente",
     autor:"Felipe 02",
     editora:"Editora 02",
-    preco:"R$ 30,00",
+    preco:"R$ 25,00",
     categoria:"Fantasia",
     imagem:"img/um_casamento_conveniente.png",
     descricao: "Lorem ipsun lorem ipsun lorem ipsun lorem ipsun lorem ipsun"}
@@ -208,4 +208,69 @@ function menu(){
     });
 }
 menu();
+
+// <!doctype html>
+// <html>
+//     <head>
+//         <meta charset="utf-8">
+//         <title>Teste JS</title>
+//     </head>
+//     <body>
+//         <h1>Teste - Usando JavaScript:</h1>    
+//             <form>
+//                 <fieldset>
+//                     <label for="nome">Nome:</label>
+//                     <input id="campo-nome" type="text" placeholder="Digite o nome ">
+//                 </fieldset>
+
+//                 <fieldset>
+//                     <label for="idade">Idade:</label>
+//                     <input id="campo-idade" type="text" placeholder="Digite a idade">
+//                 </fieldset>
+
+//                 <button id="adicionar">Adicionar</button>
+//             </form>
+//             <script src="teste.js"></script>    
+//     </body>
+// </html>
+
+
+let tituloLivro = document.querySelector("#search_bar");   //O querySelector pega o valor do campo, neste caso por  ID(#) - e ele só aceita string, por isso as aspas
+
+var botao = document.querySelector("#search_button");  //Criei uma variavel para o botao
+
+botao.addEventListener("click", function(){
+    let resultado=livros.filter(livro=>{return livros.titulo===tituloLivro});
+
+
+    
+    for(i=0; i<resultado.length; i++){
+        let divCard = document.createElement("div");
+        divCard.setAttribute("class", "card");
+
+        let imgCapa=document.createElement("img");
+        imgCapa.setAttribute("src", livros[i].imagem);
+
+        let overlayDiv = document.createElement("div");
+        overlayDiv.setAttribute("class", "overlay");
+
+        let bookTitle = document.createElement("h2");
+        let titleContent = document.createTextNode(livros[i].titulo)
+        bookTitle.appendChild(titleContent);
+
+        let descricaoLivro =document.createElement("p");
+        let descContent = document.createTextNode(livros[i].descricao)
+        descricaoLivro.appendChild(descContent);
+
+        showcase[0].appendChild(divCard);
+
+        divCard.appendChild(imgCapa);
+        
+        divCard.appendChild(overlayDiv);
+        
+        overlayDiv.appendChild(bookTitle);
+        overlayDiv.appendChild(descricaoLivro);
+    }   
+    
+});
 
