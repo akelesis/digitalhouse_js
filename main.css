@@ -16,6 +16,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     background-color: #F71735;
     color: #EEE0CB;
@@ -175,4 +176,47 @@ footer {
     .showcase {
         width: 60vw;
     }
+}
+
+/* Minhas mudanças */
+#divimg{
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.overlay h3, .overlay p {
+    color: white;
+    background-color: rgb(128, 128, 128, 0.5);
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #EEE0CB;
+    font-size: 16px;
+}
+
+.menuSusp{
+    background-color: #f7425a;
+    color: #EEE0CB;
+    width: 300%;
+    justify-content: left;
+    position: relative;
+    left: -70px;
+    top: 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.menuSusp ul {
+    padding: 0;
+}
+
+.menuSusp li {
+    margin: 5px;
 }
