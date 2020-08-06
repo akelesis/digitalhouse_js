@@ -206,7 +206,7 @@ body {
 }
 
 .showcase {
-  width: 80vw;
+  width: 60vw;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -216,7 +216,7 @@ body {
 }
 
 .card {
-  width: 300px;
+  width: 260px;
   height: 400px;
   margin: 20px;
   position: relative;
@@ -227,24 +227,8 @@ body {
   perspective: 2000px;
 }
 
-.overlay {
-    width: 300px;
-    height: 400px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 5;
 
-    background-color: #7777;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-    box-sizing: border-box;
-}
 
 footer {
   width: 100%;
@@ -261,3 +245,4 @@ footer {
     width: 60vw;
   }
 }
+
