@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "img": "https://m.media-amazon.com/images/I/51kL8++H5gL.jpg",
+    "nome": "O Primo Basílio: Clássicos de Eça de Queirós",
+    "url": "https://www.amazon.com.br/Primo-Bas%C3%ADlio-Jos%C3%A9-Maria-Queir%C3%B3s-ebook/dp/B07GV5SZYL/ref=sr_1_4?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=18ALLGMQDSM04&dchild=1&keywords=o+primo+basilio&qid=1596545600&s=books&sprefix=o+primo+%2Cstripbooks%2C323&sr=1-4",
+    "descricao": "Quando Jorge teve que viajar a trabalho, reaparece em Lisboa um primo de Luísa, o Basílio, antigo namorado seu. Luísa cai nos encantos de seu primo e terá sua vida transformada em uma história de sedução, chantagens e engano.",
+    "preco": 1.99,
+    "categoria": "Romance"
+  },
+  {
+    "id": 2,
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51TBcoRJwlL._SX322_BO1,204,203,200_.jpg",
+    "nome": "Fogo Morto: José Lins do Rego",
+    "url": "https://www.amazon.com.br/Fogo-morto-Jos%C3%A9-Lins-Rego/dp/850301050X/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=fogo+morto&qid=1596625487&s=books&sr=1-1",
+    "descricao": "São raras as obras literárias comparáveis aos diamantes, cujo brilho nunca se apaga. Fogo morto é, sem dúvida alguma, uma dessas raridades Zé Lins criou três personagens que retratam a decadência e ao mesmo tempo a força para a superação: o mestre artesão José Amaro, o senhor de engenho Lula de Holanda e o capitão Vitorino Carneiro da Cunha. Os três possuem o orgulho como traço comum. Estes protagonistas, somados a um elenco de coadjuvantes igualmente memoráveis, compõem um amplo espectro da sociedade brasileira na transição entre a Escravatura e a Abolição.",
+    "preco": 43.89,
+    "categoria": "Romance"
+  },
+  {
+    "id": 3,
+    "img": "https://m.media-amazon.com/images/I/517m8yNbMCL._AC_UY218_.jpg",
+    "nome": "Os Sonhos Morrem Primeiro: Harold Robbins e Nelson Rodrigues",
+    "url": "https://www.amazon.com.br/s?k=os+sonhos+morrem+primeiro&i=stripbooks&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=F785NCD09VJR&sprefix=os+sonhos+morre%2Cstripbooks%2C236&ref=nb_sb_ss_fb_1_15",
+    "descricao": "OBS: LIVRO EM BOM ESTADO, COM O CORTE DAS PAGINAS UM POUCO AMARELADOS PELO TEMPO. COM UM PEQUENO BURACO NA CAPA FRONTAL. COM UMA PEQUENA MANCHA ESCURECIDA NA CONTRA-CAPA. / LITERATURA NORTE AMERICANA.FICCAO ESTADUNIDENSE.O AUTOR NOS LEVA A CONHECER UM MUNDO DE CASSINOS, CLUBES E ESTACOES DE RECREIO PARA MILIONARIOS, DE FOTOGRAFOS PROFISSIONAIS REGIAMENTE PAGOS E LINDAS MODELOS; UM MUNDO DE TOTAL PRAZER E HEDONISMO EM QUE DINHEIRO E SEXO SAO PRATICAMENTES INDISTINGUIVEIS.TRADUCAO:NELSON RODRIGUES.",
+    "preco": 6.00,
+    "categoria": "Romance"
+  },
+  {
+    "id": 4,
+    "img": "https://images-na.ssl-images-amazon.com/images/I/51Owic9Sr1L._SX312_BO1,204,203,200_.jpg",
+    "nome": "Triste fim de Policarpo Quaresma: Lima Barreto",
+    "url": "https://www.amazon.com.br/Triste-Policarpo-Quaresma-Lima-Barreto/dp/8572323546/ref=sr_1_2?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3PL6X6HKCCF42&dchild=1&keywords=o+triste+fim+de+policarpo+quaresma&qid=1596640620&s=books&sprefix=o+triste+fim+de+policarpo+quaresma%2Cstripbooks%2C246&sr=1-2",
+    "descricao": "Policarpo Quaresma ama o Brasil. Ama porque é a terra mais fértil do mundo, porque tem a fauna e a flora mais lindas e exuberantes, porque é a cultura mais rica, a melhor comida, em variedade e sabores, porque possui as mulheres mais belas e, segundo ele, até mesmo... os melhores governantes. Funcionário público, fluente em tupi, estudioso da cultura indígena e grande apreciador das modinhas de violão ― para ele, o único estilo de música verdadeiramente nacional ―, Policarpo, como Dom Quixote de La Mancha, enfrenta moinhos de vento para provar a todos o seu ponto de vista, bradar ao mundo o amor por sua musa, não a Srta. Dulcineia de Toboso, mas a mui amada pátria brasileira. Mas, afinal, que fim poderia ter a aventura de Policarpo? Repleto de personagens fortes e carismáticos, o romance de Lima Barreto é, ao mesmo tempo, um ensaio sobre o idealismo, uma crítica profunda, mas permeada de comicidade, da realidade brasileira do fim do século XIX e início do XX e um retrato das mudanças pelas quais o Brasil passava naquele momento, como o despertar do feminismo. Lindo, inteligente, comovente! Um clássico da literatura nacional.",
+    "preco": 20.81,
+    "categoria": "Romance"
+  }
+]
