@@ -4,6 +4,10 @@ const slide3 = document.getElementById("slide3");
 const botao = document.getElementById("dh_menu_btn");
 const busca = document.getElementById("search_button");
 const searchBar = document.getElementById("search_bar");
+const bookCase = document.getElementById("bookCase");
+const showcase = document.getElementsByClassName("showcase");
+const body = document.querySelector("body")
+
 
 
 
@@ -32,21 +36,69 @@ function mudaImagem() {
 setInterval(mudaImagem, 5000);
 
 var livros = [
-    { "titulo": "David", "desc": "7a", "url": "./img/300x400.png" },
-    { "titulo": "Jose", "desc": "8a", "url": "./img/300x400.png" },
-    { "titulo": "Mariana", "desc": "7a", "url": "./img/300x400.png" },
-    { "titulo": "David", "desc": "8a", "url": "./img/300x400.png" },
-    { "titulo": "Lucas", "desc": "9a", "url": "./img/300x400.png" },
+    { titulo: "A Garota do Lago", desc: "Charlie Donlea", url: "./img/img1.jpg" },
+    { titulo: "Essa Gente", desc: "Chico Buarque", url: "./img/img2.jpg" },
+    { titulo: "O Conta da Aia", desc: "Margaret Atwood", url: "./img/img3.jpg" },
+    { titulo: "O Homem de Giz", desc: "C.J. Tudor", url: "./img/img4.jpg" },
+    { titulo: "Anne de Green Gables", desc: "Montgomery Lucy Maud", url: "./img/img5.jpg" },
+    { titulo: "As Aventuras de Mike", desc: "Gabriel Dearo e Manu Digillio", url: "./img/img6.jpg" },
 ];
 
 searchBar.getAttribute("value");
 busca.addEventListener("click", function() {
+    limpaPesquisa();
     var textoBusca = searchBar.value.toUpperCase();
     console.log("busca: " + textoBusca);
 
+    if (textoBusca.length == 0) {
+        resultadoBusca = livros;
+    } else {
 
-    var resultadoBusca = livros.filter(function(livros) {
-        return (livros.titulo.toUpperCase() == textoBusca);
-    });
+        var resultadoBusca = livros.filter(function(livros) {
+            return (livros.titulo.toUpperCase() == textoBusca);
+        });
+
+    }
+
     console.log(resultadoBusca);
+
+    listarLivros(resultadoBusca);
+
+
+
 })
+
+function limpaPesquisa() {
+    var Cards = document.getElementsByClassName("card");
+    console.log(Cards.length)
+    while (Cards.length > 0) {
+        Cards[0].parentNode.removeChild(Cards[0]);
+    }
+}
+
+function listarLivros(arrayLivros) {
+
+
+
+    arrayLivros.forEach(livro => {
+
+        var livroBox = document.createElement("div");
+        livroBox.setAttribute("class", "card");
+        livroBox.innerHTML =
+            `<img width=300 height=400 src=${livro.url} >
+                    <div class="overlay">
+                        <h2 class="formatoTitulo">${livro.titulo}</h2>
+                        <p class="formatoAutor">${livro.desc}</p>
+                    </div>`
+        bookCase.appendChild(livroBox);
+
+
+    })
+
+
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM completamente carregado e analisado");
+    listarLivros(livros);
+});
