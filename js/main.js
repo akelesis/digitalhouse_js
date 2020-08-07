@@ -15,15 +15,13 @@ fetch(jsonAddress)
 
 function cards(json){
     return `
-    <div class="card">
-        <a href="#"" class="linkBooks">
-        <img src="${json.imagem}" alt="Capa do livro ${json.titulo}">
+    <div class="card" ">
+        <img src="${json.imagem}" alt="Capa do livro ${json.titulo} id="${json.numero}">
         <div class="container">
             <p class="titulo"><strong>${json.titulo}</strong></p>
             <p class="autor">Autor: ${json.autor}</p>    
             <p class="preco">Preço: ${json.preco}</p>
         </div>
-        </a>
     </div>    
     ` 
 }
@@ -70,4 +68,58 @@ function passar(json, n){
             card.innerHTML += cards(listaLivros[i]);
         }
     }
+}
+
+const pesquisar = document.getElementById("search_button");
+const barraPesquisa = document.getElementById("search_bar");
+pesquisar.addEventListener("click", function(){
+    if(barraPesquisa.value == ""){
+        card.innerHTML = "";
+        card.innerHTML += digiteAlgo();
+    }else{
+        let livrosFilter = [];
+        let s, words, searchWords;
+        for(i = 0; i < listaLivros.length; i++){
+            s = listaLivros[i].titulo.toUpperCase();
+            words = s.split(/\W+/).filter(x => x.length > 3);
+            searchWords = barraPesquisa.value.split(/\W+/).filter(x => x.length > 3);
+            for(var j = 0; j < words.length; j++){
+                for(var h = 0; h < searchWords.length; h++){
+                    if(searchWords[h].toUpperCase() == words[j]){
+                        livrosFilter.push(i);
+                        break
+                }
+                }  
+            }
+        }
+        if(livrosFilter.length > 0){
+            const array = [...new Set(livrosFilter)];
+        
+            //console.log(array);
+            card.innerHTML = "";
+            for(i = 0; i < array.length; i++){
+                j = array[i];
+                card.innerHTML += cards(listaLivros[j])
+            }
+        }else{
+            card.innerHTML = "";
+            card.innerHTML += notFound();
+        }
+    }
+})
+
+function notFound() {
+    return `
+    <div class="notTyped" ">
+        <h2>Livro não encontrado!</h2>
+    </div>    
+    ` 
+}
+
+function digiteAlgo() {
+    return `
+    <div class="notTyped" ">
+        <h2>Digite alguma coisa no campo de pesquisa!</h2>
+    </div>    
+    ` 
 }

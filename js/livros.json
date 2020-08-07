@@ -1,5 +1,6 @@
 [
     {
+        "numero":"1",
         "titulo":"Harry Potter e a Pedra Filosofal",
         "autor":"J. K. Rowling",
         "ano":"1997",
@@ -12,6 +13,7 @@
         
     },
     {
+        "numero":"2",
         "titulo":"Harry Potter e a Camara Secreta",
         "autor":"J. K. Rowling",
         "ano":"1998",
@@ -22,7 +24,8 @@
         "faixa":"médio",
         "descricao":"Depois de férias aborrecidas na casa dos tios trouxas, está na hora de Harry Potter voltar a estudar. Coisas acontecem, no entanto, para dificultar o regresso de Harry. Persistente e astuto, o herói não se deixa intimidar pelos obstáculos e, com a ajuda dos fiéis amigos Weasley"
     },
-    {
+    {   
+        "numero":"3",
         "titulo":"Harry Potter e o Prisioneiro de Azkaban",
         "autor":"J. K. Rowling",
         "ano":"2000",
@@ -33,7 +36,8 @@
         "faixa":"médio",
         "descricao":"As aulas estão de volta à Hogwarts e Harry Potter não vê a hora de embarcar no expresso a vapor que o levará de volta à escola de bruxaria. Mais uma vez suas férias na rua dos Alfeneiros foi triste e solitária. "
     },
-    {
+    {   
+        "numero":"4",
         "titulo":"Harry Potter e o Cálice de Fogo",
         "autor":"J. K. Rowling",
         "ano":"2001",
@@ -45,6 +49,7 @@
         "descricao":"Nesta aventura, o feiticeiro cresceu e está com 14 anos. O início do ano letivo de Harry Potter reserva muitas emoções, mágicas, e acontecimentos inesperados, além de um novo torneio em que os alunos de Hogwarts terão de demonstrar todas as habilidade mágicas e nãomágicas que vêm adquirindo ao longo de suas vidas."
     },
     {
+        "numero":"5",
         "titulo":"Harry Potter e a Ordem da Fênix",
         "autor":"J. K. Rowling",
         "ano":"2002",
@@ -56,6 +61,7 @@
         "descricao":"Harry não é mais um garoto. Aos 15 anos, continua sofrendo a rejeição dos Dursdley, sua estranha família no mundo dos 'trouxas'. Também continua contando com Rony Weasley e Hermione Granger, seus melhores amigos em Hogwarts, para levar adiante suas investigações e aventuras. Mas o bruxinho começa a sentir e descobrir coisas novas, como o primeiro amor e a sexualidade."
     },
     {
+        "numero":"6",
         "titulo":"Harry Potter e o Enigma do Princípe",
         "autor":"J. K. Rowling",
         "ano":"2004",
@@ -67,6 +73,7 @@
         "descricao":"Harry Potter e o enigma do príncipe' dá continuidade à saga do jovem bruxo Harry Potter a partir do ponto em que o livro anterior parou o momento em que fica provado que o poder de Voldemort e dos Comensais da Morte, seus seguidores, cresce mais a cada dia, em meio à batalha entre o bem e o mal. A onda de terror provocada pelo Lorde das Trevas estaria afetando."
     },
     {
+        "numero":"7",
         "titulo":"Harry Potter e as Relíquias da Morte",
         "autor":"J. K. Rowling",
         "ano":"2006",
@@ -78,6 +85,7 @@
         "descricao":"Harry Potter e as relíquias da morte', de J.K. Rowling, é o sétimo e último livro da série. Voldemorte está cada vez mais forte e Harry Potter precisa encontrar e aniquilar as Horcruxes para enfraquecer o lorde e poder enfrentálo. "
     },
     {
+        "numero":"8",
         "titulo":"O Iluminado",
         "autor":"Stephen King",
         "ano":"1970",
@@ -89,6 +97,7 @@
         "descricao":"O lugar perfeito para recomeçar”, é o que pensa Jack Torrance ao ser contratado como zelador para o inverno. Hora de deixar para trás o alcoolismo, os acessos de fúria, os repetidos fracassos. Isolado pela neve com a esposa e o filho, tudo o que Jack deseja é um pouco de paz para se dedicar à escrita."
     },
     {
+        "numero":"9",
         "titulo":"It: A Coisa",
         "autor":"Stephen King",
         "ano":"1986",
@@ -100,6 +109,7 @@
         "descricao":"Durante as férias de 1958, em uma pacata cidadezinha do Maine, Bill, Richie, Stan, Mike, Eddie, Ben e Beverly aprenderam o real sentido da amizade, do amor, da confiança... e do medo."
     },
     {
+        "numero":"10",
         "titulo":"Novembro de 63",
         "autor":"Stephen King",
         "ano":"2011",
@@ -111,6 +121,7 @@
         "descricao":"A vida pode mudar em um instante e dar guinadas extraordinárias. É o que acontece com Jake Epping, um professor de inglês de uma cidade no Maine, quando Al, dono da lanchonete da cidade, o recruta para assumir a missão que se tornou a obsessão de sua vida: deter o assassinato de John Kennedy."
     },
     {
+        "numero":"11",
         "titulo":"A Dança da Morte",
         "autor":"Stephen King",
         "ano":"1987",
@@ -122,6 +133,7 @@
         "descricao":"Após um erro de computação no Departamento de Defesa, um vírus é liberado, e um milhão de contatos casuais formam uma cadeia de morte: é assim que o mundo acaba. O que surge em seu lugar é um ambiente árido, sem instituições e esvaziado de 99% da população."
     },
     {
+        "numero":"12",
         "titulo":"O Senhor dos Anéis e a Sociedade do Anel",
         "autor":"J. R. R. Tolkien",
         "ano":"1954",
@@ -133,6 +145,7 @@
         "descricao":"O volume inicial de O Senhor dos Anéis, lançado originalmente em julho de 1954, foi o primeiro grande épico de fantasia moderno, conquistando milhões de leitores e se tornando o padrão de referência para todas as outras obras do gênero até hoje."
     },
     {
+        "numero":"13",
         "titulo":"O Senhor dos Anéis e as Duas Torres",
         "autor":"J. R. R. Tolkien",
         "ano":"1954",
@@ -144,6 +157,7 @@
         "descricao":"O segundo volume de O Senhor dos Anéis, mais importante épico de fantasia moderno, narra os caminhos separados seguidos pelos membros da Sociedade do Anel em sua luta para deter Sauron, o Senhor Sombrio da terra de Mordor, e destruir o Um Anel, no qual está contida a maior parte do poder do tirano demoníaco"
     },
     {
+        "numero":"14",
         "titulo":"O Senhor dos Anéis e o Retorno do Rei",
         "autor":"J. R. R. Tolkien",
         "ano":"1955",
@@ -155,6 +169,7 @@
         "descricao":"A guerra entre os Povos Livres da Terra-média e Sauron, o Senhor Sombrio da terra de Mordor, chega a seu clímax neste terceiro volume do romance O Senhor dos Anéis. As batalhas grandiosas que estão prestes a acontecer, no entanto, são apenas o pano de fundo para o verdadeiro drama: a missão quase suicida dos hobbits Frodo e Sam, que tentam destruir o Um Anel, fonte do poder de Sauron, infiltrando-se no coração do território do Inimigo."
     },
     {
+        "numero":"15",
         "titulo":"O Hobbit",
         "autor":"J. R. R. Tolkien",
         "ano":"1937",
@@ -166,6 +181,7 @@
         "descricao":"Bilbo Bolseiro era um dos mais respeitáveis hobbits de todo o Condado até que, um dia, o mago Gandalf bate à sua porta. A partir de então, toda sua vida pacata e campestre soprando anéis de fumaça com seu belo cachimbo começa a mudar."
     },
     {
+        "numero":"16",
         "titulo":"As Crônicas de Nárnia",
         "autor":"C. S. Lewis",
         "ano":"1950",
@@ -177,6 +193,7 @@
         "descricao":"Bilbo Bolseiro era um dos mais respeitáveis hobbits de todo o Condado até que, um dia, o mago Gandalf bate à sua porta. A partir de então, toda sua vida pacata e campestre soprando anéis de fumaça com seu belo cachimbo começa a mudar."
     },
     {
+        "numero":"17",
         "titulo":"Ilíada",
         "autor":"Homero",
         "ano":"700 A.C.",
@@ -188,6 +205,7 @@
         "descricao":"Composta no século VIII a.C., a Ilíada é considerada o marco inaugural da literatura ocidental. Tradicionalmente atribuída a Homero, a obra aborda o período de algumas semanas no último ano da Guerra de Troia"
     },
     {
+        "numero":"18",
         "titulo":"Odisséia",
         "autor":"Homero",
         "ano":"700 A.C.",

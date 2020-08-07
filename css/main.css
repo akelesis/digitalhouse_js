@@ -226,6 +226,24 @@ nav a{
     margin-right: 100px;;
 }
 
+#info-livros{
+    height: 500px;
+    width: 900px;
+    background: #FFF;
+    border-radius: 30px;
+    border: solid 4px #F71735;
+    align-self: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    display: none;
+    text-align: justify;
+}
+
 .showcase {
     width: 60vw;
     height: 1050px;
@@ -245,6 +263,15 @@ nav a{
     cursor: pointer;
 }
 
+.cardInfo{
+    width: 35%;
+    height: 400px;
+    margin: 10px 0;
+    position: relative;
+    margin: 40px;
+    border: solid 2px #000;
+}
+
 .card:hover {
     border: solid 10px #555;
 }
@@ -261,8 +288,15 @@ nav a{
 
 .preco, .autor {
     text-align: center;
+    font-size: 18px;
 }
 
+.containerInfo{
+    height: 90%;
+    width: 60%;
+    margin: 10px;
+    padding: 30px;
+}
 .overlay {
     width: 300px;
     height: 400px;
@@ -277,6 +311,12 @@ nav a{
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
+}
+
+.notTyped{
+    text-align: center;
+    color: red;
+    width: 100%;
 }
 
 footer {
