@@ -1,14 +1,30 @@
+
+const listaLivrosA = [];
+const nAleatorios = [];
 const listaLivros = []
-const jsonAddress = 'js/livros.json'
-const card = document.querySelector('.showcase')
+const jsonAddress = 'js/livros.json';
+const card = document.querySelector('.showcase');
 var cont = 0;
 fetch(jsonAddress)
 .then(status => status.json())
-.then(data => listaLivros.push(...data))
-.then(() => {
-    for (i=0; i<6; i++){
+.then(data => listaLivrosA.push(...data))
+.then(() => {;
+    let rand;
+    do{
+        rand = Math.floor(Math.random() * 18);
+        if(nAleatorios.indexOf(rand) == -1){
+            nAleatorios.push(rand);
+        }
+    }while(nAleatorios.length < 18);
+     console.log(nAleatorios);
+
+    for(i = 0; i < 18; i++){
+        let x = nAleatorios[i]
+        listaLivros.push(listaLivrosA[x]);
+    }
+    for (i = 0; i < 6; i++){
         cont++;
-        card.innerHTML += cards(listaLivros[i])
+        card.innerHTML += cards(listaLivros[i]);
         }
     }
 )
@@ -104,7 +120,7 @@ function pesquisarLivros(){
         
             //console.log(array);
             card.innerHTML = "";
-            for(i = 0; i < array.length; i++){
+            for(i = 0; i < array.length && i < 6; i++){
                 j = array[i];
                 card.innerHTML += cards(listaLivros[j])
             }
@@ -136,6 +152,5 @@ function digiteAlgo(search) {
             <h2>Digite mais de 3 caracteres</h2>
         </div>    
         `
-    }
-    
+    }   
 }
