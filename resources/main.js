@@ -21,15 +21,17 @@ btn_menu.addEventListener("click", () => {
 })
 
 /* Carrossel de imagens */
-const carrossel = document.querySelector("#dh_carousel");
+const carrossel = document.querySelector("#dh_carousel")
+let margin = -300;
 
-let imgN = 2;
-function trocaImagem() {
-    if (imgN === 4) { imgN = 1 }
-    carrossel.innerHTML = `<img src="img/livros${imgN}.jpeg" class="img-livros">`
-    imgN++
-}
-setInterval(trocaImagem, 5000)
+setInterval(() => { 
+    if (margin > 0) {
+        margin = -300;
+    }
+
+    carrossel.style.marginLeft = `${margin}%`
+    margin+=0.1
+}, 10);
 
 /*livros*/
 let livros = [];
@@ -45,12 +47,19 @@ fetch("resources/livros.json")
 let resultadoBusca = [];
 const boxResultado = document.getElementById("respesquisa")
 
-function mostrarResultado (arrayResultado) {
-
+function limparResultadoPesquisa () {
     let pesquisaAnterior = document.querySelectorAll(".cartao-livro")
     pesquisaAnterior.forEach(cartao => {
         boxResultado.removeChild(cartao)
     })
+}
+
+function limparArrayResultado () {
+    resultadoBusca = [];
+}
+
+function mostrarResultado (arrayResultado) {
+    limparResultadoPesquisa()
 
     arrayResultado.forEach(livro => {
         let cartaoLivro = document.createElement("div");
@@ -60,32 +69,90 @@ function mostrarResultado (arrayResultado) {
         cartaoLivro.innerHTML += `<p><b>Categoria:</b> ${livro.Categoria}</p>`
         cartaoLivro.innerHTML += `<p><b>Preço:</b> R$ ${livro.Preco}0</p>`
         cartaoLivro.innerHTML += `<p><b>Sipnose:</b> ${livro.Sipnose}</p>`
-
+        /*{...livro}*/
         boxResultado.appendChild(cartaoLivro)
     });
 }
 
 /*Filtro por nome*/
 const campoBuscaNome = document.querySelector("#search_bar");
+const btn_pesquisa = document.querySelector("#search_button");
 
 campoBuscaNome.addEventListener("input", () => {
     let NomeBuscado = (String((campoBuscaNome.value))).toLowerCase();
 
-    function obterResultadoNome (callback) {
-        resultadoBusca.forEach((resultado) => {
-            resultadoBusca.pop(resultado)
-        })
+    function obterResultadoPorNome (callback) {
     
         livros.forEach(livro => {
             let nomeLivro = (String(livro.Nome)).toLowerCase();
-            if (NomeBuscado.length > 2) {
-                if (nomeLivro.indexOf(NomeBuscado) !== -1) {
-                    resultadoBusca.push(livro)
-                }
+            if (NomeBuscado.length > 2 && nomeLivro.indexOf(NomeBuscado) !== -1) {
+                resultadoBusca.push(livro)
             }
         })
         callback(resultadoBusca)
     }
 
-    obterResultadoNome(mostrarResultado)
+    obterResultadoPorNome(mostrarResultado)
+    limparArrayResultado()
+})
+
+btn_pesquisa.addEventListener("click", () => {
+    if(resultadoBusca.length === 0) {
+        alert("Livro não encontrado.")
+    }
+})
+
+/* Filtro por Categoria */
+const categoria = document.querySelector("#category")
+
+categoria.addEventListener("change", () => {
+
+    function obterResultadoPorCategoria (callback) {
+        let categoriaSelecionada = categoria.options[categoria.selectedIndex].value;
+    
+        livros.forEach((livro) => {
+            if(livro.Categoria == categoriaSelecionada) {
+                resultadoBusca.push(livro)
+            }
+        })
+    
+        callback(resultadoBusca)
+    }
+    obterResultadoPorCategoria(mostrarResultado)
+    limparArrayResultado()
+})
+
+/* Filtro por Preço */
+const preco = document.querySelector("#price_range")
+
+preco.addEventListener("change", () => {
+
+    function obterResultadoPorPreco (callback) {
+        let precoSelecionado = preco.options[preco.selectedIndex].value;
+    
+        livros.forEach((livro) => {
+            switch(precoSelecionado) {
+                case "barato": if(livro.Preco <= 20) {
+                    resultadoBusca.push(livro);
+                }
+                break;
+                case "medio": if(livro.Preco > 20 && livro.Preco <= 40) {
+                    resultadoBusca.push(livro)
+                };
+                break
+                case "caro": if(livro.Preco > 40 && livro.Preco <= 60) {
+                    resultadoBusca.push(livro)
+                };
+                break
+                case "mais caro": if(livro.Preco > 60) {
+                    resultadoBusca.push(livro)
+                };
+                break
+            }
+        })
+    
+        callback(resultadoBusca)
+    }
+    obterResultadoPorPreco(mostrarResultado)
+    limparArrayResultado()
 })
