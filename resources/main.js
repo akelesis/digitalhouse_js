@@ -24,14 +24,24 @@ btn_menu.addEventListener("click", () => {
 const carrossel = document.querySelector("#dh_carousel")
 let margin = -300;
 
-setInterval(() => { 
-    if (margin > 0) {
+function mover () {
+    carrossel.style.marginLeft = `${margin}%`
+    margin++
+    
+    if(margin === 0) {
         margin = -300;
     }
 
-    carrossel.style.marginLeft = `${margin}%`
-    margin+=0.1
-}, 10);
+    if(margin%100 === 0) {
+        clearInterval(mudaImagem)
+        setTimeout(()=> {
+            mudaImagem = setInterval(mover, 10);
+        }, 5000)
+    }
+}
+let mudaImagem = setInterval(mover, 10);
+
+setInterval(mudaImagem, 10);
 
 /*livros*/
 let livros = [];
@@ -58,7 +68,7 @@ function limparArrayResultado () {
     resultadoBusca = [];
 }
 
-function mostrarResultado (arrayResultado) {
+function mostrarResultado (arrayResultado, callback) {
     limparResultadoPesquisa()
 
     arrayResultado.forEach(livro => {
@@ -71,6 +81,8 @@ function mostrarResultado (arrayResultado) {
         cartaoLivro.innerHTML += `<p><b>Sipnose:</b> ${livro.Sipnose}</p>`
         /*{...livro}*/
         boxResultado.appendChild(cartaoLivro)
+
+        callback()
     });
 }
 
@@ -92,8 +104,7 @@ campoBuscaNome.addEventListener("input", () => {
         callback(resultadoBusca)
     }
 
-    obterResultadoPorNome(mostrarResultado)
-    limparArrayResultado()
+    obterResultadoPorNome(mostrarResultado, limparArrayResultado)
 })
 
 btn_pesquisa.addEventListener("click", () => {
@@ -116,10 +127,9 @@ categoria.addEventListener("change", () => {
             }
         })
     
-        callback(resultadoBusca)
+        callback(resultadoBusca, limparArrayResultado)
     }
     obterResultadoPorCategoria(mostrarResultado)
-    limparArrayResultado()
 })
 
 /* Filtro por Preço */
@@ -151,8 +161,7 @@ preco.addEventListener("change", () => {
             }
         })
     
-        callback(resultadoBusca)
+        callback(resultadoBusca, limparArrayResultado)
     }
     obterResultadoPorPreco(mostrarResultado)
-    limparArrayResultado()
 })
