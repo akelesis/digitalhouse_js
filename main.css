@@ -40,7 +40,7 @@ body {
     cursor: pointer;
 }
 
-.menu {
+.menuLateral {
     background-color: white;
     height: 100%;
     width: 270px;
@@ -50,6 +50,25 @@ body {
     z-index: 20;
     transition: right 0.3s linear;
     border-left: 1px solid #888;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#opcoes_menu li {
+    list-style-type: none;
+    margin-left: 20px;
+    font-family: "Mulish", sans-serif;
+    /* font-size: 16px;
+    color: #F71735;
+    list-style: none;
+    margin-bottom: 10px;
+    list-style: none; */
+    color: #F71735;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .menu_overlay {
