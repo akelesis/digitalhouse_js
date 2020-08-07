@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rowdies:wght@700&display=swap" rel="stylesheet">');
 
 body {
-    margin: 0;
+    margin: 1;
     display: flex;
     flex-direction: column;
     background-color: #EEE0CB;
@@ -45,20 +45,64 @@ body {
     cursor: pointer;
 }
 
+#menu-flex {
+    position: absolute;
+
+    height: calc(4 * (1.3em+16px));
+    width: 0;
+    
+    top: 80px;
+    right: 0;
+    padding-top: 0.5%;
+    z-index: 5;
+    border: black;
+    border-radius: 2%;
+    
+    background-color:orangered;
+    overflow: hidden;
+    transition: 0.5s;
+}
+#menu-flex a {
+    display: block;
+    top: 0;
+    padding-left: 25%;
+    padding-top: 5%;
+
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Anton', sans-serif;
+    
+    color:black;
+    white-space: nowrap;
+
+}
+
 .content {
     display: flex;
     flex-direction: column;
 }
 
 #dh_carousel {
-    width: 100%;
-    height: 60vh;
+    width:  100%; 
+    height: 400px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     background-color: #ccc; 
+}
+
+#dh_carousel a{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 .carrousel_label {
@@ -142,15 +186,39 @@ body {
     position: relative;
 }
 
+
+.fotolivro{
+    width: 225px;
+     height: 300px;
+     margin-left: calc(50% - 112.5px);
+     background-color: #7777;  
+} 
+
+.titulo{
+    font-size: 20px;
+    text-align: center;
+}
+
+.escritor{
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.valor{
+    font-size: 15px;
+    color:orangered;
+    text-align: center;
+}
 .overlay {
     width: 300px;
-    height: 400px;
+    height: 100px;
     position: absolute;
     left: 0;
-    top: 0;
-    z-index: 5;
+    top: 200;
+    
 
-    background-color: #7777;
+  
 
     display: flex;
     flex-direction: column;
@@ -160,6 +228,7 @@ body {
     padding: 10px;
     box-sizing: border-box;
 }
+
 
 footer {
     width: 100%;
