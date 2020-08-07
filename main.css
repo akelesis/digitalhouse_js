@@ -176,3 +176,14 @@ footer {
         width: 60vw;
     }
 }
+
+.carrousel_images{
+    height: 300px;
+    width: 1000px;
+}
+
+#imagens_carousel{
+    height: 100px;
+    width: 100px;
+    border: solid;
+}
