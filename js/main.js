@@ -72,7 +72,14 @@ function passar(json, n){
 
 const pesquisar = document.getElementById("search_button");
 const barraPesquisa = document.getElementById("search_bar");
-pesquisar.addEventListener("click", function(){
+pesquisar.addEventListener("click", pesquisarLivros);
+barraPesquisa.addEventListener("keyup", function(e){
+    if(e.keyCode === 13)
+        pesquisarLivros();
+});
+
+
+function pesquisarLivros(){
     if(barraPesquisa.value == "" || barraPesquisa.value.length < 4){
         card.innerHTML = "";
         card.innerHTML += digiteAlgo(barraPesquisa.value.length);
@@ -106,7 +113,7 @@ pesquisar.addEventListener("click", function(){
             card.innerHTML += notFound();
         }
     }
-})
+}
 
 function notFound() {
     return `
