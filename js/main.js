@@ -16,8 +16,6 @@ fetch(jsonAddress)
             nAleatorios.push(rand);
         }
     }while(nAleatorios.length < 18);
-     console.log(nAleatorios);
-
     for(i = 0; i < 18; i++){
         let x = nAleatorios[i]
         listaLivros.push(listaLivrosA[x]);
@@ -117,8 +115,6 @@ function pesquisarLivros(){
         }
         if(livrosFilter.length > 0){
             const array = [...new Set(livrosFilter)];
-        
-            //console.log(array);
             card.innerHTML = "";
             for(i = 0; i < array.length && i < 6; i++){
                 j = array[i];
@@ -153,4 +149,64 @@ function digiteAlgo(search) {
         </div>    
         `
     }   
+}
+
+const preco = document.getElementById("price_range");
+const categoria = document.getElementById("category");
+categoria.addEventListener("change", function(){
+    filterPrecoCategoria(0);
+});
+preco.addEventListener("change", function(){
+    filterPrecoCategoria(1);
+});
+
+function filterPrecoCategoria(e){
+    const precoBooks = []
+    const categoryBooks = [];
+    if(e == 0){
+        for(i = 0; i < listaLivros.length; i++){
+            if(listaLivros[i].genero == categoria.value)
+                categoryBooks.push(listaLivros[i]);
+        }
+        if(preco.value){
+            for(i = 0; i < categoryBooks.length; i++){
+                if(categoryBooks[i].faixa == preco.value)
+                    precoBooks.push(categoryBooks[i]);
+            }
+            card.innerHTML = "";
+            if(precoBooks.length == 0)
+                card.innerHTML = notFound();
+            for(i = 0; i < 6 && i < precoBooks.length; i++)
+                card.innerHTML += cards(precoBooks[i]);
+        
+        }else{
+            card.innerHTML = "";
+            if(categoryBooks.length == 0)
+                card.innerHTML = notFound();
+            for(i = 0; i < 6 && i < categoryBooks.length; i++)
+                card.innerHTML += cards(categoryBooks[i]);  
+        }
+    }else{
+        for(i = 0; i < listaLivros.length; i++){
+            if(listaLivros[i].faixa == preco.value)
+                precoBooks.push(listaLivros[i]);
+        }
+        if(categoria.value){
+            for(i = 0; i < precoBooks.length; i++){
+                if(precoBooks[i].genero == categoria.value)
+                    categoryBooks.push(precoBooks[i]);
+            }
+            card.innerHTML = "";
+            if(categoryBooks.length == 0)
+                card.innerHTML = notFound();
+            for(i = 0; i < 6 && i < categoryBooks.length; i++)
+                card.innerHTML += cards(categoryBooks[i]);
+        }else{
+            card.innerHTML = "";
+            if(precoBooks.length == 0)
+                card.innerHTML = notFound();
+            for(i = 0; i < 6 && i < precoBooks.length; i++)
+                card.innerHTML += cards(precoBooks[i]);
+        }    
+    }
 }
