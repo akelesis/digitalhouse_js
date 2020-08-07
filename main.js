@@ -1,3 +1,11 @@
+/**
+    ___________________________
+
+      CONSTANTES E VARIAVEIS
+    ___________________________
+ 
+*/
+
 const livros = [
     {
         nome:"Livro 1",
@@ -35,11 +43,60 @@ const showcase = document.querySelector('.showcase');
 const categoria = document.querySelector("#category");
 const preco = document.querySelector("#price_range");
 const carousel = document.querySelector("#img_carousel");
+const searchButton = document.querySelector("#search_button");
 
-let livrosPorCategoria = [];
+let buscanome = document.querySelector("#search_bar");
+let livrosPorCategoria = livros;
 let livrosPorCategoriaPreco = [];
 let livroPrices = [];
 let livroCategorias = [];
+let arrayLivros = [];
+
+/**
+    ___________________________
+
+        EVENTS LISTNERS
+    ___________________________
+ 
+*/
+
+categoria.addEventListener('change', () => {
+    limparTela();
+    filtroCategoria();
+});
+
+preco.addEventListener('change', () => {
+    limparTela();
+    filtroPreco();
+});
+
+searchButton.addEventListener('click', () =>{
+    filtroNome();
+});
+
+buscanome.addEventListener('keydown', (key) =>{
+    if (key.keyCode === 13) {
+        filtroNome();
+    }
+});
+
+/**
+    _____________________________
+
+    FUNCTIONS RENDERIZAR ARRAY
+    _____________________________
+ 
+*/
+
+function onLoad(){
+    montaListaCategoria(livros);
+    renderizarArrayNaPagina(livros);
+}
+
+
+function limparTela(){
+    showcase.innerHTML = "";
+}
 
 function renderizarArrayNaPagina(livrosfiltrados) {
     livrosfiltrados.forEach(livro => {
@@ -57,17 +114,16 @@ function renderizarArrayNaPagina(livrosfiltrados) {
         card.appendChild(precoLivro);
         showcase.appendChild(card);
     });
-};
+}
 
-categoria.addEventListener('change', () => {
-    limparTela();
-    filtroCategoria();
-});
+/**
+    _____________________________
 
-preco.addEventListener('change', () => {
-    limparTela();
-    filtroPreco();
-});
+    FILTROS CATEGORIA, PRECO E
+            BUSCA NOME
+    _____________________________
+ 
+*/
 
 function filtroCategoria(){
     if(categoria.value === 'todos'){
@@ -80,14 +136,54 @@ function filtroCategoria(){
                 livrosPorCategoria.push(livro);
             }
         });
-    };
+    }
     renderizarArrayNaPagina(livrosPorCategoria);
     montaListaPreco(livrosPorCategoria);
-};
+}
 
-function limparTela(){
-    showcase.innerHTML = "";
-};
+function filtroPreco(){
+    if(preco.value === 'todos'){
+        livrosPorCategoriaPreco = [];
+        livrosPorCategoriaPreco = livrosPorCategoria;
+    }else{
+        livrosPorCategoriaPreco = [];
+        livrosPorCategoria.forEach(livro => {
+            if(preco.value === livro.preco.categoriaPrice){
+                livrosPorCategoriaPreco.push(livro);
+            }
+        });
+    }
+    renderizarArrayNaPagina(livrosPorCategoriaPreco);
+}
+
+function filtroNome(){
+    populaFiltro();
+    if (buscanome.value != ""){ 
+        arrayLivros = arrayLivros.filter(livro => {
+            return livro.nome.toUpperCase().indexOf(buscanome.value.toUpperCase()) != -1;
+        });
+
+        limparTela();
+
+        if(arrayLivros.length != 0){
+            renderizarArrayNaPagina(arrayLivros);
+        }else{
+            var erroRetorno = "Nenhum livro encontrado!";
+            alert(erroRetorno);
+            populaFiltro();
+        }
+    }
+}
+
+/**
+    _____________________________
+
+       FUNCTIONS SELECT INPUT 
+       RENDERIZADO PELO ARRAY
+        PRECO E CATEGORIA
+    _____________________________
+ 
+*/
 
 function montaListaPreco(lista){
     while (preco.options.length) {
@@ -105,44 +201,47 @@ function montaListaPreco(lista){
     preco.options.add(defaults);
 
     livroPrices.forEach(livroPrice => { 
-        var option = new Option(livroPrice); 
+        var option = new Option(primeiraLetraUpperCase(livroPrice), livroPrice); 
         preco.options.add(option);
     });
 
-};
+}
 
 function montaListaCategoria(lista){
     lista.forEach(livro =>{
-        var precoParaOption = livro.categoria; 
-        if(!(livroCategorias.includes(precoParaOption))){ 
-            livroCategorias.push(precoParaOption); 
-        };
+        var categoriaParaOption = livro.categoria; 
+        if(!(livroCategorias.includes(categoriaParaOption))){ 
+            livroCategorias.push(categoriaParaOption); 
+        }
     });
 
     livroCategorias.forEach(livroCategoria => { 
-        var option = new Option(livroCategoria); 
+        var option = new Option(primeiraLetraUpperCase(livroCategoria), livroCategoria); 
         categoria.options.add(option);
     });
 
-};
+}
 
-function onLoad(){
-    montaListaCategoria(livros);
-    renderizarArrayNaPagina(livros);
-};
+/**
+    _____________________________
 
-function filtroPreco(){
-    if(preco.value === 'todos'){
-        livrosPorCategoriaPreco = [];
-        livrosPorCategoriaPreco = livrosPorCategoria;
+       FUNCTIONS ADICIONAIS 
+        IMPLEMENTAM FUNCTIONS
+            ANTERIORES
+    _____________________________
+ 
+*/
+
+function populaFiltro(){
+    if(livrosPorCategoriaPreco.length > 0){
+        arrayLivros = livrosPorCategoriaPreco;
     }else{
-        livrosPorCategoriaPreco = [];
-        livrosPorCategoria.forEach(livro => {
-            if(preco.value === livro.preco.categoriaPrice){
-                livrosPorCategoriaPreco.push(livro);
-            }
-        });
-    };
-    renderizarArrayNaPagina(livrosPorCategoriaPreco);
-};
+        arrayLivros = livrosPorCategoria;
+    }
+}
 
+function primeiraLetraUpperCase(palavra){
+    return palavra
+            .charAt(0)
+            .toUpperCase() + palavra.slice(1);
+}
