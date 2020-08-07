@@ -313,7 +313,7 @@ footer {
 .showcase {
     width: 80vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-self: center;
     margin: 50px 0;
