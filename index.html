@@ -12,22 +12,20 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <button id="dh_menu_btn" onclick="openNav()"><i class="fas fa-bars"></i></button>
 
-        <!-- <nav>
+        <nav id="my-sidenav" class="sidenav">
             <ul>
+                <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
                 <li><a href="#">Lista de Desejos</a></li>
                 <li><a href="#">Minhas Compras</a></li>
                 <li><a href="#">Painel de Controle</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>
-        </nav> -->
+        </nav>
     </header>
     <main class="content">
         <section id="dh_carousel">
-            <!-- <h2 class="carrousel_label">
-                Carrossel...
-            </h2> -->
             <div class="btns-carousel">
                 <button id="prev-btn">Anterior</button>
                 <button id="next-btn">Próximo</button>

@@ -6,6 +6,14 @@ const sectionShowCase = document.getElementsByClassName("showcase")[0];
 const searchBtn = document.getElementById("search_button");
 const selectCategory = document.getElementById("category");
 
+function openNav() {
+    document.getElementById("my-sidenav").style.width = "200px";
+}
+
+function closeNav() {
+    document.getElementById("my-sidenav").style.width = "0";
+}
+
 const bookList = [
     {
         title: "O Senhor dos anéis",
