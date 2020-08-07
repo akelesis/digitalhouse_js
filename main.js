@@ -92,8 +92,7 @@ function insereLivros(books){
 }
 
 function limpaLista(){
-    let livrosAtuais = document.getElementsByClassName('card');
-    Array.prototype.slice.call(livrosAtuais).forEach(a => document.querySelector(".showcase").removeChild(a));
+    document.getElementsByClassName('showcase')[0].innerHTML='';
 }
 
 function pesquisa(){
