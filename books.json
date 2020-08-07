@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "title": "Livro 1",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
+    "price": 22.00,
+    "category": "Self Help",
+    "img": "img/300x400.png"
+  },
+  {
+    "id": 1,
+    "title": "Livro 2",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
+    "price": 14.00,
+    "category": "Romance",
+    "img": "img/300x400.png"
+  },
+  {
+    "id": 2,
+    "title": "Livro 3",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
+    "price": 18.00,
+    "category": "Fantasy",
+    "img": "img/300x400.png"
+  },
+  {
+    "id": 3,
+    "title": "Livro 4",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
+    "price": 44.00,
+    "category": "Sci-Fi",
+    "img": "img/300x400.png"
+  },
+  {
+    "id": 4,
+    "title": "Livro 5",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
+    "price": 36.00,
+    "category": "Sci-Fi",
+    "img": "img/300x400.png"
+  },
+  {
+    "id": 5,
+    "title": "Livro 6",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda. Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste corrupti error perspiciatis repellat!",
+    "price": 70.00,
+    "category": "Romance",
+    "img": "img/300x400.png"
+  }
+]
