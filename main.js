@@ -1,3 +1,6 @@
+/*eslint-env browser*/
+
+
 /* -------------------- Menu lateral -------------------- */
 document.querySelector(".btn-open-menu").onclick = function () {
     document.getElementById("side-menu").style.width = "250px";
@@ -9,10 +12,35 @@ document.querySelector(".btn-close-menu").onclick = function () {
 
 
 /* -------------------- Carrosel -------------------- */
+const carrossel = document.querySelector(".carousel");
+const slides = Array.from(carrossel.children);
+const larguraSlide = 100;
 
-/* Em andamento... */
+slides.forEach((slide, index) => {
+    slide.style.left = larguraSlide * index + 'vw';
+});
 
+document.querySelector(".btn-carousel-right").onclick = function () {
+    let slideAtual = carrossel.querySelector(".current-slide");    
+    let proximoSlide = slideAtual.nextElementSibling;
+    
+    const mover = proximoSlide.style.left;
 
+    carrossel.style.transform = 'translateX(-' + mover + ')';
+    slideAtual.classList.remove("current-slide");
+    proximoSlide.classList.add("current-slide");
+}
+
+document.querySelector(".btn-carousel-left").onclick = function () {
+    const slideAtual = carrossel.querySelector(".current-slide");
+    const slideAnterior = slideAtual.previousElementSibling;
+    
+    const mover = slideAnterior.style.left;
+
+    carrossel.style.transform = 'translateX(-' + mover + ')';
+    slideAtual.classList.remove("current-slide");
+    slideAnterior.classList.add("current-slide");
+}
 
 /* -------------------- Showcase -------------------- */
 
@@ -102,6 +130,7 @@ cards.forEach((card, index) => {
 
     overlay.insertBefore(autor, p);
     overlay.insertBefore(genero, p);
+    //adicionando na posição depois de p
     p.parentNode.insertBefore(preco, p.nextSibling);
 });
 
