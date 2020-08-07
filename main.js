@@ -5,9 +5,30 @@ let imgs = document.querySelectorAll("img")
 let tituloSite = document.querySelectorAll(".overlay h2")
 let textos = document.querySelectorAll(".overlay p")
 
-let imgSrc =["./img/domQuixote.jpg","./img/guerraEPaz.jpg","./img/oMeninoDo.jpg","./img/orgulhoEPreconceito.jpg","./img/senhorDosAneis.jpg","./img/viagemAoCentro.jpg"]
-let titulos=["Dom Quixote","Guerra e Paz","O menino do pijama listrado","Orgulho e Preconceito","O Senhor dos Aneis","Viagem ao Centro da Terra"]
-let sinopse = ["É uma obra escrita pelo escritor espanhol Miguel de Cervantes e Saavedra (1547-1616). Trata-se de uma sátira às antigas novelas de cavalaria, considerada uma das maiores obras da literatura espanhola e um clássico da literatura universal. O livro, lançado em 1605, inaugurou o romance moderno e hoje conta com muitas versões traduzidas para inúmeras línguas","É um romance histórico escrito pelo autor russo Liev Tolstói e publicado entre 1865 e 1869 no Russkii Vestnik, um periódico da época. É uma das obras mais volumosas da história da literatura universal. O livro narra a história da Rússia à época de Napoleão Bonaparte. A riqueza e realismo de seus detalhes assim como suas numerosas descrições psicológicas fazem com que seja considerado um dos maiores livros da História da Literatura. Tolstói desenvolve no livro uma teoria fatalista da História, onde o livre-arbítrio não teria mais que uma importância menor e onde todos os acontecimentos só obedeceriam a um determinismo histórico irrelutável.","A obra apresenta uma amizade improvável entre dois garotos em tempos de guerra. Conectados por um fato em comum, pois ambos nasceram no mesmo dia, suas vidas são completamente distintas e separadas por um elemento, a cerca. A curiosidade, inocência e confiança são os principais elementos dessa história, que transcorre durante um dos períodos mais tristes que a humanidade já viveu.","É a obra-prima da escritora britânica Jane Austen que tem como pano de fundo a burguesia inglesa do início do século XIX. Vemos no romance como as relações movidas por amor e dinheiro podem ser promíscuas e mesquinhas, encobertas pelo véu da sociedade burguesa. O clássico inglês foi adaptado para o cinema quatro vezes, a versão mais consagrada ganhou as telas em 2005 sob a direção de Joe Wright.","É um romance de fantasia criado pelo escritor, professor e filólogo britânico J.R.R. Tolkien. A história começa como seqüência de um livro anterior de Tolkien, O Hobbit (The Hobbit), e logo se desenvolve numa história muito maior. Foi escrito entre 1937 e 1949, com muitas partes criadas durante a Segunda Guerra Mundial. Embora Tolkien tenha planejado realizá-lo em volume único, foi originalmente publicado em três volumes entre 1954 e 1955, e foi assim, em três volumes, que se tornou popular. Desde então foi reimpresso várias vezes e foi traduzido para mais de 40 línguas, tornando-se um dos trabalhos mais populares da literatura do século XX.","Precursor do gênero ficção científica no século XIX, Viagem ao Centro da Terra (no original Voyage au Centre de la Terre) é um clássico da literatura universal lançado no ano de 1864. Viagem ao Centro da Terra trata-se de uma aventura protagonizada por Otto Lidenbrock, pelo sobrinho Axel e pelo guia Hans Bjelke. Acredita-se que a história tenha sido inspirada em uma viagem que o próprio Verne teria feito para a Noruega e para outros países escandinavos."]
+let imgSrc = [
+    "./img/domQuixote.jpg",
+    "./img/guerraEPaz.jpg",
+    "./img/oMeninoDo.jpg",
+    "./img/orgulhoEPreconceito.jpg",
+    "./img/senhorDosAneis.jpg",
+    "./img/viagemAoCentro.jpg"
+]
+let titulos = [
+    "Dom Quixote",
+    "Guerra e Paz",
+    "O menino do pijama listrado",
+    "Orgulho e Preconceito",
+    "O Senhor dos Aneis",
+    "Viagem ao Centro da Terra"
+]
+let sinopse = [
+    "É uma obra escrita pelo escritor espanhol Miguel de Cervantes e Saavedra (1547-1616). Trata-se de uma sátira às antigas novelas de cavalaria, considerada uma das maiores obras da literatura espanhola e um clássico da literatura universal. O livro, lançado em 1605, inaugurou o romance moderno e hoje conta com muitas versões traduzidas para inúmeras línguas",
+    "É um romance histórico escrito pelo autor russo Liev Tolstói e publicado entre 1865 e 1869 no Russkii Vestnik, um periódico da época. É uma das obras mais volumosas da história da literatura universal. O livro narra a história da Rússia à época de Napoleão Bonaparte. A riqueza e realismo de seus detalhes assim como suas numerosas descrições psicológicas fazem com que seja considerado um dos maiores livros da História da Literatura. Tolstói desenvolve no livro uma teoria fatalista da História, onde o livre-arbítrio não teria mais que uma importância menor e onde todos os acontecimentos só obedeceriam a um determinismo histórico irrelutável.",
+    "A obra apresenta uma amizade improvável entre dois garotos em tempos de guerra. Conectados por um fato em comum, pois ambos nasceram no mesmo dia, suas vidas são completamente distintas e separadas por um elemento, a cerca. A curiosidade, inocência e confiança são os principais elementos dessa história, que transcorre durante um dos períodos mais tristes que a humanidade já viveu.",
+    "É a obra-prima da escritora britânica Jane Austen que tem como pano de fundo a burguesia inglesa do início do século XIX. Vemos no romance como as relações movidas por amor e dinheiro podem ser promíscuas e mesquinhas, encobertas pelo véu da sociedade burguesa. O clássico inglês foi adaptado para o cinema quatro vezes, a versão mais consagrada ganhou as telas em 2005 sob a direção de Joe Wright.",
+    "É um romance de fantasia criado pelo escritor, professor e filólogo britânico J.R.R. Tolkien. A história começa como seqüência de um livro anterior de Tolkien, O Hobbit (The Hobbit), e logo se desenvolve numa história muito maior. Foi escrito entre 1937 e 1949, com muitas partes criadas durante a Segunda Guerra Mundial. Embora Tolkien tenha planejado realizá-lo em volume único, foi originalmente publicado em três volumes entre 1954 e 1955, e foi assim, em três volumes, que se tornou popular. Desde então foi reimpresso várias vezes e foi traduzido para mais de 40 línguas, tornando-se um dos trabalhos mais populares da literatura do século XX.",
+    "Precursor do gênero ficção científica no século XIX, Viagem ao Centro da Terra (no original Voyage au Centre de la Terre) é um clássico da literatura universal lançado no ano de 1864. Viagem ao Centro da Terra trata-se de uma aventura protagonizada por Otto Lidenbrock, pelo sobrinho Axel e pelo guia Hans Bjelke. Acredita-se que a história tenha sido inspirada em uma viagem que o próprio Verne teria feito para a Noruega e para outros países escandinavos."
+]
 
 for (j=0;j<imgs.length;j++){
     imgs[j].src = imgSrc[j]
@@ -31,8 +52,15 @@ carousel.appendChild(btnBack = document.createElement("button"))
 btnBack.appendChild(document.createTextNode("Back"))
 
 let img = document.createElement("img")
-let vetor =["./img/imgCinza.png","./img/imgVerde.png","./img/imgLaranja.png","./img/imgVermelha.png"]
+let vetor =[
+    "./img/imgCinza.png",
+    "./img/imgVerde.png",
+    "./img/imgLaranja.png",
+    "./img/imgVermelha.png"
+]
 let i=0
+
+
 img.src = vetor[i]
 img.style.height = "60vh"
 carousel.appendChild(img)
@@ -71,7 +99,7 @@ btnNext.addEventListener("click",function(){
 
 /* Menu Hamburguer */
 
-
+//falta fazer//
 
 /* Menu Hamburguer */
 
@@ -79,13 +107,45 @@ btnNext.addEventListener("click",function(){
 
 /* Ferramenta de pesquisa */
 
-let domQuixote = {nome:"Dom Quixote", categoria: "fantasia", preco:"40"}
-let guerraEPaz = {nome:"Guerra e Paz",categoria: "romance", preco:"70"}
-let oMeninoDo = {nome:"O Menino do Pijama Listrado",categoria: "autoAjuda", preco: "47"}
-let orgulhoEPreconceito = {nome:"Orgulho e Preconceito",categoria: "romance", preco:"25"}
-let senhorDosAneis = {nome:"O Senhor dos Aneis",categoria: "fantasia", preco: "50"}
-let viagemAoCentro = {nome:"Viagem ao Centro da Terra",categoria: "ficcao", preco: "15"}
-let bancoDeDados = [domQuixote,guerraEPaz,oMeninoDo,orgulhoEPreconceito,senhorDosAneis,viagemAoCentro]
+let domQuixote = {
+    nome:"Dom Quixote",
+    categoria: "fantasia",
+    preco:"40"
+}
+let guerraEPaz = {
+    nome:"Guerra e Paz",
+    categoria: "romance",
+    preco:"70"
+}
+let oMeninoDo = {
+    nome:"O Menino do Pijama Listrado",
+    categoria: "autoAjuda",
+    preco: "47"
+}
+let orgulhoEPreconceito = {
+    nome:"Orgulho e Preconceito",
+    categoria: "romance",
+    preco:"25"
+}
+let senhorDosAneis = {
+    nome:"O Senhor dos Aneis",
+    categoria: "fantasia",
+    preco: "50"
+}
+let viagemAoCentro = {
+    nome:"Viagem ao Centro da Terra",
+    categoria: "ficcao",
+    preco: "15"
+}
+
+let bancoDeDados = [
+    domQuixote,
+    guerraEPaz,
+    oMeninoDo,
+    orgulhoEPreconceito,
+    senhorDosAneis,
+    viagemAoCentro
+]
 
 function ate20(valor) {
     return valor <= 20;
@@ -136,12 +196,64 @@ console.log(buscaGenero(bancoDeDados,"ficcao"))
 console.log(buscaGenero(bancoDeDados,"fantasia"))
 console.log(buscaGenero(bancoDeDados,"autoAjuda")) */
 
-let infPreco = document.querySelector(".advanced_filters select#price_range")
-let infCat = document.querySelector(".advanced_filters select#category")
-console.log(infPreco)
-console.log(infCat)
+function elementosComuns(arr1, arr2) {
+    let comuns = []
+    for(var j2=0 ; j2<arr1.length ; ++j2) {
+        for(var k2=0 ; j<arr2.length ; ++k2) {
+            if(arr1[j2] == arr2[k2]) {      
+            comuns.push(arr1[j2])
+            }
+        }
+    }
+}
 
-/* function busca(){
+function busca(baseData,gen,prec){
+    if (gen != ""){
+        let findGen = buscaGenero(baseData,gen)
+    }
+    if (prec != ""){
+        let opt1 = {
+            valor:"barato",
+            func:"ate20"
+        }
+        let opt2 = {
+            valor:"medio",
+            func:"de21a40"
+        }
+        let opt3 = {
+            valor:"caro",
+            func:"de41a60"
+        }
+        let opt4 = {
+            valor:"mais caro",
+            func:"acima60"
+        }
+        let opts = [
+            opt1,
+            opt2,
+            opt3,
+            opt4,
+        ]
+        for (i3=0;i3<precos.length;i3++){
+            if (prec == opts[i3].valor){
+                let findPrec = buscaPreco(baseData,opts[i3].func)
+            }
+        }
+    }
+/*     if (findGen) 
+    return elementosComuns() */
+}
+
+/* let infPreco = document.querySelector(".advanced_filters select#price_range")
+let infCat = document.querySelector(".advanced_filters select#category")
+*/
+
+var selecaoPreco = document.getElementById('price_range');
+var valor = selecaoPreco.options[selecaoPreco.selectedIndex].value;
+console.log(valor)
+
+
+/* function teste(){
     livros=[]
     if (infPreco=="barato"){
         livros=buscaPreco(bancoDeDados,ate20)
