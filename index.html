@@ -6,31 +6,49 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../digitalhouse_js/CSS/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../digitalhouse_js/CSS/carrossel.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../digitalhouse_js/CSS/menu.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../digitalhouse_js/CSS/listaLivros.css'>
 </head>
 
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+
+<!--------------------------------------MENU-------------------------------------------------------->
+        <button id="dh_menu_btn" class="dh_menu_btn"><i class="fas fa-bars"></i></button>
+
+        <nav class="menu-hidde" id="menu-hidde">
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+              
+            </ul>
+        </nav>
+<!--------------------------------------------------------------------------------------------------->
     </header>
     <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+        <section id="dh_carrossel">
+                <ul>
+                  <li><img src="../digitalhouse_js/img/visao.png" ></li>
+                  <li><img src="../digitalhouse_js/img/visao02.jpeg"></li>
+                  <li><img src="../digitalhouse_js/img/visao03.jpg"></li>
+                  <li><img src="../digitalhouse_js/img/visao01.jpg"></li>       
+                </ul>  
         </section>
         <section class="filters">
             <div class="name_box">
-                <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <input type="text" id="search_bar" placeholder="Nome do livro..." >
+                <button id="search_button" onclick="pesquisaNome()"><i class="fas fa-search"></i></button>
             </div>
+           
             <div class="advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
-                    <option value="Fantasia">Fantasia</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Infantil">Infantil</option>
                     <option value="Romance">Romance</option>
                 </select>
                 <select name="price_range" id="price_range">
@@ -41,61 +59,69 @@
                     <option value="mais caro">acima de R$61</option>
                 </select>
             </div>
+            <button  onclick="limpar()">Limpar Pesquisa<i class="fas fa-backspace"></i></button>
         </section>
 
         <section class="showcase">
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imgLivros" src="./img/livros/livro01.jpg">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>A CULPA É DAS ESTRELAS</h2>
+                    <p>O enredo conta a história de Hazel, uma jovem de dezesseis anos que desde os treze luta contra um câncer. A jovem passava os seus (poucos) dias de vida sem viver grandes emoções, até que conhece Augustus, um rapaz que perdeu uma das pernas devido a uma doença.
+                            Juntos, Hazel e Gus enfrentam os terrores do câncer com um senso de humor ácido e bastante peculiar. A Culpa é das Estrelas é um livro lindo e que vai conquistar o seu coração, sem dúvidas!</p>
+                            <br/>
+                            <strong>CATEGORIA:</strong>Romance <br/>
+                            <strong>PREÇO:</strong> R$18,50
+                        </div>
+            </div>
+            <div class="card">
+                <img class="imgLivros" src="./img/livros/livro03.jpg">
+                <div class="overlay">
+                    <h2>O EXORCISTA</h2>
+                    <p>Este livro, que também se tornou um clássico do cinema de terror, conta a história de uma garota de doze anos vítima de uma possessão demoníaca, trazendo para ela poderes de levitação e força descomunal. Além disso, a menina passa a falar palavrões e a blasfemar contra Deus com uma voz masculina, além de ter o rosto brutalmente desfigurado pela possessão. Eis que um padre exorcista é chamado para realizar o exorcismo do demônio, momento a partir do qual muitas coisas acontecem.</p>
+                    <br/>
+                    <strong>CATEGORIA:</strong>Terror <br/>
+                    <strong>PREÇO:</strong> R$24,55
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imgLivros" src="./img/livros/livro06.jpg">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>POR QUE NÃO POSSO?</h2>
+                    <p>Apresenta às crianças diferentes emoções e aspectos do comportamento. Elas aprenderão que é preciso obedecer às regras de seus pais e professores para que todos possam se divertir e aprender juntos.</p>
+                    <br/>
+                    <strong>CATEGORIA:</strong>Infantil <br/>
+                    <strong>PREÇO:</strong> R$12,20
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imgLivros" src="./img/livros/livro02.jpg">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>CREPÚSCULO</h2>
+                    <p> A saga conta a história de Isabella Swan, uma adolescente que se muda de Phoenix para Forks, em Washington, experimentando um mundo totalmente novo para si ao apaixonar-se por Edward Cullen, um vampiro</p>
+                    <br/>
+                    <strong>CATEGORIA:</strong>Romance <br/>
+                    <strong>PREÇO:</strong> R$82,80
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imgLivros" src="./img/livros/livro04.jpg">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>MENINA BONITA DO LAÇO DE FITA</h2>
+                    <p>Uma linda menina negra desperta a admiração de um coelho branco, que deseja ter uma filha tão pretinha quanto ela. Cada vez que ele lhe pergunta qual o segredo de sua cor, ela inventa uma história. O coelho segue todos os “conselhos” da menina, mas continua branco.</p>
+                    <br/>
+                    <strong>CATEGORIA:</strong>Infantil <br/>
+                    <strong>PREÇO:</strong> R$15,50
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img class="imgLivros" src="./img/livros/livro05.jpg">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/300x400.png">
-                <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>OS MORTOS VIVOS</h2>
+                    <p>Essa história acontece na cidade de Milburn, onde quatro amigos formam a “Sociedade Chowder”. Duas vezes por mês eles se reúnem para contar histórias de espíritos, monstros e fantasmas e em um dos seus encontros eventos estranhos passam a acontecer, aterrorizando a todos.</p>
+                    <br/>
+                    <strong>CATEGORIA:</strong>Terror <br/>
+                    <strong>PREÇO:</strong> R$41,00
                 </div>
             </div>
         </section>
@@ -104,7 +130,9 @@
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    <script src='../digitalhouse_js/JS/main.js'></script>
+    <script src='../digitalhouse_js/JS/menu.js'></script>
+    <script src='../digitalhouse_js/JS/filtro.js'></script>
 </body>
 
 </html>

@@ -1,0 +1,42 @@
+#dh_menu_btn {
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+    background-color: #f7425a;
+    color: #EEE0CB;
+    font-size: 25px;
+    transition: filter .3s;
+}
+
+#dh_menu_btn:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.menu-hidde {
+    background: #333 none repeat scroll 0% 0%;
+    width: 185px;
+    height: 100%;
+    position: absolute; /*necessária para o funcionamento*/
+    box-shadow: 1px 2px 3px #DDD;
+    left: -100%;  /*é com essa propriedade que o menu fica escondido a esquerda*/
+    transition: left .5s;
+    margin-top: 25em;
+    }
+     
+    .menu-hidde li {
+    color: #fff;
+    font-size: 20px;
+    padding: 18px;
+    cursor: pointer;
+    }
+     
+    .menu-hidde ul {
+    position: absolute;
+    top: 31px;
+    }
+
