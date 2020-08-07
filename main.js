@@ -7,8 +7,40 @@ const searchBar = document.getElementById("search_bar");
 const bookCase = document.getElementById("bookCase");
 const showcase = document.getElementsByClassName("showcase");
 const body = document.querySelector("body")
+    // const menu = document.getElementById("menuLateral");
 
+function openCloseMenu() {
+    var menu = document.getElementById("menu");
+    var overlay = document.getElementById("menu_overlay");
+    var styles = window.getComputedStyle(menu);
+    console.log("fui clicado")
 
+    if (styles.right === "-270px") {
+        menu.style.right = "0px";
+        overlay.style.display = "block";
+    } else {
+        menu.style.right = "-270px";
+        overlay.style.display = "none";
+    }
+}
+
+// function ativaBotaoMenu() {
+
+//     var styles = window.getComputedStyle(menu);
+
+//     if (styles.right === "-270px") {
+//         menu.style.right = "0px";
+//     } else {
+//         menu.style.right = "-270px";
+//     }
+
+// }
+
+botao.addEventListener("click", function() {
+
+    // ativaBotaoMenu();
+    openCloseMenu();
+})
 
 
 function mudaImagem() {

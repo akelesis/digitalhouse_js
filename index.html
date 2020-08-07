@@ -12,11 +12,28 @@
 </head>
 
 <body>
+    <div id="menu_overlay" class="menu_overlay" style="display: none;" onclick="openCloseMenu()">
+
+    </div>
+
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria eita teste</h1>
         <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+
+
+
     </header>
     <main class="content">
+
+        <div id="menu" class="menu" onblur="openCloseMenu()">
+            <p class="titulo_menu">Minha Conta</p>
+            <ul id="opcoes_conta">
+                <li>André Chimicatti Fabrini</li>
+                <li>Favoritos</li>
+                <li>Minhas Compras</li>
+            </ul>
+        </div>
+
         <section>
             <!-- <h2 class="carrousel_label">
                 Carrossel...
@@ -84,6 +101,10 @@
                 </select>
             </div>
         </section>
+
+
+
+
 
         <section class="showcase">
 
