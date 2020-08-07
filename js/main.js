@@ -73,9 +73,9 @@ function passar(json, n){
 const pesquisar = document.getElementById("search_button");
 const barraPesquisa = document.getElementById("search_bar");
 pesquisar.addEventListener("click", function(){
-    if(barraPesquisa.value == ""){
+    if(barraPesquisa.value == "" || barraPesquisa.value.length < 4){
         card.innerHTML = "";
-        card.innerHTML += digiteAlgo();
+        card.innerHTML += digiteAlgo(barraPesquisa.value.length);
     }else{
         let livrosFilter = [];
         let s, words, searchWords;
@@ -116,10 +116,19 @@ function notFound() {
     ` 
 }
 
-function digiteAlgo() {
-    return `
-    <div class="notTyped" ">
-        <h2>Digite alguma coisa no campo de pesquisa!</h2>
-    </div>    
-    ` 
+function digiteAlgo(search) {
+    if(search == 0){
+        return `
+        <div class="notTyped" ">
+            <h2>Digite alguma coisa no campo de pesquisa!</h2>
+        </div>    
+        ` 
+    }else{
+        return `
+        <div class="notTyped" ">
+            <h2>Digite mais de 3 caracteres</h2>
+        </div>    
+        `
+    }
+    
 }
