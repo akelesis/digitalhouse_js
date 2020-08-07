@@ -102,8 +102,9 @@ function pesquisarLivros(){
         let s, words, searchWords;
         for(i = 0; i < listaLivros.length; i++){
             s = listaLivros[i].titulo.toUpperCase();
-            words = s.split(/\W+/).filter(x => x.length > 3);
-            searchWords = barraPesquisa.value.split(/\W+/).filter(x => x.length > 3);
+            words = s.split(" ").filter(x => x.length > 3);
+            console.log(words);
+            searchWords = barraPesquisa.value.split(" ").filter(x => x.length > 3);
             for(var j = 0; j < words.length; j++){
                 for(var h = 0; h < searchWords.length; h++){
                     if(searchWords[h].toUpperCase() == words[j]){
