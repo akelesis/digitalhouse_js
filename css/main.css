@@ -252,6 +252,7 @@ nav a{
     flex-wrap: wrap;
     align-self: center;
     margin: 30px 0;
+    justify-content: center;
 }
 
 .card {
@@ -327,4 +328,18 @@ footer {
     justify-content: center;
     align-items: center;
     color: #EEE0CB;
+}
+
+@media(max-width: 1899px) {
+    .showcase {
+        height: 1600px ;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 1266px){
+    .showcase {
+        height: 3800px;
+        justify-content: center;
+    }
 }
