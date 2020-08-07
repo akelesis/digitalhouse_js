@@ -101,10 +101,10 @@ campoBuscaNome.addEventListener("input", () => {
                 resultadoBusca.push(livro)
             }
         })
-        callback(resultadoBusca)
+        callback(resultadoBusca, limparArrayResultado)
     }
 
-    obterResultadoPorNome(mostrarResultado, limparArrayResultado)
+    obterResultadoPorNome(mostrarResultado)
 })
 
 btn_pesquisa.addEventListener("click", () => {
