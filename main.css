@@ -140,6 +140,8 @@ body {
     height: 400px;
     margin: 10px 0;
     position: relative;
+    border:2px solid black;
+    background-color: #EEE0DC;
 }
 
 .overlay {
