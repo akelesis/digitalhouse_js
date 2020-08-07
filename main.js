@@ -1,35 +1,54 @@
+let books;
+//Carrega primeiro livros antes de continuar
+async function carregaLivros(){
+
+    try {
+        books = await fetch('https://5f2d34808085690016922f79.mockapi.io/livros/').then(res => res.json()).catch(err => console.log("Não foi possível carregar os livros." + err.message));
+        insereLivros(books);
+        insereImgsCarousel();
+        insereAutores();
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+carregaLivros();
+
+
 document.getElementById('search_bar').addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         pesquisa();
     }
 });
 
-//Agrupa os autores e insere na combo
-let group = books.reduce((r, a) => {
-    r[a.author] = [...r[a.author] || [], a];
-    return r;
-   }, {});
+function insereAutores(){
+    //Agrupa os autores e insere na combo
+    let group = books.reduce((r, a) => {
+        r[a.author] = [...r[a.author] || [], a];
+        return r;
+    }, {});
 
-for (autor in group){
-    let opt = document.createElement('option');
-    opt.value = autor;
-    opt.textContent = autor;
-    document.getElementById('category').appendChild(opt);
+    for (autor in group){
+        let opt = document.createElement('option');
+        opt.value = autor;
+        opt.textContent = autor;
+        document.getElementById('category').appendChild(opt);
+    }
 }
 
-
+function insereImgsCarousel() {
 //insere as imagens no carousel
-books.forEach(function(livro) {
-    let imgC = document.createElement('img');
-    imgC.className = 'imgCarousel';
-    imgC.src = livro.image
+    books.forEach(function(livro) {
+        let imgC = document.createElement('img');
+        imgC.className = 'imgCarousel';
+        imgC.src = livro.image
 
-    document.getElementById('dh_carousel').appendChild(imgC);
-});
+        document.getElementById('dh_carousel').appendChild(imgC);
+    });
 
-duplicCarousel();
-insereLivros(books);
-
+    duplicCarousel();
+}
 
 function duplicCarousel(){
     const imgsCarousel = document.getElementById('dh_carousel').children;
