@@ -29,7 +29,6 @@ books.forEach(function(livro) {
 
 duplicCarousel();
 insereLivros(books);
-//
 
 
 function duplicCarousel(){
@@ -81,13 +80,14 @@ function limpaLista(){
 function pesquisa(){
 
     limpaLista()
+    let pBooks = books;
 
     //filtra preco
     const e = document.getElementById("price_range").selectedIndex;
-    let pBooks = filtraPreco(e);
+    if (e > 1) { pBooks = filtraPreco(e) };
 
      //filtra autor
-    if (document.getElementById('category').selectedIndex != 0) {
+    if (document.getElementById('category').selectedIndex > 1) {
         pBooks = pBooks.filter(livro => livro.author == document.getElementById('category').value);
     }
 
@@ -104,23 +104,23 @@ function pesquisa(){
     var result;
     switch (e) {
 
-        case 0:
+        case 1:
             result = books;
         break;
 
-        case 1:
+        case 2:
             result = books.filter(livro => livro.price.value * 4 < 21);//*4 Eur para Real
         break;
 
-        case 2:
+        case 3:
             result = books.filter(livro => livro.price.value * 4 >= 21 && livro.price.value * 4 < 41 );
         break;
 
-        case 3:
+        case 4:
             result = books.filter(livro => livro.price.value * 4 >= 41 && livro.price.value * 4 < 61 );
         break;
 
-        case 4:
+        case 5:
             result = books.filter(livro => livro.price.value * 4 >= 61);
         break;
     }
