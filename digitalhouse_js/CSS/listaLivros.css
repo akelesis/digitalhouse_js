@@ -1,0 +1,45 @@
+.imgLivros{
+    position: relative;
+    width: 18.7em;
+    height: 25em;
+}
+
+.overlay:hover{
+    display: block;
+    background-color: #000;
+    color: #fff;
+    opacity: 1;
+}
+
+.overlay{
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    opacity: 0;
+}
+
+.showcase {
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-self: center;
+    margin: 50px 0;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 10px 0;
+    position: relative;
+}
