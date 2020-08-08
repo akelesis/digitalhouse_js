@@ -1,3 +1,24 @@
+// Menu
+const buttonMenu = document.querySelector("#dh_menu_btn");
+const menu = document.querySelector(".dh_menu");
+
+buttonMenu.onclick = function() {
+  if (menu.style.display === "none") {
+    showMenu();
+  } else {
+    hideMenu();
+  }
+}
+
+function showMenu() {
+  menu.style.display = "flex";
+}
+
+function hideMenu() {
+  menu.style.display = "none";
+}
+
+// Carousel
 function showCarousel(n) {
   let i;
   const slides = document.querySelectorAll(".carousel_item");
@@ -37,3 +58,4 @@ prev.onclick = function () {
   n = -1;
   changeSlide(n)
 }
+
