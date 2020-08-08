@@ -53,9 +53,9 @@ body {
 #dh_carousel {
   width: 100%;
   height: 60vh;
-
+  overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   background-color: #ccc;
@@ -63,10 +63,9 @@ body {
 
 #dh_carousel > img {
   height: 360px;
-  width: 277.5px;
+  width: 287.5px;
 
-  transition-property: left;
-  transition-duration: 2s;
+  transition: 2s;
 }
 
 .carrousel_label {

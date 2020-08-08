@@ -142,43 +142,52 @@ async function getBooks() {
 }
 
 function initCarousel() {
+  let index = 0;
   const cheapBooks = originalBookList.filter((book) => {
     return book.price.value <= 10;
   });
-
-  //console.log(cheapBooks);
+  const carouselLength = cheapBooks.length - 1;
 
   if (cheapBooks.length > 0) {
-    cheapBooks.map((book) => {
-      const imageSlide = document.createElement("img");
-      imageSlide.setAttribute("src", book.image);
-      imageSlide.style.display = "none";
-      carouselSection.appendChild(imageSlide);
-    });
-    const carouselLength = cheapBooks.length - 1;
+    renderCarousel(cheapBooks, carouselLength);
+
     const carouselNodes = carouselSection.childNodes;
-    console.log(carouselNodes[0]);
 
-    let index = 0;
-    carouselNodes[index].style.display = "block";
     setInterval(() => {
-      if (index === 0) {
-        carouselNodes[carouselLength].style.display = "none";
-      }
-
       if (index !== 0) {
         carouselNodes[index - 1].style.display = "none";
       }
 
       if (index !== carouselLength) {
-        carouselNodes[index].style.display = "block";
+        carouselNodes[index].style.marginLeft = "-40vw";
         index += 1;
-      } else {
-        carouselNodes[index].style.display = "block";
+      } else if (index === carouselLength) {
+        console.log(carouselNodes[index]);
+        // carouselNodes[index].style.marginLeft = "40vw";
+        carouselSection.innerHTML = "";
         index = 0;
+        renderCarousel(cheapBooks, carouselLength);
       }
-    }, 3000);
+    }, 2500);
   }
+}
+
+function renderCarousel(books, carouselLength) {
+  books.map((book, idx) => {
+    const imageSlide = document.createElement("img");
+    imageSlide.setAttribute("src", book.image);
+    imageSlide.style.display = "block";
+    if (idx === 0) {
+      imageSlide.style.marginLeft = "42vw";
+    } else {
+      imageSlide.style.marginLeft = "65vw";
+    }
+    if (idx === carouselLength) {
+      console.log("Joguei 10vw");
+      imageSlide.style.marginRight = "40vw";
+    }
+    carouselSection.appendChild(imageSlide);
+  });
 }
 
 getBooks();
