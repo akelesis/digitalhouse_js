@@ -52,20 +52,11 @@ body {
 
 #dh_carousel {
     width: 100%;
-    height: 60vh;
 
     display: flex;
     justify-content: center;
-    align-items: center;
 
     background-color: #ccc; 
-}
-
-.carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
 }
 
 .filters {
@@ -171,8 +162,26 @@ footer {
     color: #EEE0CB;
 }
 
+
+#dh_nav{
+    display: none;
+    background-color: #F71735;
+  
+}
+
+li {
+    list-style: none;
+    padding:3px 9px;
+    margin-bottom:2px;
+    font: 18px  "Mulish", sans-serif;
+    text-align: right;
+}
+
+
 @media(min-width: 1498px) {
-    .showcase {
+    .showcase  {
         width: 60vw;
     }
+
 }
+
