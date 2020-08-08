@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap');
 
+/*ESTILO MENU*/
+#menu{
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    right: 0;
+    top:64px;
+    
+
+}
+.ulmenu{
+    /*text-align: center;*/
+    list-style-type: none;
+    background-color: #777;
+    padding: 0;
+}
+li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 20px;
+}
+a:link {
+    text-decoration: none;
+   }
+   
+a:hover {
+    color:white;
+   }
+/*FIM ESTILO MENU*/
+#dh_carouselFoto{
+    width: 290px;
+    height: 390px;
+}
+#dvslider{
+    width: 1000px;
+    height: 300px;
+    /*border: 1px solid;*/
+    margin: 0 auto;
+}
 body {
     margin: 0;
     display: flex;
