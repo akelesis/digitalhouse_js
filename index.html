@@ -9,21 +9,24 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 
-<body>
+<body onload="slide1()">
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
         <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <ul id="menu" class="hidden">
+            <li>Home</li>
+            <li>Perfil</li>
+            <li>Login</li>
+        </ul>
     </header>
     <main class="content">
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+            <img id="imagens-carousel">
         </section>
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
@@ -32,6 +35,7 @@
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="Romance">Romance</option>
+                    <option value="Terror">Terror</option>
                 </select>
                 <select name="price_range" id="price_range">
                     <option value="" selected="true" disabled="disabled">Faixa de preço</option>
@@ -42,60 +46,43 @@
                 </select>
             </div>
         </section>
-
+        <section id="card-pesquisados">
+        </section>
         <section class="showcase">
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/pj-ladrao.png" class="img-livros">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Percy Jackson  O Ladrão de Raios</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/pj-mar-de-monstros.png" class="img-livros">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Percy Jackson  O Mar de Monstros</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/um-dia.png" class="img-livros">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Um dia</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/pare-odiar.png" class="img-livros">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Pare de se Odiar</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/2001.png" class="img-livros">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>2001: Uma Odisséia no Espaço</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/escuridao-total.png" class="img-livros">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Escuridão Total Sem estrelas</h2>
                 </div>
             </div>
         </section>
@@ -105,6 +92,8 @@
     </footer>
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
     <script src='main.js'></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 </body>
 
 </html>
