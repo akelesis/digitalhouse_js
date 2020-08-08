@@ -38,11 +38,28 @@ body {
     color: #EEE0CB;
     font-size: 25px;
     transition: filter .3s;
+
+    z-index: 2;
 }
 
 #dh_menu_btn:hover {
     filter: brightness(80%);
     cursor: pointer;
+}
+
+#menu.closed {
+    display: none;
+}
+
+#menu.opened {
+    padding-top: 64px;
+    padding-left: 8px;
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    right: 0px;
+    background-color: #ccc;
 }
 
 .content {
@@ -64,13 +81,6 @@ body {
 .carousel_item {
     margin: 10px;
 }
-
-/* .carrousel_label {
-    font-family: "Mulish", sans-serif;
-    font-weight: 200;
-    font-size: 25px;
-    color: #777;
-} */
 
 .filters {
     width: 100%;

@@ -12,39 +12,49 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <button id="dh_menu_btn" onclick="handleMenu()"><i class="fas fa-bars"></i></button>
     </header>
     <main class="content">
         <section id="dh_carousel">
-        
         </section>
 
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="handleSearch()"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
+                    <!-- <option value="Auto Ajuda">Auto Ajuda</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
-                    <option value="Romance">Romance</option>
+                    <option value="Romance">Romance</option> -->
                 </select>
-                <select name="price_range" id="price_range">
+                <select name="price_range" id="price_range" onchange="handleSearchPrice()">
                     <option value="" selected="true" disabled="disabled">Faixa de preço</option>
                     <option value="barato">R$1 - R$20</option>
                     <option value="medio">R$21 - R$40</option>
                     <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
+                    <option value="mais caro">acima de R$60</option>
                 </select>
             </div>
         </section>
 
         <section class="showcase">
         </section>
+
     </main>
+    
+    <div id="menu" class="closed">
+        <p class="title_menu"> Menu </p>
+        <nav>
+            <div> Favoritos </div>
+            <div> Comprados </div>
+            <div> Lista de Desejos </div>
+        </nav>
+    </div>
+
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
