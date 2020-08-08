@@ -231,6 +231,13 @@ body {
     height: 400px;
     margin: 10px 0;
     position: relative;
+    transition: transform 0.2s;
+}
+
+.card img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .overlay {
@@ -241,7 +248,7 @@ body {
     top: 0;
     z-index: 5;
 
-    background-color: #7777;
+    background-color: rgba(119, 119, 119, 0.815);
 
     display: flex;
     flex-direction: column;
@@ -250,6 +257,11 @@ body {
 
     padding: 10px;
     box-sizing: border-box;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }
 
 footer {
