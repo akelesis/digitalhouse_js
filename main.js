@@ -99,30 +99,6 @@ const availableBooks = [
 
 const cardsContainer = document.getElementById('cardsContainer');
 
-for (let book of availableBooks) {
-  const card = document.createElement('div');
-  card.className = 'card';
-
-  const cardImage = document.createElement('img');
-  cardImage.src = book.image;
-  card.appendChild(cardImage);
-
-  const cardOverlay = document.createElement('div');
-  cardOverlay.className = 'overlay';
-
-  const cardTitle = document.createElement('h2');
-  cardTitle.textContent = book.name;
-  cardOverlay.appendChild(cardTitle);
-
-  const cardDescription = document.createElement('p');
-  cardDescription.textContent = book.description;
-  cardOverlay.appendChild(cardDescription);
-
-  card.appendChild(cardOverlay);
-
-  cardsContainer.appendChild(card);
-}
-
 const textFilter = document.getElementById('search_bar');
 const categoryFilter = document.getElementById('category');
 const priceRangeFilter = document.getElementById('price_range');
@@ -182,3 +158,5 @@ function filter() {
     cardsContainer.appendChild(card);
   }
 }
+
+filter();
