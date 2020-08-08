@@ -61,12 +61,16 @@ body {
     background-color: #ccc; 
 }
 
-.carrousel_label {
+.carousel_item {
+    margin: 10px;
+}
+
+/* .carrousel_label {
     font-family: "Mulish", sans-serif;
     font-weight: 200;
     font-size: 25px;
     color: #777;
-}
+} */
 
 .filters {
     width: 100%;
