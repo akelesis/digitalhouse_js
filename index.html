@@ -10,22 +10,35 @@
       
     </head>
 
-<body onload= "addBooks()">
+<body onLoad = "slide1 ()">
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <div class="dropdown">
+            <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+            <div class="dropdown-content">
+                <a href="#">Minha conta</a>
+                <a href="#">Lista de desejos</a>
+                <a href="#">Minhas compras</a>
+                <a href="#">Configurações</a>
+                <a href="#">Ajuda</a>
+                <a href="#">Logout</a>
+            </div>
+          </div>
     </header>
     <main class="content">
         <section id="dh_carousel">
+            <img src = "img/slider1.png" alt = "slideshow" id = "dh_carousel">
+            <img src = "img/slider2.jpg" alt = "slideshow" id = "dh_carousel">
+            <img src = "img/slider3.jpg" alt = "slideshow" id = "dh_carousel">
+               
             <h2 class="carrousel_label">
-                Carrossel...
+                
             </h2>
         </section>
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="searchTitle()"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">

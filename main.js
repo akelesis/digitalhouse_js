@@ -1,4 +1,6 @@
 // ------------------------ Insert books -------------------------
+
+
 let books = [
     {   
         title: "O poder do hábito",
@@ -87,10 +89,97 @@ function addBooks() {
         card.appendChild(overlay);
         overlay.appendChild(h2);
         overlay.appendChild(p);
-    })
-}
-function listBooks(){
-    addBooks(books);
+    });
 }
 
+    addBooks(books);
+
+
 //------------------------ Filters ---------------------
+
+function searchTitle() {
+    let titleFilter = document.getElementById("search_bar").value;
+
+    let filterList = books.filter (book => {
+        return (book.title.toUpperCase()).includes(titleFilter.toUpperCase());
+     
+    });
+    
+    addBooks (filterList);
+
+    document.getElementById('category').value = "";
+    document.getElementById('price_range').value = "";
+
+
+}
+
+
+//Category
+function searchCategory() {
+    let categoryFilter = document.getElementById("category");
+    let selectedCategory = categoryFilter.options[categoryFilter.selectedIndex].value;
+
+    let filterList = books.filter(book =>{
+        return book.category === selectedCategory;
+    })
+
+    addBooks(filterList);
+    
+    document.getElementById("search_bar").value = ""; //clean other filter
+    document.getElementById("price_range").value = ""; //clean other filter
+
+};
+
+//Price
+function searchPrice (){
+    let priceFilter = document.getElementById("price_range");
+    let selectedPrice = priceFilter.options[priceFilter.selectedIndex].value;
+
+    let filterList = books.filter(book =>{
+        switch (selectedPrice){
+            case "barato":
+                return book.price >= 1 && book.price <= 20;
+                break;
+            case "médio":
+                return book.price >= 21 && book.price <= 40;
+                break;
+            case "caro":
+                return book.price >= 41 && book.price <= 60;
+                break;
+            case "mais caro":
+                return book.price > 60;
+                break;
+            default:
+                break;
+    
+        }
+    });
+
+    addBooks(filterList);
+}
+
+//Carrousel
+
+var intervalo = 3000;
+
+function slide1 (){
+    document.getElementById("dh_carousel").src = "slider1.png";
+    setTimeout ("slide2 ()", intervalo);
+}
+
+function slide2 (){
+    document.getElementById("dh_carousel").src = "slider2.jpg";
+    setTimeout ("slide3 ()", intervalo);
+
+}
+
+function slide3 (){
+    document.getElementById("dh_carousel").src = "slider3.jpg";
+    setTimeout ("slide1 ()", intervalo);
+}
+
+
+
+
+
+
