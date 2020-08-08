@@ -15,6 +15,11 @@ var slides = function() {
 }
 slides();
 
+/*
+id = string? 
+preco = string? 
+sem tempo para fazer um código mais elaborado
+*/
 var livros = [
 	{
 		id: '1',
