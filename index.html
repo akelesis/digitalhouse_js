@@ -4,7 +4,7 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Digital House</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
@@ -12,13 +12,13 @@
 <body>
     <header class="bookshop_header">
         <h1 class="dh_title">Digital House - Livraria</h1>
-        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
+        <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>  
     </header>
     <main class="content">
         <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
+            <div id="slider">
+                <img src="./img/banner-livros-1.jpg" id="arrayImages"/>
+            </div>
         </section>
         <section class="filters">
             <div class="name_box">
@@ -45,57 +45,48 @@
 
         <section class="showcase">
             <div class="card">
-                <img src="./img/300x400.png">
+                <img id="fotoLivros_1" alt="" width="300" height="400"/>
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2 id="tituloLivros_2" class="titulo-cor"></h2>
+                    <p id="paragrafoLivros_3" class="paragrafo-cor"></p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img id="fotoLivros_4" alt="" width="300" height="400"/>
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2 id="tituloLivros_5" class="titulo-cor"></h2>
+                    <p id="paragrafoLivros_6" class="paragrafo-cor"></p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img id="fotoLivros_7" alt="" width="300" height="400"/>
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2 id="tituloLivros_8" class="titulo-cor"></h2>
+                    <p id="paragrafoLivros_9" class="paragrafo-cor"></p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img id="fotoLivros_10" alt="" width="300" height="400"/>
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2 id="tituloLivros_11" class="titulo-cor"></h2>
+                    <p id="paragrafoLivros_12" class="paragrafo-cor"></p>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img id="fotoLivros_13" alt="" width="300" height="400"/>
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2 id="tituloLivros_14" class="titulo-cor"></h2>
+                    <p id="paragrafoLivros_15" class="paragrafo-cor"></p>
+                </div>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img id="listaLivros_6" alt="" width="300" height="400"/>
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <img id="fotoLivros_16" alt="" width="300" height="400"/>
+                    <div class="overlay">
+                        <h2 id="tituloLivros_17" class="titulo-cor"></h2>
+                        <p id="paragrafoLivros_18" class="paragrafo-cor"></p>
                 </div>
             </div>
         </section>
@@ -103,6 +94,7 @@
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
+  
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
     <script src='main.js'></script>
 </body>

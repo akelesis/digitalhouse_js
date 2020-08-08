@@ -176,3 +176,23 @@ footer {
         width: 60vw;
     }
 }
+
+#slider{
+    width: 100%;
+    height: 100%;
+    position: relative;
+   
+}
+#slider img{
+    width: 100%;
+    height: 100%;    
+    object-fit: cover;
+}
+h2.titulo-cor{
+    color: #fff;
+}
+p.paragrafo-cor{
+    color: #fff;
+    text-align: center;
+}
+
