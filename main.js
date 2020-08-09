@@ -5,42 +5,48 @@ var objLivros = [
         ano: 2014,
         autor: "Markus Zusak",
         capa: "img/meninaroubava.jpg",
-        categoria: "Romance"
+        categoria: "Romance",
+        preco: 55
     },
     {
         nome: "Teorema de Katherine",
         ano: 2018,
         autor: "John Green",
         capa: "img/teorema.jpg",
-        categoria: "Fantasia"
+        categoria: "Fantasia",
+        preco: 20
     },
     {
         nome: "A culpa é das estrelas",
         ano: 207,
         autor: "John Green",
         capa: "img/culpa.jpg",
-        categoria: "Auto ajuda"
+        categoria: "Auto ajuda",
+        preco: 30
     },
     {
         nome: "Anne Frank",
         ano: 2009,
         autor: "Orro H. Frank",
         capa: "img/anne.jpg",
-        categoria: "Romance"
+        categoria: "Romance",
+        preco: 50
     },
     {
         nome: "Revolução dos bichos",
         ano: 2007,
         autor: "George Orwell",
         capa: "img/revolucao.jpg",
-        categoria: "Ficção Científica"
+        categoria: "Ficção Científica",
+        preco: 90
     },
     {
         nome: "A Cabana",
         ano: 2007,
         autor: "William P. Young",
         capa: "img/cabana.jpg",
-        categoria: "Fantasia"
+        categoria: "Fantasia",
+        preco: 60
     }
 ]
 
@@ -97,21 +103,65 @@ var carrosel = document.getElementById("dh_carousel");
 var inputs = document.getElementById('search_bar');
 var btnFiltro = document.getElementById('search_button');
 var blocoLivros = document.querySelector(".showcase");
+var cat = document.querySelector("#category");
+var price = document.querySelector("#price_range");
 
+for (var i=0; i < objLivros.length; i++){
+    if(objLivros[i].preco>60){
+        objLivros[i].priceStr = "mais caro";
+    } else if (objLivros[i].preco>40){
+        objLivros[i].priceStr = "caro";
+        } else if (objLivros[i].preco>20){
+            objLivros[i].priceStr = "medio";
+            } else {
+                objLivros[i].priceStr = "barato";
+        }
+}
+
+// console.log(objLivros);
+// console.log(cat.value);
 
 btnFiltro.addEventListener('click', function(){
     var blocos = document.querySelectorAll(".card");
     var nomeLivro = inputs.value;
-    console.log(nomeLivro);
-    var resultFilter = objLivros.filter(function(book){
-        return book.nome === nomeLivro
-    })
-    console.log(resultFilter);
-    console.log(blocos);
+    // console.log(nomeLivro);
+    // console.log(cat.value);
+    if (cat.value === "" && price.value === "" && nomeLivro.nome != ""){
+        var resultFilter = objLivros.filter(function(book){
+            return book.nome === nomeLivro && book.categoria
+        })}else if (nomeLivro === "" && price.value === "" && cat.value != ""){
+            var resultFilter = objLivros.filter(function(book){
+                return book.categoria === cat.value 
+        })}else if (nomeLivro === ""  && cat.value === "" && price.value != ""){
+            var resultFilter = objLivros.filter(function(book){
+                return book.priceStr === price.value
+        })}else if (nomeLivro === ""  && cat.value != "" && price.value != ""){
+            var resultFilter = objLivros.filter(function(book){
+                return book.priceStr === price.value && book.categoria === cat.value
+        })}else if (nomeLivro != ""  && cat.value === "" && price.value != ""){
+            var resultFilter = objLivros.filter(function(book){
+                return book.priceStr === price.value && book.nome === nomeLivro
+            })}else if (nomeLivro != ""  && cat.value != "" && price.value === ""){
+                var resultFilter = objLivros.filter(function(book){
+                    return book.categoria === cat.value && book.nome === nomeLivro
+                })} else{
+                    var resultFilter = objLivros.filter(function(book){
+                        return book.nome === nomeLivro && book.categoria === cat.value && book.priceStr === price.value
+                })}
+    // console.log(resultFilter);
+    // console.log(cat.value);
+    // console.log(price.value);
+    // console.log(nomeLivro);
+    // console.log(blocos);
+    if (resultFilter.length==0){
+        alert(`O livro ${nomeLivro} não foi encontrado com os parametros passados!`);
+    }
+
+    for (var i=0; i<blocos.length; i++){
+        blocoLivros.removeChild(blocos[i]);
+    };
+
     resultFilter.forEach(livroResult => {
-        for (var i=0; i<blocos.length; i++){
-            blocoLivros.removeChild(blocos[i]);
-        };
             var card = document.createElement('div');
             card.setAttribute("class", "card");
             var img = document.createElement('img');
