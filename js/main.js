@@ -297,12 +297,10 @@ function clicksMenu(){
 }
 
 function abreMenu(){
-    console.log("abriu");
     menu.style.visibility = "visible";
 }
 
 function fechaMenu(){
-    console.log("fechou");
     menu.style.visibility = "hidden";
 }
 
