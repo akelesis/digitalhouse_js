@@ -183,7 +183,30 @@ footer {
 }
 
 #imagens_carousel{
-    height: 100px;
-    width: 100px;
-    border: solid;
+    padding-top: 29.3%;
+    width: 100%;
+}
+
+.bookOne{
+    background-image: url("./img/livro1.jpg");
+}
+
+.bookTwo{
+    background-image: url("./img/livro2.jpg");
+}
+
+.bookThree{
+    background-image: url("./img/livro3.jpg");
+}
+
+.bookFour{
+    background-image: url("./img/livro4.jpg");
+}
+
+.bookFive{
+    background-image: url("./img/livro5.jpg");
+}
+
+.bookSix{
+    background-image: url("./img/livro6.jpg");
 }

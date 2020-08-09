@@ -27,21 +27,35 @@ setInterval(function (){
     carousel.style.backgroundImage="url('"+pictures[i]+"')"
     console.log()
     i++;
-    if(i>2){
+    if(i>pictures.length-1){
         i=0;
     }
 }, 3000);
 
+const positionOne = document.getElementById("positionOne").classList.add("bookOne")
+const positionTwo = document.getElementById("positionTwo").classList.add("bookTwo")
+const positionThree = document.getElementById("positionThree").classList.add("bookThree")
+const positionfour = document.getElementById("positionFour").classList.add("bookFour")
+const positionFive = document.getElementById("positionFive").classList.add("bookFive")
+const positionSix = document.getElementById("positionSix").classList.add("bookSix")
 
+let books = [];
 
+fetch("livros.json").then(res => res.json()).then(res => books=res);
 
+function searchName(bookName){
+for (var i = 0; i < books.length; i++){
+    var cont = 0;
+    if (books[i].nome == bookName){
+        cont++;
+    }
+    
+    }
+    return cont;
+  }
 
-
-
-/* Carregando imagem
-const carrousel = document.getElementById("imagens_carousel");
-function carregaFoto(){
-    carrousel.style.backgroundImage="url('./img/livraria1.jpg')"
+function getName(){
+    var txt = document.getElementById("search_bar").value;
+    alert(searchName(txt));
+    
 }
-carrousel.addEventListener("load", carregaFoto());
-*/
