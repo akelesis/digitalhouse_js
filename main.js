@@ -44,6 +44,9 @@ const categoria = document.querySelector("#category");
 const preco = document.querySelector("#price_range");
 const carousel = document.querySelector("#img_carousel");
 const searchButton = document.querySelector("#search_button");
+const menuBotao = document.querySelector("#dh_menu_btn");
+const menu = document.querySelector("#dh_menu");
+const time = 2000;
 
 let buscanome = document.querySelector("#search_bar");
 let livrosPorCategoria = livros;
@@ -51,6 +54,7 @@ let livrosPorCategoriaPreco = [];
 let livroPrices = [];
 let livroCategorias = [];
 let arrayLivros = [];
+let clicks = 0;
 
 /**
     ___________________________
@@ -80,6 +84,10 @@ buscanome.addEventListener('keydown', (key) =>{
     }
 });
 
+menuBotao.addEventListener('click', () =>{
+    clicksMenu();
+});
+
 /**
     _____________________________
 
@@ -91,8 +99,10 @@ buscanome.addEventListener('keydown', (key) =>{
 function onLoad(){
     montaListaCategoria(livros);
     renderizarArrayNaPagina(livros);
+    fechaMenu();
+    sliderConfiguracao();
+    slider();
 }
-
 
 function limparTela(){
     showcase.innerHTML = "";
@@ -165,13 +175,12 @@ function filtroNome(){
 
         limparTela();
 
-        if(arrayLivros.length != 0){
-            renderizarArrayNaPagina(arrayLivros);
-        }else{
+        if(arrayLivros.length == 0){
             var erroRetorno = "Nenhum livro encontrado!";
             alert(erroRetorno);
             populaFiltro();
         }
+        renderizarArrayNaPagina(arrayLivros);
     }
 }
 
@@ -245,3 +254,55 @@ function primeiraLetraUpperCase(palavra){
             .charAt(0)
             .toUpperCase() + palavra.slice(1);
 }
+
+/**
+    _____________________________
+
+        FUNCTIONS CAROUSEL
+    _____________________________
+ 
+*/
+
+function slider(){
+    carousel.src="https://image.freepik.com/vetores-gratis/fundo-retangular-embacado-de-rosa-claro-vector-azul_6869-86.jpg";
+    setTimeout("sliderOne()", time)
+}
+    
+function sliderOne(){
+    carousel.src="https://image.freepik.com/vetores-gratis/design-de-fundo-embacado-triangulo-rosa-vetor-azul_6869-2192.jpg";
+    setTimeout("slider()", time)
+}
+
+function sliderConfiguracao() {
+    carousel.style.height = "60vh";
+    carousel.style.width = "100%";
+}
+
+/**
+    _____________________________
+
+        FUNCTIONS NAVBAR
+    _____________________________
+ 
+*/
+
+function clicksMenu(){
+    clicks += 1;
+
+    if((clicks % 2) != 0){
+        abreMenu();
+    }else{
+        fechaMenu();
+    }
+}
+
+function abreMenu(){
+    console.log("abriu");
+    menu.style.visibility = "visible";
+}
+
+function fechaMenu(){
+    console.log("fechou");
+    menu.style.visibility = "hidden";
+}
+
