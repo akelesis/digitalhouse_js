@@ -144,6 +144,23 @@ body {
     background-color: #EEE0DC;
 }
 
+#dh_menu{
+    background-color: #EEE0CB;
+    width: 400px;
+    height: 50px;
+    padding-top: 20px;
+}
+
+.item {
+    text-decoration: none;
+    color: #F71735;
+    font-weight: bolder;
+    text-align: center;  
+    padding: 20px; 
+    font-size: 20px;
+    width: 25%;
+}
+
 .overlay {
     width: 300px;
     height: 400px;
@@ -178,3 +195,4 @@ footer {
         width: 60vw;
     }
 }
+
