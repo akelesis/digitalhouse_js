@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Biblioteca Digital House</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 500
+        })
+    </script>
+    <style>
+        .divCarousel{
+            height: 300px;
+            width: 100%;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -15,87 +31,104 @@
         <button id="dh_menu_btn"><i class="fas fa-bars"></i></button>
     </header>
     <main class="content">
-        <section id="dh_carousel">
-            <h2 class="carrousel_label">
-                Carrossel...
-            </h2>
-        </section>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block divCarousel" src="img/livros1.jpg" alt="Livro 1">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block divCarousel" src="img/livros2.jpg" alt="Livro 2">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block divCarousel" src="img/livros3.jpg" alt="Livro 3">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block divCarousel" src="img/livros4.jpg" alt="Livro 4">
+            </div>
+        </div>
+    </div>
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button" onclick="fnBuscarLivros()"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
                     <option value="Auto Ajuda">Auto Ajuda</option>
-                    <option value="Ficção Científica">Ficção Científica</option>
+                    <option value="Empreendedorismo">Empreendedorismo</option>
                     <option value="Fantasia">Fantasia</option>
+                    <option value="Não ficção">Não ficção</option>
+                    <option value="Psicologia">Psicologia</option>
                     <option value="Romance">Romance</option>
+               
                 </select>
                 <select name="price_range" id="price_range">
                     <option value="" selected="true" disabled="disabled">Faixa de preço</option>
                     <option value="barato">R$1 - R$20</option>
-                    <option value="medio">R$21 - R$40</option>
-                    <option value="caro">R$41 - R$60</option>
-                    <option value="mais caro">acima de R$61</option>
+                    <option value="medio">R$22 - R$45</option>
+                    <option value="caro">R$46 - R$80</option>
+                    <option value="mais caro">acima de R$100</option>
                 </select>
             </div>
         </section>
+        <section id="respesquisa">
 
+        </section>
         <section class="showcase">
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/cortela.jpg" class="img-card">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Por  que fazemos o que fazemos</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/empreendedor.jpg" class="img-card">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Empreendedor</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/habito.jpg" class="img-card">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>O Poder do Hábito</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/harry_potter.jpg" class="img-card">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Harry Potter e a Pedra Filosofal</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/mindset.jpg" class="img-card">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>Mindset</h2>
                 </div>
             </div>
             <div class="card">
-                <img src="./img/300x400.png">
+                <img src="./img/poder_acao.jpg" class="img-card">
                 <div class="overlay">
-                    <h2>Texto Exemplo</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati minus eaque quos assumenda.
-                        Culpa commodi repudiandae asperiores ipsa hic, dicta cumque earum omnis aperiam eaque iste
-                        corrupti error perspiciatis repellat!</p>
+                    <h2>O Poder da Ação</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/sapiens.jpg" class="img-card">
+                <div class="overlay">
+                    <h2>Uma Breve História da humanidade Sapiens </h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/revolucao.jpg" class="img-card">
+                <div class="overlay">
+                    <h2>A Revolução dos Bichos</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./img/gatilho.jpg" class="img-card">
+                <div class="overlay">
+                    <h2>Gatilhos Mentais </h2>
                 </div>
             </div>
         </section>
@@ -103,8 +136,9 @@
     <footer>
         <p>Todos os direitos reservados - Digital House &#169;</p>
     </footer>
+
     <script src="https://kit.fontawesome.com/37a6fc82c8.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    <script src="./resources/main.js"></script>
 </body>
 
 </html>

@@ -50,10 +50,10 @@ body {
 }
 
 #ul_menu {
-    width: 40%;
+    width: auto;
     color: white;
     list-style: none;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 #ul_menu > li {
