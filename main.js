@@ -45,6 +45,7 @@ function busca(){
         console.log(postUser1);
         document.getElementById('nome').innerHTML= postUser1[0].nome;
         document.getElementById('descricao').innerHTML= "Valor: "+ "R$"+postUser1[0].preco;
+        window.location.href='#divResult';
     } else {
         window.alert("NADA FOI LOCALIZADO");
         document.getElementById('search_bar').value='';
@@ -84,7 +85,7 @@ function inicia(){
     load();
     imgAtual=0;
     maxImg=imgs.length-1;
-    slider=document.getElementById("dh_carouselFoto");
+    slider=document.getElementById("dh_carousel");
     carregarImg(imgAtual);
     tmp=setInterval(troca,3000);
 }
@@ -99,7 +100,7 @@ function troca(){
 window.addEventListener("load", inicia);
 //FIM CARROSSEL
 
-//FUNÇÃO DO BOTAO EXIBE E OCULTA MENU
+//FUNÇÃO DO BOTÃO EXIBE E OCULTA MENU
 function mostra(){
     if (document.getElementById('menu').style.display=='block'){
         document.getElementById('menu').style.display='none';
@@ -108,4 +109,4 @@ function mostra(){
         }
     
 }
-//DIM DA FUNÇÃO DO BOTAO EXIBE E OCULTA MENU
+//FIM DA FUNÇÃO DO BOTÃO EXIBE E OCULTA MENU

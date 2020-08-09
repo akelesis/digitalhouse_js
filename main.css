@@ -15,8 +15,9 @@
 .ulmenu{
     /*text-align: center;*/
     list-style-type: none;
-    background-color: #777;
+    background-color:#F71735;
     padding: 0;
+    color: white;
 }
 li{
     font-family: Arial, Helvetica, sans-serif;
@@ -25,16 +26,15 @@ li{
 }
 a:link {
     text-decoration: none;
-   }
+}
    
 a:hover {
-    color:white;
-   }
-/*FIM ESTILO MENU*/
-#dh_carouselFoto{
-    width: 290px;
-    height: 390px;
+    color:blue;
 }
+.itemMenu{
+       color: white;
+}
+/*FIM ESTILO MENU*/
 #dvslider{
     width: 1000px;
     height: 300px;
@@ -100,6 +100,8 @@ body {
     align-items: center;
 
     background-color: #ccc; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .carrousel_label {
