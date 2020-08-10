@@ -23,12 +23,12 @@
         <section class="filters">
             <div class="name_box">
                 <input type="text" id="search_bar" placeholder="Nome do livro...">
-                <button id="search_button" onclick="teste()"><i class="fas fa-search"></i></button>
+                <button id="search_button"><i class="fas fa-search"></i></button>
             </div>
             <div class="advanced_filters">
                 <select name="category" id="category">
                     <option value="" selected="true" disabled="disabled">Selecione a categoria</option>
-                    <option value="Auto Ajuda">Auto Ajuda</option>
+                    <option value="Auto Ajuda" id="autoAjuda">Auto Ajuda</option>
                     <option value="Ficção Científica">Ficção Científica</option>
                     <option value="Fantasia">Fantasia</option>
                     <option value="Romance">Romance</option>
@@ -43,52 +43,7 @@
             </div>
         </section>
 
-        <section class="showcase">
-            <div class="card">
-                <img id="fotoLivros_1" alt="" width="300" height="400"/>
-                <div class="overlay">
-                    <h2 id="tituloLivros_2" class="titulo-cor"></h2>
-                    <p id="paragrafoLivros_3" class="paragrafo-cor"></p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="fotoLivros_4" alt="" width="300" height="400"/>
-                <div class="overlay">
-                    <h2 id="tituloLivros_5" class="titulo-cor"></h2>
-                    <p id="paragrafoLivros_6" class="paragrafo-cor"></p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="fotoLivros_7" alt="" width="300" height="400"/>
-                <div class="overlay">
-                    <h2 id="tituloLivros_8" class="titulo-cor"></h2>
-                    <p id="paragrafoLivros_9" class="paragrafo-cor"></p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="fotoLivros_10" alt="" width="300" height="400"/>
-                <div class="overlay">
-                    <h2 id="tituloLivros_11" class="titulo-cor"></h2>
-                    <p id="paragrafoLivros_12" class="paragrafo-cor"></p>
-                </div>
-            </div>
-            <div class="card">
-                <img id="fotoLivros_13" alt="" width="300" height="400"/>
-                <div class="overlay">
-                    <h2 id="tituloLivros_14" class="titulo-cor"></h2>
-                    <p id="paragrafoLivros_15" class="paragrafo-cor"></p>
-                </div>
-                </div>
-            </div>
-            <div class="card">
-                <img id="listaLivros_6" alt="" width="300" height="400"/>
-                <div class="overlay">
-                    <img id="fotoLivros_16" alt="" width="300" height="400"/>
-                    <div class="overlay">
-                        <h2 id="tituloLivros_17" class="titulo-cor"></h2>
-                        <p id="paragrafoLivros_18" class="paragrafo-cor"></p>
-                </div>
-            </div>
+        <section class="showcase"> 
         </section>
     </main>
     <footer>
