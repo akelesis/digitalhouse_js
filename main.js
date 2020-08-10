@@ -69,47 +69,62 @@ function changeCards() {
 
 changeCards();
 
-// função de pesquisa
+// função de pesquisa que oculta os cards
 
 const searchBar = document.getElementById("search_bar");
 const categories = document.getElementById("category");
 const prices = document.getElementById("price_range");
 
-// função de pesquisa genérica por texto que oculta os cards
+function search() {
 
-function search(obj, key, filter) {
-    for (let index = 0; index < obj.length; index++) {
-        let value = obj[index][key].toUpperCase();
-        if (value.indexOf(filter) < 0) {
-            cards[index].style.display = "none";
-        }else {
-            cards[index].style.display = "";
+    let initial = bookCase.map(() => true);
+
+    let filteredTitulo = searchBar.value != ""
+    ? bookCase.map(book => book.titulo.toUpperCase().indexOf(searchBar.value.toUpperCase()) != -1)
+    : initial;
+
+    let filteredCategory = categories.value != ""
+    ? bookCase.map(book => book.categoria.toUpperCase().indexOf(categories.options[categories.selectedIndex].text.toUpperCase()) != -1)
+    : initial;
+
+    let range = bookCase.map(book => {
+        if (book.valor < 21) return "barato";
+        if (book.valor > 21 && book.valor < 41) return "medio";
+        if (book.valor > 41 && book.valor < 61) return "caro";
+        return "mais caro";
+    });
+
+    let filteredRange = prices.value != ""
+    ? range.map(value => value.indexOf(prices.options[prices.selectedIndex].value) != -1)
+    : initial;
+
+    let results = filteredTitulo.map((value, id) => value && filteredCategory[id] && filteredRange[id]);
+
+    results.forEach((result, id) => {
+        if (result == true) {
+            cards[id].style.display = "";
+        } else {
+            cards[id].style.display = "none";
         }
-    }
+    })
 }
 
-// função de pesquisa por título
-
-function titleSearch() {
-    let filter = searchBar.value.toUpperCase();
-    search(bookCase, "titulo", filter);
-}
-
-// função de pesquisa por categoria
-
-function categorySearch() {
-    let filter = categories.options[categories.selectedIndex].text.toUpperCase();
-    search(bookCase, "categoria", filter)
-}
-
+/*
 // função que escuta a barra de pesquisa por título com addEventListener
 
 searchBar.addEventListener("input", function () {
-    titleSearch();
+    search();
 })
 
 // função que escuta o select categoria
 
 categories.onchange = function () {
-    categorySearch();
+    search();
 }
+
+// função que escuta o select faixa de preço
+
+prices.onchange = function () {
+    search();
+}
+*/
