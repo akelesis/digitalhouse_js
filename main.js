@@ -1,75 +1,60 @@
 const menuButton = document.querySelector('button#dh_menu_btn');
 const menuSection = document.querySelector('section#menu');
 
-const filtersInputBookName = document.querySelector('input#search_bar');
-const booksFiltersSelects = document.querySelectorAll('select.books_filters');
-const filterSelectCategory = booksFiltersSelects[0];
-const filterSelectPrice = booksFiltersSelects[1];
+function htmlUtils(){
 
-/* Conteúdos da sessão de produtos */
-const books = [
-    {name: "Alooo", price: 30.50, category: "Auto Ajuda"},
-    {name: "Olaaaa", price: 22.50, category: "Romance"},
-    {name: "Helloooo", price: 42.50, category: "Auto Ajuda"},
-    {name: "b", price: 25.50, category: "Auto Ajuda"},
-    {name: "c", price: 70.50, category: "Romance"},
-    {name: "d", price: 13.50, category: "Ficção Científica"},
-    {name: "e", price: 37.50, category: "Fantasia"},
-];
-
-function clearHtmlElementsTextsContents(){
-    
-    [...arguments].forEach(htmlElement => htmlElement.textContent = "");
-}
-    
-function toggleHtmlElementAttribute(attr, htmlElement, {on, off}){
-    
-    return function(){
-    
-        if(htmlElement.getAttribute(attr) === on){
-            
-            return htmlElement.setAttribute(attr, off);
-        }
+    function clearHtmlElementsTextsContents(){
         
-        return htmlElement.setAttribute(attr, on);
+        [...arguments].forEach(htmlElement => htmlElement.textContent = "");
     }
-}
-
-function recursiveConcatHtmlElementTextContent(htmlElement, text, control = 0){
     
-    return function(){        
-    
-        if(control !== text.length){
-    
-            htmlElement.textContent += text[control];
+    function toggleHtmlElementAttribute(attr, htmlElement, {on, off}){
+        
+        return function(){
             
-            return recursiveConcatHtmlElementTextContent(htmlElement, text, control++);
+            if(htmlElement.getAttribute(attr) === on){
+                
+                return htmlElement.setAttribute(attr, off);
+            }
+            
+            return htmlElement.setAttribute(attr, on);
         }
     }
-}
-
-function htmlElementTypingAnimation(htmlElement, text, time){
     
-    return setInterval(recursiveConcatHtmlElementTextContent(htmlElement, text), time);
+    function recursiveConcatHtmlElementTextContent(htmlElement, text, control = 0){
+        
+        return function(){        
+            
+            if(control !== text.length){
+                
+                htmlElement.textContent += text[control];
+                
+                return recursiveConcatHtmlElementTextContent(htmlElement, text, control++);
+            }
+        }
+    }
+    
+    function htmlElementTypingAnimation(htmlElement, text, time){
+        
+        return setInterval(recursiveConcatHtmlElementTextContent(htmlElement, text), time);
+    }
+
+    const exports = {
+
+        clearTextsContents: clearHtmlElementsTextsContents,
+        toggleAttribute: toggleHtmlElementAttribute,
+        recursiveConcatTextContent: recursiveConcatHtmlElementTextContent,
+        typingAnimation: htmlElementTypingAnimation
+    }
+
+    return exports;
 }
 
-function setHtmlElementStyleColor(htmlElement, color){
-
-    htmlElement.style.color = color;
-}
-
-function setHtmlElementStyleBgImage(htmlElement, imageSource){
-
-    htmlElement.style.backgroundImage = `url(${imageSource})`;
-}
-
-function getHtmlElementStyleAttribute(htmlElement, attribute){
-
-    return htmlElement.style[attribute];
-}
 
 /* Módulo do banner principal da página */
 function bannerCarousel(){
+    
+    const _utils = htmlUtils();
 
     /* Elementos HTML do banner */
     const carouselSection = document.querySelector('section#dh_carousel');
@@ -77,112 +62,172 @@ function bannerCarousel(){
     const carouselParagraph = document.querySelector('p.carousel_paragraph');
     
     /* Conteúdos do carrossel(backgroundImages/textContents) */
-    const carouselContents = [
+    const _carouselContents = [
         {
-            imgSrc: "./img/carousel/01_1024px.png",
+            banner: "first-switch",
             textContents: {
-                            label: "Lorem it", 
-                            paragraph: "A prática cotidiana prova que o surgimento do comércio virtual aponta para a melhoria das diretrizes de desenvolvimento para o futuro.", 
-                            color:"white"
+                label: "Lorem it", 
+                paragraph: "A prática cotidiana prova que o surgimento do comércio virtual aponta para a melhoria das diretrizes de desenvolvimento para o futuro.", 
+                color:"white"
             }
         }, 
         {
-            imgSrc: "./img/carousel/02_1140px.jpg",
+            banner: "second-switch",
             textContents: {
-                            label: "Uti", 
-                            paragraph:"As experiências acumuladas demonstram que o entendimento das metas propostas aponta para a melhoria do sistema de participação geral.", 
-                            color:"black"
+                label: "Uti", 
+                paragraph:"As experiências acumuladas demonstram que o entendimento das metas propostas aponta para a melhoria do sistema de participação geral.", 
+                color:"black"
             }
         }
     ];
     
     /* Variável de controle de índices dos conteúdos de carrossel(backgroundImages/textContents) */
-    let carouselControl = 0;
-
-    function selectCarouselContents(){
-        
-        if(carouselControl === carouselContents.length){
-            
-            carouselControl = 0;
-        }
-
-        const selectedContents = carouselContents[carouselControl];
+    let _carouselControl = 0;
     
-        carouselControl++;
+    function _selectCarouselContents(){
+        
+        if(_carouselControl === _carouselContents.length){
+            
+            _carouselControl = 0;
+        }
+        
+        const selectedContents = _carouselContents[_carouselControl];
+        
+        _carouselControl++;
         
         return selectedContents;
     }
-
+    
     function changeBannerContentCarousel(){
-    
-        const selectedContents = selectCarouselContents();
-    
-        setHtmlElementStyleColor(carouselSection, selectedContents.textContents.color);
-        setHtmlElementStyleBgImage(carouselSection, selectedContents.imgSrc);
-        clearHtmlElementsTextsContents(carouselLabel, carouselParagraph);
-        htmlElementTypingAnimation(carouselLabel, selectedContents.textContents.label, 300);
-        htmlElementTypingAnimation(carouselParagraph, selectedContents.textContents.paragraph, 50);
+        
+        const selectedContents = _selectCarouselContents();
+        
+        carouselSection.setAttribute('banner', selectedContents.banner);
+        
+        _utils.clearTextsContents(carouselLabel, carouselParagraph);
+        _utils.typingAnimation(carouselLabel, selectedContents.textContents.label, 300);
+        _utils.typingAnimation(carouselParagraph, selectedContents.textContents.paragraph, 50);
     }
-
-    return {
-
+    
+    const exports = {
+        elements:{
+            section: carouselSection,
+            label: carouselLabel,
+            paragraph: carouselParagraph
+        },
         change: changeBannerContentCarousel
     }
+
+    return exports;
 }
 
-function actionByPriceAndCategory({initialPrice, finalPrice}, productCategory){
-
-    if(productCategory){
-
-        return function(product){
+/* Módulo de produtos */
+function product(){
     
-            return (product.price > initialPrice && product.price < finalPrice) && (product.category === productCategory);
+    function actionByPriceAndCategory({initialPrice, finalPrice}, productCategory){
+        
+        if(productCategory){
+            
+            return function(product){
+                
+                return (product.price > initialPrice && product.price < finalPrice) && (product.category === productCategory);
+            }
+        }
+        else{
+            
+            return function(product){
+                
+                return (product.price > initialPrice && product.price < finalPrice);
+            }
         }
     }
-    else{
-
-        return function(product){
     
-            return (product.price > initialPrice && product.price < finalPrice);
+    function filterProductsByPriceAndCategory(productsArray, getPriceRange, getProductCategory){
+        
+        return productsArray.filter(actionByPriceAndCategory(getPriceRange(), getProductCategory()));
+    }
+    
+    const exports = {
+        
+        actionByPriceAndCategory: actionByPriceAndCategory,
+        filterByPriceAndCategory: filterProductsByPriceAndCategory
+    }
+
+    return exports;
+}
+
+/* Módulo de livros */
+function books(){
+    
+    const _bookProduct = product();
+    
+    /* Elementos html pertencentes */
+    const filtersInputBookName = document.querySelector('input#search_bar');
+    const booksFiltersSelects = document.querySelectorAll('select.books_filters');
+    const filterSelectCategory = booksFiltersSelects[0];
+    const filterSelectPrice = booksFiltersSelects[1];
+    
+    const _books = [
+        {name: "Alooo", price: 30.50, category: "Auto Ajuda"},
+        {name: "Olaaaa", price: 22.50, category: "Romance"},
+        {name: "Helloooo", price: 42.50, category: "Auto Ajuda"},
+        {name: "b", price: 25.50, category: "Auto Ajuda"},
+        {name: "c", price: 70.50, category: "Romance"},
+        {name: "d", price: 13.50, category: "Ficção Científica"},
+        {name: "e", price: 37.50, category: "Fantasia"},
+    ];
+
+    function _getSelectedBooksPriceRange(){
+        
+        /* Padrão do valor recebido do select(elemento html) num(início do range)...num(final do range). Ex: "20...40" */
+        
+        const myPriceRangeArray = filterSelectPrice.value.split('...').map(num => parseInt(num));
+        
+        return {
+            
+            initialPrice: myPriceRangeArray[0],
+            finalPrice: myPriceRangeArray[1]
         }
     }
+    
+    function _getSelectedBookCategory(){
+        
+        return filterSelectCategory.value;
+    }
+    
+    function getFilteredBooks(){
+        
+        console.log(_bookProduct.filterByPriceAndCategory(_books, _getSelectedBooksPriceRange, _getSelectedBookCategory));
+    }
+    
+    const exports = {
+        elements: {
+            filtersInputName: filtersInputBookName,
+            filtersSelects: booksFiltersSelects,
+            filterSelectCategory: filterSelectCategory,
+            filterSelectPrice: filterSelectCategory
+        },
+        getFiltered: getFilteredBooks
+    }
+
+    return exports;
 }
 
-function filterProductsByPriceAndCategory(productsArray, getPriceRange, getProductCategory){
+/* MAIN */
+function main(dom, win){
     
-    return productsArray.filter(actionByPriceAndCategory(getPriceRange(), getProductCategory()));
-}
+    return function(){
 
-function getSelectedBooksPriceRange(){
-    
-    /* Padrão do valor recebido do select(elemento html) num(início do range)...num(final do range). Ex: "20...40" */
-
-    const myPriceRangeArray = filterSelectPrice.value.split('...').map(num => parseInt(num));
-
-    return {
-
-        initialPrice: myPriceRangeArray[0],
-        finalPrice: myPriceRangeArray[1]
+        const utils = htmlUtils();
+        const pageBannerCarousel = bannerCarousel();
+        const pageBooks = books();
+        
+        setInterval(pageBannerCarousel.change, 10000);
+        
+        menuButton.addEventListener('click', utils.toggleAttribute('active', menuSection, {on: 'true', off: 'false'}));
+        
+        pageBooks.elements.filtersSelects.forEach(select => select.addEventListener('change', pageBooks.getFiltered));
     }
 }
 
-function getSelectedBookCategory(){
-
-    return filterSelectCategory.value;
-}
-
-function getFilteredBooks(){
-
-    return filterProductsByPriceAndCategory(books, getSelectedBooksPriceRange, getSelectedBookCategory);
-}
-
-window.addEventListener('load', function(){
-    
-    const pageBannerCarousel = bannerCarousel();
-
-    setInterval(pageBannerCarousel.change, 10000);
-
-    menuButton.addEventListener('click', toggleHtmlElementAttribute('active', menuSection, {on: 'true', off: 'false'}));
-    
-    booksFiltersSelects.forEach(select => select.addEventListener('change', getFilteredBooks));
-})
+window.addEventListener('load', main(document, window));

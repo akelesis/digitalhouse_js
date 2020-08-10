@@ -110,11 +110,24 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-image:url("./img/carousel/03_1280px.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+#dh_carousel[banner = 'initial'] {
+    background-image:url("./img/carousel/03_1280px.jpg");
+    color: white;
+}
+
+#dh_carousel[banner = 'first-switch'] {
+    background-image:url("./img/carousel/01_1024px.png");
+    color: white;
+}
+
+#dh_carousel[banner = 'second-switch'] {
+    background-image:url("./img/carousel/02_1140px.jpg");
+    color: black;
+}
 
 .filters {
     width: 100%;
