@@ -75,19 +75,7 @@ const imageCarousel = document.getElementById("arrayImages");
        }); 
 
 
-           listaFiltrada.forEach(livro =>{
-            livroBox = document.createElement("div")
-            livroBox.setAttribute("class", "livro-Box")
-            livroBox.innerHTML = `<div class="card">
-            <img src=${livro.image} width="300" height="400" />
-            <div class="overlay">
-                <h2 class="titulo-cor">${livro.titulo}</h2>
-                <p class="paragrafo-cor">${livro.texto}</p>
-            </div>
-            </div>`
-            container.appendChild(livroBox);
-           
-       })
+      
 
 
 
