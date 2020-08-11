@@ -80,12 +80,12 @@ function search() {
     let initial = bookCase.map(() => true);
 
     let filteredTitulo = searchBar.value != ""
-    ? bookCase.map(book => book.titulo.toUpperCase().indexOf(searchBar.value.toUpperCase()) != -1)
-    : initial;
+        ? bookCase.map(book => book.titulo.toUpperCase().indexOf(searchBar.value.toUpperCase()) != -1)
+        : initial;
 
     let filteredCategory = categories.value != ""
-    ? bookCase.map(book => book.categoria.toUpperCase().indexOf(categories.options[categories.selectedIndex].text.toUpperCase()) != -1)
-    : initial;
+        ? bookCase.map(book => book.categoria.toUpperCase().indexOf(categories.options[categories.selectedIndex].text.toUpperCase()) != -1)
+        : initial;
 
     let range = bookCase.map(book => {
         if (book.valor < 21) return "barato";
@@ -95,8 +95,8 @@ function search() {
     });
 
     let filteredRange = prices.value != ""
-    ? range.map(value => value.indexOf(prices.options[prices.selectedIndex].value) != -1)
-    : initial;
+        ? range.map(value => value.indexOf(prices.options[prices.selectedIndex].value) != -1)
+        : initial;
 
     let results = filteredTitulo.map((value, id) => value && filteredCategory[id] && filteredRange[id]);
 
@@ -128,3 +128,51 @@ prices.onchange = function () {
     search();
 }
 */
+
+// Carousel automático
+
+const carousel = [
+    {
+        img: "./img/slides/slide1.jpg",
+        titulo: "Título 1",
+        texto: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa nemo repudiandae totam nam. Iusto rem quasi, qui repellendus ipsa veniam? Perspiciatis assumenda ut voluptatum nostrum, ipsam incidunt quod officiis reprehenderit?"
+    },
+    {
+        img: "./img/slides/slide2.jpg",
+        titulo: "Título 2",
+        texto: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde omnis mollitia vero error tempore porro nobis sint quas, numquam explicabo asperiores consectetur modi inventore distinctio aspernatur voluptatum cumque est adipisci!"
+    }
+]
+
+carousel.push(carousel[0]);
+
+const carouselContainer = document.getElementById("carousel_container");
+
+document.getElementById("dh_carousel").style.width = `${carousel.length * 100}%`;
+
+carousel.forEach(slide => {
+    let slideCarousel = document.createElement("span");
+    slideCarousel.className = "slide_carousel";
+    slideCarousel.style.backgroundImage = `url(${slide.img})`;
+
+    slideCarousel.innerHTML = `
+    <div class="text_carousel" >
+        <h2>${slide.titulo}</h2>
+        <p>${slide.texto}</p>
+    </div>
+    `;
+    carouselContainer.appendChild(slideCarousel);
+});
+
+let index = 0;
+
+function slider() {
+    index == 0
+        ? carouselContainer.style.transition = "0s"
+        : carouselContainer.style.transition = "1s";
+
+    carouselContainer.style.left = `-${100 / carousel.length * index}%`;
+
+    index = (index + 1) % carousel.length;
+}
+setInterval(slider, 5000);
