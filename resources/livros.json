@@ -1,0 +1,65 @@
+[
+    {
+        "Nome": "Por que fazemos o que fazemos?",
+        "Autor": "Mário Sergio Cortella",
+        "Categoria": "Auto Ajuda",
+        "Preco": 22.49,
+        "Sipnose": "Bateu aquela preguiça de ir para o escritório na segunda-feira? A falta de tempo virou uma constante? A rotina está tirando o prazer no dia a dia? Anda em dúvida sobre qual é o real objetivo de sua vida? O filósofo e escritor Mario Sergio Cortella desvenda em Por que fazemos o que fazemos? as principais preocupações com relação ao trabalho. Dividido em vinte capítulos, ele aborda questões como a importância de ter uma vida com propósito, a motivação em tempos difíceis, os valores e a lealdade a si e ao seu emprego. O livro é um verdadeiro manual para todo mundo que tem uma carreira mas vive se questionando sobre o presente e o futuro. Recheado de ensinamentos como 'Paciência na turbulência, sabedoria na travessia', é uma obra fundamental para quem sonha com realização profissional sem abrir mão da vida pessoal."
+    },
+    {
+        "Nome": "A Mente do Empreendedor",
+        "Autor": "KEVIN D. JOHNSON",
+        "Categoria": "Auto Ajuda",
+        "Preco": 14.95,
+        "Sipnose": "Steve Jobs, Jeff Bezos, Mark Zuckerberg, Bill Gates, Valerie Gaydos e Sara Blakely. O que eles - entre outros tantos empreendedores geniais - têm em comum? Sucesso em seus negócios! A verdade é que milhares de pessoas tentam empreender. Muitos erram. Alguns acertam. Mas pouquíssimos tornam-se empresários incrivelmente bem sucedidos. Kevin D. Johnson acredita que, se os empresários souberem o que se passa dentro da cabeça dos empreendedores mais bem sucedidos do mundo, serão mais precisos nas suas decisões do dia a dia e aumentarão a chance de acertar. Segundo o autor, você precisa mudar seu modo de pensar. Em outras palavras, precisa interiorizar a mente do empreendedor: um jeito de pensar que foca nas lições mais importantes e vitais desses grandes nomes. E é exatamente isso que Kevin D. Johnson oferece neste livro. O autor pesquisou profundamente e encontrou hábitos, crenças e características em comum entre esses grandes nomes"
+    },
+    {
+        "Nome": "Gatilhos Mentais",
+        "Autor": "Miguel de Cervantes",
+        "Categoria": "Romance",
+        "Preco": 79.90,
+        "Sipnose": "Um dos maiores clássicos da literatura espanhola, Dom Quixote conta a história de um cavaleiro que leu demasiados romances e enlouqueceu. Dom Quixote agora pensa que é um herói, como nos livros que leu, e sai em busca de aventuras com seu leal escudeiro, Sancho Pança. Esse livro cômico inspirou muitas outras sátiras ao longo da História."
+    },
+    {
+        "Nome": "Mindset",
+        "Autor": "Carol Dweck",
+        "Categoria": "Psicologia ",
+        "Preco": 39.90,
+        "Sipnose": "Clássico da psicologia em versão revista e atualizada. Carol S. Dweck, professora de psicologia na Universidade Stanford e especialista internacional em sucesso e motivação, desenvolveu, ao longo de décadas de pesquisa, um conceito fundamental: a atitude mental com que encaramos a vida, que ela chama de 'mindset', é crucial para o sucesso. Dweck revela de forma brilhante como o sucesso pode ser alcançado pela maneira como lidamos com nossos objetivos. O mindset não é um mero traço de personalidade, é a explicação de por que somos otimistas ou pessimistas, bem-sucedidos ou não. Ele define nossa relação com o trabalho e com as pessoas e a maneira como educamos nossos filhos. É um fator decisivo para que todo o nosso potencial seja explorado."
+    },
+    {
+        "Nome": "A revolução dos bichos",
+        "Autor": "George Orwell",
+        "Categoria": "Romance",
+        "Preco": 29.90,
+        "Sipnose": "Verdadeiro clássico moderno, concebido por um dos mais influentes escritores do século XX, A revolução dos bichos é uma fábula sobre o poder. Narra a insurreição dos animais de uma granja contra seus donos. Progressivamente, porém, a revolução degenera numa tirania ainda mais opressiva que a dos humanos."
+    },
+    {
+        "Nome": "Sapiens - Uma Breve História da Humanidade",
+        "Autor": "Yuval Harari",
+        "Categoria": "Não ficção",
+        "Preco": 22.99,
+        "Sipnose": "Sapiens: Uma Breve História da Humanidade é um livro de Yuval Harari publicado primeiramente em 2014, embora tenha sido lançado originalmente em Israel em 2011, com o título Uma Breve História do Gênero Humano."
+    },
+    {
+        "Nome": "O Poder da Ação",
+        "Autor": "Paulo Vieira",
+        "Categoria": "Auto Ajuda",
+        "Preco": 17.90,
+        "Sipnose": "Acorde para os objetivos que quer conquistar. Já aconteceu a você de se olhar no espelho e não gostar daqueles quilos a mais? De observar seu momento profissional somente com frustração? De se sentir desconectado dos seus familiares, dos seus amigos? Se você acha que essas são situações normais, pense de novo! Só porque isso acontece com várias pessoas não quer dizer que a vida deva ser assim. Só porque algo se torna comum, não significa que seja normal! Neste livro, Paulo Vieira lhe convida a quebrar o ciclo vicioso e iniciar um caminho de realização. Para isso, ele apresenta o método responsável por impactar 250 mil pessoas ao longo de sua carreira - e que pode ser a chave para o que você tanto procura. No decorrer destas páginas, o autor lhe entrega uma bússola. E para conseguir se guiar por ela você terá de assumir um compromisso com a mudança. Preparado? Aproveite todas as provocações e os desafios propostos nesta obra para conseguir, de fato, fazer o check-up completo sobre si mesmo. Acorde, creia, comunique, tenha foco, AJA! Pare de adiar sua vida e seja quem quer ser a partir de agora. Não existe outra opção. E está em suas mãos reescrever seu futuro."
+    },
+    {
+        "Nome": "Harry Potter e a Pedra Filosofal",
+        "Autor": "J. K. Rowling",
+        "Categoria": "Fantasia",
+        "Preco": 22.90,
+        "Sipnose": "Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter, escrita por J. K. Rowling. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo."
+    },
+    {
+        "Nome": "O Poder do Hábito",
+        "Autor": "Charles Duhigg",
+        "Categoria": "Auto Ajuda",
+        "Preco": 44.90,
+        "Sipnose": "O Poder do Hábito: por que fazemos o que fazemos na vida e nos negócios é um livro de Charles Duhigg, ex-repórter do New York Times, publicado em Fevereiro de 2012 pela Random House. Explora a ciência por trás da criação e reforma de hábitos."
+    }
+]
