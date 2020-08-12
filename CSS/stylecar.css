@@ -20,7 +20,7 @@ a{
     color: white;
 }
 
-#interface{
+.interface{
     background-color: rgba(50, 50, 75, 0.8);
     margin: 30px;
     padding: 10px;

@@ -234,25 +234,40 @@ filtro.on("change", function() {
         window.location.reload();
     } else {
         container.remove();
-        alert("evento disparado e o valor é: " + valor);
         const comFiltro = listMovie.filter(livros => {
             return livros.category === valor;
         })
+
         console.log(comFiltro);
-        console.log(comFiltro[1]);
-        console.log(comFiltro[1].name);
-        var di = document.createElement("DIV");
+        console.log(comFiltro[0]);
+        console.log(comFiltro[0].name);
+
+        var element = document.createElement("DIV");
+        var a = document.createElement("A");
+        document.body.appendChild(element);
+        element.appendChild(a);
+
+        element.setAttribute("class", "interface");
+        a.setAttribute("class", "largura img");
+        
+        a.style.backgroundImage = comFiltro[0].img;
+        console.log(element);
+        console.log(a);
+        
+
+/*         var di = document.createElement("DIV");
         console.log(di);
         //fixa.appendChild(di);
         var a = document.createElement("A");
-        let i = 0;
-        comFiltro.forEach(livros => {
-            di.appendChild(a)
+        for (var i=0; i<comFiltro.length; i++) {
             a.setAttribute("class", "largura img");
-            let anovo = a.setAttribute("id", ""+i+"");
-            anovo.style.backgroundImage = "comFiltro[i].img";
-            i++;
-        })
-    }    
+            a.setAttribute("id", ""+i+"");
+            a.style.backgroundImage = "comFiltro[i].img";
+            di.appendChild(a);
+            console.log(a);
+            //fixa.appendChild(di);
+        }
+        //fixa.appendChild(di);
+ */    }    
   })
 //<a class="largura img" target="_blank"></a>
